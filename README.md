@@ -6,6 +6,8 @@
 - 在线访问（国内）：https://juniorhighstudy-8i7o50u1.maozi.io/
 - 在线访问（GitHub Pages）：https://nonomil.github.io/junior-high-study-rebuild/
 
+> 部署触发标记：本次提交用于触发 GitHub Pages 的 Actions 部署（无需代码改动）。
+
 ## 项目结构
 
 ```
@@ -41,6 +43,9 @@
 > 说明：本次更新后将新增 `初中学习低分重建--word版/` 文件夹（存放各科对应的 Word 文档），会被移动至本网站根目录以便统一管理与下载。
 
 ## 更新日志
+
+### 2025-11-04 触发部署
+- 说明：仅用于触发 GitHub Actions Pages 工作流的部署，以验证自动发布配置。
 
 ### 2025-11-04
 - 新增内容：
