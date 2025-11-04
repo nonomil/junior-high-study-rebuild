@@ -171,6 +171,7 @@
             <li><a href="#knowledge-system" onclick="scrollToSection('knowledge-system')">英语知识体系构建</a></li>
             <li><a href="#key-difficulties" onclick="scrollToSection('key-difficulties')">重点难点突破</a></li>
             <li><a href="#detailed-methods" onclick="scrollToSection('detailed-methods')">详细学习方法与策略</a></li>
+            <li><a href="#vocab-methods" onclick="scrollToSection('vocab-methods')">词汇学习方法补充</a></li>
             <li><a href="#learning-methods" onclick="scrollToSection('learning-methods')">学习方法与技巧</a></li>
             <li><a href="#learning-resources" onclick="scrollToSection('learning-resources')">学习资源推荐</a></li>
             <li><a href="#exam-skills" onclick="scrollToSection('exam-skills')">考试技巧</a></li>
@@ -1024,6 +1025,57 @@
         </div>
     </main>
 
+    <!-- 词汇学习方法补充（词根词缀·词组搭配·语境猜词） -->
+    <section class="content-section" id="vocab-methods">
+        <h2>🔧 词汇学习方法补充：词根词缀·词组搭配·语境猜词（拒绝死记硬背）</h2>
+        <div class="card">
+            <h3>总原则</h3>
+            <p>把“认识一个词”升级为“掌握一个词”：在语境中理解、在搭配中使用、在构词中扩展。</p>
+        </div>
+        <div class="grid grid-3">
+            <div class="card">
+                <h4>词根词缀簇（构词法）</h4>
+                <ul>
+                    <li>建立个人词根表：每周2-3个高频词根与前后缀。</li>
+                    <li>词簇扩展练习：围绕一个词根扩展5-8个相关词并造句。</li>
+                    <li>联想网络：按场景分组形成“词汇地图”。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>固定搭配与词组（collocations）</h4>
+                <ul>
+                    <li>每日积累5个搭配（make a decision, pay attention to 等）。</li>
+                    <li>例句优先：每个搭配至少造1个“属于你的句子”。</li>
+                    <li>搭配卡片：含义+例句+常见错用（如 do a decision ×）。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>语境猜词（阅读中词义猜测）</h4>
+                <ul>
+                    <li>定位线索：围绕数字、专名、转折/因果连接词。</li>
+                    <li>同义替换与结构线索：定义句、举例、结果、转折。</li>
+                    <li>排除法：不合语境的选项直接淘汰。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="success">
+            <h4>实践闭环</h4>
+            <ul>
+                <li>每日：1个词根+5个搭配+1段语境猜词练习。</li>
+                <li>每周：100词短文，刻意使用10个本周词与搭配。</li>
+                <li>每月：复盘错点，形成个人易错清单并纠正。</li>
+            </ul>
+        </div>
+        <div class="warning">
+            <h4>常见误区与修正</h4>
+            <ul>
+                <li>只背中文意思→绑定例句/搭配/词根扩展。</li>
+                <li>逐词查词典影响阅读→优先训练语境猜词。</li>
+                <li>短期冲刺易遗忘→按 1/3/7/15 天滚动复习。</li>
+            </ul>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助初中生提升学习成绩.</p>
@@ -1070,7 +1122,7 @@
         }
 
         window.addEventListener('scroll', function() {
-            const sections = ['importance', 'knowledge-system', 'key-difficulties', 'detailed-methods', 'learning-methods', 'learning-resources', 'exam-skills', 'evaluation-reflection'];
+            const sections = ['importance', 'knowledge-system', 'key-difficulties', 'detailed-methods', 'vocab-methods', 'learning-methods', 'learning-resources', 'exam-skills', 'evaluation-reflection'];
             let currentSection = '';
             
             sections.forEach(sectionId => {

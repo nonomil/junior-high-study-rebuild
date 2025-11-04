@@ -172,6 +172,8 @@
             <li><a href="#learning-strategies" onclick="scrollToSection('learning-strategies')">分层学习策略</a></li>
             <li><a href="#key-difficulties" onclick="scrollToSection('key-difficulties')">重点难点突破</a></li>
             <li><a href="#memory-skills" onclick="scrollToSection('memory-skills')">高效记忆技巧与方法</a></li>
+            <li><a href="#politics-analysis-sop" onclick="scrollToSection('politics-analysis-sop')">政治分析方法SOP</a></li>
+            <li><a href="#history-recitation-sop" onclick="scrollToSection('history-recitation-sop')">历史背诵方法SOP</a></li>
             <li><a href="#current-affairs" onclick="scrollToSection('current-affairs')">时事热点关注策略</a></li>
             <li><a href="#answer-skills" onclick="scrollToSection('answer-skills')">答题技巧与策略</a></li>
             <li><a href="#learning-resources" onclick="scrollToSection('learning-resources')">学习资源与工具推荐</a></li>
@@ -1244,6 +1246,66 @@
         </div>
     </main>
 
+    <!-- 政治分析方法SOP -->
+    <section class="content-section" id="politics-analysis-sop">
+        <h2>🧩 政治分析方法SOP：立场·概念·逻辑树·材料·时事</h2>
+        <div class="card">
+            <h3>五步作答流程</h3>
+            <ol>
+                <li><strong>明确立场：</strong>结合核心价值观，先给一句话总观点。</li>
+                <li><strong>概念归类：</strong>列出教材原理关键词（如依法治国、共同富裕、国家治理）。</li>
+                <li><strong>搭建逻辑树：</strong>政治—经济—文化—社会—生态多角度结构化论证。</li>
+                <li><strong>材料拆解：</strong>提取主体、举措、结果，与原理逐一对应。</li>
+                <li><strong>时事结合：</strong>补充1-2个近热点，呼应题目主题。</li>
+            </ol>
+        </div>
+        <div class="grid grid-2">
+            <div class="card">
+                <h4>结构化答案模板</h4>
+                <ul>
+                    <li>总观点：一句话立场。</li>
+                    <li>分点论证：原理A/B/C + 材料信息 + 作用意义。</li>
+                    <li>总结提升：升华主题或提出实践建议。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>简例：优化营商环境</h4>
+                <ul>
+                    <li>政治：依法治国与政府职能转变，提高行政效率与透明度。</li>
+                    <li>经济：降低制度性交易成本，促进创新与投资，形成新质生产力。</li>
+                    <li>社会：公平竞争，维护消费者权益与就业质量。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史背诵方法SOP -->
+    <section class="content-section" id="history-recitation-sop">
+        <h2>📚 历史背诵方法SOP：分段背诵·脉络梳理·串联整书</h2>
+        <div class="card">
+            <h3>操作流程</h3>
+            <ol>
+                <li><strong>时间轴先行：</strong>先画时间轴，标注关键年份与事件节点。</li>
+                <li><strong>分段背诵：</strong>聚焦小事件（起因—经过—结果—影响），先理解后背诵。</li>
+                <li><strong>人物与线索：</strong>制作“人物卡”，串联相关事件。</li>
+                <li><strong>因果与对比：</strong>用连接词编织叙述，同主题不同时期做对比。</li>
+                <li><strong>整书地图：</strong>古代史/近现代史/世界史建立主题地图。</li>
+                <li><strong>复述与默写：</strong>口头复述→遮挡默写→查漏补缺。</li>
+                <li><strong>滚动复习：</strong>1/3/7/15天周期复盘。</li>
+            </ol>
+        </div>
+        <div class="success">
+            <h4>示例（洋务运动）</h4>
+            <ul>
+                <li>时间线：19世纪60-90年代；口号：“自强”“求富”。</li>
+                <li>事件：创办军事/民用工业（江南制造总局等）。</li>
+                <li>结果：甲午战败，运动失败。</li>
+                <li>影响：开启近代化进程，刺激民族资本主义产生。</li>
+                <li>模板：目的—实践—影响—结果—局限。</li>
+            </ul>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助初中生提升学习成绩.</p>
@@ -1290,7 +1352,7 @@
         }
 
         window.addEventListener('scroll', function() {
-            const sections = ['importance', 'politics-system', 'history-system', 'learning-strategies', 'key-difficulties', 'memory-skills', 'current-affairs', 'answer-skills', 'learning-resources', 'evaluation-reflection'];
+            const sections = ['importance', 'politics-system', 'history-system', 'learning-strategies', 'key-difficulties', 'memory-skills', 'politics-analysis-sop', 'history-recitation-sop', 'current-affairs', 'answer-skills', 'learning-resources', 'evaluation-reflection'];
             let currentSection = '';
             
             sections.forEach(sectionId => {
