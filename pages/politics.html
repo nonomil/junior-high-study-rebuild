@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政治科目学习指南 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin: 0;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 10px;
+            z-index: 101;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="chinese.html">📝 语文指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#politics-overview" onclick="scrollToSection('politics-overview')">政治学习指南</a></li>
+            <li><a href="#politics-status" onclick="scrollToSection('politics-status')">学习现状分析</a></li>
+            <li><a href="#politics-system" onclick="scrollToSection('politics-system')">政治知识体系</a></li>
+            <li><a href="#politics-memory" onclick="scrollToSection('politics-memory')">记忆技巧方法</a></li>
+            <li><a href="#politics-answer" onclick="scrollToSection('politics-answer')">答题技巧策略</a></li>
+            <li><a href="#politics-topics" onclick="scrollToSection('politics-topics')">专题学习计划</a></li>
+            <li><a href="#politics-current" onclick="scrollToSection('politics-current')">时事政治关注</a></li>
+            <li><a href="#politics-resources" onclick="scrollToSection('politics-resources')">学习资源推荐</a></li>
+            <li><a href="#politics-evaluation" onclick="scrollToSection('politics-evaluation')">学习效果评估</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="content-page">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1 id="politics-overview">📖 政治科目学习指南：记忆技巧与答题策略</h1>
+            <p>培养政治素养，提升答题能力</p>
+
+            <!-- 学习现状分析 -->
+            <section class="content-section" id="politics-status">
+                <h2>📊 政治学习现状分析</h2>
+                
+                <div class="info-box">
+                    <h3>典型问题表现</h3>
+                    <ul>
+                        <li><strong>记忆困难</strong>：知识点多而杂，记忆方法单一，遗忘速度快</li>
+                        <li><strong>理解不深</strong>：死记硬背，缺乏逻辑思维，不会分析材料</li>
+                        <li><strong>答题技巧缺乏</strong>：审题不准，答案要点不全，语言表达不规范</li>
+                        <li><strong>时事脱节</strong>：不关注时事，理论联系实际能力弱，热点分析不深入</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h3>分数分布分析</h3>
+                    <table class="diagnosis-table">
+                        <thead>
+                            <tr>
+                                <th>题型</th>
+                                <th>满分</th>
+                                <th>当前得分</th>
+                                <th>失分原因</th>
+                                <th>提升空间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>选择题</td>
+                                <td>50分</td>
+                                <td>30分</td>
+                                <td>基础知识不牢固</td>
+                                <td>15分</td>
+                            </tr>
+                            <tr>
+                                <td>材料分析题</td>
+                                <td>30分</td>
+                                <td>15分</td>
+                                <td>审题不准，答题不规范</td>
+                                <td>12分</td>
+                            </tr>
+                            <tr>
+                                <td>论述题</td>
+                                <td>20分</td>
+                                <td>8分</td>
+                                <td>逻辑不清，要点不全</td>
+                                <td>10分</td>
+                            </tr>
+                            <tr>
+                                <td><strong>总计</strong></td>
+                                <td><strong>100分</strong></td>
+                                <td><strong>53分</strong></td>
+                                <td><strong>综合能力不足</strong></td>
+                                <td><strong>37分</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="success-box">
+                    <h3>8个月提升目标</h3>
+                    <table class="diagnosis-table">
+                        <thead>
+                            <tr>
+                                <th>阶段</th>
+                                <th>时间</th>
+                                <th>目标分数</th>
+                                <th>重点任务</th>
+                                <th>评估标准</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>基础重建期</td>
+                                <td>11-12月</td>
+                                <td>65分</td>
+                                <td>知识体系重建，基础记忆</td>
+                                <td>选择题正确率70%</td>
+                            </tr>
+                            <tr>
+                                <td>强化提升期</td>
+                                <td>1-3月</td>
+                                <td>75分</td>
+                                <td>专题学习，技巧训练</td>
+                                <td>材料题得分率60%</td>
+                            </tr>
+                            <tr>
+                                <td>冲刺突破期</td>
+                                <td>4-6月</td>
+                                <td>85分</td>
+                                <td>热点复习，模拟训练</td>
+                                <td>综合能力全面提升</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 政治知识体系 -->
+            <section class="content-section" id="politics-system">
+                <h2>📚 政治知识体系</h2>
+
+                <div class="card">
+                    <h3>马克思主义基本原理</h3>
+                    <h4>重点知识梳理：</h4>
+                    <ul>
+                        <li><strong>哲学基本问题</strong>：
+                            <ul>
+                                <li>物质和意识的关系</li>
+                                <li>思维和存在的关系</li>
+                                <li>理论和实践的关系</li>
+                            </ul>
+                        </li>
+                        <li><strong>认识论要点</strong>：
+                            <ul>
+                                <li>实践是认识的基础</li>
+                                <li>认识的发展过程</li>
+                                <li>真理的客观性和相对性</li>
+                            </ul>
+                        </li>
+                        <li><strong>社会发展规律</strong>：
+                            <ul>
+                                <li>生产力决定生产关系</li>
+                                <li>经济基础决定上层建筑</li>
+                                <li>人民群众是历史的创造者</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>中国特色社会主义理论</h3>
+                    <h4>核心内容：</h4>
+                    <ul>
+                        <li><strong>基本路线</strong>：一个中心，两个基本点</li>
+                        <li><strong>基本制度</strong>：
+                            <ul>
+                                <li>人民代表大会制度</li>
+                                <li>中国共产党领导的多党合作和政治协商制度</li>
+                                <li>民族区域自治制度</li>
+                                <li>基层群众自治制度</li>
+                            </ul>
+                        </li>
+                        <li><strong>基本方略</strong>：十四个坚持</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>思想品德教育</h3>
+                    <ul>
+                        <li><strong>心理健康</strong>：
+                            <ul>
+                                <li>认识自我：自我意识、自我评价、自我完善</li>
+                                <li>调节情绪：情绪管理、压力应对、心理调适</li>
+                                <li>意志品质：坚强意志、克服困难、持之以恒</li>
+                                <li>人际交往：友谊、合作、沟通技巧</li>
+                            </ul>
+                        </li>
+                        <li><strong>道德品质</strong>：
+                            <ul>
+                                <li>诚实守信：诚信的重要性、诚信行为</li>
+                                <li>责任担当：个人责任、社会责任、国家责任</li>
+                                <li>公平正义：公平观念、正义感、维护正义</li>
+                                <li>关爱他人：同情心、助人为乐、奉献精神</li>
+                            </ul>
+                        </li>
+                        <li><strong>法律意识</strong>：
+                            <ul>
+                                <li>法律基础：法律的特征、作用、地位</li>
+                                <li>权利义务：公民的基本权利和义务</li>
+                                <li>法律保护：未成年人保护法、预防犯罪</li>
+                                <li>法治观念：依法治国、法治思维</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>国情教育</h3>
+                    <ul>
+                        <li><strong>基本国情</strong>：
+                            <ul>
+                                <li>人口国情：人口特点、人口政策</li>
+                                <li>资源国情：资源状况、节约资源</li>
+                                <li>环境国情：环境问题、环境保护</li>
+                                <li>发展阶段：社会主义初级阶段</li>
+                            </ul>
+                        </li>
+                        <li><strong>基本制度</strong>：
+                            <ul>
+                                <li>根本制度：人民代表大会制度</li>
+                                <li>基本制度：中国共产党领导的多党合作制</li>
+                                <li>经济制度：社会主义市场经济</li>
+                                <li>文化制度：社会主义核心价值体系</li>
+                            </ul>
+                        </li>
+                        <li><strong>发展战略</strong>：
+                            <ul>
+                                <li>科教兴国：科技创新、教育发展</li>
+                                <li>可持续发展：经济、社会、环境协调发展</li>
+                                <li>改革开放：改革的意义、开放的作用</li>
+                                <li>共同富裕：全面建设小康社会</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>经济生活知识体系</h3>
+                    <ul>
+                        <li><strong>生产与消费</strong>：
+                            <ul>
+                                <li>生产决定消费</li>
+                                <li>消费反作用于生产</li>
+                                <li>供给侧结构性改革</li>
+                            </ul>
+                        </li>
+                        <li><strong>分配与交换</strong>：
+                            <ul>
+                                <li>按劳分配为主体</li>
+                                <li>多种分配方式并存</li>
+                                <li>效率与公平</li>
+                            </ul>
+                        </li>
+                        <li><strong>市场与政府</strong>：
+                            <ul>
+                                <li>市场决定资源配置</li>
+                                <li>政府宏观调控</li>
+                                <li>新发展理念</li>
+                            </ul>
+                        </li>
+                        <li><strong>对外开放</strong>：
+                            <ul>
+                                <li>对外贸易</li>
+                                <li>对外投资</li>
+                                <li>构建人类命运共同体</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 记忆技巧方法 -->
+            <section class="content-section" id="politics-memory">
+                <h2>🧠 高效记忆技巧与方法</h2>
+
+                <div class="card">
+                    <h3>核心理念</h3>
+                    <p>文科学习的本质不是死记硬背，而是将孤立的知识点，通过逻辑和想象，编织成一张有序的"知识网络"。这张网络不仅记得牢，而且在需要时能迅速提取和应用。</p>
+                </div>
+
+                <div class="card">
+                    <h3>SOP-1: "关键词"发散记忆法</h3>
+                    <p>适用于政治概念、历史名词解释</p>
+                    <h4>操作三步骤：</h4>
+                    <ol>
+                        <li><strong>定核心 (1个词)</strong>：用一个词定义该概念的本质。</li>
+                        <li><strong>找要素 (3-5个词)</strong>：围绕核心词，找出构成该概念的几个关键要素。</li>
+                        <li><strong>连成句 (一段话)</strong>：用通顺的语言，将核心词和要素组合成一段完整的解释。</li>
+                    </ol>
+                    
+                    <div class="info-box">
+                        <h4>案例：记忆"人民代表大会制度"</h4>
+                        <ol>
+                            <li><strong>定核心</strong>：`权力` (本质是权力机关)</li>
+                            <li><strong>找要素</strong>：`人民选举`、`代表`、`组成国家权力机关`、`统一行使国家权力`、`民主集中制`</li>
+                            <li><strong>连成句</strong>："人民代表大会制度是我国的根本政治制度（定性）。它指的是，国家的一切权力属于人民（核心），人民通过选举产生自己的代表，由这些代表组成国家权力机关（人大），统一行使国家权力。它的组织和活动原则是民主集中制。"</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>理论知识记忆法</h3>
+                    <ul>
+                        <li><strong>关键词记忆法</strong>：
+                            <ul>
+                                <li>马克思主义基本原理：物质→意识→实践→认识</li>
+                                <li>中国特色社会主义：道路→理论→制度→文化</li>
+                                <li>社会主义核心价值观：国家→社会→个人三层面</li>
+                            </ul>
+                        </li>
+                        <li><strong>逻辑框架法</strong>：
+                            <ul>
+                                <li>基本经济制度：公有制为主体，多种所有制共同发展</li>
+                                <li>分配制度：按劳分配为主体，多种分配方式并存</li>
+                                <li>市场经济体制：市场决定资源配置，政府宏观调控</li>
+                            </ul>
+                        </li>
+                        <li><strong>联想记忆法</strong>：
+                            <ul>
+                                <li>人民代表大会制度 → 人民当家作主 → 民主集中制</li>
+                                <li>依法治国 → 法律面前人人平等 → 建设法治国家</li>
+                            </ul>
+                        </li>
+                        <li><strong>口诀记忆法</strong>：
+                            <ul>
+                                <li>社会主义核心价值观：富强民主文明和谐，自由平等公正法治，爱国敬业诚信友善</li>
+                                <li>五位一体：经政文社生（经济、政治、文化、社会、生态文明）</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>时事政治记忆法</h3>
+                    <ul>
+                        <li><strong>时事分类记忆</strong>：
+                            <ul>
+                                <li>国内重大事件：党和国家重要会议、重大政策发布、社会热点事件</li>
+                                <li>国际重要新闻：国际组织活动、双边多边合作、全球性问题</li>
+                                <li>经济发展动态：重大经济政策、发展成就、改革措施</li>
+                                <li>科技创新成果：重大科技突破、创新政策、科技应用</li>
+                            </ul>
+                        </li>
+                        <li><strong>记忆要点</strong>：
+                            <ul>
+                                <li><strong>五要素记忆法</strong>：时间+地点+人物+事件+意义</li>
+                                <li><strong>建立时事档案</strong>：按月整理重要时事，制作时事卡片</li>
+                                <li><strong>理论联系实际</strong>：将时事与课本知识结合分析</li>
+                                <li><strong>关注热点专题</strong>：深入分析重大事件的背景和影响</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 答题技巧策略 -->
+            <section class="content-section" id="politics-answer">
+                <h2>📝 答题技巧与策略</h2>
+
+                <div class="card">
+                    <h3>论述题标准作业流程 (SOP) - "三步成文法"</h3>
+                    <p><strong>核心理念</strong>：任何一道文科论述题，其本质都是要求你就一个问题"发表看法并证明它"。一个高分答案，必须包含清晰的"观点"、充分的"论据"和简明的"总结"。</p>
+                    
+                    <h4>操作三步骤：</h4>
+                    <ol>
+                        <li><strong>第一步：亮观点 (一句话)</strong>
+                            <ul>
+                                <li>句式模板：</li>
+                                <li>"这一事件/政策的意义在于..."</li>
+                                <li>"我认为，造成这一现象的原因是..."</li>
+                                <li>"材料反映了...的道理/观点。"</li>
+                                <li>"我们应该..." (针对启示类题目)</li>
+                            </ul>
+                        </li>
+                        <li><strong>第二步：摆论据 (分点罗列)</strong>
+                            <ul>
+                                <li>分点：用"第一、第二、第三..."或"首先、其次、再次..."</li>
+                                <li>政理结合：每个要点都应该包含"理论知识"和"材料信息"两部分</li>
+                                <li>由表及里：可以按照"政治、经济、文化"、"对内、对外"等多角度组织</li>
+                            </ul>
+                        </li>
+                        <li><strong>第三步：做总结 (一句话)</strong>
+                            <ul>
+                                <li>句式模板：</li>
+                                <li>"综上所述，..."</li>
+                                <li>"因此，我们青少年应该..."</li>
+                                <li>"这对于我们今天的...建设，依然具有重要的借鉴意义。"</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3>选择题答题策略</h3>
+                    <h4>具体技巧：</h4>
+                    <ol>
+                        <li><strong>审题要仔细</strong>：
+                            <ul>
+                                <li>看清题目要求（体现、说明、表明等）</li>
+                                <li>注意限定词（主要、根本、直接等）</li>
+                                <li>理解材料信息（时间、地点、人物等）</li>
+                            </ul>
+                        </li>
+                        <li><strong>选项分析法</strong>：
+                            <ul>
+                                <li>先排除明显错误的选项</li>
+                                <li>再排除与题意无关的选项</li>
+                                <li>最后在剩余选项中选择最佳答案</li>
+                            </ul>
+                        </li>
+                        <li><strong>常见错误类型</strong>：
+                            <ul>
+                                <li>绝对化表述（一定、必然、只有等）</li>
+                                <li>颠倒因果关系</li>
+                                <li>混淆概念内涵</li>
+                                <li>夸大或缩小作用</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3>材料分析题答题策略</h3>
+                    <h4>答题步骤：</h4>
+                    <ol>
+                        <li><strong>审题分析</strong>：明确题目要求，确定答题角度</li>
+                        <li><strong>材料解读</strong>：提取关键信息，理解材料主旨</li>
+                        <li><strong>知识调用</strong>：回忆相关知识，建立知识联系</li>
+                        <li><strong>组织答案</strong>：分点作答，逻辑清晰</li>
+                        <li><strong>检查完善</strong>：检查要点，完善表述</li>
+                    </ol>
+
+                    <h4>答题模板：</h4>
+                    <ul>
+                        <li><strong>"体现类"题目</strong>：
+                            <ul>
+                                <li>材料中...体现了...（理论观点）</li>
+                                <li>具体表现为...（材料信息）</li>
+                                <li>说明了...（深层含义）</li>
+                            </ul>
+                        </li>
+                        <li><strong>"意义类"题目</strong>：
+                            <ul>
+                                <li>有利于...（积极作用）</li>
+                                <li>能够...（具体效果）</li>
+                                <li>对...具有重要意义（总体评价）</li>
+                            </ul>
+                        </li>
+                        <li><strong>"措施类"题目</strong>：
+                            <ul>
+                                <li>国家要...（政府角度）</li>
+                                <li>社会要...（社会角度）</li>
+                                <li>个人要...（个人角度）</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>论述题答题策略</h3>
+                    <h4>答题结构：</h4>
+                    <ul>
+                        <li><strong>开头段</strong>：
+                            <ul>
+                                <li>提出观点</li>
+                                <li>简述背景</li>
+                            </ul>
+                        </li>
+                        <li><strong>主体段</strong>：
+                            <ul>
+                                <li>分层论述</li>
+                                <li>举例说明</li>
+                                <li>理论分析</li>
+                            </ul>
+                        </li>
+                        <li><strong>结尾段</strong>：
+                            <ul>
+                                <li>总结观点</li>
+                                <li>升华主题</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>写作要点：</h4>
+                    <ul>
+                        <li><strong>观点明确</strong>：开头明确提出中心论点</li>
+                        <li><strong>层次清晰</strong>：按逻辑顺序分层论述</li>
+                        <li><strong>论据充分</strong>：理论论据+事实论据</li>
+                        <li><strong>语言规范</strong>：使用政治术语，表述准确</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 专题学习计划 -->
+            <section class="content-section" id="politics-topics">
+                <h2>🎯 专题学习计划</h2>
+
+                <div class="card">
+                    <h3>第一阶段：基础理论专题（11-12月）</h3>
+                    
+                    <h4>专题一：马克思主义哲学基本原理</h4>
+                    <ul>
+                        <li>学习内容：物质与意识、实践与认识、矛盾分析法</li>
+                        <li>学习方法：理论学习+案例分析+练习巩固</li>
+                        <li>时间安排：每周3小时，共8周</li>
+                        <li>评估标准：能够运用哲学原理分析现实问题</li>
+                    </ul>
+
+                    <h4>专题二：中国特色社会主义理论体系</h4>
+                    <ul>
+                        <li>学习内容：毛泽东思想、邓小平理论、新时代思想</li>
+                        <li>学习方法：历史脉络梳理+重点内容精讲</li>
+                        <li>时间安排：每周2小时，共8周</li>
+                        <li>评估标准：掌握理论体系的发展脉络和核心内容</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>第二阶段：应用能力专题（1-3月）</h3>
+                    
+                    <h4>专题三：经济生活分析</h4>
+                    <ul>
+                        <li>学习内容：市场经济、宏观调控、对外开放</li>
+                        <li>学习方法：经济现象分析+政策解读</li>
+                        <li>时间安排：每周3小时，共12周</li>
+                        <li>评估标准：能够分析经济现象，理解经济政策</li>
+                    </ul>
+
+                    <h4>专题四：政治生活参与</h4>
+                    <ul>
+                        <li>学习内容：人民当家作主、依法治国、党的领导</li>
+                        <li>学习方法：制度学习+实践参与</li>
+                        <li>时间安排：每周2小时，共12周</li>
+                        <li>评估标准：理解政治制度，具备政治参与意识</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>第三阶段：热点专题复习（4-6月）</h3>
+                    
+                    <h4>专题五：时事政治分析</h4>
+                    <ul>
+                        <li>学习内容：国内外重大时事、热点问题分析</li>
+                        <li>学习方法：时事跟踪+理论分析+模拟练习</li>
+                        <li>时间安排：每周4小时，共10周</li>
+                        <li>评估标准：能够运用理论分析时事热点</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 时事政治关注 -->
+            <section class="content-section" id="politics-current">
+                <h2>📰 时事政治关注策略</h2>
+
+                <div class="card">
+                    <h3>关注重点</h3>
+                    <ul>
+                        <li><strong>党和国家重要会议</strong>：
+                            <ul>
+                                <li>全国人民代表大会</li>
+                                <li>中国共产党全国代表大会</li>
+                                <li>中央经济工作会议</li>
+                                <li>重要政策发布</li>
+                            </ul>
+                        </li>
+                        <li><strong>重大政策文件</strong>：
+                            <ul>
+                                <li>五年规划纲要</li>
+                                <li>重要法律法规</li>
+                                <li>改革措施</li>
+                                <li>发展战略</li>
+                            </ul>
+                        </li>
+                        <li><strong>社会热点事件</strong>：
+                            <ul>
+                                <li>重大社会事件</li>
+                                <li>民生问题</li>
+                                <li>科技创新成果</li>
+                                <li>文化发展成就</li>
+                            </ul>
+                        </li>
+                        <li><strong>国际重要新闻</strong>：
+                            <ul>
+                                <li>国际组织活动</li>
+                                <li>双边多边合作</li>
+                                <li>全球性问题</li>
+                                <li>国际关系变化</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>学习方法</h3>
+                    <ul>
+                        <li><strong>建立时事档案</strong>：按月整理重要时事，制作时事卡片</li>
+                        <li><strong>理论联系实际</strong>：将时事与课本知识结合分析</li>
+                        <li><strong>关注热点专题</strong>：深入分析重大事件的背景和影响</li>
+                        <li><strong>定期复习</strong>：定期回顾时事内容，加深记忆</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>推荐资源</h3>
+                    <ul>
+                        <li><strong>新闻媒体</strong>：人民日报、新华社、央视新闻</li>
+                        <li><strong>学习平台</strong>：学习强国、人民网、新华网</li>
+                        <li><strong>杂志期刊</strong>：半月谈、时事报告、求是</li>
+                        <li><strong>官方平台</strong>：中国政府网、教育部网站</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 学习资源推荐 -->
+            <section class="content-section" id="politics-resources">
+                <h2>📚 学习资源推荐</h2>
+
+                <div class="card">
+                    <h3>教材与参考书</h3>
+                    <ul>
+                        <li><strong>教材</strong>：人民教育出版社《道德与法治》</li>
+                        <li><strong>参考书</strong>：
+                            <ul>
+                                <li>《政治基础知识手册》</li>
+                                <li>《政治答题技巧与方法》</li>
+                                <li>《时事政治热点解读》</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>在线学习资源</h3>
+                    <ul>
+                        <li><strong>学习平台</strong>：
+                            <ul>
+                                <li>学习强国APP</li>
+                                <li>国家中小学智慧教育平台</li>
+                                <li>中国教育在线</li>
+                            </ul>
+                        </li>
+                        <li><strong>视频课程</strong>：
+                            <ul>
+                                <li>哔哩哔哩政治课程</li>
+                                <li>学而思网校</li>
+                                <li>作业帮直播课</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>时事资源</h3>
+                    <ul>
+                        <li><strong>新闻网站</strong>：人民日报、新华社、央视新闻</li>
+                        <li><strong>官方平台</strong>：中国政府网、教育部网站</li>
+                        <li><strong>杂志期刊</strong>：半月谈、时事报告、求是</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 学习效果评估 -->
+            <section class="content-section" id="politics-evaluation">
+                <h2>📊 学习效果评估</h2>
+
+                <div class="card">
+                    <h3>评估标准</h3>
+                    <table class="diagnosis-table">
+                        <thead>
+                            <tr>
+                                <th>能力层次</th>
+                                <th>评估内容</th>
+                                <th>评估方式</th>
+                                <th>合格标准</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>识记</td>
+                                <td>基本概念、重要理论</td>
+                                <td>选择题、填空题</td>
+                                <td>正确率80%</td>
+                            </tr>
+                            <tr>
+                                <td>理解</td>
+                                <td>原理含义、逻辑关系</td>
+                                <td>简答题、解释题</td>
+                                <td>要点完整，表述准确</td>
+                            </tr>
+                            <tr>
+                                <td>应用</td>
+                                <td>理论分析、材料解读</td>
+                                <td>材料题、分析题</td>
+                                <td>观点正确，论证充分</td>
+                            </tr>
+                            <tr>
+                                <td>综合</td>
+                                <td>知识整合、创新表达</td>
+                                <td>论述题、小论文</td>
+                                <td>逻辑清晰，有创新见解</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>阶段性检测计划</h3>
+                    <table class="diagnosis-table">
+                        <thead>
+                            <tr>
+                                <th>月份</th>
+                                <th>检测重点</th>
+                                <th>检测形式</th>
+                                <th>目标分数</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11月</td>
+                                <td>基础知识掌握</td>
+                                <td>选择题+简答题</td>
+                                <td>65分</td>
+                            </tr>
+                            <tr>
+                                <td>12月</td>
+                                <td>理解能力提升</td>
+                                <td>材料题+分析题</td>
+                                <td>70分</td>
+                            </tr>
+                            <tr>
+                                <td>1月</td>
+                                <td>应用能力训练</td>
+                                <td>综合练习</td>
+                                <td>75分</td>
+                            </tr>
+                            <tr>
+                                <td>2月</td>
+                                <td>专题知识整合</td>
+                                <td>专题测试</td>
+                                <td>78分</td>
+                            </tr>
+                            <tr>
+                                <td>3月</td>
+                                <td>答题技巧运用</td>
+                                <td>模拟考试</td>
+                                <td>80分</td>
+                            </tr>
+                            <tr>
+                                <td>4月</td>
+                                <td>热点问题分析</td>
+                                <td>时事分析</td>
+                                <td>82分</td>
+                            </tr>
+                            <tr>
+                                <td>5月</td>
+                                <td>综合能力提升</td>
+                                <td>全真模拟</td>
+                                <td>85分</td>
+                            </tr>
+                            <tr>
+                                <td>6月</td>
+                                <td>考前冲刺训练</td>
+                                <td>押题练习</td>
+                                <td>88分</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="warning-box">
+                    <h3>常见问题解决</h3>
+                    <ul>
+                        <li><strong>记忆困难</strong>：
+                            <ul>
+                                <li>改进记忆方法：多种方法结合</li>
+                                <li>加强理解记忆：理解后记忆，建立知识联系</li>
+                                <li>建立复习机制：及时复习，定期回顾</li>
+                            </ul>
+                        </li>
+                        <li><strong>理解不深</strong>：
+                            <ul>
+                                <li>概念辨析法：准确理解概念内涵和外延</li>
+                                <li>逻辑梳理法：理清知识的逻辑结构</li>
+                                <li>实例分析法：用具体实例说明抽象理论</li>
+                            </ul>
+                        </li>
+                        <li><strong>答题问题</strong>：
+                            <ul>
+                                <li>审题训练：关键词识别，题型判断</li>
+                                <li>要点训练：要点提取，要点整理</li>
+                                <li>表述训练：规范用词，准确表达</li>
+                                <li>逻辑训练：结构清晰，层次分明</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="info-box">
+                <h3>💡 学习建议</h3>
+                <ul>
+                    <li>坚持每天学习，保持连续性</li>
+                    <li>注重方法，提高效率</li>
+                    <li>理论联系实际，增强应用能力</li>
+                    <li>关注热点，培养政治敏感性</li>
+                    <li>多思考，多讨论，提高思维能力</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助学生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveLink(sectionId);
+            }
+        }
+
+        function updateActiveLink(activeId) {
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = ['politics-overview', 'politics-status', 'politics-system', 'politics-memory', 'politics-answer', 'politics-topics', 'politics-current', 'politics-resources', 'politics-evaluation'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                updateActiveLink(currentSection);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveLink('politics-overview');
+        });
+    </script>
+</body>
+</html>
+
+

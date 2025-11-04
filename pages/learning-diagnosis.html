@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习障碍深度诊断 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">🎓 初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">🏠 首页</a></li>
+                <li class="nav-item"><a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a></li>
+                <li class="nav-item"><a href="family-education.html" class="nav-link">👨‍👩‍👧‍👦 家庭教育</a></li>
+                <li class="nav-item"><a href="time-management.html" class="nav-link">⏰ 时间管理</a></li>
+                <li class="nav-item"><a href="learning-diagnosis.html" class="nav-link active">🔍 学习诊断</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h1>🔍 学习障碍深度诊断</h1>
+                <p>7大核心问题解决方案</p>
+            </div>
+
+            <!-- 诊断概述 -->
+            <section class="content-section">
+                <h2>📊 诊断概述</h2>
+                <div class="info">
+                    <p><strong>目标：</strong>通过系统性诊断，找出学习低分的根本原因，制定针对性解决方案。</p>
+                    <p><strong>方法：</strong>从认知、情感、行为、环境四个维度进行全面分析。</p>
+                </div>
+            </section>
+
+            <!-- 各科目快速诊断测试 -->
+            <section class="content-section" id="subject-diagnosis">
+                <h2>📚 各科目快速诊断测试</h2>
+                <p class="intro">快速确定当前学习进度和知识欠账情况。每个科目提供5-10道基础题，帮助识别知识断层点。</p>
+                
+                <div class="warning-box">
+                    <h3>💡 诊断说明</h3>
+                    <ul>
+                        <li><strong>测试时间：</strong>每个科目约10-15分钟</li>
+                        <li><strong>测试方式：</strong>可以自测或使用在线测试平台</li>
+                        <li><strong>评分标准：</strong>根据正确率判断学习起点和欠账情况</li>
+                        <li><strong>建议：</strong>诚实作答，不要查阅资料，这样才能准确评估真实水平</li>
+                    </ul>
+                </div>
+
+                <!-- 数学诊断 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 id="math-diagnosis">🧮 数学科目诊断测试</h3>
+                    <p><strong>目的：</strong>快速定位数学知识断层点，确定需要从哪个年级开始补起。</p>
+                    
+                    <div class="diagnosis-test">
+                        <h4>基础诊断题（每题2分，共10分）</h4>
+                        <form id="mathTestForm" onsubmit="calculateScore('math', event)">
+                            <div class="test-question">
+                                <p><strong>1. 有理数运算：</strong>计算 (-5) + 3 × (-2) - 8 ÷ 4 = ?</p>
+                                <label><input type="radio" name="q1" value="0"> A. -13</label>
+                                <label><input type="radio" name="q1" value="2"> B. -15</label>
+                                <label><input type="radio" name="q1" value="0"> C. -12</label>
+                                <label><input type="radio" name="q1" value="0"> D. 不会做</label>
+                                <p class="answer-hint" style="display:none; color:#10b981;"><strong>正确答案：</strong>B. -15</p>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>2. 一元一次方程：</strong>解方程 2x + 3 = 7，x = ?</p>
+                                <label><input type="radio" name="q2" value="0"> A. 1</label>
+                                <label><input type="radio" name="q2" value="2"> B. 2</label>
+                                <label><input type="radio" name="q2" value="0"> C. 3</label>
+                                <label><input type="radio" name="q2" value="0"> D. 不会做</label>
+                                <p class="answer-hint" style="display:none; color:#10b981;"><strong>正确答案：</strong>B. 2</p>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>3. 多项式运算：</strong>计算 (x + 2)(x - 3) = ?</p>
+                                <label><input type="radio" name="q3" value="2"> A. x² - x - 6</label>
+                                <label><input type="radio" name="q3" value="0"> B. x² + x - 6</label>
+                                <label><input type="radio" name="q3" value="0"> C. x² - 5x + 6</label>
+                                <label><input type="radio" name="q3" value="0"> D. 不会做</label>
+                                <p class="answer-hint" style="display:none; color:#10b981;"><strong>正确答案：</strong>A. x² - x - 6</p>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>4. 一次函数：</strong>函数 y = 2x + 1 的图像经过哪个象限？</p>
+                                <label><input type="radio" name="q4" value="2"> A. 一、二、三象限</label>
+                                <label><input type="radio" name="q4" value="0"> B. 一、二、四象限</label>
+                                <label><input type="radio" name="q4" value="0"> C. 一、三、四象限</label>
+                                <label><input type="radio" name="q4" value="0"> D. 不会做</label>
+                                <p class="answer-hint" style="display:none; color:#10b981;"><strong>正确答案：</strong>A. 一、二、三象限</p>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>5. 勾股定理：</strong>直角三角形两直角边分别为3和4，斜边长度是？</p>
+                                <label><input type="radio" name="q5" value="2"> A. 5</label>
+                                <label><input type="radio" name="q5" value="0"> B. 6</label>
+                                <label><input type="radio" name="q5" value="0"> C. 7</label>
+                                <label><input type="radio" name="q5" value="0"> D. 不会做</label>
+                                <p class="answer-hint" style="display:none; color:#10b981;"><strong>正确答案：</strong>A. 5</p>
+                            </div>
+                            
+                            <button type="submit" class="download-btn">提交诊断</button>
+                        </form>
+                        
+                        <div id="mathResult" style="display:none; margin-top: 1rem;">
+                            <div class="success-box">
+                                <h4>📊 诊断结果分析</h4>
+                                <div id="mathResultContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1.5rem;">
+                        <h4>🎯 诊断标准：</h4>
+                        <ul>
+                            <li><strong>做对0-1题（0-2分）：</strong>需要从初一基础开始补起，知识漏洞较大</li>
+                            <li><strong>做对2-3题（4-6分）：</strong>需要从初二内容开始补，有一定基础但不够扎实</li>
+                            <li><strong>做对4-5题（8-10分）：</strong>可以直接进入初三复习，重点提升中档题和难题</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>🌐 在线测试资源推荐：</h4>
+                        <ul>
+                            <li><strong><a href="https://www.zuoyebang.com" target="_blank">作业帮</a>：</strong>提供各年级数学能力测试，免费使用</li>
+                            <li><strong><a href="https://www.xueersi.com" target="_blank">学而思网校</a>：</strong>有系统的数学能力评估，可以了解知识点掌握情况</li>
+                            <li><strong><a href="https://www.51zxw.net" target="_blank">51自学网</a>：</strong>提供免费的基础知识测试</li>
+                            <li><strong>洋葱学院APP：</strong>可以按章节进行知识点测试，了解具体薄弱环节</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 物理诊断 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 id="physics-diagnosis">⚛️ 物理科目诊断测试</h3>
+                    <p><strong>目的：</strong>检测核心物理概念和公式的掌握情况。</p>
+                    
+                    <div class="diagnosis-test">
+                        <h4>基础诊断题</h4>
+                        <form id="physicsTestForm" onsubmit="calculateScore('physics', event)">
+                            <div class="test-question">
+                                <p><strong>1. 速度公式：</strong>物体运动的速度公式是？</p>
+                                <label><input type="radio" name="p1" value="2"> A. v = s/t</label>
+                                <label><input type="radio" name="p1" value="0"> B. v = t/s</label>
+                                <label><input type="radio" name="p1" value="0"> C. v = st</label>
+                                <label><input type="radio" name="p1" value="0"> D. 不会</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>2. 密度公式：</strong>物体的密度公式是？</p>
+                                <label><input type="radio" name="p2" value="2"> A. ρ = m/V</label>
+                                <label><input type="radio" name="p2" value="0"> B. ρ = V/m</label>
+                                <label><input type="radio" name="p2" value="0"> C. ρ = mV</label>
+                                <label><input type="radio" name="p2" value="0"> D. 不会</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>3. 欧姆定律：</strong>电流、电压、电阻的关系是？</p>
+                                <label><input type="radio" name="p3" value="2"> A. I = U/R</label>
+                                <label><input type="radio" name="p3" value="0"> B. I = R/U</label>
+                                <label><input type="radio" name="p3" value="0"> C. I = UR</label>
+                                <label><input type="radio" name="p3" value="0"> D. 不会</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>4. 浮力计算：</strong>物体在液体中受到的浮力公式是？</p>
+                                <label><input type="radio" name="p4" value="2"> A. F浮 = ρ液gV排</label>
+                                <label><input type="radio" name="p4" value="0"> B. F浮 = mg</label>
+                                <label><input type="radio" name="p4" value="0"> C. F浮 = ρV</label>
+                                <label><input type="radio" name="p4" value="0"> D. 不会</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>5. 压强公式：</strong>压强的计算公式是？</p>
+                                <label><input type="radio" name="p5" value="2"> A. p = F/S</label>
+                                <label><input type="radio" name="p5" value="0"> B. p = F×S</label>
+                                <label><input type="radio" name="p5" value="0"> C. p = F/S²</label>
+                                <label><input type="radio" name="p5" value="0"> D. 不会</label>
+                            </div>
+                            
+                            <button type="submit" class="download-btn">提交诊断</button>
+                        </form>
+                        
+                        <div id="physicsResult" style="display:none; margin-top: 1rem;">
+                            <div class="success-box">
+                                <h4>📊 诊断结果分析</h4>
+                                <div id="physicsResultContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1.5rem;">
+                        <h4>🎯 诊断标准：</h4>
+                        <ul>
+                            <li><strong>做对0-2题：</strong>需要从物理基础概念开始重新学习</li>
+                            <li><strong>做对3-4题：</strong>基础概念有一定掌握，需要加强公式应用训练</li>
+                            <li><strong>做对5题：</strong>基础扎实，可以进入综合应用和难题训练</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>🌐 在线测试资源推荐：</h4>
+                        <ul>
+                            <li><strong><a href="https://www.zuoyebang.com" target="_blank">作业帮</a>：</strong>物理能力测试和知识点诊断</li>
+                            <li><strong>物理大师APP：</strong>提供各章节知识点测试，动画演示帮助理解</li>
+                            <li><strong>学科网：</strong>提供各年级物理测试卷，可以评估掌握情况</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 英语诊断 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 id="english-diagnosis">🔤 英语科目诊断测试</h3>
+                    <p><strong>目的：</strong>评估词汇量和语法基础，确定学习起点。</p>
+                    
+                    <div class="diagnosis-test">
+                        <h4>词汇量快速测试</h4>
+                        <p>请估计你认识多少个英语单词（以《中考词汇闪过》为标准）：</p>
+                        <form id="englishTestForm" onsubmit="calculateScore('english', event)">
+                            <div class="test-question">
+                                <p><strong>1. 词汇量评估：</strong>你大约认识多少个英语单词？</p>
+                                <label><input type="radio" name="e1" value="0"> A. 少于300个</label>
+                                <label><input type="radio" name="e1" value="2"> B. 300-600个</label>
+                                <label><input type="radio" name="e1" value="4"> C. 600-1000个</label>
+                                <label><input type="radio" name="e1" value="6"> D. 1000个以上</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>2. 时态掌握：</strong>你能说出几种英语时态？</p>
+                                <label><input type="radio" name="e2" value="0"> A. 1-2种</label>
+                                <label><input type="radio" name="e2" value="2"> B. 3-4种</label>
+                                <label><input type="radio" name="e2" value="4"> C. 5-6种</label>
+                                <label><input type="radio" name="e2" value="6"> D. 7种以上</label>
+                            </div>
+                            
+                            <div class="test-question">
+                                <p><strong>3. 阅读理解：</strong>你能读懂初一水平的英语短文吗？</p>
+                                <label><input type="radio" name="e3" value="0"> A. 完全读不懂</label>
+                                <label><input type="radio" name="e3" value="2"> B. 能读懂30-50%</label>
+                                <label><input type="radio" name="e3" value="4"> C. 能读懂60-80%</label>
+                                <label><input type="radio" name="e3" value="6"> D. 能读懂90%以上</label>
+                            </div>
+                            
+                            <button type="submit" class="download-btn">提交诊断</button>
+                        </form>
+                        
+                        <div id="englishResult" style="display:none; margin-top: 1rem;">
+                            <div class="success-box">
+                                <h4>📊 诊断结果分析</h4>
+                                <div id="englishResultContent"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1.5rem;">
+                        <h4>🎯 诊断标准：</h4>
+                        <ul>
+                            <li><strong>总分0-4分：</strong>词汇量不足，需要从背单词开始，每天30-50个</li>
+                            <li><strong>总分6-8分：</strong>有一定基础，需要词汇和语法并行学习</li>
+                            <li><strong>总分10-16分：</strong>基础较好，可以直接进入刷题和综合训练</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>🌐 在线测试资源推荐：</h4>
+                        <ul>
+                            <li><strong><a href="https://www.baikemy.com" target="_blank">百词斩</a>：</strong>提供词汇量测试，免费且准确</li>
+                            <li><strong><a href="https://www.shanbay.com" target="_blank">扇贝英语</a>：</strong>综合能力测试，包括词汇、语法、阅读</li>
+                            <li><strong><a href="https://www.51talk.com" target="_blank">51Talk</a>：</strong>提供免费的英语水平测试</li>
+                            <li><strong>不背单词APP：</strong>可以测试词汇量，了解单词掌握情况</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 化学诊断 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 id="chemistry-diagnosis">🧪 化学科目诊断测试</h3>
+                    <p><strong>目的：</strong>检测化学基础概念和化学式的掌握情况。</p>
+                    
+                    <div class="info-box">
+                        <h4>基础概念测试</h4>
+                        <p>请回答以下问题：</p>
+                        <ol>
+                            <li>你知道水的化学式是H₂O吗？ □知道 □不知道</li>
+                            <li>你知道氧气、氢气的化学式吗？ □知道 □不知道</li>
+                            <li>你理解原子、分子、元素的概念吗？ □理解 □不理解</li>
+                            <li>你会配平简单的化学方程式吗？ □会 □不会</li>
+                            <li>你知道常见酸碱盐的化学性质吗？ □知道 □不知道</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>🎯 诊断标准：</h4>
+                        <ul>
+                            <li><strong>做对0-1题：</strong>需要从基础概念开始学习</li>
+                            <li><strong>做对2-3题：</strong>有一定基础，需要加强练习</li>
+                            <li><strong>做对4-5题：</strong>基础扎实，可以进入综合训练</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>🌐 在线测试资源推荐：</h4>
+                        <ul>
+                            <li><strong><a href="https://www.zuoyebang.com" target="_blank">作业帮</a>：</strong>化学知识点测试</li>
+                            <li><strong>化学加APP：</strong>提供化学学习资源和小测试</li>
+                            <li><strong>学科网：</strong>化学测试卷和知识点评估</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 其他科目诊断 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 id="other-subjects-diagnosis">📖 其他科目诊断</h3>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h4>🌱 生物诊断</h4>
+                            <p><strong>快速测试：</strong></p>
+                            <ul>
+                                <li>能否说出细胞的基本结构？</li>
+                                <li>是否理解光合作用和呼吸作用？</li>
+                                <li>是否掌握遗传的基本规律？</li>
+                            </ul>
+                            <div class="info-box" style="margin-top: 1rem;">
+                                <h4>🌐 在线测试：</h4>
+                                <ul>
+                                    <li><a href="https://www.zuoyebang.com" target="_blank">作业帮</a> - 生物测试</li>
+                                    <li>学科网 - 生物知识点评估</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4>🌍 地理诊断</h4>
+                            <p><strong>快速测试：</strong></p>
+                            <ul>
+                                <li>能否说出中国主要省份和城市？</li>
+                                <li>是否理解经纬度的概念？</li>
+                                <li>是否掌握气候类型和分布？</li>
+                            </ul>
+                            <div class="info-box" style="margin-top: 1rem;">
+                                <h4>🌐 在线测试：</h4>
+                                <ul>
+                                    <li><a href="https://www.zuoyebang.com" target="_blank">作业帮</a> - 地理测试</li>
+                                    <li>学科网 - 地理知识点评估</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4>📝 语文诊断</h4>
+                            <p><strong>快速测试：</strong></p>
+                            <ul>
+                                <li>能否读懂现代文并概括主旨？</li>
+                                <li>是否理解常见文言文词汇？</li>
+                                <li>是否掌握基本写作技巧？</li>
+                            </ul>
+                            <div class="info-box" style="margin-top: 1rem;">
+                                <h4>🌐 在线测试：</h4>
+                                <ul>
+                                    <li><a href="https://www.zuoyebang.com" target="_blank">作业帮</a> - 语文测试</li>
+                                    <li>学科网 - 语文知识点评估</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h4>📖 政史诊断</h4>
+                            <p><strong>快速测试：</strong></p>
+                            <ul>
+                                <li>能否说出主要历史事件的时间？</li>
+                                <li>是否理解基本政治概念？</li>
+                                <li>是否掌握答题技巧？</li>
+                            </ul>
+                            <div class="info-box" style="margin-top: 1rem;">
+                                <h4>🌐 在线测试：</h4>
+                                <ul>
+                                    <li><a href="https://www.zuoyebang.com" target="_blank">作业帮</a> - 政史测试</li>
+                                    <li>学科网 - 政史知识点评估</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 综合诊断建议 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3>💡 综合诊断建议</h3>
+                    <div class="success-box">
+                        <h4>诊断后的行动步骤：</h4>
+                        <ol>
+                            <li><strong>记录诊断结果：</strong>将各科目的诊断结果记录下来，明确薄弱环节</li>
+                            <li><strong>制定学习计划：</strong>根据诊断结果，制定针对性的学习计划</li>
+                            <li><strong>定期复测：</strong>每1-2个月重新测试一次，跟踪学习进度</li>
+                            <li><strong>寻求帮助：</strong>如果某个科目欠账较多，可以考虑寻求老师或辅导班的帮助</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>📋 诊断记录表模板</h4>
+                        <p>建议打印或复制以下表格，记录诊断结果：</p>
+                        <table class="diagnosis-table">
+                            <thead>
+                                <tr>
+                                    <th>科目</th>
+                                    <th>诊断日期</th>
+                                    <th>得分</th>
+                                    <th>欠账情况</th>
+                                    <th>学习起点</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>数学</td>
+                                    <td>____年__月__日</td>
+                                    <td>___分</td>
+                                    <td>________________</td>
+                                    <td>从___年级开始</td>
+                                    <td>________________</td>
+                                </tr>
+                                <tr>
+                                    <td>物理</td>
+                                    <td>____年__月__日</td>
+                                    <td>___分</td>
+                                    <td>________________</td>
+                                    <td>从___年级开始</td>
+                                    <td>________________</td>
+                                </tr>
+                                <tr>
+                                    <td>英语</td>
+                                    <td>____年__月__日</td>
+                                    <td>___分</td>
+                                    <td>________________</td>
+                                    <td>从___年级开始</td>
+                                    <td>________________</td>
+                                </tr>
+                                <tr>
+                                    <td>化学</td>
+                                    <td>____年__月__日</td>
+                                    <td>___分</td>
+                                    <td>________________</td>
+                                    <td>从___年级开始</td>
+                                    <td>________________</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top: 1rem;">
+                            <button onclick="window.print()" class="download-btn">
+                                <i class="fas fa-print"></i> 打印诊断记录表
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7大核心问题 -->
+            <section class="content-section">
+                <h2>🎯 7大核心问题诊断</h2>
+                
+                <!-- 问题1：基础差 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3>🎯 问题1：基础差 - "听不懂课，看不懂题"</h3>
+                    
+                    <h4>具体表现：</h4>
+                    <ul>
+                        <li>老师讲课像听天书</li>
+                        <li>课本看了也不明白</li>
+                        <li>做题时不知道从哪里下手</li>
+                        <li>感觉自己和别人差一大截</li>
+                    </ul>
+                    
+                    <h4>根本原因：</h4>
+                    <div class="info-box">
+                        <p><strong>知识漏洞 → 新课听不懂 → 更多漏洞 → 恶性循环</strong></p>
+                        <p><strong>典型表现：</strong></p>
+                        <ul>
+                            <li>数学：初一的有理数不会，初二的方程听不懂，初三函数完全蒙圈</li>
+                            <li>英语：只认识300个词，阅读全是生词</li>
+                            <li>物理：速度公式不清，后续力学全废</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>解决方案：回退式学习法</h4>
+                    
+                    <h5>第一步：找到知识断层点（1-2天）</h5>
+                    <p><strong>自我诊断题：</strong></p>
+                    
+                    <div class="table-responsive">
+                        <table class="diagnosis-table">
+                            <thead>
+                                <tr>
+                                    <th>科目</th>
+                                    <th>诊断题目</th>
+                                    <th>判断标准</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5">数学</td>
+                                    <td>有理数运算：(-5) + 3 × (-2) - 8 ÷ 4 = ?</td>
+                                    <td rowspan="5">
+                                        <ul>
+                                            <li>做对0-1题 → 从初一补</li>
+                                            <li>做对2-3题 → 从初二补</li>
+                                            <li>做对4-5题 → 进入初三</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>一元一次方程：2x + 3 = 7，x = ?</td>
+                                </tr>
+                                <tr>
+                                    <td>多项式运算：(x + 2)(x - 3) = ?</td>
+                                </tr>
+                                <tr>
+                                    <td>一次函数：y = 2x + 1 经过哪个象限？</td>
+                                </tr>
+                                <tr>
+                                    <td>勾股定理：直角三角形两直角边为3和4，斜边长度？</td>
+                                </tr>
+                                <tr>
+                                    <td>英语</td>
+                                    <td>认识500个单词？能说出5种时态？能读懂简单短文？</td>
+                                    <td>
+                                        <ul>
+                                            <li>认识&lt;300词 → 先背单词</li>
+                                            <li>认识300-600词 → 补语法+词汇</li>
+                                            <li>认识&gt;600词 → 直接刷题</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>物理</td>
+                                    <td>速度公式、密度公式、欧姆定律、浮力计算</td>
+                                    <td>不会任意一个 → 从基础补</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h5>第二步：搭建知识地基（2个月）</h5>
+                    <p><strong>核心原则：</strong></p>
+                    <ul>
+                        <li>宁可慢，不能跳</li>
+                        <li>真懂再前进</li>
+                        <li>用最简单的材料</li>
+                    </ul>
+                    
+                    <p><strong>数学基础重建（每天60分钟）：</strong></p>
+                    <div class="table-responsive">
+                        <table class="diagnosis-table">
+                            <thead>
+                                <tr>
+                                    <th>周次</th>
+                                    <th>内容</th>
+                                    <th>标准</th>
+                                    <th>资源</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>第1周</td>
+                                    <td>有理数（加减乘除混合）</td>
+                                    <td>5分钟内算对 (-5)+3×(-2)-8÷4</td>
+                                    <td>洋葱学院+《尖子生学案》</td>
+                                </tr>
+                                <tr>
+                                    <td>第2周</td>
+                                    <td>整式运算（合并同类项、去括号）</td>
+                                    <td>能化简 3(2x-1)-2(x+3)</td>
+                                    <td>同上</td>
+                                </tr>
+                                <tr>
+                                    <td>第3周</td>
+                                    <td>一元一次方程</td>
+                                    <td>能解出 3x-5=2x+7</td>
+                                    <td>同上</td>
+                                </tr>
+                                <tr>
+                                    <td>第4周</td>
+                                    <td>几何基础（角、线段、三角形）</td>
+                                    <td>能证明三角形内角和180°</td>
+                                    <td>同上</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <p><strong>每学一个知识点的验证标准 (SOP版)：</strong></p>
+                    <ol>
+                        <li>能用自己的话解释概念（是什么）</li>
+                        <li>能解释公式/定理的推导过程（为什么）</li>
+                        <li>能使用SOP工具（如数学"四步法"）做对10道基础题（正确率≥90%）（怎么用）</li>
+                        <li>能给别人讲明白一道错题的SOP分析过程</li>
+                    </ol>
+                    
+                    <p><strong>英语基础重建（每天40分钟）：</strong></p>
+                    <p><strong>词汇关（2个月800词）：</strong></p>
+                    <ul>
+                        <li>第1个月：每天30词，百词斩图片记忆，中午复习，晚上巩固</li>
+                        <li>第2个月：继续30词/天，不背单词真实语境，每百词测试</li>
+                    </ul>
+                    <p><strong>记忆方法：</strong>看图 → 读音 → 例句 → 默写1遍 → 隔日复习</p>
+                    
+                    <p><strong>语法关（只学核心的5个）：</strong></p>
+                    <div class="table-responsive">
+                        <table class="diagnosis-table">
+                            <thead>
+                                <tr>
+                                    <th>语法点</th>
+                                    <th>时间</th>
+                                    <th>方法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>时态</td>
+                                    <td>1周</td>
+                                    <td>英语兔视频+20题</td>
+                                </tr>
+                                <tr>
+                                    <td>句型</td>
+                                    <td>3天</td>
+                                    <td>陈述/疑问/否定</td>
+                                </tr>
+                                <tr>
+                                    <td>词性</td>
+                                    <td>3天</td>
+                                    <td>名/动/形容词</td>
+                                </tr>
+                                <tr>
+                                    <td>简单句</td>
+                                    <td>3天</td>
+                                    <td>主谓宾</td>
+                                </tr>
+                                <tr>
+                                    <td>连接词</td>
+                                    <td>2天</td>
+                                    <td>and/but/because</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h5>第三步：验证是否真懂</h5>
+                    <p><strong>每周自测（周日晚上）：</strong></p>
+                    <ol>
+                        <li>拿出一张白纸</li>
+                        <li>不看书，默写本周知识点</li>
+                        <li>每个知识点做2题</li>
+                        <li>做对通过；做错下周继续</li>
+                    </ol>
+                    
+                    <p><strong>家长验收法：</strong>让孩子讲解当天所学，讲清楚即真懂</p>
+                    
+                    <h5>第四步：跟进度与补基础并行</h5>
+                    <p><strong>时间分配：</strong></p>
+                    <ul>
+                        <li>60%时间：补漏洞</li>
+                        <li>40%时间：跟新课</li>
+                    </ul>
+                    <p><strong>应对学校考试：</strong>只做会做的，目标：基础题全对（60分）+ 中档题过半（10分）= 70分</p>
+                    
+                    <div class="success-box">
+                        <h4>基础差的解决公式：</h4>
+                        <p><strong>找断层点 → 回退学习 → 小步快跑 → 验证真懂 → 继续前进</strong></p>
+                        <p>时间投入 = 2个月 × 每天2小时 = 120小时</p>
+                        <p>效果 = 完整知识体系，后续事半功倍</p>
+                    </div>
+                </div>
+                
+                <!-- 问题2：不理解 -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3>🎯 问题2：不理解 - "会背不会用，做题就懵"</h3>
+                    
+                    <h4>具体表现：</h4>
+                    <ul>
+                        <li>公式背得滚瓜烂熟，一做题就不知道用哪个</li>
+                        <li>知识点能复述，题目换个样子就不认识</li>
+                        <li>老师讲例题听懂了，自己做类似题还是错</li>
+                        <li>感觉学的和考的是两回事</li>
+                    </ul>
+                    
+                    <h4>根本原因：</h4>
+                    <div class="info-box">
+                        <p><strong>机械记忆 ≠ 真正理解</strong></p>
+                        <p><strong>背概念 ≠ 会应用</strong></p>
+                        <p><strong>深层原因：</strong></p>
+                        <ul>
+                            <li>知识孤立</li>
+                            <li>不会识别条件</li>
+                            <li>缺少"为什么"的思考</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>解决方案：理解式学习法 (SOP版)</h4>
+                    <p>如果说"基础差"是看不懂原材料，"不理解"就是不知道如何加工原材料。解决方案的核心，就是将隐性的思考过程，用标准化的流程显性化。</p>
+                    
+                    <h5>方法1：费曼学习法 (概念理解)</h5>
+                    <p>当学习一个新概念（比如"压强"）时，遵循以下4步，是检验是否真懂的试金石：</p>
+                    <ol>
+                        <li><strong>选择概念</strong> - 锁定你要学习的单个概念，如"欧姆定律"</li>
+                        <li><strong>模拟教学</strong> - 想象你要把它教给一个完全不懂的小白。你需要用最简单、最清晰的语言，在白纸上写下或说出你对它的理解。这个过程会瞬间暴露你的知识漏洞</li>
+                        <li><strong>发现疑点并回溯</strong> - 在"教学"过程中，你会发现哪些地方讲不清楚、解释不通。这就是你的理解薄弱环节。立刻回到课本或资料，重新学习和理解这个点</li>
+                        <li><strong>简化与比喻</strong> - 用自己的话（甚至是一个比喻）来总结这个概念。例如："电压就像是水压，电流就像是水流，电阻就像是水管的粗细。水压越大，水流越快；水管越细，水流越慢。" 如果你能做到这一步，说明你才真正理解了它</li>
+                    </ol>
+                    
+                    <h5>方法2：解题SOP应用 (实践理解)</h5>
+                    <p>如果说费曼学习法是理解"是什么"和"为什么"的利器，那么<strong>解题SOP就是理解"怎么用"的标准化流程</strong>。它强制你在解题时，把"理解"的思考过程外化出来。</p>
+                    
+                    <p><strong>核心思想：</strong>从"找答案"转变为"找过程"，将解题变成一个"输入-处理-输出"的清晰流程。</p>
+                    
+                    <div class="success-box">
+                        <h4>不理解的解决公式 (SOP版)：</h4>
+                        <p><strong>机械记忆 → 理解式学习 → 能讲给别人 → 能举一反三</strong></p>
+                        <p><strong>方法组合：</strong>费曼学习法（讲清楚概念是什么、为什么）+ 各科解题SOP（讲清楚题目怎么用、如何用好）</p>
+                        <p><strong>= 真正理解，告别"会背不会用"</strong></p>
+                    </div>
+                </div>
+                
+                <!-- 其他问题概述 -->
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>3️⃣ 错的多 - "做10道错8道，越做越没信心"</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>死记硬背，不理解原理</li>
+                            <li>做题没有章法，乱做一通</li>
+                            <li>不会总结规律和方法</li>
+                            <li>学习效率低下</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>观察学习过程</li>
+                            <li>分析做题思路</li>
+                            <li>检查笔记质量</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>学习科学的学习方法</li>
+                            <li>培养逻辑思维能力</li>
+                            <li>建立解题模板</li>
+                            <li>定期方法反思</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>3️⃣ 时间管理混乱</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>作业总是做不完</li>
+                            <li>学习时间安排不合理</li>
+                            <li>拖延症严重</li>
+                            <li>没有学习计划</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>记录一周时间使用</li>
+                            <li>分析时间浪费点</li>
+                            <li>评估任务优先级</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>制定详细时间表</li>
+                            <li>学习番茄工作法</li>
+                            <li>设置学习目标</li>
+                            <li>建立奖惩机制</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>4️⃣ 学习动机不足</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>对学习没有兴趣</li>
+                            <li>缺乏学习目标</li>
+                            <li>容易放弃困难任务</li>
+                            <li>学习被动应付</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>了解学习态度</li>
+                            <li>分析兴趣点</li>
+                            <li>评估目标清晰度</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>设定明确目标</li>
+                            <li>建立奖励机制</li>
+                            <li>寻找学习乐趣</li>
+                            <li>增强成就感</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>5️⃣ 心理压力过大</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>考试焦虑严重</li>
+                            <li>害怕犯错误</li>
+                            <li>自信心不足</li>
+                            <li>情绪波动大</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>心理状态评估</li>
+                            <li>压力源分析</li>
+                            <li>情绪管理能力测试</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>学习放松技巧</li>
+                            <li>建立正确认知</li>
+                            <li>增强自信心</li>
+                            <li>寻求专业帮助</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>6️⃣ 学习环境不佳</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>学习环境嘈杂</li>
+                            <li>学习用品不齐全</li>
+                            <li>家庭支持不够</li>
+                            <li>同伴影响消极</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>环境因素评估</li>
+                            <li>家庭支持度分析</li>
+                            <li>同伴关系调查</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>优化学习环境</li>
+                            <li>争取家庭支持</li>
+                            <li>选择良好同伴</li>
+                            <li>创造学习氛围</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>7️⃣ 身体健康问题</h3>
+                        <h4>症状表现：</h4>
+                        <ul>
+                            <li>注意力难以集中</li>
+                            <li>记忆力下降</li>
+                            <li>容易疲劳</li>
+                            <li>睡眠质量差</li>
+                        </ul>
+                        <h4>诊断方法：</h4>
+                        <ul>
+                            <li>身体健康检查</li>
+                            <li>作息规律评估</li>
+                            <li>营养状况分析</li>
+                        </ul>
+                        <h4>解决方案：</h4>
+                        <ul>
+                            <li>规律作息时间</li>
+                            <li>均衡营养饮食</li>
+                            <li>适量体育锻炼</li>
+                            <li>定期健康检查</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 综合诊断流程 -->
+            <section class="content-section">
+                <h2>🔄 综合诊断流程</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>第一步：问题识别</h3>
+                        <ul>
+                            <li>收集学习表现数据</li>
+                            <li>分析考试成绩趋势</li>
+                            <li>了解学习习惯</li>
+                            <li>评估学习态度</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第二步：深度分析</h3>
+                        <ul>
+                            <li>使用诊断工具</li>
+                            <li>进行能力测试</li>
+                            <li>分析错题模式</li>
+                            <li>评估学习环境</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第三步：制定方案</h3>
+                        <ul>
+                            <li>确定优先级</li>
+                            <li>制定改进计划</li>
+                            <li>设定阶段目标</li>
+                            <li>安排实施步骤</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第四步：跟踪评估</h3>
+                        <ul>
+                            <li>定期检查进展</li>
+                            <li>调整改进方案</li>
+                            <li>记录改善效果</li>
+                            <li>持续优化策略</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 诊断工具 -->
+            <section class="content-section">
+                <h2>🛠️ 诊断工具</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>学习能力测试</h3>
+                        <ul>
+                            <li>记忆力测试</li>
+                            <li>理解力评估</li>
+                            <li>逻辑思维测试</li>
+                            <li>注意力集中度测试</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>学习习惯调查</h3>
+                        <ul>
+                            <li>时间管理调查表</li>
+                            <li>学习方法评估</li>
+                            <li>作业完成情况</li>
+                            <li>复习习惯分析</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>心理状态评估</h3>
+                        <ul>
+                            <li>学习动机量表</li>
+                            <li>考试焦虑测试</li>
+                            <li>自信心评估</li>
+                            <li>情绪管理能力</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 改进建议 -->
+            <section class="content-section">
+                <h2>💡 改进建议</h2>
+                
+                <div class="success">
+                    <h3>立即行动建议：</h3>
+                    <ol>
+                        <li><strong>完成自我诊断：</strong>使用上述工具进行全面自我评估</li>
+                        <li><strong>确定主要问题：</strong>从7大问题中找出最突出的2-3个</li>
+                        <li><strong>制定改进计划：</strong>针对主要问题制定具体行动方案</li>
+                        <li><strong>寻求支持：</strong>向老师、家长或同学寻求帮助</li>
+                        <li><strong>开始实施：</strong>从最容易改变的方面开始</li>
+                    </ol>
+                </div>
+                
+                <div class="warning">
+                    <h3>注意事项：</h3>
+                    <ul>
+                        <li>诊断要客观真实，不要自欺欺人</li>
+                        <li>改进要循序渐进，不要急于求成</li>
+                        <li>要有耐心，改变需要时间</li>
+                        <li>定期评估，及时调整策略</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助学生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+    </script>
+    <script>
+        // 诊断测试评分函数
+        function calculateScore(subject, event) {
+            event.preventDefault();
+            
+            let score = 0;
+            let totalQuestions = 0;
+            let correctAnswers = 0;
+            
+            if (subject === 'math') {
+                const form = document.getElementById('mathTestForm');
+                const questions = ['q1', 'q2', 'q3', 'q4', 'q5'];
+                
+                questions.forEach((q) => {
+                    const selected = form.querySelector(`input[name="${q}"]:checked`);
+                    if (selected) {
+                        totalQuestions++;
+                        const value = parseInt(selected.value);
+                        if (value === 2) { // 正确答案的value是2
+                            correctAnswers++;
+                            score += 2;
+                        }
+                    }
+                });
+                
+                // 显示结果
+                const resultDiv = document.getElementById('mathResult');
+                const resultContent = document.getElementById('mathResultContent');
+                
+                let level = '';
+                let suggestion = '';
+                
+                if (score >= 8) {
+                    level = '基础较好';
+                    suggestion = '可以直接进入初三复习，重点提升中档题和难题。建议每天做15-20道综合题，重点训练解题技巧。';
+                } else if (score >= 4) {
+                    level = '基础一般';
+                    suggestion = '需要从初二内容开始补，有一定基础但不够扎实。建议每周复习一个初二章节，配合基础练习。';
+                } else {
+                    level = '基础薄弱';
+                    suggestion = '需要从初一基础开始补起，知识漏洞较大。建议每天花60分钟补基础，使用洋葱学院等视频资源，配合基础练习册。';
+                }
+                
+                resultContent.innerHTML = `
+                    <p><strong>得分：</strong>${score}/10分（做对${correctAnswers}/5题）</p>
+                    <p><strong>水平评估：</strong>${level}</p>
+                    <p><strong>学习建议：</strong>${suggestion}</p>
+                    <p><strong>推荐资源：</strong>洋葱学院视频、《尖子生学案》基础版、作业帮在线测试</p>
+                `;
+                
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+            } else if (subject === 'physics') {
+                const form = document.getElementById('physicsTestForm');
+                const questions = ['p1', 'p2', 'p3', 'p4', 'p5'];
+                
+                questions.forEach((q) => {
+                    const selected = form.querySelector(`input[name="${q}"]:checked`);
+                    if (selected) {
+                        totalQuestions++;
+                        const value = parseInt(selected.value);
+                        if (value === 2) {
+                            correctAnswers++;
+                            score += 2;
+                        }
+                    }
+                });
+                
+                const resultDiv = document.getElementById('physicsResult');
+                const resultContent = document.getElementById('physicsResultContent');
+                
+                let level = '';
+                let suggestion = '';
+                
+                if (score >= 10) {
+                    level = '基础扎实';
+                    suggestion = '基础扎实，可以进入综合应用和难题训练。建议每天做10-15道综合计算题，重点训练解题思路。';
+                } else if (score >= 6) {
+                    level = '基础一般';
+                    suggestion = '基础概念有一定掌握，需要加强公式应用训练。建议每天做15-20道基础计算题，熟练掌握公式应用。';
+                } else {
+                    level = '基础薄弱';
+                    suggestion = '需要从物理基础概念开始重新学习。建议每天花30分钟看视频学习概念，配合20道基础题练习。';
+                }
+                
+                resultContent.innerHTML = `
+                    <p><strong>得分：</strong>${score}/10分（做对${correctAnswers}/5题）</p>
+                    <p><strong>水平评估：</strong>${level}</p>
+                    <p><strong>学习建议：</strong>${suggestion}</p>
+                    <p><strong>推荐资源：</strong>物理大师APP、作业帮物理测试、学科网测试卷</p>
+                `;
+                
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+            } else if (subject === 'english') {
+                const form = document.getElementById('englishTestForm');
+                const questions = ['e1', 'e2', 'e3'];
+                
+                questions.forEach((q) => {
+                    const selected = form.querySelector(`input[name="${q}"]:checked`);
+                    if (selected) {
+                        totalQuestions++;
+                        score += parseInt(selected.value);
+                    }
+                });
+                
+                const resultDiv = document.getElementById('englishResult');
+                const resultContent = document.getElementById('englishResultContent');
+                
+                let level = '';
+                let suggestion = '';
+                
+                if (score >= 10) {
+                    level = '基础较好';
+                    suggestion = '基础较好，可以直接进入刷题和综合训练。建议每天做1-2篇阅读理解，每周写1篇作文。';
+                } else if (score >= 6) {
+                    level = '基础一般';
+                    suggestion = '有一定基础，需要词汇和语法并行学习。建议每天背30个单词，每周学习一个语法点，配合简单阅读练习。';
+                } else {
+                    level = '基础薄弱';
+                    suggestion = '词汇量不足，需要从背单词开始。建议每天背30-50个单词，使用百词斩等APP，同时学习基础语法。';
+                }
+                
+                resultContent.innerHTML = `
+                    <p><strong>得分：</strong>${score}/18分</p>
+                    <p><strong>水平评估：</strong>${level}</p>
+                    <p><strong>学习建议：</strong>${suggestion}</p>
+                    <p><strong>推荐资源：</strong>百词斩（词汇量测试）、扇贝英语（综合测试）、不背单词APP</p>
+                `;
+                
+                resultDiv.style.display = 'block';
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+        
+        // 滚动到指定区域
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+</body>
+</html>

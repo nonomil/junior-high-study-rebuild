@@ -1,0 +1,2729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初中学习低分重建指导系统 - 完整版</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 根变量定义 */
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #f1f5f9;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        /* 基础样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-md);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-logo::before {
+            content: "🎓";
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            position: relative;
+            margin-left: 1.5rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            background-color: var(--bg-accent);
+            color: var(--primary-color);
+        }
+
+        .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* 下拉菜单 */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--border-radius);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            list-style: none;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--bg-accent);
+            color: var(--primary-color);
+        }
+
+        /* 目录导航 */
+        .toc {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            max-width: 200px;
+            z-index: 999;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .toc:hover {
+            opacity: 1;
+        }
+
+        .toc h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.3rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+        }
+
+        .section {
+            padding: 3rem 0;
+            min-height: 100vh;
+            scroll-margin-top: 80px; /* 为固定导航栏留出空间 */
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+        
+        /* 修复锚点跳转时被导航栏遮挡 */
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.2rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* 紧急警告框 */
+        .emergency-alert {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .emergency-alert h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        /* 网格布局 */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        /* 时间线样式 */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        /* 内容样式 */
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+        }
+
+        .content-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .content-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .content-section ul, .content-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.4rem;
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .warning {
+            background-color: #fef3c7;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .success {
+            background-color: #d1fae5;
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .info {
+            background-color: #dbeafe;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .danger {
+            background-color: #fee2e2;
+            border-left: 4px solid var(--danger-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .info-card {
+            background: #e0f2fe;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .info-card h2, .info-card h3, .info-card h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-accent);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        tr:hover {
+            background-color: var(--bg-secondary);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .toc {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 页脚 */
+        .footer {
+            background-color: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* 搜索功能增强 */
+        .search-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid #3b82f6;
+            border-radius: 25px;
+            padding: 8px 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 1rem 0;
+        }
+        
+        .search-box:focus-within {
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            width: 200px;
+            background: transparent;
+        }
+        
+        .search-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            background: #2563eb;
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1001;
+        }
+        
+        .search-result-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        .search-result-item:hover {
+            background: #f8fafc;
+        }
+        
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .search-highlight {
+            background: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        /* 打印样式 */
+        @media print {
+            /* 隐藏不需要打印的元素 */
+            .search-container,
+            .navbar,
+            .nav,
+            .footer,
+            .back-to-top,
+            .toc {
+                display: none !important;
+            }
+            
+            /* 调整页面布局 */
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+                color: #000;
+                background: white;
+            }
+            
+            .container {
+                max-width: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 20pt;
+            }
+            
+            .section-header {
+                page-break-after: avoid;
+            }
+            
+            .card {
+                border: 1pt solid #ccc;
+                page-break-inside: avoid;
+                margin-bottom: 10pt;
+                box-shadow: none;
+            }
+            
+            .grid {
+                display: block;
+            }
+            
+            .grid .card {
+                margin-bottom: 15pt;
+            }
+            
+            /* 表格样式 */
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 10pt;
+            }
+            
+            table, th, td {
+                border: 1pt solid #000;
+            }
+            
+            th, td {
+                padding: 5pt;
+                text-align: left;
+            }
+            
+            /* 链接样式 */
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+            
+            /* 标题样式 */
+            h1 {
+                font-size: 18pt;
+                margin-bottom: 10pt;
+                color: #000;
+            }
+            
+            h2 {
+                font-size: 16pt;
+                margin-bottom: 8pt;
+                color: #000;
+            }
+            
+            h3 {
+                font-size: 14pt;
+                margin-bottom: 6pt;
+                color: #000;
+            }
+            
+            h4 {
+                font-size: 12pt;
+                margin-bottom: 4pt;
+                color: #000;
+            }
+            
+            /* 分页控制 */
+            .page-break {
+                page-break-before: always;
+            }
+            
+            .no-break {
+                page-break-inside: avoid;
+            }
+            
+            /* 紧急警告框打印样式 */
+            .emergency-alert {
+                background: #f3f4f6 !important;
+                color: #000 !important;
+                border: 2pt solid #000;
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .search-container {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .search-input {
+                width: 150px;
+            }
+            
+            .toc {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">初中学习指导系统</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">🏠 首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">📚 学科指南</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/chinese.html">📝 语文指南</a></li>
+                        <li><a href="pages/math.html">🧮 数学指南</a></li>
+                        <li><a href="pages/physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="pages/english.html">🔤 英语指南</a></li>
+                        <li><a href="pages/chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="pages/politics.html">📖 政治指南</a></li>
+                        <li><a href="pages/history.html">📚 历史指南</a></li>
+                        <li><a href="pages/biology.html">🌱 生物指南</a></li>
+                        <li><a href="pages/geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">🎯 学习管理</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="pages/learning-strategies.html">📖 通用学习策略</a></li>
+                        <li><a href="pages/homework-strategy.html">📝 作业处理策略</a></li>
+                        <li><a href="pages/family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="pages/tutoring-decision.html">🎓 辅导班选择</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">💝 心理支持</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/emergency-strategies.html">🚨 应急策略</a></li>
+                        <li><a href="#psychological-support">💝 心理支持</a></li>
+                        <li><a href="#communication">💬 沟通话术</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">🔧 工具资源</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="pages/resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 搜索功能 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- 目录导航 -->
+    <div class="toc">
+        <h4>📋 快速导航</h4>
+        <ul>
+            <li><a href="#home">首页概览</a></li>
+            <li><a href="#emergency">紧急处理</a></li>
+            <li><a href="#diagnosis">学习诊断</a></li>
+            <li><a href="#math">数学指南</a></li>
+            <li><a href="#physics">物理指南</a></li>
+            <li><a href="#english">英语指南</a></li>
+            <li><a href="#politics">政治指南</a></li>
+            <li><a href="#history">历史指南</a></li>
+            <li><a href="#time-management">时间管理</a></li>
+            <li><a href="#study-techniques">学习技巧</a></li>
+            <li><a href="#family-education">家庭教育</a></li>
+            <li><a href="#homework-strategy">作业策略</a></li>
+            <li><a href="#psychological-support">心理支持</a></li>
+            <li><a href="#communication">沟通话术</a></li>
+            <li><a href="#resources">学习资源</a></li>
+        </ul>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <!-- 首页内容 -->
+        <section id="home" class="section">
+            <!-- 英雄区域 -->
+            <div class="hero">
+                <div class="container">
+                    <h1>初中学习低分重建指导系统</h1>
+                    <p class="hero-subtitle">8个月逆袭方案 · 科学方法 · 系统规划</p>
+                    <p class="hero-description">
+                        专为60-70分初中生设计的全方位学习重建方案，通过科学的时间管理、
+                        正确的学习方法和家校协同，帮助学生在8个月内实现成绩突破。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#emergency" class="btn btn-primary">🚨 立即开始</a>
+                        <a href="#diagnosis" class="btn btn-secondary">🔍 问题诊断</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 务实原则提醒 -->
+            <div class="container">
+                <div class="info-card">
+                    <h3>⚠️ 关于作业处理的务实原则</h3>
+                    <p><strong>核心原则：优先沟通，理性取舍</strong></p>
+                    <p>教师水平确实存在差异，部分作业可能确实无效或低效。与老师沟通减少作业量存在沟通成本，且老师不一定同意。在时间有限的情况下，需要进行战略性取舍。</p>
+                    <p><strong>重要前提：</strong>优先与老师沟通，沟通失败后再考虑战略性取舍，但必须确保节省的时间用于更有价值的学习。详见<a href="pages/homework-strategy.html">作业处理与师生沟通实用手册</a>。</p>
+                </div>
+
+                <!-- 系统概览 -->
+                <div class="section-header">
+                    <h2>🎯 8个月目标设定</h2>
+                    <p>现实可达成的分数提升目标</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>科目</th>
+                            <th>现状分数</th>
+                            <th>8个月目标</th>
+                            <th>提升策略</th>
+                            <th>优先级</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>语文</td>
+                            <td>80-90分</td>
+                            <td>保持85+</td>
+                            <td>维持即可</td>
+                            <td>低</td>
+                        </tr>
+                        <tr>
+                            <td>化学</td>
+                            <td>80-90分</td>
+                            <td>保持85+</td>
+                            <td>维持即可</td>
+                            <td>低</td>
+                        </tr>
+                        <tr style="background-color: #fef3c7;">
+                            <td><strong>数学</strong></td>
+                            <td>60-70分</td>
+                            <td><strong>冲刺80+</strong></td>
+                            <td>核心科目，必须提高</td>
+                            <td><span class="highlight">高</span></td>
+                        </tr>
+                        <tr style="background-color: #fef3c7;">
+                            <td><strong>物理</strong></td>
+                            <td>60-70分</td>
+                            <td><strong>冲刺80+</strong></td>
+                            <td>核心科目，必须提高</td>
+                            <td><span class="highlight">高</span></td>
+                        </tr>
+                        <tr>
+                            <td>英语</td>
+                            <td>60-70分</td>
+                            <td>冲刺75+</td>
+                            <td>背单词性价比最高</td>
+                            <td>中</td>
+                        </tr>
+                        <tr>
+                            <td>政治</td>
+                            <td>60-70分</td>
+                            <td>冲刺75+</td>
+                            <td>最后2个月突击</td>
+                            <td>中</td>
+                        </tr>
+                        <tr>
+                            <td>历史</td>
+                            <td>60-70分</td>
+                            <td>冲刺75+</td>
+                            <td>最后2个月突击</td>
+                            <td>中</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="success">
+                    <strong>预期成果：</strong>如果达到以上目标，总分能提高70-100分，足以考上更好的高中！
+                </div>
+            </div>
+        </section>
+
+        <!-- 紧急情况处理 -->
+        <section id="emergency" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🚨 紧急情况处理</h1>
+                    <p>当前危机的立即行动方案</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>🔥 第一周必做事项（立即执行）</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="card">
+                                <h3>Day 1: 家庭危机会议</h3>
+                                <div class="warning">
+                                    <strong>父母必须先统一战线！</strong>
+                                </div>
+                                <h4>会议内容：</h4>
+                                <ul>
+                                    <li><strong>父亲认识：</strong>"放纵"其实是对孩子的放弃，会让他一辈子后悔</li>
+                                    <li><strong>母亲认识：</strong>"唠叨发火"在推开孩子，必须改变沟通方式</li>
+                                    <li><strong>共同目标：</strong>不是考多少分，而是"不让孩子在8个月后后悔"</li>
+                                    <li><strong>立即停止：</strong>在孩子面前争吵教育方法</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="card">
+                                <h3>Day 2: 母亲与班主任深度沟通</h3>
+                                <h4>沟通话术模板：</h4>
+                                <div class="info">
+                                    <p>"老师，我孩子现在情况您也了解。我们家长反思了，之前方法不对。现在想请您帮忙：</p>
+                                    <ul>
+                                        <li>能否帮我们分析一下，哪几科还有提升空间？</li>
+                                        <li>作业方面，能否允许孩子选择性完成？比如抄写类减免，重点做理解类？</li>
+                                        <li>我们想请各科老师指出：孩子最需要补的3个知识点是什么？</li>
+                                        <li>能否每周给我们5分钟反馈时间？"</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="card">
+                                <h3>Day 3-4: 与各科老师沟通作业调整</h3>
+                                <h4>重点沟通内容：</h4>
+                                <ul>
+                                    <li>说明孩子当前困难，寻求理解和支持</li>
+                                    <li>请求减免机械性抄写作业</li>
+                                    <li>重点完成理解类和练习类作业</li>
+                                    <li>获得老师的学习建议和重点提醒</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="card">
+                                <h3>Day 5-7: 制定详细学习计划并开始执行</h3>
+                                <ul>
+                                    <li>根据老师建议制定每日学习计划</li>
+                                    <li>开始执行新的作业处理策略</li>
+                                    <li>建立家庭学习新规则</li>
+                                    <li>开始第一周的学习任务</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>⚡ 核心原则（必须遵守）</h2>
+                    <div class="grid grid-2">
+                        <div class="info-card">
+                            <h4>⚠️ 需要谨慎的方法及其前提：</h4>
+                            <p><strong>使用前提（必须同时满足）：</strong></p>
+                            <ol>
+                                <li>已尝试与老师沟通（至少1-2次），但老师不同意调整</li>
+                                <li>作业确实无效（机械抄写类或超纲难题类）</li>
+                                <li>有替代学习方案（节省的时间用于更有价值的学习）</li>
+                                <li>孩子知情并理解（这是权宜之计，不能成为习惯）</li>
+                            </ol>
+                            <div class="warning">
+                                <strong>⚠️ 如果滥用这些方法的后果：</strong>
+                                <ul>
+                                    <li>孩子失去练习机会（做题能力越差）</li>
+                                    <li>可能被学校发现，面临处罚</li>
+                                    <li>破坏师生信任关系</li>
+                                    <li>让孩子学会用欺骗解决问题</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="success">
+                            <h4>✅ 必须坚持的原则：</h4>
+                            <ul>
+                                <li><strong>优先沟通：</strong>先与老师沟通作业调整，争取理解和支持</li>
+                                <li><strong>理性取舍：</strong>对于确实无效或低效的作业，在沟通失败后可战略性取舍</li>
+                                <li><strong>替代学习：</strong>节省的时间必须用于更有价值的学习活动</li>
+                                <li><strong>父母统一战线：</strong>停止在孩子面前争吵</li>
+                                <li><strong>建立正反馈机制：</strong>重建孩子学习信心</li>
+                                <li><strong>战略性取舍：</strong>优先完成核心理解类作业，保证质量</li>
+                            </ul>
+                            <p><strong>核心原则：</strong>优先沟通，沟通失败后再考虑战略性取舍，但必须确保节省的时间用于更有价值的学习。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📱 手机管理现实方案</h2>
+                    <div class="card">
+                        <h3>折中方案（避免过度叛逆）</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>手机规则</th>
+                                    <th>说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>周一到周五</td>
+                                    <td>手机交给父母，需要查资料时申请</td>
+                                    <td>学习日严格管理</td>
+                                </tr>
+                                <tr>
+                                    <td>周六晚上</td>
+                                    <td>可以玩2小时</td>
+                                    <td>适度放松</td>
+                                </tr>
+                                <tr>
+                                    <td>周日</td>
+                                    <td>完成学习任务后可以玩3小时</td>
+                                    <td>奖励机制</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="info">
+                            <strong>与孩子沟通话术：</strong>"不是不让你玩，是现在时间真的很紧。我们一起扛过这8个月，高中后你想怎么玩都行。现在每天少玩3小时，能换来更好的高中，你自己想想值不值？"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习障碍诊断 -->
+        <section id="diagnosis" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🔍 学习障碍深度诊断</h1>
+                    <p>7大核心问题自测与解决方案</p>
+                </div>
+
+                <div class="content-section">
+                    <h2>📊 问题1：基础差 - "听不懂课，看不懂题"</h2>
+                    <div class="card">
+                        <h3>🔍 自我诊断测试</h3>
+                        <h4>数学基础测试：</h4>
+                        <ol>
+                            <li>有理数运算：(-5) + 3 × (-2) - 8 ÷ 4 = ?</li>
+                            <li>一元一次方程：2x + 3 = 7，x = ?</li>
+                            <li>多项式运算：(x + 2)(x - 3) = ?</li>
+                            <li>一次函数：y = 2x + 1 经过哪个象限？</li>
+                            <li>勾股定理：直角三角形两直角边为3和4，斜边长度？</li>
+                        </ol>
+                        <h4>判断标准：</h4>
+                        <ul>
+                            <li><strong>做对0-1题：</strong>从初一内容开始补</li>
+                            <li><strong>做对2-3题：</strong>从初二内容开始补</li>
+                            <li><strong>做对4-5题：</strong>直接进入初三复习</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>💡 解决方案：回退式学习法</h3>
+                        <h4>第一步：找到知识断层点（1-2天）</h4>
+                        <p>根据上面的测试结果，确定从哪个年级开始补基础。</p>
+                        
+                        <h4>第二步：搭建知识地基（2个月）</h4>
+                        <div class="warning">
+                            <strong>核心原则：</strong>宁可慢，不能跳；真懂再前进；用最简单的材料
+                        </div>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>周次</th>
+                                    <th>内容</th>
+                                    <th>掌握标准</th>
+                                    <th>推荐资源</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>第1周</td>
+                                    <td>有理数运算</td>
+                                    <td>5分钟内算对混合运算</td>
+                                    <td>洋葱学院+《尖子生学案》</td>
+                                </tr>
+                                <tr>
+                                    <td>第2周</td>
+                                    <td>整式运算</td>
+                                    <td>能化简 3(2x-1)-2(x+3)</td>
+                                    <td>同上</td>
+                                </tr>
+                                <tr>
+                                    <td>第3周</td>
+                                    <td>一元一次方程</td>
+                                    <td>能解出 3x-5=2x+7</td>
+                                    <td>同上</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📊 问题2：不理解 - "会背不会用"</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🔍 典型表现</h3>
+                            <ul>
+                                <li>公式能背出来，但不知道什么时候用</li>
+                                <li>例题看懂了，换个数字就不会</li>
+                                <li>概念能复述，但不理解本质含义</li>
+                                <li>总是问"为什么要这样做？"</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h3>💡 解决方案</h3>
+                            <h4>三步理解法：</h4>
+                            <ol>
+                                <li><strong>读懂定义：</strong>用自己的话重新表述</li>
+                                <li><strong>理解本质：</strong>这个概念解决什么问题？</li>
+                                <li><strong>掌握应用：</strong>什么情况下使用？</li>
+                            </ol>
+                            <h4>举例验证法：</h4>
+                            <ul>
+                                <li>用具体例子验证概念理解</li>
+                                <li>思考反例：什么情况下不适用</li>
+                                <li>变式练习：改变条件看结果</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📊 问题3：错误多 - "粗心大意，计算错误"</h2>
+                    <div class="card">
+                        <h3>🔍 错误类型分析</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>错误类型</th>
+                                    <th>典型表现</th>
+                                    <th>解决方法</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>计算错误</td>
+                                    <td>加减乘除算错</td>
+                                    <td>每天10分钟口算练习</td>
+                                </tr>
+                                <tr>
+                                    <td>抄写错误</td>
+                                    <td>题目抄错，数字看错</td>
+                                    <td>用手指指着读题</td>
+                                </tr>
+                                <tr>
+                                    <td>步骤遗漏</td>
+                                    <td>跳步骤，省略过程</td>
+                                    <td>强制写完整步骤</td>
+                                </tr>
+                                <tr>
+                                    <td>概念混淆</td>
+                                    <td>公式记混，方法用错</td>
+                                    <td>建立概念对比表</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📊 其他核心问题快速诊断</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>问题4：死记硬背</h3>
+                            <p><strong>表现：</strong>只会机械记忆，不理解原理</p>
+                            <p><strong>解决：</strong>推导记忆法，理解公式来源</p>
+                        </div>
+                        <div class="card">
+                            <h3>问题5：没思路</h3>
+                            <p><strong>表现：</strong>看到题目不知道从哪下手</p>
+                            <p><strong>解决：</strong>解题四步法训练</p>
+                        </div>
+                        <div class="card">
+                            <h3>问题6：记不住</h3>
+                            <p><strong>表现：</strong>今天学明天忘，知识不牢固</p>
+                            <p><strong>解决：</strong>艾宾浩斯复习法</p>
+                        </div>
+                        <div class="card">
+                            <h3>问题7：正反馈少</h3>
+                            <p><strong>表现：</strong>总是挫败，缺乏成就感</p>
+                            <p><strong>解决：</strong>设置小目标，及时鼓励</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数学指南 -->
+        <section id="math" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🧮 数学学习指南</h1>
+                    <p>系统化数学学习方案，从基础重建到能力突破</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="card">
+                        <h3>📅 8个月数学重建计划</h3>
+                        <p><strong>核心目标：</strong>60-70分提升到80分以上</p>
+                        <ul>
+                            <li><strong>第1-2个月：</strong>基础重建期 - 有理数运算、整式运算、一元一次方程</li>
+                            <li><strong>第3-5个月：</strong>能力提升期 - 因式分解、函数、几何证明</li>
+                            <li><strong>第6-8个月：</strong>冲刺突破期 - 二次函数、综合题、真题训练</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 核心学习方法</h3>
+                        <ul>
+                            <li><strong>解题四步法：</strong>审题分析 → 方法选择 → 解题执行 → 验证答案</li>
+                            <li><strong>错题管理系统：</strong>建立错题本，按艾宾浩斯曲线复习</li>
+                            <li><strong>基础优先原则：</strong>宁可慢，不能跳；真懂再前进</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="success">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的学习指南，包括详细的学习计划、解题方法、错题管理、学习资源等：</p>
+                        <a href="pages/math.html" class="btn btn-primary">📖 查看数学完整指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 物理指南 -->
+        <section id="physics" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>⚛️ 物理学习指南</h1>
+                    <p>概念理解与实验突破，物理思维培养</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="card">
+                        <h3>📅 8个月物理重建计划</h3>
+                        <p><strong>核心目标：</strong>60-70分提升到80分以上</p>
+                        <ul>
+                            <li><strong>第1-2个月：</strong>基础概念重建 - 速度、密度、压强等基础概念</li>
+                            <li><strong>第3-5个月：</strong>力学深化 - 浮力（重点难点）、功和能</li>
+                            <li><strong>第6-8个月：</strong>电学冲刺 - 电路规律、欧姆定律、电功率</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 核心学习方法</h3>
+                        <ul>
+                            <li><strong>概念理解为主：</strong>物理重在理解，不能死记硬背公式</li>
+                            <li><strong>实验验证：</strong>多做实验，培养物理直觉</li>
+                            <li><strong>过程分析：</strong>注重物理过程分析，而不只是套公式</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="success">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的学习指南，包括详细的学习计划、概念详解、实验突破、学习资源等：</p>
+                        <a href="pages/physics.html" class="btn btn-primary">📖 查看物理完整指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 英语指南 -->
+        <section id="english" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🔤 英语学习指南</h1>
+                    <p>全面提升英语听说读写能力</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="card">
+                        <h3>📅 8个月英语提升计划</h3>
+                        <p><strong>核心目标：</strong>60-70分提升到75分以上</p>
+                        <ul>
+                            <li><strong>第1-2个月：</strong>词汇基础重建 - 掌握中考核心1500词汇</li>
+                            <li><strong>第3-5个月：</strong>语法突破 - 时态语态、从句类型</li>
+                            <li><strong>第6-8个月：</strong>综合能力提升 - 阅读理解、写作、听力</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 核心学习方法</h3>
+                        <ul>
+                            <li><strong>词汇记忆：</strong>词根词缀法+联想记忆法+艾宾浩斯复习曲线</li>
+                            <li><strong>语法学习：</strong>系统梳理时态、语态、从句</li>
+                            <li><strong>阅读技巧：</strong>快速阅读+精读训练</li>
+                            <li><strong>写作提升：</strong>模板掌握+词汇升级+句式多样化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="success">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的学习指南，包括词汇记忆方法、语法系统梳理、阅读理解技巧、写作模板、听力训练、学习资源等：</p>
+                        <a href="pages/english.html" class="btn btn-primary">📖 查看英语完整指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 政治指南 -->
+        <section id="politics" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>📖 政治学习指南</h1>
+                    <p>培养政治素养，提升答题能力</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="info-box">
+                        <h3>政治学习特点</h3>
+                        <ul>
+                            <li><strong>理论性强</strong>：需要理解政治原理和理论</li>
+                            <li><strong>时事性强</strong>：需要关注时事政治</li>
+                            <li><strong>应用性强</strong>：需要理论联系实际</li>
+                            <li><strong>性价比高</strong>：最后2个月集中突击效果最好</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>核心学习内容</h3>
+                        <ul>
+                            <li><strong>马克思主义基本原理</strong>：哲学、政治经济学、科学社会主义</li>
+                            <li><strong>中国特色社会主义理论</strong>：毛泽东思想、邓小平理论、新时代思想</li>
+                            <li><strong>思想品德教育</strong>：心理健康、道德品质、法律意识</li>
+                            <li><strong>国情教育</strong>：基本国情、基本制度、发展战略</li>
+                            <li><strong>经济生活</strong>：生产与消费、分配与交换、市场与政府</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>学习策略</h3>
+                        <ul>
+                            <li><strong>理解记忆</strong>：理解政治原理，避免死记硬背</li>
+                            <li><strong>关键词记忆法</strong>：用关键词串联知识点</li>
+                            <li><strong>逻辑框架法</strong>：构建知识框架，理清逻辑关系</li>
+                            <li><strong>时事联系</strong>：将时事与课本知识结合分析</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的学习指南，包括记忆技巧、答题策略、专题学习计划等：</p>
+                        <a href="pages/politics.html" class="btn btn-primary">📖 查看政治指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 历史指南 -->
+        <section id="history" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>📚 历史学习指南</h1>
+                    <p>培养历史思维，提升分析能力</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="info-box">
+                        <h3>历史学习特点</h3>
+                        <ul>
+                            <li><strong>知识量大</strong>：需要记忆大量历史事件和人物</li>
+                            <li><strong>时间线索</strong>：需要理清历史发展的时间顺序</li>
+                            <li><strong>逻辑性强</strong>：需要理解历史事件的因果关系</li>
+                            <li><strong>分析性强</strong>：需要分析史料和历史现象</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>核心学习内容</h3>
+                        <ul>
+                            <li><strong>中国古代史</strong>：政治制度演变、经济发展变化、思想文化成就</li>
+                            <li><strong>中国近现代史</strong>：旧民主主义革命、新民主主义革命、社会主义建设、改革开放</li>
+                            <li><strong>世界历史</strong>：古代文明、中世纪、近代史、现代史</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>学习策略</h3>
+                        <ul>
+                            <li><strong>故事线串联法</strong>：将历史事件编成故事记忆</li>
+                            <li><strong>时间轴记忆法</strong>：制作历史时间轴，标注重要事件</li>
+                            <li><strong>人物卡片法</strong>：制作人物信息卡片</li>
+                            <li><strong>因果关系法</strong>：理解历史事件的因果关系</li>
+                        </ul>
+                    </div>
+
+                    <div class="success-box">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的学习指南，包括记忆技巧、答题策略、专题学习计划等：</p>
+                        <a href="pages/history.html" class="btn btn-primary">📚 查看历史指南</a>
+                    </div>
+                </div>
+        </section>
+
+        <!-- 时间管理 -->
+        <section id="time-management" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>⏰ 时间管理与学习计划</h1>
+                    <p>科学规划时间，提高学习效率</p>
+                </div>
+                
+                <div class="content-section">
+                    <div class="card">
+                        <h3>📅 8个月学习计划总览</h3>
+                        <ul>
+                            <li><strong>第1-2个月：</strong>基础重建期 - 查漏补缺，打好基础</li>
+                            <li><strong>第3-5个月：</strong>能力提升期 - 强化训练，提升能力</li>
+                            <li><strong>第6-8个月：</strong>冲刺突破期 - 真题训练，查漏补缺</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎯 核心时间管理方法</h3>
+                        <ul>
+                            <li><strong>番茄工作法：</strong>25分钟专注学习 + 5分钟休息</li>
+                            <li><strong>任务优先级：</strong>紧急重要 > 重要不紧急 > 紧急不重要 > 不紧急不重要</li>
+                            <li><strong>复习循环：</strong>当天复习 → 一周复习 → 一月复习 → 考前复习</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="success">
+                        <h3>📚 详细指南</h3>
+                        <p>查看完整的时间管理指南，包括8个月详细计划、每日时间安排、学习方法与技巧等：</p>
+                        <a href="pages/time-management.html" class="btn btn-primary">📖 查看时间管理完整指南</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习技巧大全 -->
+        <section id="study-techniques" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🧠 学习技巧大全</h1>
+                    <p>科学高效的学习方法，让学习事半功倍</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>🧩 记忆技巧专项训练</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🏰 记忆宫殿法</h3>
+                            <h4>构建步骤：</h4>
+                            <ol>
+                                <li><strong>选择熟悉场所：</strong>家里、学校、常走路线</li>
+                                <li><strong>设定路线：</strong>按固定顺序经过各个房间</li>
+                                <li><strong>放置信息：</strong>将要记忆的内容放在特定位置</li>
+                                <li><strong>创建联想：</strong>用夸张、有趣的画面连接</li>
+                                <li><strong>反复走访：</strong>在脑中重复这条路线</li>
+                            </ol>
+                            
+                            <div class="info">
+                                <strong>实例：记忆化学元素周期表前20个</strong><br>
+                                进门(氢H) → 客厅沙发(氦He) → 茶几(锂Li) → 电视(铍Be) → 遥控器(硼B)...
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🔗 联想记忆法</h3>
+                            <h4>联想类型：</h4>
+                            <ul>
+                                <li><strong>相似联想：</strong>形状、声音、意思相似</li>
+                                <li><strong>对比联想：</strong>相反或对立的概念</li>
+                                <li><strong>因果联想：</strong>原因和结果的关系</li>
+                                <li><strong>时空联想：</strong>时间、地点的关联</li>
+                            </ul>
+                            
+                            <div class="success">
+                                <strong>英语单词记忆实例：</strong><br>
+                                • ambulance(救护车) → 俺不能死(谐音)<br>
+                                • economy(经济) → 依靠农民(谐音)<br>
+                                • pregnant(怀孕) → 扑来个男的(谐音)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🎵 口诀记忆法</h3>
+                        <div class="grid grid-3">
+                            <div>
+                                <h4>数学公式口诀：</h4>
+                                <ul>
+                                    <li><strong>二次函数：</strong>"开口向上a大于零，开口向下a小于零"</li>
+                                    <li><strong>因式分解：</strong>"提公因式是关键，十字相乘要熟练"</li>
+                                    <li><strong>解方程：</strong>"移项变号要记牢，同类合并不能少"</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>物理定律口诀：</h4>
+                                <ul>
+                                    <li><strong>欧姆定律：</strong>"电压除以电阻等于电流"</li>
+                                    <li><strong>功率公式：</strong>"功率等于电压乘电流"</li>
+                                    <li><strong>密度公式：</strong>"质量除以体积等于密度"</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>历史年代口诀：</h4>
+                                <ul>
+                                    <li><strong>朝代顺序：</strong>"夏商周秦西东汉，三国两晋南北朝"</li>
+                                    <li><strong>重要事件：</strong>"1840鸦片战争，1949新中国成立"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📝 笔记技巧系统</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>📋 康奈尔笔记法</h3>
+                            <h4>页面布局：</h4>
+                            <div class="info">
+                                <strong>左侧栏(25%)：</strong>关键词、问题、提示<br>
+                                <strong>右侧栏(75%)：</strong>详细笔记内容<br>
+                                <strong>底部栏：</strong>总结和反思
+                            </div>
+                            
+                            <h4>使用步骤：</h4>
+                            <ol>
+                                <li><strong>记录：</strong>在右侧记录课堂内容</li>
+                                <li><strong>简化：</strong>课后在左侧写关键词</li>
+                                <li><strong>背诵：</strong>遮住右侧，用左侧提示回忆</li>
+                                <li><strong>反思：</strong>在底部写总结和疑问</li>
+                                <li><strong>复习：</strong>定期回顾和补充</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🗺️ 思维导图法</h3>
+                            <h4>绘制原则：</h4>
+                            <ul>
+                                <li><strong>中心主题：</strong>放在页面中央</li>
+                                <li><strong>主要分支：</strong>从中心向外延伸</li>
+                                <li><strong>次级分支：</strong>从主分支继续延伸</li>
+                                <li><strong>关键词：</strong>每个分支只写关键词</li>
+                                <li><strong>颜色编码：</strong>不同主题用不同颜色</li>
+                                <li><strong>图像符号：</strong>用图标增强记忆</li>
+                            </ul>
+                            
+                            <div class="warning">
+                                <strong>适用场景：</strong><br>
+                                • 知识点梳理和复习<br>
+                                • 作文构思和写作<br>
+                                • 问题分析和解决<br>
+                                • 学习计划制定
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🔄 科学复习策略</h2>
+                    <div class="card">
+                        <h3>📊 艾宾浩斯遗忘曲线应用</h3>
+                        <h4>最佳复习时间点：</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>复习次数</th>
+                                    <th>时间间隔</th>
+                                    <th>记忆保持率</th>
+                                    <th>复习重点</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>第1次</td>
+                                    <td>学习后20分钟</td>
+                                    <td>58%</td>
+                                    <td>快速浏览，加深印象</td>
+                                </tr>
+                                <tr>
+                                    <td>第2次</td>
+                                    <td>学习后1小时</td>
+                                    <td>44%</td>
+                                    <td>重点回顾，查漏补缺</td>
+                                </tr>
+                                <tr>
+                                    <td>第3次</td>
+                                    <td>学习后1天</td>
+                                    <td>33%</td>
+                                    <td>系统梳理，建立联系</td>
+                                </tr>
+                                <tr>
+                                    <td>第4次</td>
+                                    <td>学习后2天</td>
+                                    <td>28%</td>
+                                    <td>重难点突破</td>
+                                </tr>
+                                <tr>
+                                    <td>第5次</td>
+                                    <td>学习后4天</td>
+                                    <td>25%</td>
+                                    <td>综合应用练习</td>
+                                </tr>
+                                <tr>
+                                    <td>第6次</td>
+                                    <td>学习后7天</td>
+                                    <td>21%</td>
+                                    <td>长期记忆巩固</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🎯 费曼学习法</h3>
+                            <h4>四个步骤：</h4>
+                            <ol>
+                                <li><strong>选择概念：</strong>确定要学习的知识点</li>
+                                <li><strong>教给别人：</strong>用简单语言解释给他人</li>
+                                <li><strong>发现缺口：</strong>找出解释不清的地方</li>
+                                <li><strong>回去学习：</strong>针对缺口重新学习</li>
+                            </ol>
+                            
+                            <div class="success">
+                                <strong>实践技巧：</strong><br>
+                                • 假装教给小学生<br>
+                                • 录制讲解视频<br>
+                                • 写简化版笔记<br>
+                                • 画图解释概念
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>📚 SQ3R阅读法</h3>
+                            <h4>五个步骤：</h4>
+                            <ul>
+                                <li><strong>Survey(浏览)：</strong>快速浏览标题、图表</li>
+                                <li><strong>Question(提问)：</strong>根据标题提出问题</li>
+                                <li><strong>Read(阅读)：</strong>带着问题仔细阅读</li>
+                                <li><strong>Recite(复述)：</strong>合上书复述要点</li>
+                                <li><strong>Review(复习)：</strong>定期回顾和总结</li>
+                            </ul>
+                            
+                            <div class="info">
+                                <strong>适用范围：</strong><br>
+                                教科书学习、课外阅读、资料研究
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>⚡ 专注力训练方法</h2>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h3>🍅 番茄工作法升级版</h3>
+                            <h4>标准流程：</h4>
+                            <ul>
+                                <li>25分钟专注学习</li>
+                                <li>5分钟短休息</li>
+                                <li>重复4次后长休息15-30分钟</li>
+                            </ul>
+                            
+                            <h4>个性化调整：</h4>
+                            <ul>
+                                <li><strong>初学者：</strong>15分钟专注 + 5分钟休息</li>
+                                <li><strong>进阶者：</strong>45分钟专注 + 10分钟休息</li>
+                                <li><strong>困难任务：</strong>缩短时间，增加频率</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🧘 冥想专注训练</h3>
+                            <h4>基础练习：</h4>
+                            <ol>
+                                <li>舒适坐姿，闭上眼睛</li>
+                                <li>专注呼吸，感受气息</li>
+                                <li>思绪飘散时轻柔拉回</li>
+                                <li>从5分钟开始逐渐延长</li>
+                            </ol>
+                            
+                            <div class="success">
+                                <strong>学习应用：</strong><br>
+                                学习前3分钟冥想，提高专注力
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🎯 单任务专注法</h3>
+                            <h4>环境准备：</h4>
+                            <ul>
+                                <li>清理桌面，只留必需品</li>
+                                <li>关闭手机通知</li>
+                                <li>使用网站屏蔽软件</li>
+                                <li>告知他人不要打扰</li>
+                            </ul>
+                            
+                            <h4>心理准备：</h4>
+                            <ul>
+                                <li>明确当前任务目标</li>
+                                <li>预估完成时间</li>
+                                <li>准备奖励机制</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 家庭教育 -->
+        <section id="family-education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>👨‍👩‍👧‍👦 家庭教育指南</h1>
+                    <p>构建和谐家庭关系，营造良好学习环境</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>🔥 父母角色重新定位</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>❌ 错误的父母角色</h3>
+                            <ul>
+                                <li><strong>监工型父母：</strong>只盯着孩子学习，不断催促</li>
+                                <li><strong>代劳型父母：</strong>帮孩子做作业，包办一切</li>
+                                <li><strong>比较型父母：</strong>总是拿孩子和别人比较</li>
+                                <li><strong>情绪型父母：</strong>因为成绩好坏情绪波动很大</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>✅ 正确的父母角色</h3>
+                            <ul>
+                                <li><strong>支持型父母：</strong>提供情感支持和学习环境</li>
+                                <li><strong>引导型父母：</strong>帮助孩子找到学习方法</li>
+                                <li><strong>陪伴型父母：</strong>陪伴孩子度过困难时期</li>
+                                <li><strong>信任型父母：</strong>相信孩子有改变的能力</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>💬 有效沟通策略</h2>
+                    <div class="card">
+                        <h3>🗣️ 沟通话术模板</h3>
+                        
+                        <h4>当孩子成绩不好时：</h4>
+                        <div class="info">
+                            <strong>❌ 错误说法：</strong>"你怎么这么笨！""别人家的孩子都比你强！"<br>
+                            <strong>✅ 正确说法：</strong>"这次没考好，我们一起分析一下原因，看看哪里还可以改进。"
+                        </div>
+                        
+                        <h4>当孩子不想学习时：</h4>
+                        <div class="info">
+                            <strong>❌ 错误说法：</strong>"不学习就没有出路！""你必须给我好好学！"<br>
+                            <strong>✅ 正确说法：</strong>"我理解你现在的感受，学习确实很累。我们休息一下，然后一起想想怎么让学习变得轻松一点。"
+                        </div>
+                        
+                        <h4>当孩子有进步时：</h4>
+                        <div class="success">
+                            <strong>具体表扬：</strong>"我看到你这次数学比上次提高了5分，说明你在计算方面更仔细了，继续保持！"<br>
+                            <strong>过程表扬：</strong>"我看到你每天都在坚持做数学题，这种努力的态度很棒！"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🏠 家庭学习环境营造</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>📚 物理环境</h3>
+                            <ul>
+                                <li><strong>安静的学习空间：</strong>减少噪音干扰</li>
+                                <li><strong>充足的光线：</strong>保护视力，提高效率</li>
+                                <li><strong>整洁的桌面：</strong>减少分心因素</li>
+                                <li><strong>必要的学习用品：</strong>文具、参考书等</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>💝 心理环境</h3>
+                            <ul>
+                                <li><strong>接纳的氛围：</strong>接纳孩子的现状和情绪</li>
+                                <li><strong>鼓励的语言：</strong>多用正面积极的语言</li>
+                                <li><strong>稳定的情绪：</strong>父母保持情绪稳定</li>
+                                <li><strong>合理的期望：</strong>设置现实可达的目标</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作业策略 -->
+        <section id="homework-strategy" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>📝 作业处理策略</h1>
+                    <p>战略性取舍，提高作业效率</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>🎯 作业分类与优先级</h2>
+                    <div class="card">
+                        <h3>📊 作业类型分析</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>作业类型</th>
+                                    <th>学习价值</th>
+                                    <th>处理策略</th>
+                                    <th>时间分配</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #d1fae5;">
+                                    <td><strong>理解类作业</strong></td>
+                                    <td>高</td>
+                                    <td>必须完成，重点理解</td>
+                                    <td>60%</td>
+                                </tr>
+                                <tr style="background-color: #fef3c7;">
+                                    <td><strong>练习类作业</strong></td>
+                                    <td>中</td>
+                                    <td>选择性完成，重点题型</td>
+                                    <td>30%</td>
+                                </tr>
+                                <tr style="background-color: #fee2e2;">
+                                    <td><strong>抄写类作业</strong></td>
+                                    <td>低</td>
+                                    <td>可以减免或快速完成</td>
+                                    <td>10%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>💬 与老师沟通作业调整</h2>
+                    <div class="card">
+                        <h3>🗣️ 沟通话术模板</h3>
+                        
+                        <h4>初次沟通（建立理解）：</h4>
+                        <div class="info">
+                            <p>"老师，我孩子现在学习确实有困难，基础比较薄弱。我们想请教您：</p>
+                            <ul>
+                                <li>能否帮我们分析一下，孩子在您这科最需要补强的是什么？</li>
+                                <li>作业方面，哪些是必须完成的，哪些可以适当调整？</li>
+                                <li>我们家长应该怎样配合您的教学？"</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>请求减免抄写作业：</h4>
+                        <div class="info">
+                            <p>"老师，孩子现在时间确实很紧张，能否在抄写作业方面给予一些调整：</p>
+                            <ul>
+                                <li>抄写遍数能否减少一半，但保证质量？</li>
+                                <li>能否用理解类练习替代部分抄写？</li>
+                                <li>我们保证孩子会认真完成核心的理解类作业。"</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>汇报进展：</h4>
+                        <div class="success">
+                            <p>"老师，按照您的建议，孩子这段时间重点做了理解类作业，现在XX方面有了明显进步。下一步我们想重点加强XX，您看还有什么建议吗？"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>⏰ 高效作业完成方法</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>📋 作业完成流程</h3>
+                            <ol>
+                                <li><strong>作业分类：</strong>按重要性和难度分类</li>
+                                <li><strong>时间规划：</strong>为每类作业分配时间</li>
+                                <li><strong>优先完成：</strong>先做重要且理解类的</li>
+                                <li><strong>质量控制：</strong>保证完成质量</li>
+                                <li><strong>及时反馈：</strong>记录问题和收获</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🎯 提高效率技巧</h3>
+                            <ul>
+                                <li><strong>集中时间：</strong>同类作业集中完成</li>
+                                <li><strong>限时完成：</strong>给每项作业设定时间限制</li>
+                                <li><strong>消除干扰：</strong>关闭手机，专心作业</li>
+                                <li><strong>适当休息：</strong>每45分钟休息10分钟</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 沟通话术 -->
+        <section id="communication" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>💬 沟通话术大全</h1>
+                    <p>实用沟通模板，改善家校关系</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>👨‍🏫 与老师沟通话术</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🙋‍♂️ 主动求助话术</h3>
+                            <div class="info">
+                                <h4>开场白：</h4>
+                                <p>"老师，不好意思打扰您。我是XX的家长，想请教您一些关于孩子学习的问题。"</p>
+                                
+                                <h4>问题描述：</h4>
+                                <p>"我孩子现在在XX方面遇到了困难，具体表现在...我们也很着急，但不知道该怎么帮助他。"</p>
+                                
+                                <h4>寻求建议：</h4>
+                                <p>"您作为专业老师，能给我们一些具体的建议吗？我们应该从哪里开始改进？"</p>
+                                
+                                <h4>表达决心：</h4>
+                                <p>"我们会认真按照您的建议去做，也希望您能继续关注孩子的进步。"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>📊 汇报进展话术</h3>
+                            <div class="success">
+                                <h4>进展汇报：</h4>
+                                <p>"老师，按照您上次的建议，我们这段时间重点做了...现在孩子在XX方面有了明显改善。"</p>
+                                
+                                <h4>具体数据：</h4>
+                                <p>"比如这次小测验，XX科目比上次提高了X分，错题也减少了。"</p>
+                                
+                                <h4>遇到新问题：</h4>
+                                <p>"但是我们又发现了新的问题...希望您能继续指导我们。"</p>
+                                
+                                <h4>感谢表达：</h4>
+                                <p>"真的很感谢您的耐心指导，孩子的进步离不开您的帮助。"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>👶 与孩子沟通话术</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>😔 孩子沮丧时</h3>
+                            <div class="info">
+                                <h4>情感理解：</h4>
+                                <p>"我看得出来你现在很难受，考试没考好确实让人沮丧。"</p>
+                                
+                                <h4>接纳情绪：</h4>
+                                <p>"有这种感受很正常，每个人都会遇到挫折。"</p>
+                                
+                                <h4>寻找原因：</h4>
+                                <p>"我们一起来看看这次是什么原因，不是为了责怪，而是为了下次做得更好。"</p>
+                                
+                                <h4>鼓励支持：</h4>
+                                <p>"我相信你有能力改变，我们一起努力，慢慢来。"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>😤 孩子抗拒时</h3>
+                            <div class="warning">
+                                <h4>避免对抗：</h4>
+                                <p>"我知道你现在不想学习，我们先不谈学习，你能告诉我你在想什么吗？"</p>
+                                
+                                <h4>寻找共同点：</h4>
+                                <p>"我们都希望你能过得开心，也都不希望你将来后悔，对吧？"</p>
+                                
+                                <h4>提供选择：</h4>
+                                <p>"你觉得我们可以怎样让学习变得不那么痛苦？你有什么想法？"</p>
+                                
+                                <h4>设定界限：</h4>
+                                <p>"我理解你的感受，但学习是必须的。我们可以商量怎么学，但不能不学。"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🎯 激励孩子话术</h2>
+                    <div class="card">
+                        <h3>💪 正向激励语言</h3>
+                        
+                        <h4>过程表扬（比结果表扬更重要）：</h4>
+                        <ul>
+                            <li>"我看到你今天学习很专注，这种态度很棒！"</li>
+                            <li>"你这次错题整理得很仔细，这个习惯会帮助你很多。"</li>
+                            <li>"虽然这道题还没做对，但你的思路比以前清晰多了。"</li>
+                        </ul>
+                        
+                        <h4>成长型思维语言：</h4>
+                        <ul>
+                            <li>"你还不会这个，但通过练习一定能学会。"</li>
+                            <li>"每个人都有自己的学习节奏，你在按自己的节奏进步。"</li>
+                            <li>"困难是成长的机会，我们一起面对它。"</li>
+                        </ul>
+                        
+                        <h4>未来导向语言：</h4>
+                        <ul>
+                            <li>"现在的努力是为了让你有更多选择的机会。"</li>
+                            <li>"我相信8个月后的你会感谢现在努力的自己。"</li>
+                            <li>"每一天的进步都在为你的未来铺路。"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 心理支持与情感管理 -->
+        <section id="psychological-support" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>💝 心理支持与情感管理</h1>
+                    <p>关注孩子内心世界，提供专业心理支持</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>🧠 学习心理建设</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>💪 自信心重建</h3>
+                            <h4>自信心缺失的表现：</h4>
+                            <ul>
+                                <li>经常说"我不行"、"我太笨了"</li>
+                                <li>不敢举手回答问题</li>
+                                <li>遇到困难就想放弃</li>
+                                <li>过分在意他人评价</li>
+                                <li>害怕尝试新的学习方法</li>
+                            </ul>
+                            
+                            <h4>重建策略：</h4>
+                            <div class="success">
+                                <strong>1. 小步子原则：</strong><br>
+                                • 设定容易达成的小目标<br>
+                                • 每天记录一个进步<br>
+                                • 庆祝每一个小成功<br><br>
+                                
+                                <strong>2. 成功体验积累：</strong><br>
+                                • 从最擅长的科目开始<br>
+                                • 选择适合难度的题目<br>
+                                • 记录"成功日记"<br><br>
+                                
+                                <strong>3. 正向自我对话：</strong><br>
+                                • "我正在进步中"<br>
+                                • "困难是成长的机会"<br>
+                                • "我有能力解决问题"
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🎯 学习动机激发</h3>
+                            <h4>内在动机 vs 外在动机：</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>类型</th>
+                                        <th>特点</th>
+                                        <th>激发方法</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>内在动机</strong></td>
+                                        <td>持久、稳定</td>
+                                        <td>培养兴趣、成就感</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>外在动机</strong></td>
+                                        <td>短期、易消退</td>
+                                        <td>奖励、惩罚</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h4>动机激发技巧：</h4>
+                            <ul>
+                                <li><strong>目标可视化：</strong>制作梦想板，贴上理想高中照片</li>
+                                <li><strong>榜样力量：</strong>寻找学习榜样，了解成功故事</li>
+                                <li><strong>意义连接：</strong>将学习与个人兴趣、未来职业连接</li>
+                                <li><strong>自主选择：</strong>让孩子参与学习计划制定</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>😰 压力与焦虑管理</h2>
+                    <div class="card">
+                        <h3>📊 学习压力评估</h3>
+                        <h4>压力信号识别：</h4>
+                        <div class="grid grid-3">
+                            <div>
+                                <h5>身体信号：</h5>
+                                <ul>
+                                    <li>头痛、胃痛</li>
+                                    <li>失眠、食欲不振</li>
+                                    <li>容易疲劳</li>
+                                    <li>免疫力下降</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>情绪信号：</h5>
+                                <ul>
+                                    <li>易怒、烦躁</li>
+                                    <li>焦虑、担心</li>
+                                    <li>情绪低落</li>
+                                    <li>缺乏耐心</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>行为信号：</h5>
+                                <ul>
+                                    <li>注意力不集中</li>
+                                    <li>拖延、逃避</li>
+                                    <li>社交退缩</li>
+                                    <li>强迫行为增加</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🧘 压力缓解技巧</h3>
+                            <h4>即时缓解法（5分钟内）：</h4>
+                            <ol>
+                                <li><strong>4-7-8呼吸法：</strong>
+                                    <ul>
+                                        <li>吸气4秒</li>
+                                        <li>屏息7秒</li>
+                                        <li>呼气8秒</li>
+                                        <li>重复4-6次</li>
+                                    </ul>
+                                </li>
+                                <li><strong>肌肉放松法：</strong>
+                                    <ul>
+                                        <li>紧握拳头5秒，然后放松</li>
+                                        <li>耸肩5秒，然后放松</li>
+                                        <li>从头到脚依次进行</li>
+                                    </ul>
+                                </li>
+                                <li><strong>正念冥想：</strong>
+                                    <ul>
+                                        <li>专注当下感受</li>
+                                        <li>观察呼吸节奏</li>
+                                        <li>不评判，只观察</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🎨 长期压力管理</h3>
+                            <h4>生活方式调整：</h4>
+                            <ul>
+                                <li><strong>规律作息：</strong>固定睡眠时间，保证8小时睡眠</li>
+                                <li><strong>适度运动：</strong>每天30分钟有氧运动</li>
+                                <li><strong>健康饮食：</strong>减少咖啡因，增加蛋白质</li>
+                                <li><strong>兴趣爱好：</strong>保持1-2项放松活动</li>
+                            </ul>
+                            
+                            <h4>认知调整：</h4>
+                            <div class="info">
+                                <strong>负面思维 → 积极思维</strong><br>
+                                "我一定会失败" → "我正在努力，结果会越来越好"<br>
+                                "别人都比我强" → "每个人都有自己的节奏"<br>
+                                "这太难了" → "这是一个学习的机会"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🚨 危机干预策略</h2>
+                    <div class="card">
+                        <h3>⚠️ 危机信号识别</h3>
+                        <div class="warning">
+                            <h4>需要立即关注的信号：</h4>
+                            <div class="grid grid-2">
+                                <div>
+                                    <h5>🔴 高危信号：</h5>
+                                    <ul>
+                                        <li>表达自伤或自杀想法</li>
+                                        <li>严重的睡眠障碍（连续失眠或嗜睡）</li>
+                                        <li>完全拒绝上学或学习</li>
+                                        <li>极端的情绪波动</li>
+                                        <li>自我伤害行为</li>
+                                        <li>严重的社交退缩</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>🟡 警告信号：</h5>
+                                    <ul>
+                                        <li>持续的厌学情绪（超过2周）</li>
+                                        <li>频繁的身体不适</li>
+                                        <li>学习成绩急剧下降</li>
+                                        <li>人际关系恶化</li>
+                                        <li>行为异常（如突然变得很乖或很叛逆）</li>
+                                        <li>对未来表达绝望</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🤝 厌学情绪处理</h3>
+                            <h4>分阶段干预：</h4>
+                            <div class="success">
+                                <strong>第一阶段：理解接纳（1-2周）</strong><br>
+                                • 不强迫学习，先稳定情绪<br>
+                                • 倾听孩子的真实感受<br>
+                                • 寻找厌学的根本原因<br>
+                                • 保持日常生活规律<br><br>
+                                
+                                <strong>第二阶段：逐步引导（2-4周）</strong><br>
+                                • 从最简单的任务开始<br>
+                                • 设定极小的学习目标<br>
+                                • 及时给予正面反馈<br>
+                                • 寻找学习中的乐趣点<br><br>
+                                
+                                <strong>第三阶段：习惯重建（4-8周）</strong><br>
+                                • 逐渐增加学习时间<br>
+                                • 建立新的学习习惯<br>
+                                • 培养学习成就感<br>
+                                • 预防复发
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>👨‍👩‍👧‍👦 亲子冲突化解</h3>
+                            <h4>冲突升级阶梯：</h4>
+                            <ol>
+                                <li><strong>分歧出现</strong> → 保持冷静，避免情绪化</li>
+                                <li><strong>争论开始</strong> → 暂停讨论，各自冷静</li>
+                                <li><strong>情绪激化</strong> → 立即停止，约定稍后再谈</li>
+                                <li><strong>关系受损</strong> → 主动道歉，修复关系</li>
+                            </ol>
+                            
+                            <h4>化解技巧：</h4>
+                            <div class="info">
+                                <strong>黄金24小时原则：</strong><br>
+                                冲突后24小时内必须主动沟通修复关系<br><br>
+                                
+                                <strong>三步修复法：</strong><br>
+                                1. 承认情绪："我刚才太激动了"<br>
+                                2. 表达关爱："我是因为关心你才着急"<br>
+                                3. 寻求合作："我们一起想想怎么解决"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🌟 积极心理学应用</h2>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h3>🙏 感恩练习</h3>
+                            <h4>每日感恩三件事：</h4>
+                            <ol>
+                                <li>每晚写下三件感恩的事</li>
+                                <li>包括学习中的小进步</li>
+                                <li>感谢帮助过自己的人</li>
+                                <li>欣赏生活中的美好</li>
+                            </ol>
+                            
+                            <div class="success">
+                                <strong>效果：</strong><br>
+                                提升幸福感，减少负面情绪，增强学习动力
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>💎 优势发现</h3>
+                            <h4>24项性格优势：</h4>
+                            <ul>
+                                <li>智慧类：创造力、好奇心、判断力</li>
+                                <li>勇气类：勇敢、坚持、诚实</li>
+                                <li>仁爱类：善良、社交智慧</li>
+                                <li>正义类：团队合作、公平</li>
+                                <li>节制类：宽恕、谦逊、自控</li>
+                                <li>超越类：感恩、希望、幽默</li>
+                            </ul>
+                            
+                            <div class="info">
+                                <strong>应用方法：</strong><br>
+                                识别孩子的前5项优势，在学习中发挥这些优势
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🌈 心流体验</h3>
+                            <h4>创造心流的条件：</h4>
+                            <ul>
+                                <li><strong>明确目标：</strong>知道要做什么</li>
+                                <li><strong>即时反馈：</strong>能及时知道结果</li>
+                                <li><strong>挑战平衡：</strong>难度适中，不太难不太易</li>
+                                <li><strong>专注投入：</strong>全身心投入活动</li>
+                            </ul>
+                            
+                            <div class="warning">
+                                <strong>学习中的心流：</strong><br>
+                                选择适合难度的题目，设定明确的学习目标，及时检查学习效果
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习资源 -->
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>📋 学习资源推荐</h1>
+                    <p>精选优质学习资源，助力高效学习</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>📚 教辅书籍推荐</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>🧮 数学教辅</h3>
+                            <ul>
+                                <li><strong>《5年中考3年模拟》</strong> - 经典教辅，知识点全面</li>
+                                <li><strong>《尖子生学案》</strong> - 适合基础薄弱学生</li>
+                                <li><strong>《初中数学知识清单》</strong> - 系统梳理知识点</li>
+                                <li><strong>《王后雄教材完全解读》</strong> - 详细解析</li>
+                                <li><strong>《一本涂书》</strong> - 重点知识标注</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>⚛️ 物理教辅</h3>
+                            <ul>
+                                <li><strong>《物理实验王》</strong> - 实验专项训练</li>
+                                <li><strong>《中考物理必刷题》</strong> - 题型全面</li>
+                                <li><strong>《物理概念地图》</strong> - 概念理解</li>
+                                <li><strong>《初中物理公式定律手册》</strong> - 公式汇总</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📱 在线学习平台</h2>
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h3>🎥 视频学习</h3>
+                            <ul>
+                                <li><strong>洋葱学院</strong> - 动画讲解，适合基础差的学生</li>
+                                <li><strong>学而思网校</strong> - 系统课程体系</li>
+                                <li><strong>作业帮直播课</strong> - 互动性强</li>
+                                <li><strong>B站教学视频</strong> - 免费资源丰富</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>📝 练习平台</h3>
+                            <ul>
+                                <li><strong>菁优网</strong> - 大量分类练习题</li>
+                                <li><strong>作业帮</strong> - 拍照搜题+讲解</li>
+                                <li><strong>小猿搜题</strong> - 题目解析详细</li>
+                                <li><strong>题拍拍</strong> - 真人老师解答</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>🔧 学习工具</h3>
+                            <ul>
+                                <li><strong>印象笔记</strong> - 知识整理</li>
+                                <li><strong>思维导图</strong> - 知识梳理</li>
+                                <li><strong>番茄TODO</strong> - 时间管理</li>
+                                <li><strong>Forest</strong> - 专注学习</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📖 免费学习资源</h2>
+                    <div class="card">
+                        <h3>🌐 优质免费资源</h3>
+                        
+                        <h4>B站推荐UP主：</h4>
+                        <ul>
+                            <li><strong>数学：</strong>朱韬老师、数学骆哥、洋葱学院</li>
+                            <li><strong>物理：</strong>物理大师、李永乐老师、妙懂初中物理</li>
+                            <li><strong>英语：</strong>英语兔、阿明珍老师、新东方在线</li>
+                        </ul>
+                        
+                        <h4>微信公众号：</h4>
+                        <ul>
+                            <li><strong>初中数学：</strong>初中数学延伸课堂</li>
+                            <li><strong>初中物理：</strong>初中物理七百讲</li>
+                            <li><strong>学习方法：</strong>学霸说、超级学习法</li>
+                        </ul>
+                        
+                        <h4>网站资源：</h4>
+                        <ul>
+                            <li><strong>中考网：</strong>历年真题和模拟题</li>
+                            <li><strong>学科网：</strong>教学资源丰富</li>
+                            <li><strong>百度文库：</strong>学习资料下载</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success">
+                    <h4>💡 资源使用建议</h4>
+                    <ul>
+                        <li>选择适合自己学习风格的资源，不要贪多</li>
+                        <li>免费资源优先，付费资源要谨慎选择</li>
+                        <li>注重资源的权威性和系统性</li>
+                        <li>定期评估资源使用效果，及时调整</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注学习，成就未来！</p>
+        </div>
+    </footer>
+
+    <script>
+        // 搜索功能
+        let searchData = [];
+        
+        // 初始化搜索数据
+        function initSearchData() {
+            const sections = document.querySelectorAll('.section');
+            searchData = [];
+            
+            sections.forEach(section => {
+                const sectionId = section.id;
+                const sectionTitle = section.querySelector('h2')?.textContent || '';
+                const cards = section.querySelectorAll('.card');
+                
+                // 添加章节标题
+                if (sectionTitle) {
+                    searchData.push({
+                        title: sectionTitle,
+                        content: sectionTitle,
+                        section: sectionId,
+                        type: 'section'
+                    });
+                }
+                
+                // 添加卡片内容
+                cards.forEach(card => {
+                    const cardTitle = card.querySelector('h3, h4')?.textContent || '';
+                    const cardContent = card.textContent || '';
+                    
+                    if (cardTitle) {
+                        searchData.push({
+                            title: cardTitle,
+                            content: cardContent,
+                            section: sectionId,
+                            type: 'card'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // 执行搜索
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (query.length < 2) {
+                resultsContainer.style.display = 'none';
+                return;
+            }
+            
+            const results = searchData.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.content.toLowerCase().includes(query.toLowerCase())
+            ).slice(0, 10); // 限制显示10个结果
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="search-result-item">未找到相关内容</div>';
+            } else {
+                resultsContainer.innerHTML = results.map(result => {
+                    const highlightedTitle = highlightText(result.title, query);
+                    return `<div class="search-result-item" onclick="goToSection('${result.section}')">
+                        <strong>${highlightedTitle}</strong>
+                        <br><small>${result.type === 'section' ? '章节' : '内容'}</small>
+                    </div>`;
+                }).join('');
+            }
+            
+            resultsContainer.style.display = 'block';
+        }
+        
+        // 高亮搜索关键词
+        function highlightText(text, query) {
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+        
+        // 跳转到指定章节
+        function goToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const navbarHeight = 70; // 导航栏高度
+                const targetPosition = section.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // 隐藏搜索结果
+                document.getElementById('searchResults').style.display = 'none';
+                document.getElementById('searchInput').value = '';
+            }
+        }
+        
+        // 搜索输入事件监听
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            
+            // 初始化搜索数据
+            initSearchData();
+            
+            // 实时搜索
+            searchInput.addEventListener('input', function() {
+                performSearch();
+            });
+            
+            // 点击外部隐藏搜索结果
+            document.addEventListener('click', function(e) {
+                const searchContainer = document.querySelector('.search-container');
+                if (!searchContainer.contains(e.target)) {
+                    document.getElementById('searchResults').style.display = 'none';
+                }
+            });
+            
+            // 回车键搜索
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // 处理页面加载时的锚点跳转（如直接打开 index.html#emergency）
+            if (window.location.hash) {
+                setTimeout(function() {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        const navbarHeight = 70;
+                        const targetPosition = target.offsetTop - navbarHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 100); // 延迟100ms确保页面已加载
+            }
+        });
+
+        // 简单的导航高亮功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            // 监听滚动事件，更新导航高亮
+            window.addEventListener('scroll', function() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // 平滑滚动到锚点
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const navbarHeight = 70; // 导航栏高度
+                        const targetPosition = target.offsetTop - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

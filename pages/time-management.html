@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间管理与学习计划 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 侧边栏导航 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#time-planning" onclick="scrollToSection('time-planning')">8个月详细学习时间规划</a>
+            <a href="#daily-schedule" onclick="scrollToSection('daily-schedule')">每日详细时间安排表</a>
+            <a href="#weekly-allocation" onclick="scrollToSection('weekly-allocation')">整体每周时间分配表</a>
+            <a href="#learning-methods" onclick="scrollToSection('learning-methods')">核心学习方法与策略</a>
+            <a href="#management-tools" onclick="scrollToSection('management-tools')">推荐时间管理工具</a>
+            <a href="#common-problems" onclick="scrollToSection('common-problems')">常见时间管理问题解决</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div class="content-page" id="mainContent">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1>时间管理与学习计划</h1>
+            
+            <div id="time-planning">
+                <h2>📅 8个月详细学习时间规划</h2>
+            <img src="../images/8个月学习时间轴.svg" alt="8个月学习时间轴" style="width: 100%; margin: 2rem 0;">
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3>🎯 Q1: 11月-1月（基础重建期）</h3>
+                
+                <h4>📚 11月目标：基础扫盲</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 数学（有理数、方程）+ 英语（词汇基础500词）</li>
+                    <li><strong>周3-4:</strong> 物理（声光热基础）+ 数学（不等式、函数初步）</li>
+                    <li><strong>学习资料:</strong> 《5年中考3年模拟》基础篇 + 洋葱学院视频</li>
+                    <li><strong>目标分数:</strong> 各科达到60分以上</li>
+                </ul>
+                
+                <h4>📚 12月目标：完成初二下到初三上基础内容</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 数学（一次函数、几何基础）+ 物理（力学入门）</li>
+                    <li><strong>周3-4:</strong> 数学（二次函数基础）+ 英语语法系统过一遍</li>
+                    <li><strong>学习资料:</strong> 《教材完全解读》+ 《典中点》基础题</li>
+                    <li><strong>目标分数:</strong> 各科达到70分以上</li>
+                </ul>
+                
+                <h4>📚 1月目标：第一轮基础题训练 + 期末备考</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 各科基础题专项训练</li>
+                    <li><strong>周3-4:</strong> 期末考试复习</li>
+                    <li><strong>🎯 里程碑:</strong> 各科达到75分以上</li>
+                </ul>
+            </div>
+            
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3>🚀 Q2: 2月-4月（强化提升期）</h3>
+                
+                <h4>📚 2月目标：春节+开学,真题入门</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 春节适度放松,每天保持2小时学习</li>
+                    <li><strong>周3-4:</strong> 开始刷2020-2023年各地中考真题（只做基础+中档题）</li>
+                    <li><strong>学习资料:</strong> 《中考真题分类汇编》</li>
+                </ul>
+                
+                <h4>📚 3月目标：题型专项突破</h4>
+                <ul>
+                    <li><strong>周1:</strong> 数学（几何证明专题）+ 物理（电学基础）</li>
+                    <li><strong>周2:</strong> 数学（函数综合）+ 化学（计算专题）</li>
+                    <li><strong>周3:</strong> 英语（阅读理解技巧）+ 物理（力学综合）</li>
+                    <li><strong>周4:</strong> 各科错题整理周</li>
+                </ul>
+                
+                <h4>📚 4月目标：一模备考 + 查漏补缺</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 一模重点题型训练</li>
+                    <li><strong>周3:</strong> 一模考试</li>
+                    <li><strong>周4:</strong> 一模错题深度分析</li>
+                    <li><strong>🎯 里程碑:</strong> 一模达到80分以上</li>
+                </ul>
+            </div>
+            
+            <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h3>🏆 Q3: 5月-6月（冲刺突破期）</h3>
+                
+                <h4>📚 5月目标：二模冲刺 + 高频考点强化</h4>
+                <ul>
+                    <li><strong>周1-2:</strong> 各科高频考点刷题</li>
+                    <li><strong>周3:</strong> 二模考试</li>
+                    <li><strong>周4:</strong> 二模总结 + 专项突破</li>
+                </ul>
+                
+                <h4>📚 6月1-15日：中考前最后冲刺</h4>
+                <ul>
+                    <li><strong>周1:</strong> 模拟套卷训练（每天一套完整卷）</li>
+                    <li><strong>周2:</strong> 错题本反复过 + 回归课本</li>
+                    <li><strong>周3:</strong> 调整状态,轻度复习</li>
+                    <li><strong>🎯 目标:</strong> 中考冲击90分+</li>
+                </ul>
+            </div>
+            </div>
+
+            <div id="daily-schedule">
+                <h2>⏰ 每日详细时间安排表</h2>
+            
+            <h3>📋 工作日时间表（周一至周五）</h3>
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <thead style="background-color: #f2f2f2;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">时间段</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">内容</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">时长</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">6:30-7:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">起床+早读英语</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">背单词/课文</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">7:00-7:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">早餐+上学路上听力</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">可可英语听力</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">12:00-12:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">午休前刷单词</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">10分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">百词斩</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">放学后15分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">回顾当天课堂笔记</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">15分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">及时消化</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">18:30-19:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">晚饭+休息</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                        </tr>
+                        <tr style="background-color: #fffacd;">
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>19:00-20:00</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>数学专项</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>60分钟</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>视频学习/刷题</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">20:00-20:10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">休息</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">10分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">眼保健操</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">20:10-20:50</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">物理/化学</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">40分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">隔天轮换</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">20:50-21:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">休息</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">10分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">21:00-21:40</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">英语</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">40分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">阅读+完形</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">21:40-22:10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">政治/历史</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">背诵为主</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">22:10-22:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">整理错题+明日计划</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">20分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">22:30-23:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">洗漱+睡前过单词</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; margin-top: 10px; font-weight: bold; color: #d63384;">总学习时长：约4小时（不含课堂时间）</p>
+            </div>
+            
+            <h3>🏠 周末时间表（周六/周日）</h3>
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <thead style="background-color: #f2f2f2;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">时间段</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">内容</th>
+                            <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">时长</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">8:00-9:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">早餐+英语晨读</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">60分钟</td>
+                        </tr>
+                        <tr style="background-color: #fffacd;">
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>9:00-11:00</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>数学深度学习</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;"><strong>120分钟</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">11:00-11:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">休息+整理笔记</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">11:30-12:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">物理专题</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">60分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">12:30-14:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">午饭+午休</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">90分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">14:00-15:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">理科刷题</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">90分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">15:30-16:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">运动/放松</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">30分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">16:00-17:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">英语专项</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">90分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">17:30-18:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">晚饭+休息</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">60分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">18:30-20:00</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">文科学习</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">90分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">20:00-21:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">本周错题复习</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">90分钟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">21:30-22:30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">自由时间/预习</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">60分钟</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; margin-top: 10px; font-weight: bold; color: #d63384;">总学习时长：约8小时</p>
+            </div>
+            </div>
+
+            <div id="weekly-allocation">
+                <h2>📊 整体每周时间分配表（详细版）</h2>
+            
+            <h3>第一阶段（11-1月）周一至周五</h3>
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 14px;">
+                    <thead style="background-color: #e3f2fd;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px;">时间</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周一</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周二</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周三</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周四</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周五</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">6:30-7:00</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读</td>
+                        </tr>
+                        <tr style="background-color: #fffacd;">
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>19:00-20:00</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学基础</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学基础</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学基础</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学基础</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学基础</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">20:10-20:50</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理基础</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学基础</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理基础</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学基础</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理基础</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:00-21:40</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语语法+阅读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语语法+阅读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语语法+阅读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语语法+阅读</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语作文</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:40-22:10</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">文科复习</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">22:10-22:30</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">整理错题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">整理错题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">整理错题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">整理错题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">本周总结</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>第二阶段（2-4月）周一至周五</h3>
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 14px;">
+                    <thead style="background-color: #e8f5e8;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px;">时间</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周一</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周二</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周三</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周四</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周五</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">6:30-7:00</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读+听力</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读+听力</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读+听力</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读+听力</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语早读+听力</td>
+                        </tr>
+                        <tr style="background-color: #fffacd;">
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>19:00-20:00</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学刷题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学刷题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学刷题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学刷题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学刷题</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">20:10-20:50</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理专题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学专题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理专题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学专题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">理科综合</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:00-21:40</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语阅读3篇</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语完形2篇</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语阅读3篇</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语综合</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语作文</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:40-22:10</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治刷题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史刷题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治刷题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史刷题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">文科测试</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">22:10-22:30</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">错题整理</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">错题整理</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">错题整理</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">错题整理</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">周总结</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>第三阶段（5-6月）周一至周五</h3>
+            <div style="overflow-x: auto; margin: 20px 0;">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-size: 14px;">
+                    <thead style="background-color: #fff3cd;">
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px;">时间</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周一</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周二</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周三</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周四</th>
+                            <th style="border: 1px solid #ddd; padding: 8px;">周五</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">6:30-7:00</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语+政治背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语+历史背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语+政治背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语+历史背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语+时事</td>
+                        </tr>
+                        <tr style="background-color: #fffacd;">
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>19:00-20:00</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学高频题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学高频题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学高频题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学高频题</strong></td>
+                            <td style="border: 1px solid #ddd; padding: 6px;"><strong>数学模拟</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">20:10-20:50</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理高频题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学高频题</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">物理模拟</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">化学模拟</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">理科综合</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:00-21:40</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语保持训练</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语保持训练</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语保持训练</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语保持训练</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">英语模拟</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">21:40-22:10</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治时事+背诵</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史高频考点</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">政治模拟</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">历史模拟</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">文科总复习</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 6px;">22:10-22:30</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">看错题本</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">看错题本</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">看错题本</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">看错题本</td>
+                            <td style="border: 1px solid #ddd; padding: 6px;">看错题本</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <div id="learning-methods">
+                <h2>🎯 核心学习方法与策略</h2>
+            <img src="../images/学习效率提升技巧图.svg" alt="学习效率提升技巧图" style="width: 100%; margin: 2rem 0;">
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #dc3545;">
+                <h3>❌ 错题本使用法（最重要！）</h3>
+                
+                <h4>📚 错题本分类：</h4>
+                <ul>
+                    <li><strong>理科（数学、物理、化学）</strong>共用1本厚本</li>
+                    <li><strong>英语</strong>单独1本</li>
+                    <li><strong>文科（政治、历史）</strong>共用1本</li>
+                </ul>
+                
+                <h4>📝 记录格式：</h4>
+                <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0; border: 1px solid #ddd;">
+                    <p><strong>日期:</strong> 2024.11.15<br>
+                    <strong>科目:</strong> 数学 - 二次函数<br>
+                    <strong>错题原因:</strong> □概念不清 ☑方法不会 □计算错误 □审题失误</p>
+                    <p><strong>原题:</strong> [抄题或剪贴]<br>
+                    <strong>我的答案:</strong> [写出当时的答案]<br>
+                    <strong>正确答案:</strong> [写出正确答案]<br>
+                    <strong>解题思路:</strong> [用自己的话写出思路]<br>
+                    <strong>相似题:</strong> [找2道类似题练习]<br>
+                    <strong>复习日期:</strong> □第3天 □第7天 □第15天 □第30天</p>
+                </div>
+                
+                <h4>🔄 复习频率：艾宾浩斯记忆曲线</h4>
+                <ul>
+                    <li><strong>第1天:</strong> 做错当天</li>
+                    <li><strong>第3天:</strong> 第一次复习</li>
+                    <li><strong>第7天:</strong> 第二次复习</li>
+                    <li><strong>第15天:</strong> 第三次复习</li>
+                    <li><strong>第30天:</strong> 第四次复习</li>
+                </ul>
+            </div>
+
+            <h3>📚 专注力提升</h3>
+            <ul>
+                <li><strong>🍅 番茄工作法：</strong>25分钟专注+5分钟休息</li>
+                <li><strong>🏠 环境优化：</strong>安静、整洁的学习空间</li>
+                <li><strong>📱 手机管理：</strong>学习时间远离干扰源</li>
+                <li><strong>⏰ 时间块管理：</strong>将学习任务分解为小块</li>
+            </ul>
+
+            <h3>🧠 记忆技巧</h3>
+            <ul>
+                <li><strong>📈 艾宾浩斯遗忘曲线：</strong>及时复习，间隔重复</li>
+                <li><strong>🔗 联想记忆法：</strong>建立知识间联系</li>
+                <li><strong>🗺️ 思维导图：</strong>可视化知识结构</li>
+                <li><strong>👨‍🏫 费曼学习法：</strong>教授他人来检验理解</li>
+            </ul>
+            </div>
+
+            <div id="management-tools">
+                <h2>🛠️ 推荐时间管理工具</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+                    <h3>📅 学习计划表</h3>
+                    <p>制作详细的周计划和日计划，包含具体时间和任务安排。建议使用Excel或专门的计划应用。</p>
+                    <ul>
+                        <li>每日具体时间安排</li>
+                        <li>每周学习目标设定</li>
+                        <li>进度跟踪和调整</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+                    <h3>🍅 番茄钟应用</h3>
+                    <p>使用番茄工作法应用，提高学习专注度和效率。推荐Forest、番茄TODO等应用。</p>
+                    <ul>
+                        <li>25分钟专注计时</li>
+                        <li>休息时间提醒</li>
+                        <li>学习数据统计</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+                    <h3>📝 学习记录本</h3>
+                    <p>记录每日学习内容、时间和效果，便于总结和调整。可以使用纸质本或电子记录。</p>
+                    <ul>
+                        <li>每日学习时长记录</li>
+                        <li>学习效果评估</li>
+                        <li>问题和改进点记录</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+                    <h3>❌ 错题整理本</h3>
+                    <p>分科目整理错题，定期复习，避免重复犯错。这是提分最有效的工具。</p>
+                    <ul>
+                        <li>分科目分类整理</li>
+                        <li>错误原因分析</li>
+                        <li>定期复习计划</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div id="common-problems">
+                <h2>⚠️ 常见时间管理问题解决</h2>
+            
+            <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #ffc107;">
+                <h3>❗ 问题：作业做不完</h3>
+                <h4>🎯 解决方案：</h4>
+                
+                <h5>🛑 立即停止的作业：</h5>
+                <ul>
+                    <li>机械抄写类（抄错题本、抄课文、罚抄）</li>
+                    <li>重复性计算（会做的题反复做）</li>
+                    <li>超纲难题（中考不考的竞赛题）</li>
+                </ul>
+                
+                <h5>✅ 必须完成的作业：</h5>
+                <ul>
+                    <li>老师会讲评的题</li>
+                    <li>错题类型的变式练习</li>
+                    <li>基础概念的填空选择</li>
+                </ul>
+                
+                <h5>💬 与老师沟通话术：</h5>
+                <p style="background: white; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                    "老师，孩子现在作业确实做不完。我想和您商量：抄写类作业能否用'错题本整理'替代？重复的题能否只做一半？我保证让他把您课上讲的例题搞懂，行吗？"
+                </p>
+            </div>
+            
+            <div style="background: #f8d7da; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #dc3545;">
+                <h3>❗ 问题：学习效率低</h3>
+                <h4>🎯 解决方案：</h4>
+                
+                <h5>🔍 效率低的常见原因：</h5>
+                <ul>
+                    <li>注意力不集中（手机干扰、环境嘈杂）</li>
+                    <li>学习方法不当（死记硬背、不理解）</li>
+                    <li>疲劳学习（睡眠不足、连续学习时间过长）</li>
+                    <li>目标不明确（不知道要学什么）</li>
+                </ul>
+                
+                <h5>🔧 改进措施：</h5>
+                <ul>
+                    <li>使用番茄工作法，25分钟专注+5分钟休息</li>
+                    <li>创造安静的学习环境，远离手机</li>
+                    <li>每天保证8小时睡眠</li>
+                    <li>制定明确的学习目标和计划</li>
+                </ul>
+            </div>
+            
+            <div style="background: #d1ecf1; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #17a2b8;">
+                <h3>❗ 问题：时间分配不合理</h3>
+                <h4>🎯 解决方案：</h4>
+                
+                <h5>⚖️ 科目时间分配原则：</h5>
+                <ul>
+                    <li><strong>数学：35%</strong>（最重要，拉分最大）</li>
+                    <li><strong>物理：20%</strong>（理科重点）</li>
+                    <li><strong>英语：20%</strong>（性价比高）</li>
+                    <li><strong>化学：15%</strong>（相对简单）</li>
+                    <li><strong>政治历史：10%</strong>（最后突击）</li>
+                </ul>
+                
+                <h5>🔄 调整策略：</h5>
+                <ul>
+                    <li>每周评估各科进步情况</li>
+                    <li>根据考试成绩调整时间分配</li>
+                    <li>薄弱科目适当增加时间</li>
+                    <li>强势科目保持即可</li>
+                </ul>
+            </div>
+            
+            <div style="background: #d4edda; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 5px solid #28a745;">
+                <h3>❗ 问题：缺乏学习动力</h3>
+                <h4>🎯 解决方案：</h4>
+                
+                <h5>🎉 建立正反馈机制：</h5>
+                <ul>
+                    <li>设定小目标，及时庆祝达成</li>
+                    <li>记录每日进步，可视化成长</li>
+                    <li>寻找学习伙伴，互相鼓励</li>
+                    <li>家长给予适当奖励和认可</li>
+                </ul>
+                
+                <h5>🎯 目标激励法：</h5>
+                <ul>
+                    <li>明确中考目标学校</li>
+                    <li>了解目标学校的优势</li>
+                    <li>想象考上后的美好生活</li>
+                    <li>制作目标学校的照片贴在书桌前</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助初中生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

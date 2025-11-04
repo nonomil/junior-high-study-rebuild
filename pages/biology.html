@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生物科目学习指南 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin: 0;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 10px;
+            z-index: 101;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="chinese.html">📝 语文指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#biology-overview" onclick="scrollToSection('biology-overview')">生物学习指南</a></li>
+            <li><a href="#biology-status" onclick="scrollToSection('biology-status')">学习现状分析</a></li>
+            <li><a href="#biology-system" onclick="scrollToSection('biology-system')">核心知识体系</a></li>
+            <li><a href="#biology-physiology" onclick="scrollToSection('biology-physiology')">重点生理过程</a></li>
+            <li><a href="#biology-genetics" onclick="scrollToSection('biology-genetics')">遗传与变异</a></li>
+            <li><a href="#biology-experiment" onclick="scrollToSection('biology-experiment')">重要生物实验</a></li>
+            <li><a href="#biology-methods" onclick="scrollToSection('biology-methods')">生物学习方法</a></li>
+            <li><a href="#biology-resources" onclick="scrollToSection('biology-resources')">学习资源推荐</a></li>
+            <li><a href="#biology-exam" onclick="scrollToSection('biology-exam')">中考备考策略</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="content-page">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1 id="biology-overview">🌱 生物科目学习指南</h1>
+            <p>生命科学基础与应用</p>
+
+            <!-- 学习现状分析 -->
+            <section class="content-section" id="biology-status">
+                <h2>📊 生物学习现状分析</h2>
+                <div class="info">
+                    <p><strong>特点：</strong>生物学科理论与实际联系紧密，需要理解记忆并重。</p>
+                    <p><strong>目标：</strong>掌握生命科学基础知识，培养科学思维能力。</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🎯 学习重点</h3>
+                        <ul>
+                            <li>细胞的结构和功能</li>
+                            <li>生物的生长发育</li>
+                            <li>遗传和变异</li>
+                            <li>生物与环境</li>
+                            <li>人体生理功能</li>
+                            <li>生物技术应用</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>⚠️ 常见难点</h3>
+                        <ul>
+                            <li>细胞结构的识别</li>
+                            <li>生理过程的理解</li>
+                            <li>遗传规律的应用</li>
+                            <li>实验设计和分析</li>
+                            <li>生物图表的解读</li>
+                            <li>概念间的联系</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心知识体系 -->
+            <section class="content-section" id="biology-system">
+                <h2>🏗️ 生物核心知识体系</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>第一单元：生物和生物圈</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>生物的特征</li>
+                            <li>生物圈的概念</li>
+                            <li>环境对生物的影响</li>
+                            <li>生物对环境的适应</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li>生物的基本特征：新陈代谢、生长发育、遗传变异、应激性</li>
+                            <li>生态因子：非生物因子和生物因子</li>
+                            <li>生物的适应性：形态适应、生理适应、行为适应</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第二单元：生物体的结构层次</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>细胞是生命活动的基本单位</li>
+                            <li>植物细胞和动物细胞</li>
+                            <li>细胞的生活</li>
+                            <li>多细胞生物体的结构层次</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li>显微镜的使用方法</li>
+                            <li>植物细胞：细胞壁、细胞膜、细胞质、细胞核、液泡、叶绿体</li>
+                            <li>动物细胞：细胞膜、细胞质、细胞核</li>
+                            <li>细胞分裂：分裂过程和意义</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第三单元：生物圈中的绿色植物</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>藻类、苔藓和蕨类植物</li>
+                            <li>种子植物</li>
+                            <li>被子植物的一生</li>
+                            <li>绿色植物与生物圈的水循环</li>
+                            <li>绿色植物是生物圈中有机物的制造者</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li>种子的结构和萌发条件</li>
+                            <li>植物的根、茎、叶的结构和功能</li>
+                            <li>光合作用：条件、过程、意义</li>
+                            <li>呼吸作用：过程、意义</li>
+                            <li>蒸腾作用：过程、意义</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第四单元：生物圈中的人</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>人的由来</li>
+                            <li>人体的营养</li>
+                            <li>人体的呼吸</li>
+                            <li>人体内物质的运输</li>
+                            <li>人体内废物的排出</li>
+                            <li>人体生命活动的调节</li>
+                            <li>人类活动对生物圈的影响</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li>消化系统的组成和功能</li>
+                            <li>呼吸系统的组成和功能</li>
+                            <li>循环系统的组成和功能</li>
+                            <li>泌尿系统的组成和功能</li>
+                            <li>神经系统的组成和功能</li>
+                            <li>内分泌系统的功能</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 重点生理过程详解 -->
+            <section class="content-section" id="biology-physiology">
+                <h2>🔄 重点生理过程详解</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🌞 光合作用</h3>
+                        
+                        <h4>反应式：</h4>
+                        <p><strong>CO₂ + H₂O → (CH₂O) + O₂</strong></p>
+                        
+                        <h4>条件：</h4>
+                        <ul>
+                            <li>光照（光能）</li>
+                            <li>叶绿体（场所）</li>
+                            <li>叶绿素（催化剂）</li>
+                        </ul>
+                        
+                        <h4>过程：</h4>
+                        <ol>
+                            <li>光反应：在类囊体膜上进行</li>
+                            <li>暗反应：在叶绿体基质中进行</li>
+                        </ol>
+                        
+                        <h4>意义：</h4>
+                        <ul>
+                            <li>制造有机物</li>
+                            <li>释放氧气</li>
+                            <li>转化太阳能</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>💨 呼吸作用</h3>
+                        
+                        <h4>反应式：</h4>
+                        <p><strong>(CH₂O) + O₂ → CO₂ + H₂O + ATP</strong></p>
+                        
+                        <h4>类型：</h4>
+                        <ul>
+                            <li><strong>有氧呼吸：</strong>需要氧气参与</li>
+                            <li><strong>无氧呼吸：</strong>不需要氧气参与</li>
+                        </ul>
+                        
+                        <h4>过程：</h4>
+                        <ol>
+                            <li>糖酵解：在细胞质中进行</li>
+                            <li>柠檬酸循环：在线粒体中进行</li>
+                            <li>电子传递：在线粒体内膜进行</li>
+                        </ol>
+                        
+                        <h4>意义：</h4>
+                        <ul>
+                            <li>分解有机物</li>
+                            <li>释放能量</li>
+                            <li>产生ATP</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>💧 蒸腾作用</h3>
+                        
+                        <h4>定义：</h4>
+                        <p>植物体内的水分以水蒸气的形式从叶片散失到大气中的过程。</p>
+                        
+                        <h4>过程：</h4>
+                        <ol>
+                            <li>根部吸收水分</li>
+                            <li>水分在维管束中运输</li>
+                            <li>水分到达叶片</li>
+                            <li>通过气孔散失</li>
+                        </ol>
+                        
+                        <h4>意义：</h4>
+                        <ul>
+                            <li>促进水分吸收和运输</li>
+                            <li>促进无机盐的运输</li>
+                            <li>降低植物体温度</li>
+                            <li>参与水循环</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🔄 血液循环</h3>
+                        
+                        <h4>循环路径：</h4>
+                        <ul>
+                            <li><strong>体循环：</strong>左心室→主动脉→全身→静脉→右心房</li>
+                            <li><strong>肺循环：</strong>右心室→肺动脉→肺→肺静脉→左心房</li>
+                        </ul>
+                        
+                        <h4>血液成分：</h4>
+                        <ul>
+                            <li><strong>血浆：</strong>运输营养物质和废物</li>
+                            <li><strong>红细胞：</strong>运输氧气和二氧化碳</li>
+                            <li><strong>白细胞：</strong>免疫防御</li>
+                            <li><strong>血小板：</strong>止血凝血</li>
+                        </ul>
+                        
+                        <h4>功能：</h4>
+                        <ul>
+                            <li>运输营养物质</li>
+                            <li>运输氧气和二氧化碳</li>
+                            <li>运输代谢废物</li>
+                            <li>维持体温</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 遗传与变异 -->
+            <section class="content-section" id="biology-genetics">
+                <h2>🧬 遗传与变异</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>基本概念</h3>
+                        
+                        <h4>遗传：</h4>
+                        <p>亲代的性状传递给子代的现象。</p>
+                        
+                        <h4>变异：</h4>
+                        <p>子代与亲代之间以及子代个体之间存在差异的现象。</p>
+                        
+                        <h4>基因：</h4>
+                        <p>控制生物性状的遗传因子，是DNA分子上具有遗传信息的片段。</p>
+                        
+                        <h4>染色体：</h4>
+                        <p>细胞核内能被碱性染料染成深色的物质，由DNA和蛋白质组成。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>遗传规律</h3>
+                        
+                        <h4>基因的分离定律：</h4>
+                        <ul>
+                            <li>每个性状由一对基因控制</li>
+                            <li>基因在体细胞中成对存在</li>
+                            <li>形成生殖细胞时基因分离</li>
+                            <li>受精时基因重新组合</li>
+                        </ul>
+                        
+                        <h4>显性与隐性：</h4>
+                        <ul>
+                            <li><strong>显性基因：</strong>用大写字母表示（如A）</li>
+                            <li><strong>隐性基因：</strong>用小写字母表示（如a）</li>
+                            <li><strong>显性性状：</strong>AA、Aa都表现</li>
+                            <li><strong>隐性性状：</strong>只有aa才表现</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="success">
+                    <h3>遗传图解示例：</h3>
+                    <p><strong>双眼皮（A）×单眼皮（a）</strong></p>
+                    <ul>
+                        <li>亲代：AA（双眼皮）× aa（单眼皮）</li>
+                        <li>配子：A × a</li>
+                        <li>子代：Aa（全为双眼皮）</li>
+                        <li>子代自交：Aa × Aa</li>
+                        <li>结果：AA:Aa:aa = 1:2:1</li>
+                        <li>性状比：双眼皮:单眼皮 = 3:1</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 生物实验 -->
+            <section class="content-section" id="biology-experiment">
+                <h2>🔬 重要生物实验</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>显微镜使用</h3>
+                        
+                        <h4>操作步骤：</h4>
+                        <ol>
+                            <li>取镜和安放</li>
+                            <li>对光</li>
+                            <li>观察</li>
+                            <li>整理</li>
+                        </ol>
+                        
+                        <h4>注意事项：</h4>
+                        <ul>
+                            <li>右手握镜臂，左手托镜座</li>
+                            <li>先用低倍镜观察</li>
+                            <li>调节光线要适中</li>
+                            <li>使用完毕要清洁</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>观察植物细胞</h3>
+                        
+                        <h4>材料：</h4>
+                        <ul>
+                            <li>洋葱鳞片叶</li>
+                            <li>显微镜</li>
+                            <li>载玻片、盖玻片</li>
+                            <li>碘液</li>
+                        </ul>
+                        
+                        <h4>步骤：</h4>
+                        <ol>
+                            <li>制作临时装片</li>
+                            <li>染色</li>
+                            <li>显微镜观察</li>
+                            <li>绘图记录</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>探究光合作用</h3>
+                        
+                        <h4>实验设计：</h4>
+                        <ul>
+                            <li>对照实验</li>
+                            <li>控制变量</li>
+                            <li>设置重复</li>
+                        </ul>
+                        
+                        <h4>检测方法：</h4>
+                        <ul>
+                            <li>淀粉检测：碘液变蓝</li>
+                            <li>氧气检测：带火星木条复燃</li>
+                            <li>二氧化碳检测：石灰水变浑浊</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习方法指导 -->
+            <section class="content-section" id="biology-methods">
+                <h2>📚 生物学习方法</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>理解记忆法</h3>
+                        
+                        <h4>概念理解：</h4>
+                        <ul>
+                            <li>抓住关键词</li>
+                            <li>理解本质特征</li>
+                            <li>联系实际生活</li>
+                            <li>对比相似概念</li>
+                        </ul>
+                        
+                        <h4>过程理解：</h4>
+                        <ul>
+                            <li>分步骤理解</li>
+                            <li>画流程图</li>
+                            <li>找因果关系</li>
+                            <li>联系结构功能</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>图表分析法</h3>
+                        
+                        <h4>结构图分析：</h4>
+                        <ul>
+                            <li>识别各部分名称</li>
+                            <li>理解结构功能</li>
+                            <li>掌握相互关系</li>
+                            <li>联系生理过程</li>
+                        </ul>
+                        
+                        <h4>数据图表：</h4>
+                        <ul>
+                            <li>读懂坐标轴</li>
+                            <li>分析变化趋势</li>
+                            <li>找关键数据点</li>
+                            <li>得出结论</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习资源推荐 -->
+            <section class="content-section" id="biology-resources">
+                <h2>📖 学习资源推荐</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>教材资源</h3>
+                        <ul>
+                            <li><strong>人教版生物教材：</strong>基础知识全面</li>
+                            <li><strong>生物图谱：</strong>结构图详细</li>
+                            <li><strong>实验手册：</strong>实验操作指导</li>
+                            <li><strong>生物词典：</strong>概念解释清楚</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>在线资源</h3>
+                        <ul>
+                            <li><strong>生物学习网：</strong>知识点详解</li>
+                            <li><strong>生物实验室：</strong>虚拟实验</li>
+                            <li><strong>生物百科：</strong>拓展知识</li>
+                            <li><strong>中考生物：</strong>真题练习</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>学习工具</h3>
+                        <ul>
+                            <li><strong>显微镜：</strong>观察细胞结构</li>
+                            <li><strong>生物模型：</strong>立体认识</li>
+                            <li><strong>标本：</strong>实物观察</li>
+                            <li><strong>思维导图：</strong>知识整理</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 备考策略 -->
+            <section class="content-section" id="biology-exam">
+                <h2>🎯 中考备考策略</h2>
+                
+                <div class="success">
+                    <h3>备考重点：</h3>
+                    <ul>
+                        <li><strong>基础知识：</strong>概念、原理、过程</li>
+                        <li><strong>实验技能：</strong>操作、观察、分析</li>
+                        <li><strong>应用能力：</strong>解决实际问题</li>
+                        <li><strong>科学思维：</strong>逻辑推理能力</li>
+                    </ul>
+                </div>
+                
+                <div class="info">
+                    <h3>答题技巧：</h3>
+                    <ul>
+                        <li>选择题要仔细分析每个选项</li>
+                        <li>填空题要注意生物学术语的准确性</li>
+                        <li>实验题要理解实验原理和设计思路</li>
+                        <li>分析题要结合图表信息进行推理</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助学生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveLink(sectionId);
+            }
+        }
+
+        function updateActiveLink(activeId) {
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = ['biology-overview', 'biology-status', 'biology-system', 'biology-physiology', 'biology-genetics', 'biology-experiment', 'biology-methods', 'biology-resources', 'biology-exam'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                updateActiveLink(currentSection);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveLink('biology-overview');
+        });
+    </script>
+</body>
+</html>
