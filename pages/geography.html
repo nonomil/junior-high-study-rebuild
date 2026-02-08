@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理科目学习指南 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin: 0;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 10px;
+            z-index: 101;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="chinese.html">📝 语文指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#geography-overview" onclick="scrollToSection('geography-overview')">地理学习指南</a></li>
+            <li><a href="#geography-status" onclick="scrollToSection('geography-status')">学习现状分析</a></li>
+            <li><a href="#geography-system" onclick="scrollToSection('geography-system')">核心知识体系</a></li>
+            <li><a href="#geography-map" onclick="scrollToSection('geography-map')">地图技能专题</a></li>
+            <li><a href="#geography-nature" onclick="scrollToSection('geography-nature')">自然地理要素</a></li>
+            <li><a href="#geography-human" onclick="scrollToSection('geography-human')">人文地理要素</a></li>
+            <li><a href="#geography-region" onclick="scrollToSection('geography-region')">区域地理专题</a></li>
+            <li><a href="#geography-methods" onclick="scrollToSection('geography-methods')">地理学习方法</a></li>
+            <li><a href="#geography-resources" onclick="scrollToSection('geography-resources')">学习资源推荐</a></li>
+            <li><a href="#geography-exam" onclick="scrollToSection('geography-exam')">中考备考策略</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="content-page">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1 id="geography-overview">🌍 地理科目学习指南</h1>
+            <p>认识世界，理解地球</p>
+
+            <!-- 学习现状分析 -->
+            <section class="content-section" id="geography-status">
+                <h2>📊 地理学习现状分析</h2>
+                <div class="info">
+                    <p><strong>特点：</strong>地理学科综合性强，涉及自然地理和人文地理两大领域。</p>
+                    <p><strong>目标：</strong>培养空间思维能力，理解人地关系，掌握地理基本技能。</p>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🎯 学习重点</h3>
+                        <ul>
+                            <li>地球与地图基础知识</li>
+                            <li>世界地理概况</li>
+                            <li>中国地理特征</li>
+                            <li>自然地理要素</li>
+                            <li>人文地理现象</li>
+                            <li>区域地理特色</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>⚠️ 常见难点</h3>
+                        <ul>
+                            <li>地图的阅读和使用</li>
+                            <li>地理坐标的确定</li>
+                            <li>气候类型的判断</li>
+                            <li>地形特征的分析</li>
+                            <li>区域特征的比较</li>
+                            <li>地理现象的成因</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 核心知识体系 -->
+            <section class="content-section" id="geography-system">
+                <h2>🏗️ 地理核心知识体系</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>第一部分：地球与地图</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>地球的形状和大小</li>
+                            <li>地球的运动</li>
+                            <li>地图的基本要素</li>
+                            <li>地图的类型和用途</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li><strong>经纬网：</strong>经度、纬度的划分和意义</li>
+                            <li><strong>地球自转：</strong>方向、周期、地理意义</li>
+                            <li><strong>地球公转：</strong>轨道、周期、地理意义</li>
+                            <li><strong>地图三要素：</strong>比例尺、方向、图例</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第二部分：世界地理</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>世界的陆地和海洋</li>
+                            <li>世界的气候</li>
+                            <li>世界的居民</li>
+                            <li>世界的发展差异</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li><strong>七大洲：</strong>亚洲、欧洲、非洲、北美洲、南美洲、大洋洲、南极洲</li>
+                            <li><strong>四大洋：</strong>太平洋、大西洋、印度洋、北冰洋</li>
+                            <li><strong>气候类型：</strong>热带、温带、寒带气候特征</li>
+                            <li><strong>人口分布：</strong>人口稠密区和稀疏区</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第三部分：中国地理</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>中国的疆域</li>
+                            <li>中国的人口</li>
+                            <li>中国的自然环境</li>
+                            <li>中国的自然资源</li>
+                            <li>中国的经济发展</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li><strong>疆域：</strong>位置、面积、邻国、行政区划</li>
+                            <li><strong>地形：</strong>三级阶梯、主要山脉、高原、平原</li>
+                            <li><strong>气候：</strong>季风气候特征、气候类型分布</li>
+                            <li><strong>河流：</strong>长江、黄河水系特征</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3>第四部分：区域地理</h3>
+                        <h4>核心概念：</h4>
+                        <ul>
+                            <li>北方地区</li>
+                            <li>南方地区</li>
+                            <li>西北地区</li>
+                            <li>青藏地区</li>
+                        </ul>
+                        <h4>重点内容：</h4>
+                        <ul>
+                            <li><strong>区域划分：</strong>自然和人文特征</li>
+                            <li><strong>区域差异：</strong>气候、地形、资源差异</li>
+                            <li><strong>区域发展：</strong>农业、工业、交通特色</li>
+                            <li><strong>区域问题：</strong>环境问题和解决措施</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 地图技能专题 -->
+            <section class="content-section" id="geography-map">
+                <h2>🗺️ 地图技能专题</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>地图基本要素</h3>
+                        
+                        <h4>1. 比例尺</h4>
+                        <ul>
+                            <li><strong>数字式：</strong>1:1000000</li>
+                            <li><strong>文字式：</strong>图上1厘米代表实地10千米</li>
+                            <li><strong>线段式：</strong>用线段表示</li>
+                        </ul>
+                        
+                        <h4>2. 方向</h4>
+                        <ul>
+                            <li><strong>一般定向：</strong>上北下南，左西右东</li>
+                            <li><strong>指向标定向：</strong>根据指向标确定</li>
+                            <li><strong>经纬网定向：</strong>经线指示南北，纬线指示东西</li>
+                        </ul>
+                        
+                        <h4>3. 图例和注记</h4>
+                        <ul>
+                            <li>符号表示地理事物</li>
+                            <li>颜色表示不同类别</li>
+                            <li>文字说明地名等</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>地图类型与用途</h3>
+                        
+                        <h4>按内容分类：</h4>
+                        <ul>
+                            <li><strong>地形图：</strong>表示地形起伏</li>
+                            <li><strong>气候图：</strong>表示气候要素</li>
+                            <li><strong>人口图：</strong>表示人口分布</li>
+                            <li><strong>交通图：</strong>表示交通线路</li>
+                        </ul>
+                        
+                        <h4>按比例尺分类：</h4>
+                        <ul>
+                            <li><strong>大比例尺：</strong>1:10万以上，范围小，内容详细</li>
+                            <li><strong>中比例尺：</strong>1:10万-1:100万，范围中等</li>
+                            <li><strong>小比例尺：</strong>1:100万以下，范围大，内容概括</li>
+                        </ul>
+                        
+                        <h4>地图的用途：</h4>
+                        <ul>
+                            <li>确定地理位置</li>
+                            <li>量算距离和面积</li>
+                            <li>分析地理现象分布</li>
+                            <li>进行路线规划</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 自然地理要素 -->
+            <section class="content-section" id="geography-nature">
+                <h2>🌿 自然地理要素</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🏔️ 地形地貌</h3>
+                        
+                        <h4>地形类型：</h4>
+                        <ul>
+                            <li><strong>山地：</strong>海拔500米以上，坡度陡峭</li>
+                            <li><strong>丘陵：</strong>海拔200-500米，起伏和缓</li>
+                            <li><strong>高原：</strong>海拔500米以上，地面平坦</li>
+                            <li><strong>平原：</strong>海拔200米以下，地势平坦</li>
+                            <li><strong>盆地：</strong>四周高中间低的地形</li>
+                        </ul>
+                        
+                        <h4>中国主要地形区：</h4>
+                        <ul>
+                            <li><strong>四大高原：</strong>青藏、内蒙古、黄土、云贵高原</li>
+                            <li><strong>四大盆地：</strong>塔里木、准噶尔、柴达木、四川盆地</li>
+                            <li><strong>三大平原：</strong>东北、华北、长江中下游平原</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🌤️ 气候特征</h3>
+                        
+                        <h4>气候要素：</h4>
+                        <ul>
+                            <li><strong>气温：</strong>日较差、年较差、分布规律</li>
+                            <li><strong>降水：</strong>降水量、降水季节分配</li>
+                            <li><strong>风：</strong>风向、风力、季风</li>
+                        </ul>
+                        
+                        <h4>中国气候特征：</h4>
+                        <ul>
+                            <li><strong>季风气候显著：</strong>夏季风、冬季风</li>
+                            <li><strong>大陆性气候：</strong>气温年较差大</li>
+                            <li><strong>气候复杂多样：</strong>多种气候类型</li>
+                        </ul>
+                        
+                        <h4>主要气候类型：</h4>
+                        <ul>
+                            <li><strong>温带季风气候：</strong>东北、华北地区</li>
+                            <li><strong>亚热带季风气候：</strong>长江流域</li>
+                            <li><strong>热带季风气候：</strong>华南地区</li>
+                            <li><strong>温带大陆性气候：</strong>西北地区</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🏞️ 河流水系</h3>
+                        
+                        <h4>河流特征：</h4>
+                        <ul>
+                            <li><strong>流向：</strong>由地势高处流向低处</li>
+                            <li><strong>流量：</strong>与降水和流域面积有关</li>
+                            <li><strong>汛期：</strong>河流水位最高的时期</li>
+                            <li><strong>含沙量：</strong>河水中泥沙的含量</li>
+                        </ul>
+                        
+                        <h4>长江水系：</h4>
+                        <ul>
+                            <li><strong>发源地：</strong>青藏高原唐古拉山</li>
+                            <li><strong>流经省区：</strong>11个省市区</li>
+                            <li><strong>主要支流：</strong>嘉陵江、汉江、赣江等</li>
+                            <li><strong>水能资源：</strong>丰富，三峡工程</li>
+                        </ul>
+                        
+                        <h4>黄河水系：</h4>
+                        <ul>
+                            <li><strong>发源地：</strong>青藏高原巴颜喀拉山</li>
+                            <li><strong>流经省区：</strong>9个省区</li>
+                            <li><strong>主要特征：</strong>含沙量大，"地上河"</li>
+                            <li><strong>治理措施：</strong>水土保持，防洪治沙</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>🌱 自然资源</h3>
+                        
+                        <h4>土地资源：</h4>
+                        <ul>
+                            <li><strong>耕地：</strong>主要分布在东部平原</li>
+                            <li><strong>草地：</strong>主要分布在西部高原</li>
+                            <li><strong>林地：</strong>主要分布在东北、西南</li>
+                            <li><strong>特点：</strong>总量大，人均少，分布不均</li>
+                        </ul>
+                        
+                        <h4>水资源：</h4>
+                        <ul>
+                            <li><strong>分布特点：</strong>南多北少，东多西少</li>
+                            <li><strong>时间分配：</strong>夏秋多，冬春少</li>
+                            <li><strong>解决措施：</strong>南水北调，节约用水</li>
+                        </ul>
+                        
+                        <h4>矿产资源：</h4>
+                        <ul>
+                            <li><strong>能源矿产：</strong>煤炭、石油、天然气</li>
+                            <li><strong>金属矿产：</strong>铁矿、有色金属</li>
+                            <li><strong>分布特点：</strong>种类齐全，分布广泛</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 人文地理要素 -->
+            <section class="content-section" id="geography-human">
+                <h2>👥 人文地理要素</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>人口分布</h3>
+                        
+                        <h4>中国人口特点：</h4>
+                        <ul>
+                            <li><strong>人口总数：</strong>世界第一人口大国</li>
+                            <li><strong>人口密度：</strong>东部密集，西部稀疏</li>
+                            <li><strong>人口增长：</strong>增长速度放缓</li>
+                            <li><strong>人口结构：</strong>老龄化趋势明显</li>
+                        </ul>
+                        
+                        <h4>人口分布界线：</h4>
+                        <ul>
+                            <li><strong>胡焕庸线：</strong>黑河-腾冲线</li>
+                            <li><strong>东南半壁：</strong>人口稠密，占94%</li>
+                            <li><strong>西北半壁：</strong>人口稀疏，占6%</li>
+                        </ul>
+                        
+                        <h4>影响因素：</h4>
+                        <ul>
+                            <li>自然条件：气候、地形、水源</li>
+                            <li>社会经济：交通、工业、城市</li>
+                            <li>历史因素：开发历史、政策</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>民族分布</h3>
+                        
+                        <h4>民族构成：</h4>
+                        <ul>
+                            <li><strong>56个民族：</strong>汉族和55个少数民族</li>
+                            <li><strong>汉族：</strong>占总人口91.5%</li>
+                            <li><strong>少数民族：</strong>占总人口8.5%</li>
+                        </ul>
+                        
+                        <h4>分布特点：</h4>
+                        <ul>
+                            <li><strong>大杂居，小聚居：</strong>总体分布特点</li>
+                            <li><strong>汉族：</strong>遍布全国，东部集中</li>
+                            <li><strong>少数民族：</strong>主要分布在边疆地区</li>
+                        </ul>
+                        
+                        <h4>主要少数民族：</h4>
+                        <ul>
+                            <li><strong>壮族：</strong>人口最多的少数民族</li>
+                            <li><strong>维吾尔族：</strong>主要分布在新疆</li>
+                            <li><strong>藏族：</strong>主要分布在西藏</li>
+                            <li><strong>蒙古族：</strong>主要分布在内蒙古</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 区域地理专题 -->
+            <section class="content-section" id="geography-region">
+                <h2>🏞️ 区域地理专题</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>四大地理区域</h3>
+                        
+                        <h4>北方地区：</h4>
+                        <ul>
+                            <li><strong>范围：</strong>秦岭-淮河以北</li>
+                            <li><strong>地形：</strong>以平原、高原为主</li>
+                            <li><strong>气候：</strong>温带季风气候</li>
+                            <li><strong>农业：</strong>旱作农业，小麦、玉米</li>
+                        </ul>
+                        
+                        <h4>南方地区：</h4>
+                        <ul>
+                            <li><strong>范围：</strong>秦岭-淮河以南</li>
+                            <li><strong>地形：</strong>以平原、丘陵、高原为主</li>
+                            <li><strong>气候：</strong>亚热带、热带季风气候</li>
+                            <li><strong>农业：</strong>水田农业，水稻</li>
+                        </ul>
+                        
+                        <h4>西北地区：</h4>
+                        <ul>
+                            <li><strong>范围：</strong>大兴安岭以西，昆仑山以北</li>
+                            <li><strong>地形：</strong>高原、盆地为主</li>
+                            <li><strong>气候：</strong>温带大陆性气候</li>
+                            <li><strong>农业：</strong>畜牧业，绿洲农业</li>
+                        </ul>
+                        
+                        <h4>青藏地区：</h4>
+                        <ul>
+                            <li><strong>范围：</strong>昆仑山以南，横断山以西</li>
+                            <li><strong>地形：</strong>以高原、山地为主</li>
+                            <li><strong>气候：</strong>高原山地气候</li>
+                            <li><strong>农业：</strong>河谷农业，高寒牧业</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>重要经济区</h3>
+                        
+                        <h4>长江三角洲：</h4>
+                        <ul>
+                            <li><strong>位置：</strong>长江入海口</li>
+                            <li><strong>城市：</strong>上海、南京、杭州</li>
+                            <li><strong>优势：</strong>交通便利，经济发达</li>
+                            <li><strong>产业：</strong>制造业、服务业</li>
+                        </ul>
+                        
+                        <h4>珠江三角洲：</h4>
+                        <ul>
+                            <li><strong>位置：</strong>珠江入海口</li>
+                            <li><strong>城市：</strong>广州、深圳、珠海</li>
+                            <li><strong>优势：</strong>毗邻港澳，对外开放</li>
+                            <li><strong>产业：</strong>加工制造业</li>
+                        </ul>
+                        
+                        <h4>环渤海地区：</h4>
+                        <ul>
+                            <li><strong>位置：</strong>渤海沿岸</li>
+                            <li><strong>城市：</strong>北京、天津、大连</li>
+                            <li><strong>优势：</strong>资源丰富，工业基础好</li>
+                            <li><strong>产业：</strong>重工业、高新技术</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 地理学习方法 -->
+            <section class="content-section" id="geography-methods">
+                <h2>📚 地理学习方法</h2>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>地图学习法</h3>
+                        
+                        <h4>读图步骤：</h4>
+                        <ol>
+                            <li><strong>看图名：</strong>了解地图主题</li>
+                            <li><strong>看图例：</strong>理解符号含义</li>
+                            <li><strong>看比例尺：</strong>判断范围大小</li>
+                            <li><strong>看方向：</strong>确定空间位置</li>
+                            <li><strong>看内容：</strong>分析地理信息</li>
+                        </ol>
+                        
+                        <h4>用图方法：</h4>
+                        <ul>
+                            <li>图文结合，相互印证</li>
+                            <li>对比分析，找出差异</li>
+                            <li>空间定位，建立联系</li>
+                            <li>动态分析，把握变化</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>区域学习法</h3>
+                        
+                        <h4>分析要素：</h4>
+                        <ul>
+                            <li><strong>位置：</strong>经纬度位置、相对位置</li>
+                            <li><strong>自然：</strong>地形、气候、河流、资源</li>
+                            <li><strong>人文：</strong>人口、民族、城市、交通</li>
+                            <li><strong>经济：</strong>农业、工业、第三产业</li>
+                        </ul>
+                        
+                        <h4>比较方法：</h4>
+                        <ul>
+                            <li>列表比较法</li>
+                            <li>图表对比法</li>
+                            <li>综合分析法</li>
+                            <li>因果关系法</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 学习资源推荐 -->
+            <section class="content-section" id="geography-resources">
+                <h2>📖 学习资源推荐</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>教材资源</h3>
+                        <ul>
+                            <li><strong>人教版地理教材：</strong>基础知识全面</li>
+                            <li><strong>地理图册：</strong>地图资料丰富</li>
+                            <li><strong>地理填充图册：</strong>练习巩固</li>
+                            <li><strong>中国地理常识：</strong>区域地理详解</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>在线资源</h3>
+                        <ul>
+                            <li><strong>地理学习网：</strong>知识点详解</li>
+                            <li><strong>谷歌地球：</strong>卫星影像</li>
+                            <li><strong>地理信息系统：</strong>空间分析</li>
+                            <li><strong>中考地理：</strong>真题练习</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>学习工具</h3>
+                        <ul>
+                            <li><strong>地球仪：</strong>立体认识地球</li>
+                            <li><strong>地图册：</strong>各种专题地图</li>
+                            <li><strong>指南针：</strong>方向判断</li>
+                            <li><strong>思维导图：</strong>知识整理</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 备考策略 -->
+            <section class="content-section" id="geography-exam">
+                <h2>🎯 中考备考策略</h2>
+                
+                <div class="success">
+                    <h3>备考重点：</h3>
+                    <ul>
+                        <li><strong>基础知识：</strong>地理概念、原理、规律</li>
+                        <li><strong>地图技能：</strong>读图、析图、用图能力</li>
+                        <li><strong>区域认知：</strong>重要区域特征和差异</li>
+                        <li><strong>综合分析：</strong>地理现象成因和影响</li>
+                    </ul>
+                </div>
+                
+                <div class="info">
+                    <h3>答题技巧：</h3>
+                    <ul>
+                        <li>选择题要仔细读图，排除干扰选项</li>
+                        <li>填空题要注意地理术语的准确性</li>
+                        <li>读图题要按照读图步骤系统分析</li>
+                        <li>综合题要运用地理原理进行分析</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助学生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveLink(sectionId);
+            }
+        }
+
+        function updateActiveLink(activeId) {
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = ['geography-overview', 'geography-status', 'geography-system', 'geography-map', 'geography-nature', 'geography-human', 'geography-region', 'geography-methods', 'geography-resources', 'geography-exam'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                updateActiveLink(currentSection);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveLink('geography-overview');
+        });
+    </script>
+</body>
+</html>

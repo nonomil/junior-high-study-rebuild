@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物理学习指南 - 初中学习低分重建</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin: 0;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 10px;
+            z-index: 101;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="chinese.html">📝 语文指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#overview" onclick="scrollToSection('overview')">8个月总体规划</a></li>
+            <li><a href="#knowledge-framework" onclick="scrollToSection('knowledge-framework')">物理知识框架</a></li>
+            <li><a href="#month1-electricity" onclick="scrollToSection('month1-electricity')">第1个月：电学专项</a></li>
+            <li><a href="#experiment-training" onclick="scrollToSection('experiment-training')">实验题专项训练</a></li>
+            <li><a href="#learning-materials" onclick="scrollToSection('learning-materials')">学习资料推荐</a></li>
+            <li><a href="#daily-schedule" onclick="scrollToSection('daily-schedule')">每日学习安排</a></li>
+            <li><a href="#detailed-methods" onclick="scrollToSection('detailed-methods')">详细学习方法</a></li>
+            <li><a href="#subject-specific-methods" onclick="scrollToSection('subject-specific-methods')">🔧 物理专属方法</a></li>
+            <li><a href="#problem-solving" onclick="scrollToSection('problem-solving')">解题技巧与方法</a></li>
+            <li><a href="#error-management" onclick="scrollToSection('error-management')">错题管理系统</a></li>
+            <li><a href="#key-principles" onclick="scrollToSection('key-principles')">关键原则</a></li>
+            <li><a href="#effect-evaluation" onclick="scrollToSection('effect-evaluation')">学习效果评估</a></li>
+            <li><a href="#final-advice" onclick="scrollToSection('final-advice')">最后的建议</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="content-page">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1>物理学习指南</h1>
+            
+            <div class="alert alert-info">
+                <h3>🔬 物理学习的核心原则</h3>
+                <p><strong>理解现象，而不是背公式！</strong>物理不是数学，不能只做题。要先理解现象，再做题。每个公式都对应一个现象，联系生活实际来理解。</p>
+            </div>
+
+            <div id="overview">
+                <h2>📊 8个月物理学习总体规划</h2>
+            
+                <div class="study-plan-overview">
+                <div class="phase-card">
+                    <h3>第1-3个月：基础重建期</h3>
+                    <ul>
+                        <li><strong>目标</strong>：从60-70分提升到75-80分</li>
+                        <li><strong>重点</strong>：建立物理知识框架，攻克最薄弱的2个板块</li>
+                        <li><strong>方法</strong>：理解现象 → 掌握公式 → 基础练习</li>
+                        <li><strong>时间分配</strong>：每天45分钟，周末90分钟</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <h3>第4-6个月：能力提升期</h3>
+                    <ul>
+                        <li><strong>目标</strong>：稳定在80分以上</li>
+                        <li><strong>重点</strong>：实验题专项训练，综合题突破</li>
+                        <li><strong>方法</strong>：实验套路总结 → 综合题训练 → 错题分析</li>
+                        <li><strong>时间分配</strong>：每天50分钟，周末120分钟</li>
+                    </ul>
+                </div>
+                
+                <div class="phase-card">
+                    <h3>第7-8个月：冲刺突破期</h3>
+                    <ul>
+                        <li><strong>目标</strong>：冲击85分以上</li>
+                        <li><strong>重点</strong>：中考真题训练，查漏补缺</li>
+                        <li><strong>方法</strong>：真题模拟 → 专项突破 → 应试技巧</li>
+                        <li><strong>时间分配</strong>：每天60分钟，周末150分钟</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div id="knowledge-framework">
+                <h2>🧠 建立物理知识框架（第1天必做）</h2>
+            
+            <div class="framework-guide">
+                <h3>用思维导图理清物理全貌</h3>
+                <div class="step-by-step">
+                    <div class="step">
+                        <h4>步骤1：画出物理知识树</h4>
+                        <div class="code-block">
+                            <pre>
+拿出一张A4纸，画一个思维导图：
+
+                    初中物理
+                      |
+        --------------------------------
+        |              |               |
+      力学          电学            光学/热学
+        |              |               |
+    --------        --------        --------
+    |  |  |        |  |  |        |  |  |
+   力 运动 压强    电路 欧姆定律   光的反射...
+                            </pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <h4>步骤2：标注掌握程度</h4>
+                        <ul>
+                            <li><span class="color-green">绿色</span>：完全掌握（80%以上正确率）</li>
+                            <li><span class="color-yellow">黄色</span>：部分掌握（50-80%正确率）</li>
+                            <li><span class="color-red">红色</span>：不掌握（50%以下正确率）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="step">
+                        <h4>步骤3：制定攻克顺序</h4>
+                        <p>优先攻克<span class="color-red">红色</span>板块，通常顺序为：电学 → 力学 → 光学/热学</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="month1-electricity">
+                <h2>⚡ 第1个月：电学专项突破</h2>
+            
+            <div class="monthly-plan">
+                <h3>Week 1: 理解电路基础</h3>
+                
+                <div class="daily-schedule">
+                    <div class="day-plan">
+                        <h4>Day 1: 用生活例子理解基本概念</h4>
+                        <div class="concept-explanation">
+                            <h5>🔌 电流、电压、电阻的生活理解</h5>
+                            <ul>
+                                <li><strong>电流 = 水流</strong>：电子的流动就像水的流动</li>
+                                <li><strong>电压 = 水压</strong>：水压大，水流快；电压高，电流大</li>
+                                <li><strong>电阻 = 水管粗细</strong>：管细阻力大，线细电阻大</li>
+                            </ul>
+                            
+                            <h5>🤔 思考生活例子</h5>
+                            <ul>
+                                <li>为什么手机充电器有大有小？（功率不同）</li>
+                                <li>为什么电线要用铜线不用铁线？（电阻小）</li>
+                                <li>为什么电路短路会跳闸？（电流太大）</li>
+                            </ul>
+                            
+                            <div class="practice-task">
+                                <strong>今日任务：</strong>和父母一起讨论这些例子，理解了再看课本定义
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day-plan">
+                        <h4>Day 2-3: 画电路图（电学的关键）</h4>
+                        <div class="circuit-training">
+                            <h5>📝 电路图训练步骤</h5>
+                            <ol>
+                                <li><strong>抄画练习</strong>：把课本所有电路图抄一遍
+                                    <ul>
+                                        <li>串联电路</li>
+                                        <li>并联电路</li>
+                                        <li>混合电路</li>
+                                    </ul>
+                                </li>
+                                <li><strong>边画边说</strong>：
+                                    <ul>
+                                        <li>"这是串联，电流只有一条路..."</li>
+                                        <li>"这是并联，电流有两条路..."</li>
+                                    </ul>
+                                </li>
+                                <li><strong>转换练习</strong>：
+                                    <ul>
+                                        <li>实物图 → 电路图</li>
+                                        <li>电路图 → 判断串并联</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            
+                            <div class="practice-task">
+                                <strong>目标：</strong>画20个电路图，熟练掌握串并联识别
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day-plan">
+                        <h4>Day 4-5: 理解欧姆定律</h4>
+                        <div class="ohm-law-guide">
+                            <h5>⚡ 欧姆定律深度理解</h5>
+                            
+                            <div class="formula-explanation">
+                                <h6>不要死背 I=U/R，要理解含义：</h6>
+                                <ul>
+                                    <li><strong>电压越大，电流越大</strong>（水压大，水流快）</li>
+                                    <li><strong>电阻越大，电流越小</strong>（管细，水流慢）</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="application-rules">
+                                <h6>🔍 应用要点：</h6>
+                                <ul>
+                                    <li><strong>串联电路</strong>：电流处处相等（I₁=I₂=I总）</li>
+                                    <li><strong>并联电路</strong>：电压处处相等（U₁=U₂=U总）</li>
+                                    <li><strong>使用条件</strong>：已知两个量，求第三个量</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="practice-task">
+                                <strong>练习：</strong>做3道例题，搞懂公式应用方法
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="day-plan">
+                        <h4>Day 6: 综合题训练</h4>
+                        <div class="problem-solving">
+                            <h5>🎯 串并联电路计算题解题步骤</h5>
+                            <ol>
+                                <li><strong>第一步</strong>：画电路图</li>
+                                <li><strong>第二步</strong>：标注已知量</li>
+                                <li><strong>第三步</strong>：判断串联还是并联</li>
+                                <li><strong>第四步</strong>：列公式</li>
+                                <li><strong>第五步</strong>：计算</li>
+                            </ol>
+                            
+                            <div class="practice-task">
+                                <strong>训练量：</strong>5道串并联电路计算题，不求快，要求每步都理解
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Week 2-4: 力学与光学突破</h3>
+                <div class="weekly-pattern">
+                    <h4>📅 每个知识点的7天学习模式</h4>
+                    <ul>
+                        <li><strong>Day 1</strong>：理解概念（用生活例子）</li>
+                        <li><strong>Day 2-3</strong>：理解公式（为什么是这个公式？）</li>
+                        <li><strong>Day 4-5</strong>：做基础题（3-5道）</li>
+                        <li><strong>Day 6</strong>：做综合题（检验）</li>
+                        <li><strong>Day 7</strong>：整理错题+休息</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div id="experiment-training">
+                <h2>🔬 实验题专项训练（第2-3个月）</h2>
+            
+            <div class="experiment-guide">
+                <h3>实验题的万能套路</h3>
+                
+                <div class="experiment-pattern">
+                    <h4>🤔 实验题通常问什么？</h4>
+                    <ol>
+                        <li>实验目的是什么？</li>
+                        <li>实验步骤是什么？</li>
+                        <li>为什么要这样做？</li>
+                        <li>如果出现XX现象，说明什么？</li>
+                    </ol>
+                </div>
+                
+                <div class="experiment-method">
+                    <h4>📋 解题方法</h4>
+                    <ol>
+                        <li><strong>熟悉课本实验</strong>：课本上每个实验都要看懂</li>
+                        <li><strong>总结实验套路</strong>：
+                            <div class="experiment-example">
+                                <h5>例如：测电阻实验</h5>
+                                <ul>
+                                    <li><strong>目的</strong>：测未知电阻</li>
+                                    <li><strong>原理</strong>：欧姆定律 R=U/I</li>
+                                    <li><strong>步骤</strong>：画电路图 → 连接电路 → 读数 → 计算</li>
+                                    <li><strong>易错点</strong>：滑动变阻器怎么连接</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><strong>制作实验表格</strong>：把所有实验的套路整理成表格</li>
+                        <li><strong>专项练习</strong>：做10道实验题，熟悉套路</li>
+                    </ol>
+                </div>
+                
+                <h3>重点实验详解</h3>
+                
+                <div class="key-experiments">
+                    <div class="experiment-detail">
+                        <h4>⚖️ 探究杠杆平衡条件</h4>
+                        <ul>
+                            <li><strong>实验原理</strong>：F₁L₁ = F₂L₂</li>
+                            <li><strong>实验器材</strong>：杠杆、钩码、刻度尺</li>
+                            <li><strong>关键步骤</strong>：
+                                <ol>
+                                    <li>调节杠杆水平平衡</li>
+                                    <li>在杠杆两侧挂钩码</li>
+                                    <li>测量力臂长度</li>
+                                    <li>记录数据，验证规律</li>
+                                </ol>
+                            </li>
+                            <li><strong>易错点</strong>：力臂不是力的作用点到支点的距离，而是力的作用线到支点的垂直距离</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experiment-detail">
+                        <h4>💡 测量小灯泡电功率</h4>
+                        <ul>
+                            <li><strong>实验原理</strong>：P = UI</li>
+                            <li><strong>实验器材</strong>：电源、小灯泡、电流表、电压表、滑动变阻器</li>
+                            <li><strong>关键步骤</strong>：
+                                <ol>
+                                    <li>按电路图连接电路</li>
+                                    <li>调节滑动变阻器</li>
+                                    <li>读取电流表、电压表示数</li>
+                                    <li>计算电功率</li>
+                                </ol>
+                            </li>
+                            <li><strong>易错点</strong>：
+                                <ul>
+                                    <li>滑动变阻器的正确连接</li>
+                                    <li>电表的量程选择</li>
+                                    <li>额定功率与实际功率的区别</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experiment-detail">
+                        <h4>🔍 探究凸透镜成像规律</h4>
+                        <ul>
+                            <li><strong>实验器材</strong>：凸透镜、光屏、蜡烛、光具座</li>
+                            <li><strong>成像规律</strong>：
+                                <ul>
+                                    <li>u > 2f：倒立、缩小、实像（照相机原理）</li>
+                                    <li>u = 2f：倒立、等大、实像</li>
+                                    <li>f < u < 2f：倒立、放大、实像（投影仪原理）</li>
+                                    <li>u = f：不成像</li>
+                                    <li>u < f：正立、放大、虚像（放大镜原理）</li>
+                                </ul>
+                            </li>
+                            <li><strong>记忆口诀</strong>："一倍焦距分虚实，二倍焦距分大小"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="learning-materials">
+                <h2>📚 学习资料推荐</h2>
+            
+            <div class="learning-resources">
+                <div class="resource-category">
+                    <h3>📖 教材与辅导书</h3>
+                    
+                    <div class="score-based-resources">
+                        <div class="score-range">
+                            <h4>60分以下学生推荐</h4>
+                            <ul>
+                                <li><strong>主教材</strong>：人教版初中物理教材（反复读）</li>
+                                <li><strong>辅导书</strong>：
+                                    <ul>
+                                        <li>《初中物理基础知识手册》- 概念理解</li>
+                                        <li>《物理实验一本通》- 实验理解</li>
+                                        <li>《初中物理公式大全》- 公式应用</li>
+                                    </ul>
+                                </li>
+                                <li><strong>练习册</strong>：
+                                    <ul>
+                                        <li>《基础训练》- 基础题练习</li>
+                                        <li>《同步练习册》- 课后巩固</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="score-range">
+                            <h4>60-75分学生推荐</h4>
+                            <ul>
+                                <li><strong>提升教材</strong>：
+                                    <ul>
+                                        <li>《点拨》物理 - 重难点突破</li>
+                                        <li>《初中物理知识大全》- 系统梳理</li>
+                                        <li>《物理思维导图》- 知识框架</li>
+                                    </ul>
+                                </li>
+                                <li><strong>专项训练</strong>：
+                                    <ul>
+                                        <li>《电学专项突破》</li>
+                                        <li>《力学计算题精练》</li>
+                                        <li>《实验题专项训练》</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="score-range">
+                            <h4>75分以上学生推荐</h4>
+                            <ul>
+                                <li><strong>冲刺教材</strong>：
+                                    <ul>
+                                        <li>《中考物理总复习》</li>
+                                        <li>《物理压轴题突破》</li>
+                                        <li>《中考物理真题分类汇编》</li>
+                                    </ul>
+                                </li>
+                                <li><strong>竞赛拓展</strong>：
+                                    <ul>
+                                        <li>《初中物理竞赛教程》</li>
+                                        <li>《物理思维训练》</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resource-category">
+                    <h3>💻 在线学习资源</h3>
+                    
+                    <div class="online-resources">
+                        <div class="resource-type">
+                            <h4>🎥 视频课程推荐</h4>
+                            <ul>
+                                <li><strong>基础理解</strong>：
+                                    <ul>
+                                        <li>B站 - 李永乐老师物理课</li>
+                                        <li>网易公开课 - 初中物理精讲</li>
+                                        <li>腾讯课堂 - 物理概念解析</li>
+                                    </ul>
+                                </li>
+                                <li><strong>实验演示</strong>：
+                                    <ul>
+                                        <li>PhET物理仿真实验</li>
+                                        <li>虚拟物理实验室</li>
+                                        <li>物理实验动画库</li>
+                                    </ul>
+                                </li>
+                                <li><strong>解题技巧</strong>：
+                                    <ul>
+                                        <li>学而思网校 - 物理解题方法</li>
+                                        <li>猿辅导 - 物理专题课</li>
+                                        <li>作业帮 - 物理难题解析</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resource-type">
+                            <h4>📱 学习APP推荐</h4>
+                            <ul>
+                                <li><strong>概念学习</strong>：
+                                    <ul>
+                                        <li>物理大师 - 知识点讲解</li>
+                                        <li>初中物理 - 系统学习</li>
+                                        <li>物理公式 - 公式查询</li>
+                                    </ul>
+                                </li>
+                                <li><strong>实验模拟</strong>：
+                                    <ul>
+                                        <li>物理实验室 - 虚拟实验</li>
+                                        <li>电路模拟器 - 电路设计</li>
+                                        <li>力学仿真 - 力学实验</li>
+                                    </ul>
+                                </li>
+                                <li><strong>题目练习</strong>：
+                                    <ul>
+                                        <li>小猿搜题 - 拍照解题</li>
+                                        <li>作业帮 - 题目讲解</li>
+                                        <li>题拍拍 - 难题解析</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="daily-schedule">
+                <h2>📅 每日学习安排</h2>
+            
+            <div class="daily-schedule-physics">
+                <div class="weekday-schedule">
+                    <h3>📚 工作日学习安排（45分钟）</h3>
+                    
+                    <div class="time-block">
+                        <h4>🌅 早晨（7:00-7:15，15分钟）</h4>
+                        <ul>
+                            <li><strong>物理公式复习</strong>：背诵当天要用的公式</li>
+                            <li><strong>概念回顾</strong>：快速回顾昨天学的概念</li>
+                            <li><strong>实验原理</strong>：回忆重要实验的原理</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="time-block">
+                        <h4>🌆 晚上（19:30-20:00，30分钟）</h4>
+                        <ul>
+                            <li><strong>新知识学习</strong>（20分钟）：
+                                <ul>
+                                    <li>看课本新内容</li>
+                                    <li>理解物理现象</li>
+                                    <li>掌握基本公式</li>
+                                </ul>
+                            </li>
+                            <li><strong>练习巩固</strong>（10分钟）：
+                                <ul>
+                                    <li>做2-3道基础题</li>
+                                    <li>检验理解程度</li>
+                                    <li>记录疑难点</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="weekend-schedule">
+                    <h3>🏠 周末学习安排（90分钟）</h3>
+                    
+                    <div class="weekend-morning">
+                        <h4>🌄 周六上午（9:00-10:30，90分钟）</h4>
+                        <ul>
+                            <li><strong>专题突破</strong>（60分钟）：
+                                <ul>
+                                    <li>选择一个薄弱专题深入学习</li>
+                                    <li>看视频课程理解原理</li>
+                                    <li>做专题练习题</li>
+                                    <li>总结解题方法</li>
+                                </ul>
+                            </li>
+                            <li><strong>实验复习</strong>（30分钟）：
+                                <ul>
+                                    <li>复习本周学过的实验</li>
+                                    <li>画实验装置图</li>
+                                    <li>总结实验要点</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="weekend-afternoon">
+                        <h4>🌇 周日下午（15:00-16:30，90分钟）</h4>
+                        <ul>
+                            <li><strong>综合练习</strong>（60分钟）：
+                                <ul>
+                                    <li>做一套物理综合试卷</li>
+                                    <li>模拟考试环境</li>
+                                    <li>计时完成</li>
+                                </ul>
+                            </li>
+                            <li><strong>错题整理</strong>（30分钟）：
+                                <ul>
+                                    <li>分析错题原因</li>
+                                    <li>总结解题方法</li>
+                                    <li>制定复习计划</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- 详细学习方法与策略 -->
+            <div id="detailed-methods" class="detailed-methods">
+                <h2>📚 详细学习方法与策略</h2>
+                
+                <div class="method-section">
+                    <h3>🧠 物理概念理解策略</h3>
+                    <div class="strategy-grid">
+                        <div class="strategy-item">
+                            <h4>三层理解法</h4>
+                            <ul>
+                                <li><strong>第一层 - 现象理解：</strong>
+                                    <ul>
+                                        <li>观察生活中的物理现象</li>
+                                        <li>用自己的话描述现象</li>
+                                        <li>找出现象的共同特点</li>
+                                    </ul>
+                                </li>
+                                <li><strong>第二层 - 概念理解：</strong>
+                                    <ul>
+                                        <li>理解物理量的定义</li>
+                                        <li>掌握物理量的单位</li>
+                                        <li>明确物理量的测量方法</li>
+                                    </ul>
+                                </li>
+                                <li><strong>第三层 - 规律理解：</strong>
+                                    <ul>
+                                        <li>理解物理定律的条件</li>
+                                        <li>掌握公式的适用范围</li>
+                                        <li>能够灵活运用规律</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="strategy-item">
+                            <h4>实验理解法</h4>
+                            <ul>
+                                <li><strong>实验前预习：</strong>明确实验目的和原理</li>
+                                <li><strong>实验中观察：</strong>仔细观察实验现象</li>
+                                <li><strong>实验后总结：</strong>分析实验结果和误差</li>
+                                <li><strong>举一反三：</strong>思考实验的变式和应用</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-item">
+                            <h4>图像理解法</h4>
+                            <ul>
+                                <li><strong>画图辅助：</strong>用示意图帮助理解</li>
+                                <li><strong>图像分析：</strong>从图像中提取信息</li>
+                                <li><strong>数形结合：</strong>将抽象概念具体化</li>
+                                <li><strong>模型建构：</strong>建立物理模型</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <h3>🔬 实验学习策略</h3>
+                    <div class="experiment-strategy">
+                        <div class="strategy-step">
+                            <h4>实验准备阶段</h4>
+                            <ul>
+                                <li><strong>理论准备：</strong>
+                                    <ul>
+                                        <li>复习相关物理概念和定律</li>
+                                        <li>理解实验的物理原理</li>
+                                        <li>预测可能的实验结果</li>
+                                    </ul>
+                                </li>
+                                <li><strong>器材准备：</strong>
+                                    <ul>
+                                        <li>熟悉实验器材的使用方法</li>
+                                        <li>了解器材的测量范围和精度</li>
+                                        <li>检查器材是否正常工作</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="strategy-step">
+                            <h4>实验操作阶段</h4>
+                            <ul>
+                                <li><strong>规范操作：</strong>按照实验步骤严格操作</li>
+                                <li><strong>仔细观察：</strong>记录实验现象和数据</li>
+                                <li><strong>多次测量：</strong>减小偶然误差</li>
+                                <li><strong>安全第一：</strong>注意实验安全</li>
+                            </ul>
+                        </div>
+                        <div class="strategy-step">
+                            <h4>实验分析阶段</h4>
+                            <ul>
+                                <li><strong>数据处理：</strong>计算平均值，分析误差</li>
+                                <li><strong>结论总结：</strong>得出实验结论</li>
+                                <li><strong>误差分析：</strong>分析误差来源</li>
+                                <li><strong>改进建议：</strong>提出实验改进方案</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <h3>📖 各章节学习重点</h3>
+                    <div class="chapter-focus">
+                        <div class="chapter-item">
+                            <h4>力学部分</h4>
+                            <ul>
+                                <li><strong>重点概念：</strong>力、运动、压强、浮力</li>
+                                <li><strong>学习方法：</strong>
+                                    <ul>
+                                        <li>结合生活实例理解概念</li>
+                                        <li>通过实验验证规律</li>
+                                        <li>画受力分析图</li>
+                                        <li>掌握计算公式的应用</li>
+                                    </ul>
+                                </li>
+                                <li><strong>常见难点：</strong>
+                                    <ul>
+                                        <li>力的合成与分解</li>
+                                        <li>压强的计算</li>
+                                        <li>浮力的综合应用</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chapter-item">
+                            <h4>电学部分</h4>
+                            <ul>
+                                <li><strong>重点概念：</strong>电流、电压、电阻、电功率</li>
+                                <li><strong>学习方法：</strong>
+                                    <ul>
+                                        <li>理解电路的基本规律</li>
+                                        <li>掌握电路图的画法</li>
+                                        <li>熟练使用电表</li>
+                                        <li>理解串并联电路特点</li>
+                                    </ul>
+                                </li>
+                                <li><strong>常见难点：</strong>
+                                    <ul>
+                                        <li>电路故障分析</li>
+                                        <li>电功率的计算</li>
+                                        <li>电路的动态分析</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chapter-item">
+                            <h4>光学部分</h4>
+                            <ul>
+                                <li><strong>重点概念：</strong>光的传播、反射、折射</li>
+                                <li><strong>学习方法：</strong>
+                                    <ul>
+                                        <li>通过实验观察光现象</li>
+                                        <li>掌握光路图的画法</li>
+                                        <li>理解透镜成像规律</li>
+                                        <li>联系生活中的光学应用</li>
+                                    </ul>
+                                </li>
+                                <li><strong>常见难点：</strong>
+                                    <ul>
+                                        <li>透镜成像的判断</li>
+                                        <li>光路图的作图</li>
+                                        <li>光学仪器的原理</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <h3>💡 记忆技巧与方法</h3>
+                    <div class="memory-techniques">
+                        <div class="technique-item">
+                            <h4>公式记忆法</h4>
+                            <ul>
+                                <li><strong>理解记忆：</strong>理解公式的物理意义</li>
+                                <li><strong>推导记忆：</strong>掌握公式的推导过程</li>
+                                <li><strong>对比记忆：</strong>比较相似公式的异同</li>
+                                <li><strong>应用记忆：</strong>通过做题加深记忆</li>
+                            </ul>
+                        </div>
+                        <div class="technique-item">
+                            <h4>概念记忆法</h4>
+                            <ul>
+                                <li><strong>关键词记忆：</strong>抓住概念的关键词</li>
+                                <li><strong>图像记忆：</strong>用图像帮助记忆</li>
+                                <li><strong>联想记忆：</strong>建立概念间的联系</li>
+                                <li><strong>口诀记忆：</strong>编制记忆口诀</li>
+                            </ul>
+                        </div>
+                        <div class="technique-item">
+                            <h4>实验记忆法</h4>
+                            <ul>
+                                <li><strong>步骤记忆：</strong>记住实验的关键步骤</li>
+                                <li><strong>现象记忆：</strong>记住典型的实验现象</li>
+                                <li><strong>原理记忆：</strong>理解实验的物理原理</li>
+                                <li><strong>应用记忆：</strong>记住实验的实际应用</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="problem-solving">
+                <h2>🎯 解题技巧与方法</h2>
+            
+            <div class="problem-solving-techniques">
+                <div class="technique-category">
+                    <h3>⚡ 电学解题技巧</h3>
+                    
+                    <div class="technique-detail">
+                        <h4>🔌 电路分析万能方法</h4>
+                        <ol>
+                            <li><strong>画标准电路图</strong>：
+                                <ul>
+                                    <li>把实物图转换为标准电路图</li>
+                                    <li>标注所有元件</li>
+                                    <li>明确电流路径</li>
+                                </ul>
+                            </li>
+                            <li><strong>判断串并联</strong>：
+                                <ul>
+                                    <li>串联：电流只有一条路径</li>
+                                    <li>并联：电流有多条路径</li>
+                                    <li>混合：部分串联，部分并联</li>
+                                </ul>
+                            </li>
+                            <li><strong>应用基本规律</strong>：
+                                <ul>
+                                    <li>串联：I相等，U分配，R相加</li>
+                                    <li>并联：U相等，I分配，1/R相加</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="technique-detail">
+                        <h4>💡 电功率计算技巧</h4>
+                        <ul>
+                            <li><strong>基本公式</strong>：P = UI = I²R = U²/R</li>
+                            <li><strong>选择公式原则</strong>：
+                                <ul>
+                                    <li>已知U和I → 用P = UI</li>
+                                    <li>已知I和R → 用P = I²R</li>
+                                    <li>已知U和R → 用P = U²/R</li>
+                                </ul>
+                            </li>
+                            <li><strong>额定功率与实际功率</strong>：
+                                <ul>
+                                    <li>额定功率：在额定电压下的功率</li>
+                                    <li>实际功率：在实际电压下的功率</li>
+                                    <li>关系：P实/P额 = (U实/U额)²</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="technique-category">
+                    <h3>⚖️ 力学解题技巧</h3>
+                    
+                    <div class="technique-detail">
+                        <h4>🎯 受力分析方法</h4>
+                        <ol>
+                            <li><strong>确定研究对象</strong>：明确分析哪个物体的受力</li>
+                            <li><strong>画受力示意图</strong>：
+                                <ul>
+                                    <li>重力：竖直向下</li>
+                                    <li>支持力：垂直接触面向上</li>
+                                    <li>摩擦力：沿接触面，阻碍运动</li>
+                                    <li>拉力/推力：沿力的方向</li>
+                                </ul>
+                            </li>
+                            <li><strong>应用平衡条件</strong>：
+                                <ul>
+                                    <li>静止或匀速：合力为零</li>
+                                    <li>F向上 = F向下</li>
+                                    <li>F向左 = F向右</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="technique-detail">
+                        <h4>🌊 浮力问题解题步骤</h4>
+                        <ol>
+                            <li><strong>判断物体状态</strong>：漂浮、悬浮、沉底</li>
+                            <li><strong>选择浮力公式</strong>：
+                                <ul>
+                                    <li>F浮 = ρ液gV排（阿基米德原理）</li>
+                                    <li>F浮 = G物（漂浮、悬浮时）</li>
+                                    <li>F浮 = G物 - F拉（称重法）</li>
+                                </ul>
+                            </li>
+                            <li><strong>分析浮沉条件</strong>：
+                                <ul>
+                                    <li>F浮 > G物 → 上浮</li>
+                                    <li>F浮 = G物 → 漂浮或悬浮</li>
+                                    <li>F浮 < G物 → 下沉</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="technique-category">
+                    <h3>🔍 光学解题技巧</h3>
+                    
+                    <div class="technique-detail">
+                        <h4>🪞 光路图绘制方法</h4>
+                        <ol>
+                            <li><strong>平面镜成像</strong>：
+                                <ul>
+                                    <li>入射角 = 反射角</li>
+                                    <li>入射光线、反射光线、法线在同一平面</li>
+                                    <li>像与物关于镜面对称</li>
+                                </ul>
+                            </li>
+                            <li><strong>凸透镜成像</strong>：
+                                <ul>
+                                    <li>平行光线过焦点</li>
+                                    <li>过光心的光线方向不变</li>
+                                    <li>过焦点的光线平行射出</li>
+                                </ul>
+                            </li>
+                            <li><strong>光的折射</strong>：
+                                <ul>
+                                    <li>从空气射入水中：光线向法线偏折</li>
+                                    <li>从水中射入空气：光线远离法线偏折</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="error-management">
+                <h2>📝 错题管理系统</h2>
+            
+            <div class="error-management">
+                <h3>🗂️ 错题记录格式</h3>
+                
+                <div class="error-record-template">
+                    <h4>📋 物理错题记录模板</h4>
+                    <div class="template-example">
+                        <div class="template-field">
+                            <strong>日期：</strong>2024年X月X日
+                        </div>
+                        <div class="template-field">
+                            <strong>题目来源：</strong>课本P45第3题 / 练习册第二章第5题
+                        </div>
+                        <div class="template-field">
+                            <strong>知识点：</strong>欧姆定律应用 / 浮力计算 / 凸透镜成像
+                        </div>
+                        <div class="template-field">
+                            <strong>题目类型：</strong>计算题 / 实验题 / 选择题 / 作图题
+                        </div>
+                        <div class="template-field">
+                            <strong>错误原因：</strong>
+                            <ul>
+                                <li>□ 概念理解错误</li>
+                                <li>□ 公式记忆错误</li>
+                                <li>□ 计算错误</li>
+                                <li>□ 审题不仔细</li>
+                                <li>□ 实验原理不清</li>
+                                <li>□ 图像分析错误</li>
+                            </ul>
+                        </div>
+                        <div class="template-field">
+                            <strong>正确解法：</strong>（详细写出正确的解题步骤）
+                        </div>
+                        <div class="template-field">
+                            <strong>关键提醒：</strong>（写出避免再错的关键点）
+                        </div>
+                        <div class="template-field">
+                            <strong>相似题目：</strong>（找2-3道类似题目练习）
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>🔄 错题复习计划</h3>
+                
+                <div class="review-schedule">
+                    <h4>📅 基于遗忘曲线的复习安排</h4>
+                    <ul>
+                        <li><strong>第1次复习</strong>：错题当天晚上（记录后2小时内）</li>
+                        <li><strong>第2次复习</strong>：第2天（24小时后）</li>
+                        <li><strong>第3次复习</strong>：第4天（72小时后）</li>
+                        <li><strong>第4次复习</strong>：第7天（1周后）</li>
+                        <li><strong>第5次复习</strong>：第15天（2周后）</li>
+                        <li><strong>第6次复习</strong>：第30天（1个月后）</li>
+                    </ul>
+                </div>
+                
+                <h3>📊 错误类型分析</h3>
+                
+                <div class="error-analysis">
+                    <div class="error-type">
+                        <h4>🧠 概念理解类错误</h4>
+                        <ul>
+                            <li><strong>常见表现</strong>：
+                                <ul>
+                                    <li>混淆相似概念（电流与电压）</li>
+                                    <li>不理解物理意义（功率与功的区别）</li>
+                                    <li>死记硬背定义</li>
+                                </ul>
+                            </li>
+                            <li><strong>解决方法</strong>：
+                                <ul>
+                                    <li>用生活例子理解概念</li>
+                                    <li>对比相似概念的区别</li>
+                                    <li>通过实验加深理解</li>
+                                    <li>画概念图建立联系</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="error-type">
+                        <h4>📐 公式应用类错误</h4>
+                        <ul>
+                            <li><strong>常见表现</strong>：
+                                <ul>
+                                    <li>公式记忆错误</li>
+                                    <li>不知道何时用哪个公式</li>
+                                    <li>单位换算错误</li>
+                                    <li>不理解公式适用条件</li>
+                                </ul>
+                            </li>
+                            <li><strong>解决方法</strong>：
+                                <ul>
+                                    <li>理解公式的物理意义</li>
+                                    <li>掌握公式的推导过程</li>
+                                    <li>总结公式的适用条件</li>
+                                    <li>练习单位换算</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="error-type">
+                        <h4>🔬 实验操作类错误</h4>
+                        <ul>
+                            <li><strong>常见表现</strong>：
+                                <ul>
+                                    <li>不理解实验原理</li>
+                                    <li>实验步骤记忆混乱</li>
+                                    <li>不会分析实验现象</li>
+                                    <li>实验数据处理错误</li>
+                                </ul>
+                            </li>
+                            <li><strong>解决方法</strong>：
+                                <ul>
+                                    <li>理解实验的设计思路</li>
+                                    <li>总结实验的一般步骤</li>
+                                    <li>分析实验现象的原因</li>
+                                    <li>练习实验数据处理</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="key-principles">
+                <h2>🚀 物理学习的关键原则</h2>
+            
+            <div class="key-principles">
+                <div class="principle-card">
+                    <h3>🔬 理解现象，不要死背公式</h3>
+                    <p>物理不是数学，不能只做题。要先理解现象，再做题。每个公式都对应一个现象，要联系生活实际来理解。</p>
+                    <div class="example">
+                        <strong>例如：</strong>学习欧姆定律时，不要只记I=U/R，要理解"电压越大电流越大，电阻越大电流越小"的物理意义。
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>📐 画图很重要</h3>
+                    <p>电路图、受力分析图、光路图，一定要会画。画图能帮助理解物理过程，是解题的关键步骤。</p>
+                    <div class="example">
+                        <strong>建议：</strong>每天练习画5个不同类型的图，包括电路图、受力图、光路图等。
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>🌍 联系生活实际</h3>
+                    <p>每学一个知识点，想想生活中哪里能用到。这样既能加深理解，又能培养学习兴趣。</p>
+                    <div class="example">
+                        <strong>例如：</strong>学习浮力时，想想为什么轮船能浮在水面上，为什么热气球能升空。
+                    </div>
+                </div>
+                
+                <div class="principle-card">
+                    <h3>⏰ 做题不要死磕</h3>
+                    <p>10分钟做不出来，看答案，看懂为什么这么做。理解比做对更重要。</p>
+                    <div class="example">
+                        <strong>策略：</strong>先理解解题思路，再练习同类型题目，最后总结解题方法。
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div id="effect-evaluation">
+                <h2>📈 学习效果评估</h2>
+            
+            <div class="assessment-system">
+                <h3>📊 每周自我评估</h3>
+                
+                <div class="weekly-assessment">
+                    <h4>🎯 知识掌握程度评估</h4>
+                    <div class="assessment-checklist">
+                        <h5>基础概念理解（每周检查）</h5>
+                        <ul>
+                            <li>□ 能用自己的话解释本周学的物理概念</li>
+                            <li>□ 能举出生活中的相关例子</li>
+                            <li>□ 能区分相似概念的不同</li>
+                            <li>□ 能画出相关的示意图</li>
+                        </ul>
+                        
+                        <h5>公式应用能力（每周检查）</h5>
+                        <ul>
+                            <li>□ 能正确记忆本周学的公式</li>
+                            <li>□ 能理解公式的物理意义</li>
+                            <li>□ 能判断公式的适用条件</li>
+                            <li>□ 能正确进行单位换算</li>
+                        </ul>
+                        
+                        <h5>实验理解程度（每周检查）</h5>
+                        <ul>
+                            <li>□ 能说出实验的目的和原理</li>
+                            <li>□ 能画出实验装置图</li>
+                            <li>□ 能分析实验现象的原因</li>
+                            <li>□ 能处理实验数据</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>📝 月度测试安排</h3>
+                
+                <div class="monthly-test">
+                    <h4>🗓️ 测试时间安排</h4>
+                    <ul>
+                        <li><strong>第1周</strong>：基础概念测试（选择题为主）</li>
+                        <li><strong>第2周</strong>：公式应用测试（计算题为主）</li>
+                        <li><strong>第3周</strong>：实验题专项测试</li>
+                        <li><strong>第4周</strong>：综合能力测试（模拟考试）</li>
+                    </ul>
+                    
+                    <h4>📊 成绩分析方法</h4>
+                    <ul>
+                        <li><strong>85分以上</strong>：学习方法正确，继续保持</li>
+                        <li><strong>75-85分</strong>：基础较好，需要提高解题速度和准确性</li>
+                        <li><strong>60-75分</strong>：基础不够扎实，需要加强概念理解</li>
+                        <li><strong>60分以下</strong>：需要重新梳理知识体系，从基础开始</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+            <div id="final-advice" class="final-tips">
+                <h2>💡 最后的建议</h2>
+                <div class="tip-grid">
+                    <div class="tip-card">
+                        <h3>🎯 保持学习兴趣</h3>
+                        <p>物理是一门有趣的学科，多观察生活中的物理现象，培养好奇心和探索精神。</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🤝 寻求帮助</h3>
+                        <p>遇到困难时，及时向老师、同学或家长求助，不要让问题积累。</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>📚 持续练习</h3>
+                        <p>物理需要大量练习来巩固理解，但要注重质量而不是数量。</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🔄 及时复习</h3>
+                        <p>定期复习已学内容，建立知识之间的联系，形成完整的知识体系。</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助初中生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveLink(sectionId);
+            }
+        }
+
+        function updateActiveLink(activeId) {
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = ['overview', 'knowledge-framework', 'month1-electricity', 'experiment-training', 'learning-materials', 'daily-schedule', 'detailed-methods', 'problem-solving', 'error-management', 'key-principles', 'effect-evaluation', 'final-advice'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                updateActiveLink(currentSection);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveLink('overview');
+        });
+    </script>
+</body>
+</html>

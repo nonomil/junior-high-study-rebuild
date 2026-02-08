@@ -1,0 +1,178 @@
+<svg width="1400" height="1000" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="emergencyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#FF8E53;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="assessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#44A08D;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="actionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="followGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+</linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+</filter>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+</marker>
+<marker id="redArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#F44336"/>
+</marker>
+</defs>
+<rect width="1400" height="1000" fill="#f8f9fa"/>
+<text x="700" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">学习危机应急处理流程图</text>
+<g id="crisis-detection">
+<ellipse cx="700" cy="100" rx="80" ry="30" fill="url(#emergencyGrad)" filter="url(#shadow)"/>
+<text x="700" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">危机识别</text>
+<text x="700" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Crisis Detection</text>
+</g>
+<g id="warning-signs">
+<rect x="100" y="50" width="200" height="100" rx="10" fill="#FFEBEE" stroke="#F44336" stroke-width="2"/>
+<text x="200" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#C62828">⚠️ 危机信号</text>
+<text x="120" y="95" font-family="Arial, sans-serif" font-size="10" fill="#C62828">• 成绩急剧下降</text>
+<text x="120" y="110" font-family="Arial, sans-serif" font-size="10" fill="#C62828">• 拒绝上学/学习</text>
+<text x="120" y="125" font-family="Arial, sans-serif" font-size="10" fill="#C62828">• 情绪极度低落</text>
+<text x="120" y="140" font-family="Arial, sans-serif" font-size="10" fill="#C62828">• 自我否定严重</text>
+</g>
+<g id="severity-levels">
+<rect x="1000" y="50" width="300" height="100" rx="10" fill="#FFF3E0" stroke="#FF9800" stroke-width="2"/>
+<text x="1150" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#E65100">危机等级分类</text>
+<circle cx="1030" cy="95" r="8" fill="#4CAF50"/>
+<text x="1050" y="100" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">轻度：学习动力不足</text>
+<circle cx="1030" cy="115" r="8" fill="#FF9800"/>
+<text x="1050" y="120" font-family="Arial, sans-serif" font-size="10" fill="#E65100">中度：成绩明显下滑</text>
+<circle cx="1030" cy="135" r="8" fill="#F44336"/>
+<text x="1050" y="140" font-family="Arial, sans-serif" font-size="10" fill="#C62828">重度：拒绝学习/厌学</text>
+</g>
+<path d="M 300 100 L 620 100" stroke="#F44336" stroke-width="3" fill="none" marker-end="url(#redArrow)"/>
+<path d="M 780 100 L 1000 100" stroke="#FF9800" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<g id="immediate-assessment">
+<rect x="550" y="180" width="300" height="80" rx="15" fill="url(#assessGrad)" filter="url(#shadow)"/>
+<text x="700" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">立即评估 (0-2小时)</text>
+<text x="570" y="225" font-family="Arial, sans-serif" font-size="12" fill="white">• 确定危机严重程度</text>
+<text x="570" y="240" font-family="Arial, sans-serif" font-size="12" fill="white">• 评估安全风险</text>
+<text x="570" y="255" font-family="Arial, sans-serif" font-size="12" fill="white">• 识别可用资源</text>
+</g>
+<path d="M 700 130 L 700 180" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<g id="decision-diamond">
+<polygon points="700,300 750,330 700,360 650,330" fill="#9C27B0" filter="url(#shadow)"/>
+<text x="700" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">需要专业</text>
+<text x="700" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">干预？</text>
+</g>
+<path d="M 700 260 L 700 300" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<g id="professional-intervention">
+<rect x="200" y="400" width="250" height="100" rx="15" fill="#FFCDD2" stroke="#F44336" stroke-width="3" filter="url(#shadow)"/>
+<text x="325" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">专业干预路径</text>
+<text x="220" y="445" font-family="Arial, sans-serif" font-size="11" fill="#C62828">🏥 心理咨询师介入</text>
+<text x="220" y="460" font-family="Arial, sans-serif" font-size="11" fill="#C62828">👨‍⚕️ 医疗评估（必要时）</text>
+<text x="220" y="475" font-family="Arial, sans-serif" font-size="11" fill="#C62828">🏫 学校心理老师协助</text>
+<text x="220" y="490" font-family="Arial, sans-serif" font-size="11" fill="#C62828">📞 危机热线支持</text>
+</g>
+<g id="family-intervention">
+<rect x="550" y="400" width="250" height="100" rx="15" fill="#C8E6C9" stroke="#4CAF50" stroke-width="3" filter="url(#shadow)"/>
+<text x="675" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">家庭干预路径</text>
+<text x="570" y="445" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">💬 深度沟通对话</text>
+<text x="570" y="460" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">🎯 调整学习目标</text>
+<text x="570" y="475" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">⏰ 暂停高压学习</text>
+<text x="570" y="490" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">❤️ 情感支持加强</text>
+</g>
+<g id="school-intervention">
+<rect x="850" y="400" width="250" height="100" rx="15" fill="#BBDEFB" stroke="#2196F3" stroke-width="3" filter="url(#shadow)"/>
+<text x="975" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565C0">学校干预路径</text>
+<text x="870" y="445" font-family="Arial, sans-serif" font-size="11" fill="#1565C0">👨‍🏫 班主任一对一谈话</text>
+<text x="870" y="460" font-family="Arial, sans-serif" font-size="11" fill="#1565C0">📚 学习方法调整</text>
+<text x="870" y="475" font-family="Arial, sans-serif" font-size="11" fill="#1565C0">👥 同伴支持系统</text>
+<text x="870" y="490" font-family="Arial, sans-serif" font-size="11" fill="#1565C0">🎖️ 小目标激励</text>
+</g>
+<path d="M 670 340 L 350 400" stroke="#F44336" stroke-width="3" fill="none" marker-end="url(#redArrow)"/>
+<text x="500" y="375" font-family="Arial, sans-serif" font-size="12" fill="#F44336" font-weight="bold">是/重度</text>
+<path d="M 700 360 L 675 400" stroke="#4CAF50" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text x="710" y="385" font-family="Arial, sans-serif" font-size="12" fill="#4CAF50" font-weight="bold">否/中度</text>
+<path d="M 730 340 L 950 400" stroke="#2196F3" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<text x="840" y="375" font-family="Arial, sans-serif" font-size="12" fill="#2196F3" font-weight="bold">学校协助</text>
+<g id="immediate-actions">
+<rect x="100" y="550" width="1200" height="120" rx="15" fill="#E1F5FE" stroke="#0277BD" stroke-width="2"/>
+<text x="700" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0277BD">24小时内紧急行动清单</text>
+<g id="action-columns">
+<rect x="120" y="590" width="180" height="70" rx="8" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+<text x="210" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#E65100">情绪稳定</text>
+<text x="130" y="625" font-family="Arial, sans-serif" font-size="10" fill="#E65100">• 陪伴倾听</text>
+<text x="130" y="640" font-family="Arial, sans-serif" font-size="10" fill="#E65100">• 情感支持</text>
+<text x="130" y="655" font-family="Arial, sans-serif" font-size="10" fill="#E65100">• 安全保障</text>
+<rect x="320" y="590" width="180" height="70" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="1"/>
+<text x="410" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2E7D32">压力缓解</text>
+<text x="330" y="625" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">• 暂停作业</text>
+<text x="330" y="640" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">• 放松活动</text>
+<text x="330" y="655" font-family="Arial, sans-serif" font-size="10" fill="#2E7D32">• 充足睡眠</text>
+<rect x="520" y="590" width="180" height="70" rx="8" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1"/>
+<text x="610" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7B1FA2">联系支持</text>
+<text x="530" y="625" font-family="Arial, sans-serif" font-size="10" fill="#7B1FA2">• 通知老师</text>
+<text x="530" y="640" font-family="Arial, sans-serif" font-size="10" fill="#7B1FA2">• 寻求专业帮助</text>
+<text x="530" y="655" font-family="Arial, sans-serif" font-size="10" fill="#7B1FA2">• 家庭会议</text>
+<rect x="720" y="590" width="180" height="70" rx="8" fill="#E0F2F1" stroke="#00695C" stroke-width="1"/>
+<text x="810" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00695C">环境调整</text>
+<text x="730" y="625" font-family="Arial, sans-serif" font-size="10" fill="#00695C">• 减少刺激</text>
+<text x="730" y="640" font-family="Arial, sans-serif" font-size="10" fill="#00695C">• 创造安全感</text>
+<text x="730" y="655" font-family="Arial, sans-serif" font-size="10" fill="#00695C">• 正面氛围</text>
+<rect x="920" y="590" width="180" height="70" rx="8" fill="#FFF8E1" stroke="#F57F17" stroke-width="1"/>
+<text x="1010" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#F57F17">记录观察</text>
+<text x="930" y="625" font-family="Arial, sans-serif" font-size="10" fill="#F57F17">• 行为变化</text>
+<text x="930" y="640" font-family="Arial, sans-serif" font-size="10" fill="#F57F17">• 情绪状态</text>
+<text x="930" y="655" font-family="Arial, sans-serif" font-size="10" fill="#F57F17">• 干预效果</text>
+</g>
+</g>
+<path d="M 325 500 L 400 550" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M 675 500 L 650 550" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M 975 500 L 900 550" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<g id="follow-up-plan">
+<rect x="450" y="720" width="500" height="120" rx="15" fill="url(#followGrad)" filter="url(#shadow)"/>
+<text x="700" y="745" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">后续跟进计划 (1-4周)</text>
+<text x="470" y="770" font-family="Arial, sans-serif" font-size="12" fill="white">第1周：每日情绪检查，调整学习强度</text>
+<text x="470" y="785" font-family="Arial, sans-serif" font-size="12" fill="white">第2周：重建学习信心，设定小目标</text>
+<text x="470" y="800" font-family="Arial, sans-serif" font-size="12" fill="white">第3周：逐步恢复学习节奏，监测状态</text>
+<text x="470" y="815" font-family="Arial, sans-serif" font-size="12" fill="white">第4周：评估恢复效果，制定长期计划</text>
+<text x="470" y="830" font-family="Arial, sans-serif" font-size="12" fill="white">持续：定期评估，预防复发</text>
+</g>
+<path d="M 700 670 L 700 720" stroke="#333" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<g id="emergency-contacts">
+<rect x="50" y="720" width="350" height="200" rx="10" fill="#FFEBEE" stroke="#F44336" stroke-width="2"/>
+<text x="225" y="745" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">🆘 紧急联系方式</text>
+<text x="70" y="770" font-family="Arial, sans-serif" font-size="12" fill="#C62828" font-weight="bold">心理危机热线：</text>
+<text x="70" y="785" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 全国心理援助热线：400-161-9995</text>
+<text x="70" y="800" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 青少年心理热线：12355</text>
+<text x="70" y="820" font-family="Arial, sans-serif" font-size="12" fill="#C62828" font-weight="bold">学校联系：</text>
+<text x="70" y="835" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 班主任：_______________</text>
+<text x="70" y="850" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 心理老师：_____________</text>
+<text x="70" y="865" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 年级主任：_____________</text>
+<text x="70" y="885" font-family="Arial, sans-serif" font-size="12" fill="#C62828" font-weight="bold">专业机构：</text>
+<text x="70" y="900" font-family="Arial, sans-serif" font-size="11" fill="#C62828">• 心理咨询中心：_________</text>
+</g>
+<g id="prevention-measures">
+<rect x="1000" y="720" width="350" height="200" rx="10" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
+<text x="1175" y="745" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">🛡️ 预防措施</text>
+<text x="1020" y="770" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">日常监测：</text>
+<text x="1020" y="785" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 每日情绪检查</text>
+<text x="1020" y="800" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 学习压力评估</text>
+<text x="1020" y="815" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 睡眠质量监控</text>
+<text x="1020" y="835" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">环境优化：</text>
+<text x="1020" y="850" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 减少学习压力</text>
+<text x="1020" y="865" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 增加休闲时间</text>
+<text x="1020" y="880" font-family="Arial, sans-serif" font-size="11" fill="#2E7D32">• 建立支持网络</text>
+<text x="1020" y="900" font-family="Arial, sans-serif" font-size="12" fill="#2E7D32" font-weight="bold">定期评估调整策略</text>
+</g>
+<g id="success-criteria">
+<rect x="450" y="870" width="500" height="80" rx="10" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+<text x="700" y="895" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976D2">✅ 恢复成功标准</text>
+<text x="470" y="915" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 情绪稳定，愿意沟通 • 主动参与学习活动 • 睡眠饮食正常</text>
+<text x="470" y="930" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 对未来有积极期待 • 能够应对日常压力 • 家庭关系改善</text>
+<text x="470" y="945" font-family="Arial, sans-serif" font-size="11" fill="#1976D2">• 学习成绩逐步提升 • 自信心重新建立</text>
+</g>
+<text x="700" y="985" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">记住：每个孩子都是独特的，危机也是成长的机会</text>
+</svg>

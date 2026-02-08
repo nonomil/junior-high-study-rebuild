@@ -1,0 +1,187 @@
+<svg width="1400" height="1000" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter height="140%" width="140%" y="-20%" x="-20%" id="glow">
+   <feGaussianBlur result="coloredBlur" stdDeviation="3"/>
+  </filter>
+  <radialGradient r="50%" cy="50%" cx="50%" id="centerGradient">
+   <stop stop-color="#FF6B6B" offset="0%"/>
+   <stop stop-color="#4ECDC4" offset="100%"/>
+  </radialGradient>
+  <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="branchGradient1">
+   <stop stop-color="#45B7D1" offset="0%"/>
+   <stop stop-color="#96CEB4" offset="100%"/>
+  </linearGradient>
+  <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="branchGradient2">
+   <stop stop-color="#FFEAA7" offset="0%"/>
+   <stop stop-color="#FAB1A0" offset="100%"/>
+  </linearGradient>
+  <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="branchGradient3">
+   <stop stop-color="#A29BFE" offset="0%"/>
+   <stop stop-color="#FD79A8" offset="100%"/>
+  </linearGradient>
+  <linearGradient y2="0%" x2="100%" y1="0%" x1="0%" id="branchGradient4">
+   <stop stop-color="#00B894" offset="0%"/>
+   <stop stop-color="#00CEC9" offset="100%"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_1" fill="#f8f9fa" height="1000" width="1400"/>
+  <text id="svg_2" fill="#2c3e50" font-weight="bold" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" y="30" x="700">初中数学知识体系重建图</text>
+  <ellipse id="svg_3" filter="url(#glow)" fill="url(#centerGradient)" ry="60" rx="120" cy="500" cx="700"/>
+  <text id="svg_4" fill="white" font-weight="bold" font-size="16" font-family="Arial, sans-serif" text-anchor="middle" y="490" x="700">数学知识</text>
+  <text id="svg_5" fill="white" font-weight="bold" font-size="16" font-family="Arial, sans-serif" text-anchor="middle" y="510" x="700">体系重建</text>
+  <g id="numbers-branch">
+   <line id="svg_6" stroke-width="4" stroke="#45B7D1" y2="200" x2="300" y1="450" x1="580"/>
+   <ellipse id="svg_7" filter="url(#glow)" fill="url(#branchGradient1)" ry="40" rx="80" cy="150" cx="250"/>
+   <text id="svg_8" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="155" x="250">数与式</text>
+   <circle id="svg_9" fill="#45B7D1" r="25" cy="100" cx="150"/>
+   <text id="svg_10" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="85" x="150">有理数</text>
+   <text id="svg_11" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="100" x="150">运算</text>
+   <text id="svg_12" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="115" x="150">基础</text>
+   <circle id="svg_13" fill="#45B7D1" r="25" cy="100" cx="350"/>
+   <text id="svg_14" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="85" x="350">整式</text>
+   <text id="svg_15" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="100" x="350">分式</text>
+   <text id="svg_16" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="115" x="350">运算</text>
+   <circle id="svg_17" fill="#45B7D1" r="25" cy="200" cx="200"/>
+   <text id="svg_18" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="195" x="200">二次根式</text>
+   <text id="svg_19" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="210" x="200">化简</text>
+   <circle id="svg_20" fill="#45B7D1" r="25" cy="200" cx="300"/>
+   <text id="svg_21" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="195" x="300">因式</text>
+   <text id="svg_22" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="210" x="300">分解</text>
+   <line id="svg_23" y2="125" x2="150" y1="110" x1="250"/>
+   <line id="svg_24" y2="125" x2="350" y1="110" x1="250"/>
+   <line id="svg_25" y2="175" x2="200" y1="190" x1="250"/>
+   <line id="svg_26" y2="175" x2="300" y1="190" x1="250"/>
+  </g>
+  <g id="equations-branch">
+   <line id="svg_27" stroke-width="4" stroke="#FFEAA7" y2="350" x2="300" y1="400" x1="620"/>
+   <ellipse id="svg_28" filter="url(#glow)" fill="url(#branchGradient2)" ry="40" rx="80" cy="350" cx="250"/>
+   <text id="svg_29" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="355" x="250">方程组</text>
+   <circle id="svg_30" fill="#FAB1A0" r="25" cy="300" cx="120"/>
+   <text id="svg_31" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="295" x="120">一元一次</text>
+   <text id="svg_32" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="310" x="120">方程</text>
+   <circle id="svg_33" fill="#FAB1A0" r="25" cy="300" cx="380"/>
+   <text id="svg_34" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="295" x="380">一元二次</text>
+   <text id="svg_35" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="310" x="380">方程</text>
+   <circle id="svg_36" fill="#FAB1A0" r="25" cy="400" cx="120"/>
+   <text id="svg_37" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="395" x="120">二元一次</text>
+   <text id="svg_38" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="410" x="120">方程组</text>
+   <circle id="svg_39" fill="#FAB1A0" r="25" cy="400" cx="380"/>
+   <text id="svg_40" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="395" x="380">不等式</text>
+   <text id="svg_41" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="410" x="380">组</text>
+   <line id="svg_42" y2="325" x2="145" y1="310" x1="250"/>
+   <line id="svg_43" y2="325" x2="355" y1="310" x1="250"/>
+   <line id="svg_44" y2="375" x2="145" y1="390" x1="250"/>
+   <line id="svg_45" y2="375" x2="355" y1="390" x1="250"/>
+  </g>
+  <g id="functions-branch">
+   <line id="svg_46" stroke-width="4" stroke="#A29BFE" y2="200" x2="1100" y1="450" x1="820"/>
+   <ellipse id="svg_47" filter="url(#glow)" fill="url(#branchGradient3)" ry="40" rx="80" cy="150" cx="1150"/>
+   <text id="svg_48" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="155" x="1150">函数</text>
+   <circle id="svg_49" fill="#A29BFE" r="25" cy="100" cx="1050"/>
+   <text id="svg_50" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="95" x="1050">一次</text>
+   <text id="svg_51" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="110" x="1050">函数</text>
+   <circle id="svg_52" fill="#A29BFE" r="25" cy="100" cx="1250"/>
+   <text id="svg_53" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="95" x="1250">二次</text>
+   <text id="svg_54" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="110" x="1250">函数</text>
+   <circle id="svg_55" fill="#A29BFE" r="25" cy="200" cx="1100"/>
+   <text id="svg_56" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="195" x="1100">反比例</text>
+   <text id="svg_57" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="210" x="1100">函数</text>
+   <circle id="svg_58" fill="#A29BFE" r="25" cy="200" cx="1200"/>
+   <text id="svg_59" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="195" x="1200">函数</text>
+   <text id="svg_60" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="210" x="1200">图像</text>
+   <line id="svg_61" y2="125" x2="1075" y1="110" x1="1150"/>
+   <line id="svg_62" y2="125" x2="1225" y1="110" x1="1150"/>
+   <line id="svg_63" y2="175" x2="1125" y1="190" x1="1150"/>
+   <line id="svg_64" y2="175" x2="1175" y1="190" x1="1150"/>
+  </g>
+  <g id="geometry-branch">
+   <line id="svg_65" stroke-width="4" stroke="#00B894" y2="800" x2="1100" y1="550" x1="780"/>
+   <ellipse id="svg_66" filter="url(#glow)" fill="url(#branchGradient4)" ry="40" rx="80" cy="850" cx="1150"/>
+   <text id="svg_67" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="855" x="1150">几何</text>
+   <circle id="svg_68" fill="#00B894" r="25" cy="900" cx="1050"/>
+   <text id="svg_69" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="895" x="1050">三角形</text>
+   <text id="svg_70" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="910" x="1050">全等</text>
+   <circle id="svg_71" fill="#00B894" r="25" cy="900" cx="1250"/>
+   <text id="svg_72" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="895" x="1250">四边形</text>
+   <text id="svg_73" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="910" x="1250">性质</text>
+   <circle id="svg_74" fill="#00B894" r="25" cy="800" cx="1100"/>
+   <text id="svg_75" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="795" x="1100">圆的</text>
+   <text id="svg_76" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="810" x="1100">性质</text>
+   <circle id="svg_77" fill="#00B894" r="25" cy="800" cx="1200"/>
+   <text id="svg_78" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="795" x="1200">相似</text>
+   <text id="svg_79" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="810" x="1200">三角形</text>
+   <line id="svg_80" y2="825" x2="1125" y1="810" x1="1150"/>
+   <line id="svg_81" y2="825" x2="1175" y1="810" x1="1150"/>
+   <line id="svg_82" y2="875" x2="1075" y1="890" x1="1150"/>
+   <line id="svg_83" y2="875" x2="1225" y1="890" x1="1150"/>
+  </g>
+  <g id="statistics-branch">
+   <line id="svg_84" stroke-width="4" stroke="#E17055" y2="800" x2="300" y1="600" x1="620"/>
+   <ellipse id="svg_85" filter="url(#glow)" fill="#E17055" ry="40" rx="80" cy="850" cx="250"/>
+   <text id="svg_86" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="845" x="250">统计</text>
+   <text id="svg_87" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="860" x="250">概率</text>
+   <circle id="svg_88" fill="#E17055" r="25" cy="800" cx="150"/>
+   <text id="svg_89" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="795" x="150">数据</text>
+   <text id="svg_90" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="810" x="150">分析</text>
+   <circle id="svg_91" fill="#E17055" r="25" cy="800" cx="350"/>
+   <text id="svg_92" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="795" x="350">概率</text>
+   <text id="svg_93" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="810" x="350">计算</text>
+   <circle id="svg_94" fill="#E17055" r="25" cy="900" cx="200"/>
+   <text id="svg_95" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="895" x="200">图表</text>
+   <text id="svg_96" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="910" x="200">制作</text>
+   <circle id="svg_97" fill="#E17055" r="25" cy="900" cx="300"/>
+   <text id="svg_98" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="895" x="300">抽样</text>
+   <text id="svg_99" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="910" x="300">调查</text>
+   <line id="svg_100" y2="825" x2="175" y1="810" x1="250"/>
+   <line id="svg_101" y2="825" x2="325" y1="810" x1="250"/>
+   <line id="svg_102" y2="875" x2="225" y1="890" x1="250"/>
+   <line id="svg_103" y2="875" x2="275" y1="890" x1="250"/>
+  </g>
+  <g id="applications-branch">
+   <line id="svg_104" stroke-width="4" stroke="#6C5CE7" y2="650" x2="300" y1="550" x1="580"/>
+   <ellipse id="svg_105" filter="url(#glow)" fill="#6C5CE7" ry="40" rx="80" cy="650" cx="250"/>
+   <text id="svg_106" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="645" x="250">应用题</text>
+   <text id="svg_107" fill="white" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="660" x="250">建模</text>
+   <circle id="svg_108" fill="#6C5CE7" r="25" cy="600" cx="120"/>
+   <text id="svg_109" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="595" x="120">行程</text>
+   <text id="svg_110" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="610" x="120">问题</text>
+   <circle id="svg_111" fill="#6C5CE7" r="25" cy="600" cx="380"/>
+   <text id="svg_112" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="595" x="380">工程</text>
+   <text id="svg_113" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="610" x="380">问题</text>
+   <circle id="svg_114" fill="#6C5CE7" r="25" cy="700" cx="120"/>
+   <text id="svg_115" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="695" x="120">经济</text>
+   <text id="svg_116" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="710" x="120">问题</text>
+   <circle id="svg_117" fill="#6C5CE7" r="25" cy="700" cx="380"/>
+   <text id="svg_118" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="695" x="380">几何</text>
+   <text id="svg_119" fill="white" font-size="10" font-family="Arial, sans-serif" text-anchor="middle" y="710" x="380">应用</text>
+   <line id="svg_120" y2="625" x2="145" y1="610" x1="250"/>
+   <line id="svg_121" y2="625" x2="355" y1="610" x1="250"/>
+   <line id="svg_122" y2="675" x2="145" y1="690" x1="250"/>
+   <line id="svg_123" y2="675" x2="355" y1="690" x1="250"/>
+  </g>
+  <g id="difficulty-levels">
+   <rect id="svg_124" stroke-width="2" stroke="#4CAF50" fill="#E8F5E8" rx="10" height="120" width="200" y="75" x="424"/>
+   <text id="svg_125" fill="#2E7D32" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="100" x="524">难度分级</text>
+   <circle id="svg_126" fill="#4CAF50" r="8" cy="125" cx="454"/>
+   <text id="svg_127" fill="#2E7D32" font-size="12" font-family="Arial, sans-serif" y="130" x="474">基础 (60-70分)</text>
+   <circle id="svg_128" fill="#FF9800" r="8" cy="145" cx="454"/>
+   <text id="svg_129" fill="#E65100" font-size="12" font-family="Arial, sans-serif" y="150" x="474">提高 (70-80分)</text>
+   <circle id="svg_130" fill="#F44336" r="8" cy="165" cx="454"/>
+   <text id="svg_131" fill="#C62828" font-size="12" font-family="Arial, sans-serif" y="170" x="474">拔高 (80-90分)</text>
+   <circle id="svg_132" fill="#9C27B0" r="8" cy="185" cx="454"/>
+   <text id="svg_133" fill="#7B1FA2" font-size="12" font-family="Arial, sans-serif" y="190" x="474">竞赛 (90分以上)</text>
+  </g>
+  <g id="study-methods">
+   <rect id="svg_134" stroke-width="2" stroke="#FF9800" fill="#FFF3E0" rx="10" height="120" width="200" y="67" x="779"/>
+   <text id="svg_135" fill="#E65100" font-weight="bold" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="92" x="879">学习方法</text>
+   <text id="svg_136" fill="#E65100" font-size="11" font-family="Arial, sans-serif" y="112" x="799">1. 概念理解为先</text>
+   <text id="svg_137" fill="#E65100" font-size="11" font-family="Arial, sans-serif" y="127" x="799">2. 例题精讲精练</text>
+   <text id="svg_138" fill="#E65100" font-size="11" font-family="Arial, sans-serif" y="142" x="799">3. 错题归纳总结</text>
+   <text id="svg_139" fill="#E65100" font-size="11" font-family="Arial, sans-serif" y="157" x="799">4. 专题突破训练</text>
+   <text id="svg_140" fill="#E65100" font-size="11" font-family="Arial, sans-serif" y="172" x="799">5. 综合应用提升</text>
+  </g>
+  <text id="svg_141" fill="#666" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" y="970" x="700">重建策略：先基础后提高，先单项后综合，先理解后应用</text>
+ </g>
+</svg>

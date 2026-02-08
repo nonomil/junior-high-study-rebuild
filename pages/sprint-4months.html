@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4个月紧急冲刺版 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .urgent-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .urgent-banner h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.8rem;
+        }
+        .phase-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        .phase-card.phase-1 { border-left-color: #ff6b6b; }
+        .phase-card.phase-2 { border-left-color: #feca57; }
+        .phase-card.phase-3 { border-left-color: #48dbfb; }
+        .belief-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .belief-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #667eea;
+            color: white;
+        }
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .tip-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .danger-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .score-target {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .score-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .score-item .subject {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .score-item .current {
+            color: #e74c3c;
+            font-size: 0.9rem;
+        }
+        .score-item .target {
+            color: #27ae60;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+        .checklist li:before {
+            content: "☐";
+            margin-right: 10px;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        .family-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .family-tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .family-tip-card h4 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .final-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .final-message h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">数学指南</a></li>
+                        <li><a href="physics.html">物理指南</a></li>
+                        <li><a href="english.html">英语指南</a></li>
+                        <li><a href="chemistry.html">化学指南</a></li>
+                        <li><a href="chinese.html">语文指南</a></li>
+                        <li><a href="politics-history.html">政史指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">8个月计划</a></li>
+                        <li><a href="sprint-4months.html" style="color: #ff6b6b; font-weight: bold;">4个月冲刺版</a></li>
+                        <li><a href="family-education.html">家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">学习诊断</a></li>
+                        <li><a href="resources.html">学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 侧边栏导航 -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="sidebar-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#situation" onclick="scrollToSection('situation')">现状分析与目标</a>
+            <a href="#attitude" onclick="scrollToSection('attitude')">学习态度与心理</a>
+            <a href="#lifestyle" onclick="scrollToSection('lifestyle')">生活作息与健康</a>
+            <a href="#phases" onclick="scrollToSection('phases')">4个月分阶段计划</a>
+            <a href="#subjects" onclick="scrollToSection('subjects')">各科提分策略</a>
+            <a href="#family" onclick="scrollToSection('family')">家庭支持系统</a>
+            <a href="#methods" onclick="scrollToSection('methods')">学习方法精要</a>
+            <a href="#exam" onclick="scrollToSection('exam')">考试技巧</a>
+            <a href="#resources" onclick="scrollToSection('resources')">资源推荐</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div class="content-page" id="mainContent">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+
+            <div class="urgent-banner">
+                <h2>4个月紧急冲刺版 - 中考逆袭方案</h2>
+                <p>适用对象：距离中考仅剩4个月、基础不扎实、目标考上高中的初三学生</p>
+                <p><strong>核心理念：不求高分，只求稳过；抓大放小，精准提分</strong></p>
+            </div>
+
+            <!-- 第一部分：现状分析 -->
+            <div id="situation">
+                <h2><i class="fas fa-chart-line"></i> 第一部分：现状分析与目标设定</h2>
+
+                <h3>一、你的真实处境（直面现实）</h3>
+
+                <div class="warning-box">
+                    <h4>时间账本（贴合现实版）</h4>
+                    <ul>
+                        <li>距离中考：约<strong>120天</strong>（4个月）</li>
+                        <li>有效学习天数：约<strong>100天</strong>（扣除考试、生病、调整）</li>
+                        <li>工作日晚上：<strong>2.5小时</strong>（扣除作业冲突、疲劳损耗）</li>
+                        <li>周末：<strong>8小时/天</strong></li>
+                        <li>寒假（如有20天）：<strong>10小时/天</strong></li>
+                        <li><strong>总计可用时间：约350小时</strong></li>
+                    </ul>
+                </div>
+
+                <div class="danger-box">
+                    <h4>残酷的数学题</h4>
+                    <ul>
+                        <li>7门主科 × 3年知识 = 21个学年的内容</li>
+                        <li>350小时 ÷ 21 = 每个学年内容只有约17小时</li>
+                        <li><strong>结论：不可能面面俱到，必须战略取舍</strong></li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <h4>时间冲突解决方案</h4>
+                    <p>当学校作业与复习计划冲突时：</p>
+                    <ul class="checklist">
+                        <li>优先完成学校核心作业（老师会讲评的题）</li>
+                        <li>机械抄写类作业：与老师沟通减免</li>
+                        <li>重复练习类作业：只做一半，保证质量</li>
+                        <li>每天至少保证1.5小时自主复习时间</li>
+                    </ul>
+                </div>
+
+                <h3>二、目标重新校准（三级目标体系）</h3>
+
+                <h4>【保底目标】信心优先 - 月提升3-5分/科</h4>
+                <div class="score-target">
+                    <div class="score-item">
+                        <div class="subject">语文</div>
+                        <div class="current">现状：80-90</div>
+                        <div class="target">保底：83-93</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">数学</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">保底：70-80</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">英语</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">保底：68-78</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">物理</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">保底：68-78</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">化学</div>
+                        <div class="current">现状：80-90</div>
+                        <div class="target">保底：83-93</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">政治</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">保底：68-78</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">历史</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">保底：68-78</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>保底总分目标</h4>
+                    <p>从 <strong style="color: #e74c3c;">420-490分</strong> → <strong style="color: #27ae60;">500-550分</strong>（提升40-60分）- 稳过普高线</p>
+                </div>
+
+                <h4>【理想目标】努力方向 - 月提升5-8分/科</h4>
+                <div class="score-target">
+                    <div class="score-item">
+                        <div class="subject">语文</div>
+                        <div class="current">现状：80-90</div>
+                        <div class="target">理想：85-95</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">数学</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">理想：75-85</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">英语</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">理想：70-80</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">物理</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">理想：70-80</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">化学</div>
+                        <div class="current">现状：80-90</div>
+                        <div class="target">理想：85-95</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">政治</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">理想：70-80</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="subject">历史</div>
+                        <div class="current">现状：60-70</div>
+                        <div class="target">理想：70-80</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>理想总分目标</h4>
+                    <p>从 <strong style="color: #e74c3c;">420-490分</strong> → <strong style="color: #27ae60;">530-580分</strong>（提升60-90分）- 冲刺重点高中</p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>弹性调整机制</h4>
+                    <ul>
+                        <li>第1个月结束：根据实际提分情况调整后3个月目标</li>
+                        <li>一模后：根据成绩重新评估，必要时降低或提高目标</li>
+                        <li>原则：目标要"跳一跳够得着"，而非遥不可及</li>
+                        <li>如果连续2周达不到目标，立即降档到保底目标</li>
+                    </ul>
+                </div>
+
+                <h3>三、核心策略：80/20法则</h3>
+                <div class="tip-box">
+                    <h4>关键认知</h4>
+                    <ul>
+                        <li>中考<strong>80%的分数</strong>来自基础题和中档题</li>
+                        <li>难题只占20%，但耗费80%的时间</li>
+                        <li><strong>你的策略：放弃难题，死守基础分</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第二部分：学习态度与心理 -->
+            <div id="attitude">
+                <h2><i class="fas fa-brain"></i> 第二部分：学习态度与心理建设</h2>
+
+                <h3>一、必须建立的5个核心信念</h3>
+
+                <div class="belief-card">
+                    <h4>1. "我还有机会"</h4>
+                    <ul>
+                        <li>4个月 = 120天 = 2880小时</li>
+                        <li>每天进步1%，120天后你将完全不同</li>
+                        <li>无数逆袭案例证明：最后4个月提升50-100分完全可能</li>
+                    </ul>
+                </div>
+
+                <div class="belief-card">
+                    <h4>2. "基础分就是我的命"</h4>
+                    <ul>
+                        <li>中考不是选拔天才，是筛选合格者</li>
+                        <li>考上高中只需要达到分数线，不需要满分</li>
+                        <li>把简单题做对，比把难题做出来更重要</li>
+                    </ul>
+                </div>
+
+                <div class="belief-card">
+                    <h4>3. "我不需要和别人比"</h4>
+                    <ul>
+                        <li>你的对手不是班里的学霸</li>
+                        <li>你的对手是昨天的自己</li>
+                        <li>每天比昨天多会一道题，就是胜利</li>
+                    </ul>
+                </div>
+
+                <div class="belief-card">
+                    <h4>4. "错误是最好的老师"</h4>
+                    <ul>
+                        <li>每一道错题都是提分的机会</li>
+                        <li>同样的错误不犯第二次，就是进步</li>
+                        <li>错题本比任何教辅都有价值</li>
+                    </ul>
+                </div>
+
+                <div class="belief-card">
+                    <h4>5. "坚持比聪明更重要"</h4>
+                    <ul>
+                        <li>4个月不长，咬咬牙就过去了</li>
+                        <li>每天的小坚持，累积成最后的大突破</li>
+                        <li>放弃很容易，但你会后悔一辈子</li>
+                    </ul>
+                </div>
+
+                <h3>二、情绪管理急救包</h3>
+
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-hand-paper"></i> 当你想放弃时 - 5分钟情绪急救</h4>
+                        <ol>
+                            <li><strong>00:00-01:00</strong> 立即停笔，起身离开座位</li>
+                            <li><strong>01:00-02:00</strong> 到阳台/窗边，深呼吸10次（吸4秒-憋4秒-呼4秒）</li>
+                            <li><strong>02:00-03:00</strong> 喝一杯温水，上个厕所</li>
+                            <li><strong>03:00-04:00</strong> 翻开"进步日记"，看本周成就</li>
+                            <li><strong>04:00-05:00</strong> 对自己说："再坚持10分钟就休息"</li>
+                        </ol>
+                        <p style="margin-top: 10px;"><strong>10分钟最小行动清单：</strong></p>
+                        <ul class="checklist">
+                            <li>不想做数学？那就背10个英语单词</li>
+                            <li>不想背单词？那就整理1道错题</li>
+                            <li>不想整理错题？那就看5分钟语文课本</li>
+                            <li>什么都不想做？那就听一首歌后再决定</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-heart-broken"></i> 当你焦虑崩溃时</h4>
+                        <ol>
+                            <li><strong>立即停止学习</strong>：焦虑状态下学习效率为零</li>
+                            <li><strong>身体放松</strong>：出去走走、听音乐、洗个热水澡</li>
+                            <li><strong>倾诉释放</strong>：找父母、朋友或老师聊聊</li>
+                            <li><strong>降低期望</strong>：告诉自己"今天少学一点也没关系"</li>
+                        </ol>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-file-alt"></i> 当你考试失利时</h4>
+                        <ol>
+                            <li><strong>允许难过</strong>：给自己1天时间消化情绪</li>
+                            <li><strong>分析试卷</strong>：找出丢分原因，而不是自我否定</li>
+                            <li><strong>制定补救</strong>：针对薄弱点制定具体改进计划</li>
+                            <li><strong>重新出发</strong>：过去的已经过去，未来还在你手中</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <h4>家长支援信号（提前和家长约定）</h4>
+                    <ul>
+                        <li><strong>放弃信号</strong>：把笔扔在桌上</li>
+                        <li><strong>家长看到后</strong>：不批评，给一个拥抱+一杯热牛奶</li>
+                        <li>一起看10分钟轻松视频，再重新开始</li>
+                    </ul>
+                </div>
+
+                <h3>三、每日心理建设仪式</h3>
+                <div class="tip-box">
+                    <h4>早起仪式（5分钟）</h4>
+                    <ul>
+                        <li>对镜子说："今天我会比昨天更好"</li>
+                        <li>回顾今天的3个学习目标</li>
+                        <li>给自己一个微笑</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <h4>睡前仪式（10分钟）</h4>
+                    <ul>
+                        <li>写下今天做得好的3件事（无论多小）</li>
+                        <li>写下明天要改进的1件事</li>
+                        <li>告诉自己："今天辛苦了，明天继续加油"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第三部分：生活作息 -->
+            <div id="lifestyle">
+                <h2><i class="fas fa-clock"></i> 第三部分：生活作息与健康管理</h2>
+
+                <h3>一、三种作息模板</h3>
+
+                <h4>【A版：学校作业少的日子】完整版</h4>
+                <div style="overflow-x: auto;">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>活动</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>6:30</td><td>起床</td><td>不要赖床，闹钟响立即起</td></tr>
+                            <tr><td>6:30-7:00</td><td>洗漱+早餐</td><td>必须吃早餐！</td></tr>
+                            <tr><td>7:00-7:20</td><td>晨读</td><td>英语单词或语文背诵</td></tr>
+                            <tr><td>7:30-12:00</td><td>上课</td><td>认真听讲，做好笔记</td></tr>
+                            <tr><td>12:00-12:30</td><td>午餐</td><td>细嚼慢咽，不要边吃边玩手机</td></tr>
+                            <tr><td>12:30-13:30</td><td>午休</td><td>必须午睡20-30分钟！</td></tr>
+                            <tr><td>13:30-17:30</td><td>上课</td><td>下午容易困，多喝水</td></tr>
+                            <tr><td>17:30-18:30</td><td>晚餐+休息</td><td>可以适当放松</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>18:30-19:30</td><td><strong>数学</strong></td><td>精力最好的时间给最难的科目</td></tr>
+                            <tr><td>19:30-19:40</td><td>休息</td><td>眼保健操，活动身体</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>19:40-20:20</td><td><strong>物理/化学</strong></td><td>隔天轮换</td></tr>
+                            <tr><td>20:20-20:30</td><td>休息</td><td>喝水，上厕所</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>20:30-21:10</td><td><strong>英语</strong></td><td>阅读或语法</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>21:10-21:40</td><td><strong>政治/历史</strong></td><td>背诵为主</td></tr>
+                            <tr style="background-color: #fff3e0;"><td>21:40-22:00</td><td>整理错题</td><td>当天错题必须当天整理</td></tr>
+                            <tr><td>22:00-22:15</td><td>洗漱</td><td>准备睡觉</td></tr>
+                            <tr><td>22:15-22:30</td><td>睡前复习</td><td>躺在床上回顾今天所学</td></tr>
+                            <tr style="background-color: #ffebee;"><td>22:30</td><td><strong>睡觉</strong></td><td>必须保证8小时睡眠！</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>【B版：学校作业多的日子】压缩版</h4>
+                <div style="overflow-x: auto;">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>活动</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>18:30-19:30</td><td>优先完成学校作业</td><td>只做核心作业</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>19:30-20:00</td><td><strong>数学</strong></td><td>只做核心题</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>20:00-20:30</td><td><strong>英语单词+1篇阅读</strong></td><td>保持语感</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>20:30-21:00</td><td><strong>物理/化学</strong></td><td>只做重点</td></tr>
+                            <tr style="background-color: #e8f5e9;"><td>21:00-21:30</td><td><strong>文科快速背诵</strong></td><td>重点内容</td></tr>
+                            <tr style="background-color: #fff3e0;"><td>21:30-22:00</td><td>整理今日错题</td><td>不能省略</td></tr>
+                            <tr style="background-color: #ffebee;"><td>22:30</td><td><strong>睡觉</strong></td><td>不要熬夜！</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>【C版：考试周/极度疲劳日】保底版</h4>
+                <div class="danger-box">
+                    <h4>只完成3件事：</h4>
+                    <ol>
+                        <li>背30个英语单词（20分钟）</li>
+                        <li>整理今天所有错题（20分钟）</li>
+                        <li>过一遍今天学的公式（10分钟）</li>
+                    </ol>
+                    <p><strong>然后早点睡觉，不要硬撑</strong></p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>使用原则</h4>
+                    <ul>
+                        <li>每周A版至少3天</li>
+                        <li>每周B版不超过3天</li>
+                        <li>每月C版不超过2天</li>
+                        <li>如果连续3天都是B版或C版，必须找班主任沟通减轻作业</li>
+                    </ul>
+                </div>
+
+                <h3>二、健康管理要点</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-bed"></i> 睡眠（最重要！）</h4>
+                        <ul>
+                            <li><strong>底线</strong>：每天至少7.5小时，最好8小时</li>
+                            <li><strong>午睡</strong>：20-30分钟，不要超过1小时</li>
+                            <li><strong>熬夜禁令</strong>：宁可少学1小时，也不要熬夜</li>
+                            <li><strong>原因</strong>：睡眠不足会导致记忆力下降、注意力涣散</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-utensils"></i> 饮食</h4>
+                        <ul>
+                            <li><strong>早餐必吃</strong>：鸡蛋+牛奶+主食，保证上午精力</li>
+                            <li><strong>少吃零食</strong>：薯片、奶茶、糖果会让你昏昏欲睡</li>
+                            <li><strong>多喝水</strong>：每天8杯水，保持大脑清醒</li>
+                            <li><strong>晚餐适量</strong>：吃太饱会犯困，吃太少会饿</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-running"></i> 运动</h4>
+                        <ul>
+                            <li><strong>每天30分钟</strong>：跑步、跳绑、打球都可以</li>
+                            <li><strong>课间活动</strong>：不要一直坐着，起来走动</li>
+                            <li><strong>周末户外</strong>：至少1-2小时户外活动</li>
+                            <li><strong>作用</strong>：运动能提高学习效率，缓解压力</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-eye"></i> 用眼卫生</h4>
+                        <ul>
+                            <li><strong>20-20-20法则</strong>：每学习20分钟，看20英尺外20秒</li>
+                            <li><strong>光线充足</strong>：不要在昏暗环境下学习</li>
+                            <li><strong>眼保健操</strong>：每天至少做2次</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第四部分：4个月分阶段计划 -->
+            <div id="phases">
+                <h2><i class="fas fa-calendar-alt"></i> 第四部分：4个月分阶段计划</h2>
+
+                <div class="phase-card phase-1">
+                    <h3>阶段一：基础抢救期（第1-6周）</h3>
+                    <p><strong>核心任务：补最致命的漏洞</strong></p>
+
+                    <h4>数学（重点科目）</h4>
+                    <ul>
+                        <li><strong>周1-2</strong>：有理数、整式、方程（初一核心）</li>
+                        <li><strong>周3-4</strong>：一次函数、不等式（初二核心）</li>
+                        <li><strong>周5-6</strong>：二次函数基础、几何基础定理</li>
+                    </ul>
+                    <p><strong>每日任务</strong>：看1个知识点视频（20分钟）+ 做10道基础题（30分钟）+ 整理错题（10分钟）</p>
+
+                    <h4>英语</h4>
+                    <ul>
+                        <li>每天背30个单词（使用艾宾浩斯复习法）</li>
+                        <li>每周学1个语法点（时态为主）</li>
+                        <li>每周做2篇阅读理解（只做简单的）</li>
+                    </ul>
+
+                    <h4>物理</h4>
+                    <ul>
+                        <li><strong>周1-2</strong>：力学基础（力、运动、牛顿定律）</li>
+                        <li><strong>周3-4</strong>：电学基础（电流、电压、电阻）</li>
+                        <li><strong>周5-6</strong>：简单计算题训练</li>
+                    </ul>
+
+                    <h4>文科（政治、历史）</h4>
+                    <ul>
+                        <li>每天背诵30分钟</li>
+                        <li>重点：课本上的黑体字、框框里的内容</li>
+                        <li>方法：理解记忆，不要死记硬背</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>阶段目标</strong>：月考/小测提升5-10分
+                    </div>
+                </div>
+
+                <div class="phase-card phase-2">
+                    <h3>阶段二：强化提升期（第7-12周）</h3>
+                    <p><strong>核心任务：刷题型，建立解题套路</strong></p>
+
+                    <h4>数学</h4>
+                    <ul>
+                        <li>每周完成1套基础题专项</li>
+                        <li>重点题型：计算题、简单应用题、基础几何证明</li>
+                        <li><strong style="color: #e74c3c;">放弃</strong>：压轴题最后一问</li>
+                    </ul>
+
+                    <h4>英语</h4>
+                    <ul>
+                        <li>继续背单词（目标：中考词汇80%）</li>
+                        <li>阅读理解技巧训练</li>
+                        <li>完形填空技巧训练</li>
+                        <li>作文模板背诵（3-5个万能模板）</li>
+                    </ul>
+
+                    <h4>物理</h4>
+                    <ul>
+                        <li>电学计算专题</li>
+                        <li>力学综合题（简单类型）</li>
+                        <li>实验题答题模板</li>
+                    </ul>
+
+                    <h4>化学</h4>
+                    <ul>
+                        <li>化学方程式默写</li>
+                        <li>计算题专项</li>
+                        <li>实验题答题套路</li>
+                    </ul>
+
+                    <h4>文科</h4>
+                    <ul>
+                        <li>开始做真题</li>
+                        <li>总结答题模板</li>
+                        <li>时事政治关注</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>阶段目标</strong>：一模达到目标分数的90%
+                    </div>
+                </div>
+
+                <div class="phase-card phase-3">
+                    <h3>阶段三：冲刺突破期（第13-16周）</h3>
+                    <p><strong>核心任务：模拟训练，查漏补缺</strong></p>
+
+                    <h4>第13-14周：模拟套卷训练</h4>
+                    <ul>
+                        <li>每天1套模拟卷（按中考时间严格计时）</li>
+                        <li>当天批改，当天分析</li>
+                        <li>错题立即整理到错题本</li>
+                    </ul>
+
+                    <h4>第15周：错题大复盘</h4>
+                    <ul>
+                        <li>把所有错题本从头到尾过一遍</li>
+                        <li>同类型错题归纳总结</li>
+                        <li>再做一遍之前做错的题</li>
+                    </ul>
+
+                    <h4>第16周：考前调整</h4>
+                    <ul>
+                        <li>减少刷题量，保持手感</li>
+                        <li>每天只做1套卷子</li>
+                        <li>重点看错题本和公式</li>
+                        <li><strong>最后2天完全放松</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第五部分：各科提分策略 -->
+            <div id="subjects">
+                <h2><i class="fas fa-book"></i> 第五部分：各科提分策略（聚焦基础分）</h2>
+
+                <h3>数学：目标75-85分</h3>
+                <div class="tip-box">
+                    <h4>必拿分题型（约70分）</h4>
+                    <ol>
+                        <li><strong>计算题</strong>（约15分）：有理数、整式、方程、不等式</li>
+                        <li><strong>选择题前8题</strong>（约24分）：基础概念题</li>
+                        <li><strong>填空题前4题</strong>（约16分）：基础计算和概念</li>
+                        <li><strong>解答题前2题</strong>（约15分）：基础计算和简单应用</li>
+                    </ol>
+                </div>
+                <div class="warning-box">
+                    <h4>战略放弃（约15分）</h4>
+                    <ul>
+                        <li>压轴题最后一问</li>
+                        <li>复杂几何证明</li>
+                        <li>函数综合题难点</li>
+                    </ul>
+                </div>
+
+                <h3>英语：目标70-80分</h3>
+                <div class="tip-box">
+                    <h4>必拿分项目</h4>
+                    <ol>
+                        <li><strong>听力</strong>（约25分）：每天听15分钟真题听力</li>
+                        <li><strong>单选前10题</strong>（约10分）：基础语法</li>
+                        <li><strong>完形填空</strong>（约15分）：背高频词汇</li>
+                        <li><strong>阅读理解前2篇</strong>（约20分）：细节题为主</li>
+                    </ol>
+                </div>
+
+                <h3>物理：目标70-80分</h3>
+                <div class="tip-box">
+                    <h4>必拿分题型</h4>
+                    <ol>
+                        <li><strong>选择题前6题</strong>（约18分）：基础概念</li>
+                        <li><strong>填空题前3题</strong>（约9分）：基础计算</li>
+                        <li><strong>实验题基础部分</strong>（约10分）：步骤和现象</li>
+                        <li><strong>计算题第1题</strong>（约8分）：简单计算</li>
+                    </ol>
+                </div>
+
+                <h3>化学：目标85-95分（保持优势）</h3>
+                <div class="tip-box">
+                    <h4>保分策略</h4>
+                    <ul>
+                        <li>化学方程式每天默写5个</li>
+                        <li>实验题答题模板熟练</li>
+                        <li>计算题公式熟练</li>
+                    </ul>
+                </div>
+
+                <h3>政治/历史：目标70-80分</h3>
+                <div class="tip-box">
+                    <h4>背诵策略</h4>
+                    <ul>
+                        <li>每天背诵30分钟</li>
+                        <li>重点背课本黑体字</li>
+                        <li>理解性记忆，不要死记</li>
+                    </ul>
+                    <h4>答题模板</h4>
+                    <ul>
+                        <li><strong>选择题</strong>：排除法，找关键词</li>
+                        <li><strong>材料题</strong>：先看问题，再看材料，找对应点</li>
+                        <li><strong>论述题</strong>：观点+材料+总结</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第六部分：家庭支持 -->
+            <div id="family">
+                <h2><i class="fas fa-home"></i> 第六部分：家庭支持系统</h2>
+
+                <h3>一、父母必读：你能做什么</h3>
+
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-heart"></i> 1. 情绪支持（最重要）</h4>
+                        <ul>
+                            <li><strong>不要唠叨</strong>：说一遍就够了，反复说只会让孩子烦</li>
+                            <li><strong>不要比较</strong>："你看人家xxx"是最伤人的话</li>
+                            <li><strong>不要焦虑传染</strong>：你的焦虑会传染给孩子</li>
+                            <li><strong>多鼓励</strong>：看到进步就表扬，哪怕很小</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-concierge-bell"></i> 2. 后勤保障</h4>
+                        <ul>
+                            <li><strong>营养餐</strong>：保证早餐，准备健康零食</li>
+                            <li><strong>安静环境</strong>：学习时间不要打扰</li>
+                            <li><strong>作息监督</strong>：确保孩子按时睡觉</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-comments"></i> 3. 沟通技巧</h4>
+                        <ul>
+                            <li><strong>每天问</strong>："今天有什么收获？"（而不是"作业做完了吗？"）</li>
+                            <li><strong>每周聊</strong>：周末花30分钟聊聊学习以外的事</li>
+                            <li><strong>遇到问题</strong>：先听孩子说完，再给建议</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="danger-box">
+                    <h4>绝对禁止</h4>
+                    <ul>
+                        <li>在孩子面前吵架</li>
+                        <li>拿孩子和别人比较</li>
+                        <li>说"考不上高中你就完了"</li>
+                        <li>过度监控（翻书包、查手机）</li>
+                        <li>请假陪读（会增加压力）</li>
+                    </ul>
+                </div>
+
+                <h3>二、家庭会议制度</h3>
+                <div class="tip-box">
+                    <h4>每周日晚上（30分钟）</h4>
+                    <ol>
+                        <li><strong>回顾本周</strong>：完成了什么，遇到了什么困难</li>
+                        <li><strong>调整计划</strong>：下周重点是什么</li>
+                        <li><strong>情绪交流</strong>：孩子有什么想说的</li>
+                        <li><strong>父母反馈</strong>：父母观察到的进步</li>
+                    </ol>
+                    <p><strong>会议原则</strong>：孩子是主角，父母是听众；不批评，只讨论；聚焦解决方案</p>
+                </div>
+
+                <h3>三、危机处理预案</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4>孩子说"我不想学了"</h4>
+                        <ol>
+                            <li><strong>不要发火</strong>：这是求助信号</li>
+                            <li><strong>先共情</strong>："我知道你很累"</li>
+                            <li><strong>了解原因</strong>：是太难了？太累了？还是有其他事？</li>
+                            <li><strong>一起解决</strong>：降低目标、调整计划、寻求帮助</li>
+                        </ol>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>考试成绩下降</h4>
+                        <ol>
+                            <li><strong>不要责骂</strong>：孩子比你更难过</li>
+                            <li><strong>分析原因</strong>：是知识问题还是心态问题</li>
+                            <li><strong>制定补救</strong>：针对性地补漏洞</li>
+                            <li><strong>给予信心</strong>："一次考试说明不了什么"</li>
+                        </ol>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>孩子情绪崩溃</h4>
+                        <ol>
+                            <li><strong>立即停止学习</strong></li>
+                            <li><strong>陪伴和倾听</strong>：不要讲道理</li>
+                            <li><strong>允许发泄</strong>：哭出来比憋着好</li>
+                            <li><strong>必要时求助</strong>：学校心理老师或专业咨询</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第七部分：学习方法 -->
+            <div id="methods">
+                <h2><i class="fas fa-lightbulb"></i> 第七部分：学习方法精要</h2>
+
+                <h3>一、听课方法</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4>课前（5分钟）</h4>
+                        <ul>
+                            <li>快速翻看今天要学的内容</li>
+                            <li>标记看不懂的地方</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>课中</h4>
+                        <ul>
+                            <li><strong>眼睛看老师</strong>：即使听不懂也要看</li>
+                            <li><strong>手不停笔</strong>：记板书、记例题、记老师强调的</li>
+                            <li><strong>标记疑问</strong>：不懂的地方画个问号</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>课后（10分钟）</h4>
+                        <ul>
+                            <li>立即回顾笔记</li>
+                            <li>不懂的立即问同学或老师</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>二、做题方法</h3>
+                <div class="tip-box">
+                    <h4>做题前</h4>
+                    <ul>
+                        <li>先复习相关知识点（5分钟）</li>
+                        <li>准备好错题本</li>
+                    </ul>
+                    <h4>做题中</h4>
+                    <ul>
+                        <li><strong>限时</strong>：给自己设定时间</li>
+                        <li><strong>独立</strong>：不会也要先自己想</li>
+                        <li><strong>标记</strong>：不确定的题目做标记</li>
+                    </ul>
+                    <h4>做题后</h4>
+                    <ul>
+                        <li><strong>立即对答案</strong>：不要攒着</li>
+                        <li><strong>分析错题</strong>：为什么错？怎么改？</li>
+                        <li><strong>整理错题本</strong>：当天错题当天整理</li>
+                    </ul>
+                </div>
+
+                <h3>三、错题本使用方法</h3>
+                <div class="warning-box">
+                    <h4>记录内容</h4>
+                    <ol>
+                        <li>原题（可以剪贴）</li>
+                        <li>错误答案</li>
+                        <li>正确答案</li>
+                        <li><strong>错误原因</strong>（最重要！）</li>
+                        <li>相关知识点</li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    <h4>错误原因分类</h4>
+                    <ul>
+                        <li><strong>A类：粗心</strong>（计算错误、看错题）→ 做题时放慢速度</li>
+                        <li><strong>B类：不会</strong>（知识点没掌握）→ 回去复习知识点</li>
+                        <li><strong>C类：不熟</strong>（会但做不对）→ 多练同类型题</li>
+                    </ul>
+                    <h4>复习频率</h4>
+                    <ul>
+                        <li>当天晚上看一遍</li>
+                        <li>周末全部过一遍</li>
+                        <li>考前重点看B类和C类</li>
+                    </ul>
+                </div>
+
+                <h3>四、背诵方法</h3>
+                <div class="tip-box">
+                    <h4>艾宾浩斯遗忘曲线</h4>
+                    <ul>
+                        <li>第1次：学完立即复习</li>
+                        <li>第2次：1天后复习</li>
+                        <li>第3次：3天后复习</li>
+                        <li>第4次：7天后复习</li>
+                        <li>第5次：15天后复习</li>
+                    </ul>
+                    <h4>背诵技巧</h4>
+                    <ul>
+                        <li><strong>理解再背</strong>：先搞懂意思</li>
+                        <li><strong>分段背</strong>：长内容分成小段</li>
+                        <li><strong>出声背</strong>：读出来比默背效果好</li>
+                        <li><strong>睡前背</strong>：睡前背的记得最牢</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 第八部分：考试技巧 -->
+            <div id="exam">
+                <h2><i class="fas fa-file-alt"></i> 第八部分：考试技巧</h2>
+
+                <h3>一、考前准备</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4>考前一周</h4>
+                        <ul>
+                            <li>不要学新内容</li>
+                            <li>复习错题本</li>
+                            <li>保持正常作息</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>考前一天</h4>
+                        <ul>
+                            <li>准备好文具（多带几支笔）</li>
+                            <li>检查准考证</li>
+                            <li>早点睡觉</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>考试当天</h4>
+                        <ul>
+                            <li>正常吃早餐</li>
+                            <li>提前到考场</li>
+                            <li>不要和同学讨论难题</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>二、答题策略</h3>
+                <div class="tip-box">
+                    <h4>时间分配</h4>
+                    <ul>
+                        <li>选择题：1分钟/题</li>
+                        <li>填空题：2分钟/题</li>
+                        <li>解答题：按分值分配时间</li>
+                        <li><strong>留10分钟检查</strong></li>
+                    </ul>
+                    <h4>答题顺序</h4>
+                    <ol>
+                        <li>先做会的，跳过不会的</li>
+                        <li>做完会的再回来做不会的</li>
+                        <li>实在不会的也要写（写公式、写步骤）</li>
+                    </ol>
+                    <h4>检查重点</h4>
+                    <ul>
+                        <li>有没有漏题</li>
+                        <li>选择题有没有涂错</li>
+                        <li>计算题验算</li>
+                    </ul>
+                </div>
+
+                <h3>三、各科考试技巧</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4>数学</h4>
+                        <ul>
+                            <li>计算题一定要验算</li>
+                            <li>几何题画图要准确</li>
+                            <li>不会的题也要写公式和已知条件</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>英语</h4>
+                        <ul>
+                            <li>听力：先看选项，预判内容</li>
+                            <li>阅读：先看问题，再看文章</li>
+                            <li>作文：套用模板，字迹工整</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>物理</h4>
+                        <ul>
+                            <li>画图题要用尺子</li>
+                            <li>计算题要写公式和单位</li>
+                            <li>实验题按步骤答</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4>文科</h4>
+                        <ul>
+                            <li>选择题用排除法</li>
+                            <li>材料题找关键词</li>
+                            <li>论述题分点作答</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第九部分：资源推荐 -->
+            <div id="resources">
+                <h2><i class="fas fa-tools"></i> 第九部分：资源推荐</h2>
+
+                <h3>一、免费学习资源</h3>
+                <div class="family-tips">
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-video"></i> 视频课程</h4>
+                        <ul>
+                            <li><strong>B站</strong>：搜索"中考+科目名"，有大量免费课程</li>
+                            <li><strong>学而思网校</strong>：部分免费课程</li>
+                            <li><strong>洋葱数学</strong>：数学基础讲解</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-mobile-alt"></i> 刷题APP</h4>
+                        <ul>
+                            <li><strong>猿题库</strong>：按知识点刷题</li>
+                            <li><strong>作业帮</strong>：拍照搜题+讲解</li>
+                            <li><strong>小猿搜题</strong>：错题讲解</li>
+                        </ul>
+                    </div>
+                    <div class="family-tip-card">
+                        <h4><i class="fas fa-language"></i> 背单词APP</h4>
+                        <ul>
+                            <li><strong>百词斩</strong>：图片记忆法</li>
+                            <li><strong>墨墨背单词</strong>：艾宾浩斯复习</li>
+                            <li><strong>不背单词</strong>：语境记忆</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>二、教辅推荐</h3>
+                <div class="tip-box">
+                    <h4>数学</h4>
+                    <ul>
+                        <li>《五年中考三年模拟》基础版</li>
+                        <li>《中考必刷题》基础篇</li>
+                    </ul>
+                    <h4>英语</h4>
+                    <ul>
+                        <li>《中考词汇闪过》</li>
+                        <li>《星火英语中考阅读》</li>
+                    </ul>
+                    <h4>物理/化学</h4>
+                    <ul>
+                        <li>《中考必刷题》基础篇</li>
+                        <li>各省市中考真题汇编</li>
+                    </ul>
+                    <h4>文科</h4>
+                    <ul>
+                        <li>课本（最重要！）</li>
+                        <li>《中考必备》知识清单</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 最后的话 -->
+            <div class="final-message">
+                <h2>最后的话</h2>
+                <h3>致学生</h3>
+                <p>你现在可能觉得很难，觉得来不及了，觉得自己不行。</p>
+                <p>但我想告诉你：<strong>4个月，足够改变一切。</strong></p>
+                <p>不需要你变成学霸，只需要你每天比昨天多会一道题。</p>
+                <p>不需要你考满分，只需要你把会的题做对。</p>
+                <p>不需要你和别人比，只需要你不放弃自己。</p>
+                <p>120天后，当你走出考场的那一刻，你会感谢现在没有放弃的自己。</p>
+                <p style="font-size: 1.5rem; margin-top: 20px;"><strong>加油，你可以的。</strong></p>
+            </div>
+
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-top: 30px;">
+                <h3>致家长</h3>
+                <p>这4个月，孩子需要的不是更多的压力，而是更多的支持。</p>
+                <p>请相信他/她，即使成绩不理想。</p>
+                <p>请鼓励他/她，即使进步很小。</p>
+                <p>请陪伴他/她，即使你也很焦虑。</p>
+                <p>你的信任和支持，是孩子最大的动力。</p>
+                <p style="font-size: 1.2rem; margin-top: 15px;"><strong>一起加油。</strong></p>
+            </div>
+
+            <!-- 配套文档下载 -->
+            <div style="background: #e8f5e9; padding: 30px; border-radius: 15px; margin-top: 30px;">
+                <h3 style="color: #2e7d32; margin-top: 0;"><i class="fas fa-download"></i> 配套执行文档下载</h3>
+                <p>以下文档提供更详细的可执行计划，建议打印使用：</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-top: 20px;">
+                    <a href="../docs-v2/15-4个月冲刺-16周详细执行计划.md" download style="display: block; background: white; padding: 15px; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <strong style="color: #2e7d32;">16周详细执行计划</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">每周每天具体任务清单，可打印模板</p>
+                    </a>
+                    <a href="../docs-v2/16-各科学习方法SOP手册.md" download style="display: block; background: white; padding: 15px; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <strong style="color: #2e7d32;">各科学习方法SOP手册</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">每个步骤都可执行的标准流程</p>
+                    </a>
+                    <a href="../docs-v2/17-家庭支持具体操作指南.md" download style="display: block; background: white; padding: 15px; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <strong style="color: #2e7d32;">家庭支持操作指南</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">家长每日/每周必做清单，沟通话术</p>
+                    </a>
+                    <a href="../docs-v2/18-核心学习方法详解-高效记忆与解题技巧.md" download style="display: block; background: white; padding: 15px; border-radius: 8px; text-decoration: none; color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                        <strong style="color: #2e7d32;">核心学习方法详解</strong>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">复述、回忆、错题本、思路分析等方法详解</p>
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding: 20px; color: #666;">
+                <p>文档版本：4个月紧急冲刺版 v2.0</p>
+                <p>适用时间：距离中考4个月以内</p>
+                <p>最后更新：2025年2月</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 侧边栏切换按钮 -->
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

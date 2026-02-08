@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语科目学习指南 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 20px 0;
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 15px 20px;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-header h3 {
+            font-size: 16px;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin: 0;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 10px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .toggle-sidebar {
+            display: none;
+            position: fixed;
+            top: 90px;
+            left: 10px;
+            z-index: 101;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .toggle-sidebar {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="math.html">🧮 数学指南</a></li>
+                        <li><a href="physics.html">⚛️ 物理指南</a></li>
+                        <li><a href="english.html">🔤 英语指南</a></li>
+                        <li><a href="politics.html">📖 政治指南</a></li>
+                        <li><a href="history.html">📚 历史指南</a></li>
+                        <li><a href="chemistry.html">🧪 化学指南</a></li>
+                        <li><a href="biology.html">🌱 生物指南</a></li>
+                        <li><a href="geography.html">🌍 地理指南</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="time-management.html">⏰ 时间管理</a></li>
+                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
+                        <li><a href="resources.html">📋 学习资源</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜索框 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索学习内容..." id="searchInput">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>目录导航</h3>
+            <button class="toggle-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#importance" onclick="scrollToSection('importance')">英语学习的重要性</a></li>
+            <li><a href="#knowledge-system" onclick="scrollToSection('knowledge-system')">英语知识体系构建</a></li>
+            <li><a href="#key-difficulties" onclick="scrollToSection('key-difficulties')">重点难点突破</a></li>
+            <li><a href="#detailed-methods" onclick="scrollToSection('detailed-methods')">详细学习方法与策略</a></li>
+            <li><a href="#vocab-methods" onclick="scrollToSection('vocab-methods')">词汇学习方法补充</a></li>
+            <li><a href="#learning-methods" onclick="scrollToSection('learning-methods')">学习方法与技巧</a></li>
+            <li><a href="#subject-specific-methods" onclick="scrollToSection('subject-specific-methods')">🔧 英语专属方法</a></li>
+            <li><a href="#learning-resources" onclick="scrollToSection('learning-resources')">学习资源推荐</a></li>
+            <li><a href="#exam-skills" onclick="scrollToSection('exam-skills')">考试技巧</a></li>
+            <li><a href="#evaluation-reflection" onclick="scrollToSection('evaluation-reflection')">学习评价与反思</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <div class="content-page">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> 返回首页
+            </a>
+            <h1>英语科目学习指南</h1>
+            
+            <div id="importance">
+                <h2>英语学习的重要性</h2>
+            <p>英语作为国际通用语言，是现代社会必备的技能之一。初中英语学习不仅是为了应对考试，更是为了培养语言交际能力，为将来的学习和工作打下坚实基础。英语学习需要听、说、读、写四项技能的全面发展。</p>
+            </div>
+
+            <div id="knowledge-system">
+                <h2>英语知识体系构建</h2>
+            <h3>词汇体系</h3>
+            <ul>
+                <li><strong>基础词汇（1500-2000词）</strong>：
+                    <ul>
+                        <li>日常生活词汇：家庭、学校、食物、服装等</li>
+                        <li>学科词汇：各学科相关的基本词汇</li>
+                        <li>功能词汇：表达时间、地点、方式等的词汇</li>
+                        <li>高频词汇：在各种语境中经常出现的词汇</li>
+                    </ul>
+                </li>
+                <li><strong>词汇学习策略</strong>：
+                    <ul>
+                        <li>词根词缀法：通过词根、前缀、后缀记忆单词</li>
+                        <li>联想记忆法：建立词汇之间的联系</li>
+                        <li>语境记忆法：在句子和文章中记忆单词</li>
+                        <li>分类记忆法：按主题分类记忆词汇</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>语法体系</h3>
+            <ul>
+                <li><strong>词法</strong>：
+                    <ul>
+                        <li>名词：可数名词、不可数名词、名词所有格</li>
+                        <li>代词：人称代词、物主代词、反身代词、指示代词</li>
+                        <li>形容词：形容词的比较级和最高级</li>
+                        <li>副词：副词的用法和比较级</li>
+                        <li>动词：动词时态、语态、情态动词</li>
+                        <li>介词：常用介词的用法</li>
+                        <li>连词：并列连词、从属连词</li>
+                        <li>数词：基数词、序数词</li>
+                    </ul>
+                </li>
+                <li><strong>句法</strong>：
+                    <ul>
+                        <li>简单句：五种基本句型</li>
+                        <li>并列句：用并列连词连接的句子</li>
+                        <li>复合句：主句和从句的关系</li>
+                        <li>定语从句：关系代词和关系副词的用法</li>
+                        <li>状语从句：时间、地点、原因、条件等状语从句</li>
+                        <li>宾语从句：that、if/whether、疑问词引导的宾语从句</li>
+                    </ul>
+                </li>
+                <li><strong>时态体系</strong>：
+                    <ul>
+                        <li>一般现在时：表示经常性动作或状态</li>
+                        <li>一般过去时：表示过去发生的动作或状态</li>
+                        <li>一般将来时：表示将来发生的动作</li>
+                        <li>现在进行时：表示正在进行的动作</li>
+                        <li>过去进行时：表示过去某时正在进行的动作</li>
+                        <li>现在完成时：表示过去发生对现在有影响的动作</li>
+                        <li>过去完成时：表示过去某时之前已完成的动作</li>
+                        <li>过去将来时：表示从过去某时看将来的动作</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>语音体系</h3>
+            <ul>
+                <li><strong>音标系统</strong>：
+                    <ul>
+                        <li>48个国际音标：20个元音，28个辅音</li>
+                        <li>音标与字母的对应关系</li>
+                        <li>音标的正确发音方法</li>
+                    </ul>
+                </li>
+                <li><strong>语音规则</strong>：
+                    <ul>
+                        <li>重读规则：单词重音的位置</li>
+                        <li>连读规则：单词间的连读现象</li>
+                        <li>语调规则：陈述句、疑问句的语调</li>
+                        <li>节奏规则：英语的节奏特点</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="detailed-methods">📚 详细英语学习方法与策略</h2>
+            
+            <div class="method-card">
+                <h3>🎯 英语学习核心理念</h3>
+                
+                <h4>1. 语言输入优先原则</h4>
+                <ul>
+                    <li><strong>大量输入：</strong>每天至少接触英语2小时（听+读）</li>
+                    <li><strong>可理解输入：</strong>选择略高于当前水平的材料</li>
+                    <li><strong>多样化输入：</strong>听力、阅读、视频等多种形式</li>
+                    <li><strong>持续性输入：</strong>保持每日接触，形成语感</li>
+                </ul>
+                
+                <h4>2. 循序渐进学习法</h4>
+                <div class="timeline-item">
+                    <strong>第1阶段（基础期）：</strong>重点掌握音标、基础词汇、简单语法
+                </div>
+                <div class="timeline-item">
+                    <strong>第2阶段（提升期）：</strong>扩大词汇量、复杂语法、基础听说
+                </div>
+                <div class="timeline-item">
+                    <strong>第3阶段（应用期）：</strong>综合运用、考试技巧、实际交流
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <h3>📖 词汇学习系统化方法</h3>
+                
+                <h4>词汇记忆策略</h4>
+                <ul>
+                    <li><strong>词根词缀法：</strong>掌握常见词根（如：vis-看，aud-听）</li>
+                    <li><strong>联想记忆法：</strong>将新单词与已知事物建立联系</li>
+                    <li><strong>情境记忆法：</strong>在具体语境中学习和使用单词</li>
+                    <li><strong>重复记忆法：</strong>艾宾浩斯遗忘曲线复习法</li>
+                </ul>
+                
+                <h4>词汇学习计划</h4>
+                <div class="checklist">
+                    <label><input type="checkbox"> 每天学习20个新单词</label><br>
+                    <label><input type="checkbox"> 复习前一天的单词</label><br>
+                    <label><input type="checkbox"> 每周复习本周所有单词</label><br>
+                    <label><input type="checkbox"> 每月进行词汇测试</label>
+                </div>
+                
+                <h4>词汇分级学习</h4>
+                <ul>
+                    <li><strong>核心词汇（1500词）：</strong>必须熟练掌握，能听说读写</li>
+                    <li><strong>认知词汇（1000词）：</strong>能够理解意思，主要用于阅读</li>
+                    <li><strong>拓展词汇（500词）：</strong>提高类词汇，增强语言表达力</li>
+                </ul>
+            </div>
+
+            <div class="grammar-card">
+                <h3>📝 语法学习系统方法</h3>
+                
+                <h4>语法学习三步法</h4>
+                <ol>
+                    <li><strong>理解规则：</strong>明确语法规则的含义和用法</li>
+                    <li><strong>模仿练习：</strong>通过例句模仿正确的语法结构</li>
+                    <li><strong>应用创造：</strong>在实际语境中运用语法知识</li>
+                </ol>
+                
+                <h4>重点语法突破</h4>
+                <div class="timeline-item">
+                    <strong>时态系统：</strong>一般现在时→现在进行时→一般过去时→现在完成时
+                </div>
+                <div class="timeline-item">
+                    <strong>句型结构：</strong>简单句→并列句→复合句→复杂句
+                </div>
+                <div class="timeline-item">
+                    <strong>语态变化：</strong>主动语态→被动语态→各种时态的被动语态
+                </div>
+                
+                <h4>语法错误预防</h4>
+                <ul>
+                    <li><strong>主谓一致：</strong>注意单复数形式的匹配</li>
+                    <li><strong>时态呼应：</strong>保持句子内时态的一致性</li>
+                    <li><strong>介词搭配：</strong>记住固定的介词搭配</li>
+                    <li><strong>语序问题：</strong>掌握疑问句、感叹句的语序</li>
+                </ul>
+            </div>
+
+            <div class="practice-card">
+                <h3>🎯 综合技能训练方法</h3>
+                
+                <h4>听说读写整合训练</h4>
+                <ul>
+                    <li><strong>听后说：</strong>听完材料后复述主要内容</li>
+                    <li><strong>读后写：</strong>阅读文章后写出摘要或感想</li>
+                    <li><strong>说后写：</strong>口头表达后整理成书面形式</li>
+                    <li><strong>写后读：</strong>写完作文后大声朗读检查</li>
+                </ul>
+                
+                <h4>每日英语学习流程</h4>
+                <div class="daily-flow">
+                    <div class="flow-step">
+                        <strong>晨读（15分钟）：</strong>朗读课文或美文，培养语感
+                    </div>
+                    <div class="flow-step">
+                        <strong>词汇学习（20分钟）：</strong>学习新单词，复习旧单词
+                    </div>
+                    <div class="flow-step">
+                        <strong>听力训练（20分钟）：</strong>精听+泛听结合
+                    </div>
+                    <div class="flow-step">
+                        <strong>阅读练习（25分钟）：</strong>精读+泛读结合
+                    </div>
+                    <div class="flow-step">
+                        <strong>写作练习（15分钟）：</strong>日记、作文或翻译
+                    </div>
+                </div>
+            </div>
+
+            <h2>四项技能训练</h2>
+            <h3>听力技能</h3>
+            <ul>
+                <li><strong>听力理解层次</strong>：
+                    <ul>
+                        <li>语音识别：识别单词和短语</li>
+                        <li>句子理解：理解句子的意思</li>
+                        <li>语篇理解：理解对话和短文的主要内容</li>
+                        <li>推理判断：根据听到的内容进行推理</li>
+                    </ul>
+                </li>
+                <li><strong>听力训练方法</strong>：
+                    <ul>
+                        <li>精听训练：反复听同一材料，理解每个细节</li>
+                        <li>泛听训练：大量听不同材料，提高整体理解能力</li>
+                        <li>跟读训练：跟着录音朗读，提高语音语调</li>
+                        <li>听写训练：边听边写，提高听力和拼写能力</li>
+                    </ul>
+                </li>
+                <li><strong>听力材料选择</strong>：
+                    <ul>
+                        <li>教材配套录音：与课文内容相关</li>
+                        <li>英语歌曲：提高兴趣，培养语感</li>
+                        <li>英语动画片：生动有趣，贴近生活</li>
+                        <li>英语新闻：了解时事，提高水平</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>口语技能</h3>
+            <ul>
+                <li><strong>口语表达层次</strong>：
+                    <ul>
+                        <li>语音准确：发音清晰，语调自然</li>
+                        <li>词汇丰富：使用恰当的词汇表达</li>
+                        <li>语法正确：使用正确的语法结构</li>
+                        <li>流利表达：连贯、自然地表达思想</li>
+                    </ul>
+                </li>
+                <li><strong>口语训练方法</strong>：
+                    <ul>
+                        <li>模仿练习：模仿标准发音和语调</li>
+                        <li>朗读练习：大声朗读课文和文章</li>
+                        <li>对话练习：与同学或老师进行对话</li>
+                        <li>演讲练习：就某个话题进行演讲</li>
+                    </ul>
+                </li>
+                <li><strong>口语话题</strong>：
+                    <ul>
+                        <li>个人介绍：姓名、年龄、爱好等</li>
+                        <li>日常生活：学校生活、家庭生活等</li>
+                        <li>兴趣爱好：运动、音乐、阅读等</li>
+                        <li>社会话题：环保、科技、文化等</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>阅读技能</h3>
+            <ul>
+                <li><strong>阅读理解层次</strong>：
+                    <ul>
+                        <li>字面理解：理解文章的表面意思</li>
+                        <li>推理理解：根据文章内容进行推理</li>
+                        <li>评价理解：对文章内容进行评价</li>
+                        <li>创造理解：结合自己的经验理解文章</li>
+                    </ul>
+                </li>
+                <li><strong>阅读策略</strong>：
+                    <ul>
+                        <li>预测策略：根据标题和图片预测内容</li>
+                        <li>略读策略：快速浏览，了解大意</li>
+                        <li>寻读策略：寻找特定信息</li>
+                        <li>精读策略：仔细阅读，理解细节</li>
+                    </ul>
+                </li>
+                <li><strong>阅读材料</strong>：
+                    <ul>
+                        <li>教材课文：与教学内容相关</li>
+                        <li>英语故事：有趣的故事情节</li>
+                        <li>英语报刊：了解时事和文化</li>
+                        <li>英语网站：获取最新信息</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>写作技能</h3>
+            <ul>
+                <li><strong>写作类型</strong>：
+                    <ul>
+                        <li>记叙文：叙述事件的经过</li>
+                        <li>说明文：说明事物的特点</li>
+                        <li>议论文：表达观点和看法</li>
+                        <li>应用文：书信、通知、日记等</li>
+                    </ul>
+                </li>
+                <li><strong>写作步骤</strong>：
+                    <ul>
+                        <li>审题：理解题目要求</li>
+                        <li>构思：确定写作思路</li>
+                        <li>列提纲：安排文章结构</li>
+                        <li>写作：按提纲写作</li>
+                        <li>修改：检查和修改文章</li>
+                    </ul>
+                </li>
+                <li><strong>写作技巧</strong>：
+                    <ul>
+                        <li>开头技巧：吸引读者注意</li>
+                        <li>过渡技巧：使文章连贯</li>
+                        <li>结尾技巧：总结全文</li>
+                        <li>修辞技巧：使用比喻、排比等</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>分层学习策略</h2>
+            <h3>基础薄弱学生（40分以下）</h3>
+            <ul>
+                <li><strong>学习重点</strong>：
+                    <ul>
+                        <li>音标学习：掌握48个国际音标</li>
+                        <li>基础词汇：掌握800-1000个常用单词</li>
+                        <li>基础语法：简单句的结构和基本时态</li>
+                        <li>简单对话：日常生活中的简单交流</li>
+                    </ul>
+                </li>
+                <li><strong>学习方法</strong>：
+                    <ul>
+                        <li>从音标开始，打好语音基础</li>
+                        <li>大量背诵单词，建立词汇基础</li>
+                        <li>反复练习基础语法</li>
+                        <li>多听多说，培养语感</li>
+                    </ul>
+                </li>
+                <li><strong>时间分配</strong>：
+                    <ul>
+                        <li>每天英语学习时间：1-1.5小时</li>
+                        <li>单词记忆：30分钟</li>
+                        <li>语音练习：20分钟</li>
+                        <li>基础语法：25分钟</li>
+                        <li>听说训练：15分钟</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>中等水平学生（40-70分）</h3>
+            <ul>
+                <li><strong>学习重点</strong>：
+                    <ul>
+                        <li>词汇扩展：掌握1500-2000个单词</li>
+                        <li>语法深化：复合句和各种时态</li>
+                        <li>阅读理解：理解中等难度的文章</li>
+                        <li>写作训练：写出结构完整的短文</li>
+                    </ul>
+                </li>
+                <li><strong>学习方法</strong>：
+                    <ul>
+                        <li>系统学习语法知识</li>
+                        <li>大量阅读英语文章</li>
+                        <li>练习写作技巧</li>
+                        <li>参与英语交流活动</li>
+                    </ul>
+                </li>
+                <li><strong>时间分配</strong>：
+                    <ul>
+                        <li>每天英语学习时间：1.5-2小时</li>
+                        <li>词汇学习：30分钟</li>
+                        <li>语法学习：35分钟</li>
+                        <li>阅读练习：30分钟</li>
+                        <li>写作练习：25分钟</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>优秀学生（70分以上）</h3>
+            <ul>
+                <li><strong>学习重点</strong>：
+                    <ul>
+                        <li>词汇精通：掌握2500个以上单词</li>
+                        <li>语法运用：灵活运用各种语法结构</li>
+                        <li>高级阅读：理解复杂的英语文章</li>
+                        <li>流利表达：能够流利地进行英语交流</li>
+                    </ul>
+                </li>
+                <li><strong>学习方法</strong>：
+                    <ul>
+                        <li>挑战高难度材料</li>
+                        <li>培养英语思维</li>
+                        <li>参与英语竞赛</li>
+                        <li>接触原版英语材料</li>
+                    </ul>
+                </li>
+                <li><strong>时间分配</strong>：
+                    <ul>
+                        <li>每天英语学习时间：2-2.5小时</li>
+                        <li>高级阅读：45分钟</li>
+                        <li>写作提高：40分钟</li>
+                        <li>口语练习：35分钟</li>
+                        <li>拓展学习：30分钟</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+
+            <div id="key-difficulties">
+                <h2>重点难点突破</h2>
+            <h3>语法难点</h3>
+            <ul>
+                <li><strong>时态运用</strong>：
+                    <ul>
+                        <li>理解各种时态的含义和用法</li>
+                        <li>掌握时态的标志词</li>
+                        <li>在语境中正确使用时态</li>
+                        <li>区分相似时态的差别</li>
+                    </ul>
+                </li>
+                <li><strong>从句结构</strong>：
+                    <ul>
+                        <li>定语从句：关系代词和关系副词的选择</li>
+                        <li>状语从句：各种状语从句的引导词</li>
+                        <li>宾语从句：语序和时态的一致性</li>
+                    </ul>
+                </li>
+                <li><strong>非谓语动词</strong>：
+                    <ul>
+                        <li>动名词的用法</li>
+                        <li>不定式的用法</li>
+                        <li>分词的用法</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>词汇难点</h3>
+            <ul>
+                <li><strong>词汇记忆</strong>：
+                    <ul>
+                        <li>克服遗忘，建立长期记忆</li>
+                        <li>区分形近词和音近词</li>
+                        <li>掌握一词多义</li>
+                        <li>理解词汇的搭配关系</li>
+                    </ul>
+                </li>
+                <li><strong>词汇运用</strong>：
+                    <ul>
+                        <li>在语境中理解词汇含义</li>
+                        <li>正确使用词汇表达思想</li>
+                        <li>避免中式英语表达</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>阅读难点</h3>
+            <ul>
+                <li><strong>阅读速度</strong>：
+                    <ul>
+                        <li>提高阅读速度</li>
+                        <li>避免逐词阅读</li>
+                        <li>培养快速获取信息的能力</li>
+                    </ul>
+                </li>
+                <li><strong>阅读理解</strong>：
+                    <ul>
+                        <li>理解文章的主旨大意</li>
+                        <li>把握文章的细节信息</li>
+                        <li>推断作者的观点和态度</li>
+                        <li>理解文章的逻辑关系</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+
+            <div id="learning-methods">
+                <h2>学习方法与技巧</h2>
+            <h3>记忆技巧</h3>
+            <ul>
+                <li><strong>单词记忆</strong>：
+                    <ul>
+                        <li>词根词缀法：分析单词的构成</li>
+                        <li>联想记忆法：建立词汇间的联系</li>
+                        <li>情景记忆法：在具体情景中记忆</li>
+                        <li>重复记忆法：多次重复加深印象</li>
+                    </ul>
+                </li>
+                <li><strong>语法记忆</strong>：
+                    <ul>
+                        <li>理解记忆：理解语法规则的原理</li>
+                        <li>例句记忆：通过例句记忆语法</li>
+                        <li>对比记忆：比较相似语法的差异</li>
+                        <li>练习记忆：通过练习巩固语法</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>学习策略</h3>
+            <ul>
+                <li><strong>输入策略</strong>：
+                    <ul>
+                        <li>大量接触英语材料</li>
+                        <li>选择适合自己水平的材料</li>
+                        <li>注重材料的趣味性</li>
+                        <li>坚持每天接触英语</li>
+                    </ul>
+                </li>
+                <li><strong>输出策略</strong>：
+                    <ul>
+                        <li>积极参与英语交流</li>
+                        <li>勇于开口说英语</li>
+                        <li>经常练习写作</li>
+                        <li>不怕犯错误</li>
+                    </ul>
+                </li>
+                <li><strong>反思策略</strong>：
+                    <ul>
+                        <li>定期总结学习成果</li>
+                        <li>分析学习中的问题</li>
+                        <li>调整学习方法</li>
+                        <li>制定改进计划</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+
+            <div id="learning-resources">
+                <h2>学习资源推荐</h2>
+            <h3>教材和参考书</h3>
+            <ul>
+                <li><strong>主教材</strong>：人教版初中英语教材</li>
+                <li><strong>辅导书</strong>：
+                    <ul>
+                        <li>《初中英语语法大全》</li>
+                        <li>《英语词汇手册》</li>
+                        <li>《中考英语总复习》</li>
+                    </ul>
+                </li>
+                <li><strong>词典</strong>：
+                    <ul>
+                        <li>《牛津初阶英汉双解词典》</li>
+                        <li>《朗文当代英语词典》</li>
+                        <li>电子词典或手机APP</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>在线资源</h3>
+            <ul>
+                <li><strong>学习网站</strong>：
+                    <ul>
+                        <li>BBC Learning English</li>
+                        <li>VOA Learning English</li>
+                        <li>可可英语</li>
+                        <li>沪江英语</li>
+                    </ul>
+                </li>
+                <li><strong>学习APP</strong>：
+                    <ul>
+                        <li>百词斩：单词记忆</li>
+                        <li>扇贝英语：综合学习</li>
+                        <li>流利说：口语练习</li>
+                        <li>有道词典：查词翻译</li>
+                    </ul>
+                </li>
+                <li><strong>视频资源</strong>：
+                    <ul>
+                        <li>TED-Ed：教育视频</li>
+                        <li>YouTube英语频道</li>
+                        <li>B站英语学习视频</li>
+                        <li>网易公开课</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>听力材料</h3>
+            <ul>
+                <li><strong>初级材料</strong>：
+                    <ul>
+                        <li>教材配套录音</li>
+                        <li>英语儿歌</li>
+                        <li>简单的英语故事</li>
+                        <li>英语动画片</li>
+                    </ul>
+                </li>
+                <li><strong>中级材料</strong>：
+                    <ul>
+                        <li>英语新闻（慢速）</li>
+                        <li>英语电影（带字幕）</li>
+                        <li>英语广播节目</li>
+                        <li>英语访谈节目</li>
+                    </ul>
+                </li>
+                <li><strong>高级材料</strong>：
+                    <ul>
+                        <li>英语新闻（正常语速）</li>
+                        <li>英语电影（无字幕）</li>
+                        <li>英语讲座</li>
+                        <li>英语播客</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+
+            <div id="exam-skills">
+                <h2>考试技巧</h2>
+            <h3>听力考试技巧</h3>
+            <ul>
+                <li><strong>考前准备</strong>：
+                    <ul>
+                        <li>熟悉题型和要求</li>
+                        <li>预读题目和选项</li>
+                        <li>预测可能的内容</li>
+                    </ul>
+                </li>
+                <li><strong>听音技巧</strong>：
+                    <ul>
+                        <li>集中注意力</li>
+                        <li>抓住关键词</li>
+                        <li>注意语音语调</li>
+                        <li>边听边记笔记</li>
+                    </ul>
+                </li>
+                <li><strong>答题技巧</strong>：
+                    <ul>
+                        <li>快速选择答案</li>
+                        <li>不要纠结难题</li>
+                        <li>利用排除法</li>
+                        <li>检查答案</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>阅读考试技巧</h3>
+            <ul>
+                <li><strong>快速阅读</strong>：
+                    <ul>
+                        <li>先读题目，再读文章</li>
+                        <li>抓住文章主旨</li>
+                        <li>注意段落大意</li>
+                        <li>寻找关键信息</li>
+                    </ul>
+                </li>
+                <li><strong>细节理解</strong>：
+                    <ul>
+                        <li>定位关键词</li>
+                        <li>理解上下文</li>
+                        <li>注意同义替换</li>
+                        <li>排除干扰选项</li>
+                    </ul>
+                </li>
+                <li><strong>推理判断</strong>：
+                    <ul>
+                        <li>根据文章内容推理</li>
+                        <li>注意作者态度</li>
+                        <li>理解隐含意思</li>
+                        <li>避免过度推理</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>写作考试技巧</h3>
+            <ul>
+                <li><strong>审题</strong>：
+                    <ul>
+                        <li>仔细阅读题目要求</li>
+                        <li>确定文体和格式</li>
+                        <li>明确写作要点</li>
+                        <li>注意字数要求</li>
+                    </ul>
+                </li>
+                <li><strong>构思</strong>：
+                    <ul>
+                        <li>确定文章结构</li>
+                        <li>安排段落内容</li>
+                        <li>选择合适词汇</li>
+                        <li>考虑语法结构</li>
+                    </ul>
+                </li>
+                <li><strong>写作</strong>：
+                    <ul>
+                        <li>开头要吸引人</li>
+                        <li>段落要有逻辑</li>
+                        <li>使用连接词</li>
+                        <li>结尾要总结</li>
+                    </ul>
+                </li>
+                <li><strong>检查</strong>：
+                    <ul>
+                        <li>检查语法错误</li>
+                        <li>检查拼写错误</li>
+                        <li>检查标点符号</li>
+                        <li>检查字数</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>常见错误及纠正</h2>
+            <h3>语法错误</h3>
+            <ul>
+                <li><strong>时态错误</strong>：
+                    <ul>
+                        <li>混淆不同时态的用法</li>
+                        <li>时态前后不一致</li>
+                        <li>忽略时间状语的提示</li>
+                    </ul>
+                </li>
+                <li><strong>主谓一致错误</strong>：
+                    <ul>
+                        <li>单复数不一致</li>
+                        <li>就近原则使用错误</li>
+                        <li>集体名词的单复数</li>
+                    </ul>
+                </li>
+                <li><strong>介词错误</strong>：
+                    <ul>
+                        <li>介词搭配错误</li>
+                        <li>介词遗漏或多余</li>
+                        <li>介词与动词的搭配</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>词汇错误</h3>
+            <ul>
+                <li><strong>词义错误</strong>：
+                    <ul>
+                        <li>混淆近义词</li>
+                        <li>不理解词汇的确切含义</li>
+                        <li>受中文思维影响</li>
+                    </ul>
+                </li>
+                <li><strong>搭配错误</strong>：
+                    <ul>
+                        <li>动词与名词的搭配</li>
+                        <li>形容词与名词的搭配</li>
+                        <li>固定短语的搭配</li>
+                    </ul>
+                </li>
+                <li><strong>拼写错误</strong>：
+                    <ul>
+                        <li>字母顺序错误</li>
+                        <li>双写字母错误</li>
+                        <li>词尾变化错误</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>表达错误</h3>
+            <ul>
+                <li><strong>中式英语</strong>：
+                    <ul>
+                        <li>直接翻译中文表达</li>
+                        <li>语序受中文影响</li>
+                        <li>思维方式不够英语化</li>
+                    </ul>
+                </li>
+                <li><strong>语言不地道</strong>：
+                    <ul>
+                        <li>用词不够准确</li>
+                        <li>表达不够自然</li>
+                        <li>缺乏英语语感</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+
+            <div id="evaluation-reflection">
+                <h2>学习评价与反思</h2>
+            <h3>自我评价</h3>
+            <ul>
+                <li><strong>听力能力</strong>：
+                    <ul>
+                        <li>能否听懂日常对话</li>
+                        <li>能否理解听力材料的主要内容</li>
+                        <li>能否捕捉关键信息</li>
+                    </ul>
+                </li>
+                <li><strong>口语能力</strong>：
+                    <ul>
+                        <li>发音是否准确</li>
+                        <li>表达是否流利</li>
+                        <li>能否进行简单交流</li>
+                    </ul>
+                </li>
+                <li><strong>阅读能力</strong>：
+                    <ul>
+                        <li>阅读速度是否合适</li>
+                        <li>理解程度如何</li>
+                        <li>能否获取有用信息</li>
+                    </ul>
+                </li>
+                <li><strong>写作能力</strong>：
+                    <ul>
+                        <li>语法是否正确</li>
+                        <li>词汇使用是否恰当</li>
+                        <li>表达是否清楚</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>学习反思</h3>
+            <ul>
+                <li><strong>学习态度</strong>：
+                    <ul>
+                        <li>是否积极主动学习</li>
+                        <li>是否坚持每天学习</li>
+                        <li>是否勇于开口说英语</li>
+                    </ul>
+                </li>
+                <li><strong>学习方法</strong>：
+                    <ul>
+                        <li>学习方法是否有效</li>
+                        <li>是否需要调整策略</li>
+                        <li>是否充分利用资源</li>
+                    </ul>
+                </li>
+                <li><strong>学习效果</strong>：
+                    <ul>
+                        <li>成绩是否有提高</li>
+                        <li>能力是否有发展</li>
+                        <li>兴趣是否有增加</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>改进计划</h3>
+            <ul>
+                <li><strong>短期目标</strong>：
+                    <ul>
+                        <li>每周的学习目标</li>
+                        <li>具体的改进措施</li>
+                        <li>可量化的指标</li>
+                    </ul>
+                </li>
+                <li><strong>长期目标</strong>：
+                    <ul>
+                        <li>学期或学年的目标</li>
+                        <li>能力发展的方向</li>
+                        <li>未来的学习规划</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        <!-- 词汇学习方法补充（词根词缀·词组搭配·语境猜词） - 移入主内容容器，避免被侧边目录覆盖 -->
+        <section class="content-section" id="vocab-methods">
+            <h2>🔧 词汇学习方法补充：词根词缀·词组搭配·语境猜词（拒绝死记硬背）</h2>
+            <div class="card">
+                <h3>目标与量化指标</h3>
+                <ul>
+                    <li>每周词根/前后缀：3个（如 re-, pre-, -tion）→ 扩展相关词≥15个。</li>
+                    <li>固定搭配：每天5个，周累计≥35个，全部造“个人例句”。</li>
+                    <li>语境猜词：每周阅读练习3段（150-250词），正确率≥80%。</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <h4>词根词缀簇（构词法）</h4>
+                    <ul>
+                        <li>建立个人词根表：每周2-3个高频词根与前后缀。</li>
+                        <li>词簇扩展练习：围绕一个词根扩展5-8个相关词并造句。</li>
+                        <li>联想网络：按场景分组形成“词汇地图”。</li>
+                        <li>示例：re-（再次/向后）→ review, rewrite, return, replace；pre-（在前）→ prepare, preview；-tion（名词后缀）→ action, education。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>固定搭配与词组（collocations）</h4>
+                    <ul>
+                        <li>每日积累5个搭配（make a decision, pay attention to 等）。</li>
+                        <li>例句优先：每个搭配至少造1个“属于你的句子”。</li>
+                        <li>搭配卡片：含义+例句+常见错用（如 do a decision × → make a decision）。</li>
+                        <li>话题化收集：学习/校园/健康/环保等主题各建一组清单。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>语境猜词（阅读中词义猜测）</h4>
+                    <ul>
+                        <li>线索类型：同义改写（That is/which means）、例子（for example）、转折（however）、因果（because/so/therefore）。</li>
+                        <li>结构线索：定义句（X is defined as...）、同位语、定语从句。</li>
+                        <li>排除法：不合语境的选项直接淘汰；优先匹配语气、时态和逻辑。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>30分钟词汇训练 SOP（可执行）</h3>
+                <ol>
+                    <li>3分钟：选今天的词根/前缀与5个固定搭配；写在卡片或APP自定义词单里。</li>
+                    <li>10分钟：
+                        <ul>
+                            <li>构词簇扩展：围绕词根列出5-8个派生词，查例句，标注词性与中文义。</li>
+                            <li>搭配造句：每个搭配造1句“与你相关”的句子（学校/家庭/兴趣）。</li>
+                        </ul>
+                    </li>
+                    <li>10分钟：语境猜词微练习（150-200词短文）：圈出线索词，给出猜测并写下理由。</li>
+                    <li>5分钟：复盘与间隔复习计划：按 1/3/7/15 天安排回看，标注掌握度（✓/△/✗）。</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h3>示例卡片模板（可照搬）</h3>
+                <ul>
+                    <li>词根卡：root=tele（远）→ telephone, television, telegram；句子：I called my grandma by telephone.</li>
+                    <li>搭配卡：pay attention to（注意）→ Please pay attention to the rules.｜常错：pay attention on ×</li>
+                    <li>语境猜词："The device is portable, so you can carry it everywhere." portable ≈ easy to carry（因果线索 so）。</li>
+                </ul>
+            </div>
+
+            <div class="success">
+                <h4>每周训练安排</h4>
+                <ul>
+                    <li>周一：词根A + 12个派生词；搭配5个；语境练习1段。</li>
+                    <li>周三：词根B + 12个派生词；搭配5个；语境练习1段。</li>
+                    <li>周五：词根C + 12个派生词；搭配5个；语境练习1段。</li>
+                    <li>周日：写100词短文，刻意使用本周10个词/搭配；自测与纠错。</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <h4>自测清单与达标标准</h4>
+                <ul>
+                    <li>派生词正确率≥85%（拼写+词性+基本义）。</li>
+                    <li>固定搭配造句无语法错误；能说出常见错搭配并纠正。</li>
+                    <li>语境猜词练习正确率≥80%，并能描述“线索来源”。</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>记录表（建议打印或用表格工具跟踪）</h3>
+                <div class="table-responsive">
+                    <table class="diagnosis-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>词根/前缀</th>
+                                <th>派生词（≥5）</th>
+                                <th>固定搭配（≥5）</th>
+                                <th>语境猜词正确率</th>
+                                <th>复习安排（1/3/7/15）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11/04</td>
+                                <td>re-</td>
+                                <td>review/rewrite/return/replace/record</td>
+                                <td>make a decision / pay attention to / be good at / take part in / in order to</td>
+                                <td>80%</td>
+                                <td>✓ △ ✓ △</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>工具与素材</h3>
+                <ul>
+                    <li>词根/搭配查询：Oxford Learner's Dictionaries、Cambridge Dictionary。</li>
+                    <li>APP：不背单词（自定义词单）、扇贝（搭配与例句）、朗易思听（语境听读）。</li>
+                    <li>素材来源：课本文章、校内考试真题、公众号英语阅读。</li>
+                </ul>
+            </div>
+        </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 初中学习低分重建指导系统. 专注于帮助初中生提升学习成绩.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+    <script>
+        // 搜索功能（兼容）
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput && searchInput.value.trim().length >= 2) {
+                const event = new Event('input');
+                searchInput.dispatchEvent(event);
+            }
+        }
+        
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                updateActiveLink(sectionId);
+            }
+        }
+
+        function updateActiveLink(activeId) {
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const sections = ['importance', 'knowledge-system', 'key-difficulties', 'detailed-methods', 'vocab-methods', 'learning-methods', 'learning-resources', 'exam-skills', 'evaluation-reflection'];
+            let currentSection = '';
+            
+            sections.forEach(sectionId => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                    }
+                }
+            });
+            
+            if (currentSection) {
+                updateActiveLink(currentSection);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveLink('importance');
+        });
+    </script>
+</body>
+</html>

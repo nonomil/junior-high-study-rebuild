@@ -1,0 +1,252 @@
+<svg width="1600" height="1200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="mathGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="physicsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="englishGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="politicsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+</linearGradient>
+<linearGradient id="historyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+</linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+<feDropShadow dx="3" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+</filter>
+<marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+</marker>
+</defs>
+<rect width="1600" height="1200" fill="#f8f9fa"/>
+<text x="800" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2c3e50">初中各学科学习策略对比图</text>
+<text x="800" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7f8c8d">Subject Learning Strategies Comparison</text>
+<g id="math-section">
+<rect x="50" y="100" width="300" height="400" rx="15" fill="url(#mathGrad)" filter="url(#shadow)"/>
+<text x="200" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">📊 数学 Mathematics</text>
+<rect x="70" y="150" width="260" height="330" rx="10" fill="rgba(255,255,255,0.9)"/>
+<text x="200" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5a67d8">核心策略</text>
+<text x="80" y="195" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 概念理解 → 公式记忆</text>
+<text x="80" y="210" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 基础计算 → 综合应用</text>
+<text x="80" y="225" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 错题分析 → 举一反三</text>
+<text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5a67d8">学习重点</text>
+<circle cx="90" cy="270" r="4" fill="#667eea"/>
+<text x="105" y="275" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">函数与方程</text>
+<circle cx="90" cy="285" r="4" fill="#667eea"/>
+<text x="105" y="290" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">几何证明</text>
+<circle cx="90" cy="300" r="4" fill="#667eea"/>
+<text x="105" y="305" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">应用题建模</text>
+<circle cx="90" cy="315" r="4" fill="#667eea"/>
+<text x="105" y="320" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">计算准确性</text>
+<text x="200" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5a67d8">时间分配</text>
+<rect x="80" y="355" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="80" y="355" width="84" height="15" fill="#667eea" rx="7"/>
+<text x="210" y="367" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">基础70%</text>
+<rect x="80" y="375" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="80" y="375" width="36" height="15" fill="#764ba2" rx="7"/>
+<text x="210" y="387" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">提高30%</text>
+<text x="200" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#5a67d8">评估方式</text>
+<text x="80" y="430" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 每日计算练习</text>
+<text x="80" y="445" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 周测错题统计</text>
+<text x="80" y="460" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 月考成绩分析</text>
+</g>
+<g id="physics-section">
+<rect x="370" y="100" width="300" height="400" rx="15" fill="url(#physicsGrad)" filter="url(#shadow)"/>
+<text x="520" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">⚡ 物理 Physics</text>
+<rect x="390" y="150" width="260" height="330" rx="10" fill="rgba(255,255,255,0.9)"/>
+<text x="520" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e53e3e">核心策略</text>
+<text x="400" y="195" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 概念理解 → 实验验证</text>
+<text x="400" y="210" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 公式推导 → 应用练习</text>
+<text x="400" y="225" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 图像分析 → 规律总结</text>
+<text x="520" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e53e3e">学习重点</text>
+<circle cx="410" cy="270" r="4" fill="#f093fb"/>
+<text x="425" y="275" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">力学分析</text>
+<circle cx="410" cy="285" r="4" fill="#f093fb"/>
+<text x="425" y="290" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">电学计算</text>
+<circle cx="410" cy="300" r="4" fill="#f093fb"/>
+<text x="425" y="305" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">实验操作</text>
+<circle cx="410" cy="315" r="4" fill="#f093fb"/>
+<text x="425" y="320" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">图像理解</text>
+<text x="520" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e53e3e">时间分配</text>
+<rect x="400" y="355" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="400" y="355" width="72" height="15" fill="#f093fb" rx="7"/>
+<text x="530" y="367" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">概念60%</text>
+<rect x="400" y="375" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="400" y="375" width="48" height="15" fill="#f5576c" rx="7"/>
+<text x="530" y="387" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">计算40%</text>
+<text x="520" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e53e3e">评估方式</text>
+<text x="400" y="430" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 概念理解测试</text>
+<text x="400" y="445" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 实验报告评估</text>
+<text x="400" y="460" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 计算能力检测</text>
+</g>
+<g id="english-section">
+<rect x="690" y="100" width="300" height="400" rx="15" fill="url(#englishGrad)" filter="url(#shadow)"/>
+<text x="840" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">🌍 英语 English</text>
+<rect x="710" y="150" width="260" height="330" rx="10" fill="rgba(255,255,255,0.9)"/>
+<text x="840" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3182ce">核心策略</text>
+<text x="720" y="195" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 词汇积累 → 语法应用</text>
+<text x="720" y="210" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 听说训练 → 读写提升</text>
+<text x="720" y="225" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 语感培养 → 技巧掌握</text>
+<text x="840" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3182ce">学习重点</text>
+<circle cx="730" cy="270" r="4" fill="#4facfe"/>
+<text x="745" y="275" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">词汇扩展</text>
+<circle cx="730" cy="285" r="4" fill="#4facfe"/>
+<text x="745" y="290" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">语法结构</text>
+<circle cx="730" cy="300" r="4" fill="#4facfe"/>
+<text x="745" y="305" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">阅读理解</text>
+<circle cx="730" cy="315" r="4" fill="#4facfe"/>
+<text x="745" y="320" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">写作表达</text>
+<text x="840" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3182ce">时间分配</text>
+<rect x="720" y="355" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="720" y="355" width="60" height="15" fill="#4facfe" rx="7"/>
+<text x="850" y="367" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">词汇50%</text>
+<rect x="720" y="375" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="720" y="375" width="60" height="15" fill="#00f2fe" rx="7"/>
+<text x="850" y="387" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">技能50%</text>
+<text x="840" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3182ce">评估方式</text>
+<text x="720" y="430" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 词汇量测试</text>
+<text x="720" y="445" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 听说能力评估</text>
+<text x="720" y="460" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 读写综合检测</text>
+</g>
+<g id="politics-section">
+<rect x="1010" y="100" width="300" height="400" rx="15" fill="url(#politicsGrad)" filter="url(#shadow)"/>
+<text x="1160" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">🏛️ 政治 Politics</text>
+<rect x="1030" y="150" width="260" height="330" rx="10" fill="rgba(255,255,255,0.9)"/>
+<text x="1160" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#38a169">核心策略</text>
+<text x="1040" y="195" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 理论学习 → 实践理解</text>
+<text x="1040" y="210" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 记忆要点 → 逻辑分析</text>
+<text x="1040" y="225" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 时事关注 → 观点表达</text>
+<text x="1160" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#38a169">学习重点</text>
+<circle cx="1050" cy="270" r="4" fill="#43e97b"/>
+<text x="1065" y="275" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">基本理论</text>
+<circle cx="1050" cy="285" r="4" fill="#43e97b"/>
+<text x="1065" y="290" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">时事政治</text>
+<circle cx="1050" cy="300" r="4" fill="#43e97b"/>
+<text x="1065" y="305" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">材料分析</text>
+<circle cx="1050" cy="315" r="4" fill="#43e97b"/>
+<text x="1065" y="320" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">观点论述</text>
+<text x="1160" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#38a169">时间分配</text>
+<rect x="1040" y="355" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="1040" y="355" width="96" height="15" fill="#43e97b" rx="7"/>
+<text x="1170" y="367" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">记忆80%</text>
+<rect x="1040" y="375" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="1040" y="375" width="24" height="15" fill="#38f9d7" rx="7"/>
+<text x="1170" y="387" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">分析20%</text>
+<text x="1160" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#38a169">评估方式</text>
+<text x="1040" y="430" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 知识点背诵</text>
+<text x="1040" y="445" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 材料题练习</text>
+<text x="1040" y="460" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 论述题写作</text>
+</g>
+<g id="history-section">
+<rect x="370" y="530" width="300" height="400" rx="15" fill="url(#historyGrad)" filter="url(#shadow)"/>
+<text x="520" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">📚 历史 History</text>
+<rect x="390" y="580" width="260" height="330" rx="10" fill="rgba(255,255,255,0.9)"/>
+<text x="520" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d69e2e">核心策略</text>
+<text x="400" y="625" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 时间线索 → 因果关系</text>
+<text x="400" y="640" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 人物事件 → 历史规律</text>
+<text x="400" y="655" font-family="Arial, sans-serif" font-size="12" fill="#2d3748">• 史料分析 → 观点论证</text>
+<text x="520" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d69e2e">学习重点</text>
+<circle cx="410" cy="700" r="4" fill="#fa709a"/>
+<text x="425" y="705" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">重要事件</text>
+<circle cx="410" cy="715" r="4" fill="#fa709a"/>
+<text x="425" y="720" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">历史人物</text>
+<circle cx="410" cy="730" r="4" fill="#fa709a"/>
+<text x="425" y="735" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">时间脉络</text>
+<circle cx="410" cy="745" r="4" fill="#fa709a"/>
+<text x="425" y="750" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">史学方法</text>
+<text x="520" y="775" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d69e2e">时间分配</text>
+<rect x="400" y="785" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="400" y="785" width="84" height="15" fill="#fa709a" rx="7"/>
+<text x="530" y="797" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">记忆70%</text>
+<rect x="400" y="805" width="120" height="15" fill="#e2e8f0" rx="7"/>
+<rect x="400" y="805" width="36" height="15" fill="#fee140" rx="7"/>
+<text x="530" y="817" font-family="Arial, sans-serif" font-size="10" fill="#2d3748">理解30%</text>
+<text x="520" y="840" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d69e2e">评估方式</text>
+<text x="400" y="860" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 时间轴梳理</text>
+<text x="400" y="875" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 史料题分析</text>
+<text x="400" y="890" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">✓ 论述题写作</text>
+</g>
+<g id="comparison-chart">
+<rect x="750" y="530" width="500" height="400" rx="15" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+<text x="1000" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2d3748">学科特点对比分析</text>
+<g id="difficulty-comparison">
+<text x="770" y="590" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a5568">难度系数对比</text>
+<text x="770" y="610" font-family="Arial, sans-serif" font-size="12" fill="#667eea">数学</text>
+<rect x="810" y="605" width="150" height="10" fill="#e2e8f0" rx="5"/>
+<rect x="810" y="605" width="135" height="10" fill="#667eea" rx="5"/>
+<text x="970" y="614" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">★★★★★</text>
+<text x="770" y="630" font-family="Arial, sans-serif" font-size="12" fill="#f093fb">物理</text>
+<rect x="810" y="625" width="150" height="10" fill="#e2e8f0" rx="5"/>
+<rect x="810" y="625" width="120" height="10" fill="#f093fb" rx="5"/>
+<text x="970" y="634" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">★★★★☆</text>
+<text x="770" y="650" font-family="Arial, sans-serif" font-size="12" fill="#4facfe">英语</text>
+<rect x="810" y="645" width="150" height="10" fill="#e2e8f0" rx="5"/>
+<rect x="810" y="645" width="90" height="10" fill="#4facfe" rx="5"/>
+<text x="970" y="654" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">★★★☆☆</text>
+<text x="770" y="670" font-family="Arial, sans-serif" font-size="12" fill="#43e97b">政治</text>
+<rect x="810" y="665" width="150" height="10" fill="#e2e8f0" rx="5"/>
+<rect x="810" y="665" width="75" height="10" fill="#43e97b" rx="5"/>
+<text x="970" y="674" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">★★☆☆☆</text>
+<text x="770" y="690" font-family="Arial, sans-serif" font-size="12" fill="#fa709a">历史</text>
+<rect x="810" y="685" width="150" height="10" fill="#e2e8f0" rx="5"/>
+<rect x="810" y="685" width="60" height="10" fill="#fa709a" rx="5"/>
+<text x="970" y="694" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">★★☆☆☆</text>
+</g>
+<g id="time-investment">
+<text x="770" y="720" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a5568">建议时间投入比例</text>
+<circle cx="850" cy="760" r="60" fill="none" stroke="#e2e8f0" stroke-width="8"/>
+<path d="M 850 700 A 60 60 0 0 1 902 730 L 850 760 Z" fill="#667eea"/>
+<path d="M 902 730 A 60 60 0 0 1 902 790 L 850 760 Z" fill="#f093fb"/>
+<path d="M 902 790 A 60 60 0 0 1 798 790 L 850 760 Z" fill="#4facfe"/>
+<path d="M 798 790 A 60 60 0 0 1 798 730 L 850 760 Z" fill="#43e97b"/>
+<path d="M 798 730 A 60 60 0 0 1 850 700 L 850 760 Z" fill="#fa709a"/>
+<text x="850" y="765" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">时间分配</text>
+<text x="930" y="740" font-family="Arial, sans-serif" font-size="11" fill="#667eea">数学 30%</text>
+<text x="930" y="755" font-family="Arial, sans-serif" font-size="11" fill="#f093fb">物理 25%</text>
+<text x="930" y="770" font-family="Arial, sans-serif" font-size="11" fill="#4facfe">英语 20%</text>
+<text x="930" y="785" font-family="Arial, sans-serif" font-size="11" fill="#43e97b">政治 15%</text>
+<text x="930" y="800" font-family="Arial, sans-serif" font-size="11" fill="#fa709a">历史 10%</text>
+</g>
+<g id="study-methods">
+<text x="770" y="830" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a5568">学习方法特点</text>
+<rect x="770" y="840" width="200" height="80" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1" rx="5"/>
+<text x="780" y="855" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">理科（数学、物理）：</text>
+<text x="780" y="870" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 重逻辑推理和计算</text>
+<text x="780" y="885" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 需大量练习巩固</text>
+<text x="780" y="900" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 错题分析很重要</text>
+<text x="780" y="915" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 概念理解是基础</text>
+<rect x="980" y="840" width="200" height="80" fill="#f0fff4" stroke="#e2e8f0" stroke-width="1" rx="5"/>
+<text x="990" y="855" font-family="Arial, sans-serif" font-size="11" fill="#2d3748">文科（政治、历史）：</text>
+<text x="990" y="870" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 重记忆和理解</text>
+<text x="990" y="885" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 需构建知识体系</text>
+<text x="990" y="900" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 材料分析能力</text>
+<text x="990" y="915" font-family="Arial, sans-serif" font-size="10" fill="#4a5568">• 表达能力培养</text>
+</g>
+</g>
+<g id="connection-lines">
+<path d="M 200 520 Q 400 550 520 580" stroke="#667eea" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+<path d="M 520 520 Q 600 550 700 580" stroke="#f093fb" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+<path d="M 840 520 Q 900 550 1000 580" stroke="#4facfe" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+<path d="M 1160 520 Q 1100 550 1000 580" stroke="#43e97b" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+</g>
+<g id="key-insights">
+<rect x="50" y="950" width="1500" height="120" rx="15" fill="#edf2f7" stroke="#cbd5e0" stroke-width="2"/>
+<text x="800" y="980" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2d3748">🎯 关键学习策略总结</text>
+<text x="70" y="1005" font-family="Arial, sans-serif" font-size="13" fill="#4a5568" font-weight="bold">1. 因材施教：</text>
+<text x="170" y="1005" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">理科重逻辑推理，文科重记忆理解，英语重技能训练</text>
+<text x="70" y="1025" font-family="Arial, sans-serif" font-size="13" fill="#4a5568" font-weight="bold">2. 时间分配：</text>
+<text x="170" y="1025" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">根据难度和重要性合理分配学习时间，数学物理占主要比重</text>
+<text x="70" y="1045" font-family="Arial, sans-serif" font-size="13" fill="#4a5568" font-weight="bold">3. 评估反馈：</text>
+<text x="170" y="1045" font-family="Arial, sans-serif" font-size="12" fill="#4a5568">建立多元化评估体系，及时发现问题并调整学习策略</text>
+</g>
+<text x="800" y="1180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#718096">制定个性化学习计划，实现全面发展与重点突破的平衡</text>
+</svg>
