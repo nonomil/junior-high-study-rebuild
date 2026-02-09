@@ -248,6 +248,241 @@
             margin: 0 auto;
         }
 
+        .belief-section {
+            background: linear-gradient(135deg, #4338ca, #2563eb);
+            color: white;
+            padding: 3.5rem 0 2.5rem;
+            text-align: center;
+        }
+
+        .quote-container {
+            max-width: 860px;
+            margin: 0 auto 2rem;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .main-quote {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.2px;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 0.75rem;
+        }
+
+        .belief-intro {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            opacity: 0.92;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .belief-intro a {
+            color: white;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .belief-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .belief-card {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            padding: 1.4rem 1.4rem 1.2rem;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .belief-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .belief-card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .belief-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .belief-card p {
+            opacity: 0.94;
+            line-height: 1.7;
+        }
+
+        .mindset-journey {
+            margin: 1.25rem 0 1.75rem;
+            padding: 1.25rem 1.25rem 1rem;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 16px;
+            text-align: left;
+        }
+
+        .mindset-journey h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .journey-steps {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.9rem 1rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            flex: 1 1 180px;
+            min-width: 180px;
+        }
+
+        .journey-step.is-active {
+            background: rgba(245, 158, 11, 0.18);
+            border-color: rgba(245, 158, 11, 0.45);
+        }
+
+        .step-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .step-content h5 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .step-content p {
+            margin: 0.15rem 0 0;
+            font-size: 0.92rem;
+            opacity: 0.92;
+            line-height: 1.6;
+        }
+
+        .journey-arrow {
+            opacity: 0.85;
+            font-size: 1.2rem;
+            padding: 0 0.1rem;
+        }
+
+        .cta-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 1.25rem;
+        }
+
+        .cta-banner a {
+            text-decoration: none;
+        }
+
+        .cta-primary {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1d4ed8;
+            padding: 0.85rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            gap: 0.5rem;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 0.85rem 1.2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: inline-flex;
+            gap: 0.5rem;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-secondary:hover {
+            transform: translateY(-2px);
+        }
+
+        .motivation-ticker {
+            margin: 1.25rem auto 0;
+            max-width: 860px;
+            padding: 0.75rem 1rem;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .current-motivation {
+            margin: 0;
+            font-weight: 650;
+            opacity: 0.95;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
         /* 英雄区域 */
         .hero {
             background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
@@ -541,6 +776,27 @@
 
             .hero-subtitle {
                 font-size: 1.1rem;
+            }
+
+            .belief-section {
+                padding: 2.75rem 0 2rem;
+            }
+
+            .main-quote {
+                font-size: 1.55rem;
+            }
+
+            .belief-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-steps {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .journey-arrow {
+                display: none;
             }
 
             .section-header h1 {
@@ -850,6 +1106,7 @@
                     <a href="#" class="nav-link">💝 心理支持</a>
                     <ul class="dropdown-menu">
                         <li><a href="pages/emergency-strategies.html">🚨 应急策略</a></li>
+                        <li><a href="pages/mindset-rebuild.html">🧠 心态重建</a></li>
                         <li><a href="#psychological-support">💝 心理支持</a></li>
                         <li><a href="#communication">💬 沟通话术</a></li>
                     </ul>
@@ -901,6 +1158,92 @@
     <main class="main-content">
         <!-- 首页内容 -->
         <section id="home" class="section">
+            <div class="belief-section">
+                <div class="container">
+                    <div class="quote-container reveal">
+                        <div class="quote-icon">💡</div>
+                        <h2 class="main-quote">不是因为看见，所以相信；而是因为相信，所以看见。</h2>
+                        <p class="quote-author">—— 马云</p>
+                        <p class="belief-intro">
+                            先相信自己能考上高中，才会愿意去做那些一开始看不到回报的努力。把“相信”落到行动：按计划完成、及时订正、持续复盘。坚持一段时间，你会开始看见：错误变少、速度变快、分数上升。想把这套心态方法做成可执行工具，可以直接看<a href="pages/mindset-rebuild.html">心态重建页面</a>。
+                        </p>
+                    </div>
+
+                    <div class="belief-cards">
+                        <div class="belief-card reveal">
+                            <div class="belief-card-icon">🎯</div>
+                            <h4>相信自己能考上高中</h4>
+                            <p>不是等成绩提高才相信，而是先相信自己有能力改变，才会开始认真投入。</p>
+                        </div>
+                        <div class="belief-card reveal">
+                            <div class="belief-card-icon">👁️</div>
+                            <h4>才能看见努力的成功</h4>
+                            <p>因为相信，你会更愿意记录进步、发现方法，哪怕是很小的提升也能变成动力。</p>
+                        </div>
+                        <div class="belief-card reveal">
+                            <div class="belief-card-icon">🔥</div>
+                            <h4>所以愿意去拼命</h4>
+                            <p>相信未来可期，现在的每一分努力都不会白费，自然愿意全力以赴。</p>
+                        </div>
+                    </div>
+
+                    <div class="mindset-journey reveal">
+                        <h3>你的心态转变之路</h3>
+                        <div class="journey-steps">
+                            <div class="journey-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>接受现状</h5>
+                                    <p>承认现在不理想，但不等于未来。</p>
+                                </div>
+                            </div>
+                            <div class="journey-arrow">→</div>
+                            <div class="journey-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>建立信念</h5>
+                                    <p>相信通过系统努力，能考上理想高中。</p>
+                                </div>
+                            </div>
+                            <div class="journey-arrow">→</div>
+                            <div class="journey-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>发现进步</h5>
+                                    <p>看见小变化，信心会持续增长。</p>
+                                </div>
+                            </div>
+                            <div class="journey-arrow">→</div>
+                            <div class="journey-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h5>持续行动</h5>
+                                    <p>方法稳定执行，成绩自然突破。</p>
+                                </div>
+                            </div>
+                            <div class="journey-arrow">→</div>
+                            <div class="journey-step is-active">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h5>梦想成真</h5>
+                                    <p>到关键节点时，你已经变强了。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-banner reveal">
+                        <a class="cta-primary" href="#emergency">⏰ 现在就开始行动</a>
+                        <a class="cta-secondary" href="#diagnosis">🔍 先做学习诊断</a>
+                        <a class="cta-secondary" href="pages/mindset-rebuild.html">🧠 心态重建工具</a>
+                    </div>
+
+                    <div class="motivation-ticker reveal" aria-live="polite">
+                        <p class="current-motivation">💪 今天比昨天多学一点，明天就比今天更强！</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- 英雄区域 -->
             <div class="hero">
                 <div class="container">
@@ -2664,6 +3007,51 @@
                 document.getElementById('searchInput').value = '';
             }
         }
+
+        function initMotivationTicker() {
+            const tickerEl = document.querySelector('.current-motivation');
+            if (!tickerEl) return;
+
+            const motivations = [
+                '💪 今天比昨天多学一点，明天就比今天更强！',
+                '🎯 相信自己，你比想象中更有潜力！',
+                '⏰ 每一天都是新的机会：从现在开始就算数。',
+                '🌟 不怕慢，就怕站。持续行动就会看见变化。',
+                '🔥 4个月足够改变命运，前提是你要开始行动！'
+            ];
+
+            let currentIndex = 0;
+            window.setInterval(() => {
+                currentIndex = (currentIndex + 1) % motivations.length;
+                tickerEl.textContent = motivations[currentIndex];
+            }, 5000);
+        }
+
+        function initReveal() {
+            const revealEls = document.querySelectorAll('.reveal');
+            if (revealEls.length === 0) return;
+
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduceMotion) {
+                revealEls.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.12 });
+
+            revealEls.forEach(el => observer.observe(el));
+        }
         
         // 搜索输入事件监听
         document.addEventListener('DOMContentLoaded', function() {
@@ -2671,6 +3059,9 @@
             
             // 初始化搜索数据
             initSearchData();
+
+            initMotivationTicker();
+            initReveal();
             
             // 实时搜索
             searchInput.addEventListener('input', function() {
