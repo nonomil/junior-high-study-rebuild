@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -106,37 +106,37 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="chinese.html">📝 语文指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="chinese.html"><i class="fas fa-pen-nib menu-ico" aria-hidden="true"></i> 语文指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -170,6 +170,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#biology-overview" onclick="scrollToSection('biology-overview')">生物学习指南</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#biology-status" onclick="scrollToSection('biology-status')">学习现状分析</a></li>
             <li><a href="#biology-system" onclick="scrollToSection('biology-system')">核心知识体系</a></li>
             <li><a href="#biology-physiology" onclick="scrollToSection('biology-physiology')">重点生理过程</a></li>
@@ -192,7 +193,28 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>生物不是“背一遍就会”，而是“理解后反复提取”。先相信你能把知识网织起来，然后每天做最小任务：复述1个概念 + 画1张小图/表 + 做3道基础题。</p>
-                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
+            </div>
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 生物每日最低执行线（先理解结构，再强化记忆）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：复述1个概念 + 画1张小图</li>
+                    <li><strong>B档（常规）</strong>：复述1个过程 + 做3道基础题 + 订正1题</li>
+                    <li><strong>C档（状态好）</strong>：完成1个小专题（概念→图表→题目）</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>任意完成一档即可，优先保持连续学习。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我说清楚了____过程”。</p>
             </div>
 
             <!-- 学习现状分析 -->
@@ -202,7 +224,7 @@
                     <p><strong>特点：</strong>生物学科理论与实际联系紧密，需要理解记忆并重。</p>
                     <p><strong>目标：</strong>掌握生命科学基础知识，培养科学思维能力。</p>
                 </div>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>🎯 学习重点</h3>
@@ -215,7 +237,7 @@
                             <li>生物技术应用</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>⚠️ 常见难点</h3>
                         <ul>
@@ -233,7 +255,7 @@
             <!-- 核心知识体系 -->
             <section class="content-section" id="biology-system">
                 <h2>🏗️ 生物核心知识体系</h2>
-                
+
                 <div class="timeline">
                     <div class="timeline-item">
                         <h3>第一单元：生物和生物圈</h3>
@@ -251,7 +273,7 @@
                             <li>生物的适应性：形态适应、生理适应、行为适应</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第二单元：生物体的结构层次</h3>
                         <h4>核心概念：</h4>
@@ -269,7 +291,7 @@
                             <li>细胞分裂：分裂过程和意义</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第三单元：生物圈中的绿色植物</h3>
                         <h4>核心概念：</h4>
@@ -289,7 +311,7 @@
                             <li>蒸腾作用：过程、意义</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第四单元：生物圈中的人</h3>
                         <h4>核心概念：</h4>
@@ -318,27 +340,27 @@
             <!-- 重点生理过程详解 -->
             <section class="content-section" id="biology-physiology">
                 <h2>🔄 重点生理过程详解</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>🌞 光合作用</h3>
-                        
+
                         <h4>反应式：</h4>
                         <p><strong>CO₂ + H₂O → (CH₂O) + O₂</strong></p>
-                        
+
                         <h4>条件：</h4>
                         <ul>
                             <li>光照（光能）</li>
                             <li>叶绿体（场所）</li>
                             <li>叶绿素（催化剂）</li>
                         </ul>
-                        
+
                         <h4>过程：</h4>
                         <ol>
                             <li>光反应：在类囊体膜上进行</li>
                             <li>暗反应：在叶绿体基质中进行</li>
                         </ol>
-                        
+
                         <h4>意义：</h4>
                         <ul>
                             <li>制造有机物</li>
@@ -346,26 +368,26 @@
                             <li>转化太阳能</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>💨 呼吸作用</h3>
-                        
+
                         <h4>反应式：</h4>
                         <p><strong>(CH₂O) + O₂ → CO₂ + H₂O + ATP</strong></p>
-                        
+
                         <h4>类型：</h4>
                         <ul>
                             <li><strong>有氧呼吸：</strong>需要氧气参与</li>
                             <li><strong>无氧呼吸：</strong>不需要氧气参与</li>
                         </ul>
-                        
+
                         <h4>过程：</h4>
                         <ol>
                             <li>糖酵解：在细胞质中进行</li>
                             <li>柠檬酸循环：在线粒体中进行</li>
                             <li>电子传递：在线粒体内膜进行</li>
                         </ol>
-                        
+
                         <h4>意义：</h4>
                         <ul>
                             <li>分解有机物</li>
@@ -374,14 +396,14 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>💧 蒸腾作用</h3>
-                        
+
                         <h4>定义：</h4>
                         <p>植物体内的水分以水蒸气的形式从叶片散失到大气中的过程。</p>
-                        
+
                         <h4>过程：</h4>
                         <ol>
                             <li>根部吸收水分</li>
@@ -389,7 +411,7 @@
                             <li>水分到达叶片</li>
                             <li>通过气孔散失</li>
                         </ol>
-                        
+
                         <h4>意义：</h4>
                         <ul>
                             <li>促进水分吸收和运输</li>
@@ -398,16 +420,16 @@
                             <li>参与水循环</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>🔄 血液循环</h3>
-                        
+
                         <h4>循环路径：</h4>
                         <ul>
                             <li><strong>体循环：</strong>左心室→主动脉→全身→静脉→右心房</li>
                             <li><strong>肺循环：</strong>右心室→肺动脉→肺→肺静脉→左心房</li>
                         </ul>
-                        
+
                         <h4>血液成分：</h4>
                         <ul>
                             <li><strong>血浆：</strong>运输营养物质和废物</li>
@@ -415,7 +437,7 @@
                             <li><strong>白细胞：</strong>免疫防御</li>
                             <li><strong>血小板：</strong>止血凝血</li>
                         </ul>
-                        
+
                         <h4>功能：</h4>
                         <ul>
                             <li>运输营养物质</li>
@@ -430,27 +452,27 @@
             <!-- 遗传与变异 -->
             <section class="content-section" id="biology-genetics">
                 <h2>🧬 遗传与变异</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>基本概念</h3>
-                        
+
                         <h4>遗传：</h4>
                         <p>亲代的性状传递给子代的现象。</p>
-                        
+
                         <h4>变异：</h4>
                         <p>子代与亲代之间以及子代个体之间存在差异的现象。</p>
-                        
+
                         <h4>基因：</h4>
                         <p>控制生物性状的遗传因子，是DNA分子上具有遗传信息的片段。</p>
-                        
+
                         <h4>染色体：</h4>
                         <p>细胞核内能被碱性染料染成深色的物质，由DNA和蛋白质组成。</p>
                     </div>
-                    
+
                     <div class="card">
                         <h3>遗传规律</h3>
-                        
+
                         <h4>基因的分离定律：</h4>
                         <ul>
                             <li>每个性状由一对基因控制</li>
@@ -458,7 +480,7 @@
                             <li>形成生殖细胞时基因分离</li>
                             <li>受精时基因重新组合</li>
                         </ul>
-                        
+
                         <h4>显性与隐性：</h4>
                         <ul>
                             <li><strong>显性基因：</strong>用大写字母表示（如A）</li>
@@ -468,7 +490,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="success">
                     <h3>遗传图解示例：</h3>
                     <p><strong>双眼皮（A）×单眼皮（a）</strong></p>
@@ -486,11 +508,11 @@
             <!-- 生物实验 -->
             <section class="content-section" id="biology-experiment">
                 <h2>🔬 重要生物实验</h2>
-                
+
                 <div class="grid grid-3">
                     <div class="card">
                         <h3>显微镜使用</h3>
-                        
+
                         <h4>操作步骤：</h4>
                         <ol>
                             <li>取镜和安放</li>
@@ -498,7 +520,7 @@
                             <li>观察</li>
                             <li>整理</li>
                         </ol>
-                        
+
                         <h4>注意事项：</h4>
                         <ul>
                             <li>右手握镜臂，左手托镜座</li>
@@ -507,10 +529,10 @@
                             <li>使用完毕要清洁</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>观察植物细胞</h3>
-                        
+
                         <h4>材料：</h4>
                         <ul>
                             <li>洋葱鳞片叶</li>
@@ -518,7 +540,7 @@
                             <li>载玻片、盖玻片</li>
                             <li>碘液</li>
                         </ul>
-                        
+
                         <h4>步骤：</h4>
                         <ol>
                             <li>制作临时装片</li>
@@ -527,17 +549,17 @@
                             <li>绘图记录</li>
                         </ol>
                     </div>
-                    
+
                     <div class="card">
                         <h3>探究光合作用</h3>
-                        
+
                         <h4>实验设计：</h4>
                         <ul>
                             <li>对照实验</li>
                             <li>控制变量</li>
                             <li>设置重复</li>
                         </ul>
-                        
+
                         <h4>检测方法：</h4>
                         <ul>
                             <li>淀粉检测：碘液变蓝</li>
@@ -551,11 +573,11 @@
             <!-- 学习方法指导 -->
             <section class="content-section" id="biology-methods">
                 <h2>📚 生物学习方法</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>理解记忆法</h3>
-                        
+
                         <h4>概念理解：</h4>
                         <ul>
                             <li>抓住关键词</li>
@@ -563,7 +585,7 @@
                             <li>联系实际生活</li>
                             <li>对比相似概念</li>
                         </ul>
-                        
+
                         <h4>过程理解：</h4>
                         <ul>
                             <li>分步骤理解</li>
@@ -572,10 +594,10 @@
                             <li>联系结构功能</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>图表分析法</h3>
-                        
+
                         <h4>结构图分析：</h4>
                         <ul>
                             <li>识别各部分名称</li>
@@ -583,7 +605,7 @@
                             <li>掌握相互关系</li>
                             <li>联系生理过程</li>
                         </ul>
-                        
+
                         <h4>数据图表：</h4>
                         <ul>
                             <li>读懂坐标轴</li>
@@ -598,7 +620,7 @@
             <!-- 学习资源推荐 -->
             <section class="content-section" id="biology-resources">
                 <h2>📖 学习资源推荐</h2>
-                
+
                 <div class="grid grid-3">
                     <div class="card">
                         <h3>教材资源</h3>
@@ -609,7 +631,7 @@
                             <li><strong>生物词典：</strong>概念解释清楚</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>在线资源</h3>
                         <ul>
@@ -619,7 +641,7 @@
                             <li><strong>中考生物：</strong>真题练习</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>学习工具</h3>
                         <ul>
@@ -635,7 +657,7 @@
             <!-- 备考策略 -->
             <section class="content-section" id="biology-exam">
                 <h2>🎯 中考备考策略</h2>
-                
+
                 <div class="success">
                     <h3>备考重点：</h3>
                     <ul>
@@ -645,7 +667,7 @@
                         <li><strong>科学思维：</strong>逻辑推理能力</li>
                     </ul>
                 </div>
-                
+
                 <div class="info">
                     <h3>答题技巧：</h3>
                     <ul>
@@ -676,7 +698,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -685,7 +707,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -697,7 +719,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -707,7 +729,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['biology-overview', 'biology-status', 'biology-system', 'biology-physiology', 'biology-genetics', 'biology-experiment', 'biology-methods', 'biology-resources', 'biology-exam'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -717,7 +739,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }

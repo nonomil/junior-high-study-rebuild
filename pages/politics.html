@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -105,37 +105,37 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="chinese.html">📝 语文指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="chinese.html"><i class="fas fa-pen-nib menu-ico" aria-hidden="true"></i> 语文指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -169,6 +169,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#politics-overview" onclick="scrollToSection('politics-overview')">政治学习指南</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#politics-status" onclick="scrollToSection('politics-status')">学习现状分析</a></li>
             <li><a href="#politics-system" onclick="scrollToSection('politics-system')">政治知识体系</a></li>
             <li><a href="#politics-memory" onclick="scrollToSection('politics-memory')">记忆技巧方法</a></li>
@@ -191,13 +192,34 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>政治提分不靠“背更多”，靠“背得有结构、写得像答题”。先相信你能用模板把分拿稳，然后每天做最小任务：背2个关键词 + 写1题答题框架 + 订正1题。</p>
-                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
+            </div>
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 政治每日最低执行线（先框架，再规范表达）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：背2个关键词 + 说出1个概念定义</li>
+                    <li><strong>B档（常规）</strong>：写1题答题框架 + 订正1题 + 复述1个知识点</li>
+                    <li><strong>C档（状态好）</strong>：完成1个专题（概念→材料→答题模板）</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>任意完成一档即可，先稳住文科得分盘。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我会用____模板作答了”。</p>
             </div>
 
             <!-- 学习现状分析 -->
             <section class="content-section" id="politics-status">
                 <h2>📊 政治学习现状分析</h2>
-                
+
                 <div class="info-box">
                     <h3>典型问题表现</h3>
                     <ul>
@@ -454,7 +476,7 @@
                         <li><strong>找要素 (3-5个词)</strong>：围绕核心词，找出构成该概念的几个关键要素。</li>
                         <li><strong>连成句 (一段话)</strong>：用通顺的语言，将核心词和要素组合成一段完整的解释。</li>
                     </ol>
-                    
+
                     <div class="info-box">
                         <h4>案例：记忆"人民代表大会制度"</h4>
                         <ol>
@@ -526,8 +548,8 @@
 
                 <div class="card">
                     <h3>论述题标准作业流程 (SOP) - "三步成文法"</h3>
-                    <p><strong>核心理念</strong>：任何一道文科论述题，其本质都是要求你就一个问题"发表看法并证明它"。一个高分答案，必须包含清晰的"观点"、充分的"论据"和简明的"总结"。</p>
-                    
+                    <p><strong>核心理念</strong>：任何一道文科论述题，其本质都是要求你就一个问题"发表看法并证明它"。一个高分答案，建议包含清晰的"观点"、充分的"论据"和简明的"总结"。</p>
+
                     <h4>操作三步骤：</h4>
                     <ol>
                         <li><strong>第一步：亮观点 (一句话)</strong>
@@ -664,7 +686,7 @@
 
                 <div class="card">
                     <h3>第一阶段：基础理论专题（11-12月）</h3>
-                    
+
                     <h4>专题一：马克思主义哲学基本原理</h4>
                     <ul>
                         <li>学习内容：物质与意识、实践与认识、矛盾分析法</li>
@@ -684,7 +706,7 @@
 
                 <div class="card">
                     <h3>第二阶段：应用能力专题（1-3月）</h3>
-                    
+
                     <h4>专题三：经济生活分析</h4>
                     <ul>
                         <li>学习内容：市场经济、宏观调控、对外开放</li>
@@ -704,7 +726,7 @@
 
                 <div class="card">
                     <h3>第三阶段：热点专题复习（4-6月）</h3>
-                    
+
                     <h4>专题五：时事政治分析</h4>
                     <ul>
                         <li>学习内容：国内外重大时事、热点问题分析</li>
@@ -993,7 +1015,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -1002,7 +1024,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -1014,7 +1036,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -1024,7 +1046,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['politics-overview', 'politics-status', 'politics-system', 'politics-memory', 'politics-answer', 'politics-topics', 'politics-current', 'politics-resources', 'politics-evaluation'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -1034,7 +1056,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }
@@ -1046,4 +1068,3 @@
     </script>
 </body>
 </html>
-

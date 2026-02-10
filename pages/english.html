@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -105,36 +105,36 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -168,6 +168,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#importance" onclick="scrollToSection('importance')">英语学习的重要性</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#knowledge-system" onclick="scrollToSection('knowledge-system')">英语知识体系构建</a></li>
             <li><a href="#key-difficulties" onclick="scrollToSection('key-difficulties')">重点难点突破</a></li>
             <li><a href="#detailed-methods" onclick="scrollToSection('detailed-methods')">详细学习方法与策略</a></li>
@@ -190,9 +191,30 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>英语最有效的心态不是“我背不住”，而是“我每天背一点就会变强”。从今天开始：单词15分钟 + 例句10句 + 复习昨天的错题。</p>
-                <p>想把自我暗示做成可执行流程：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>想把自我暗示做成可执行流程：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
             </div>
-            
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 英语每日最低执行线（先输入，再输出）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：背10个单词 + 复习昨天10个</li>
+                    <li><strong>B档（常规）</strong>：背15个单词 + 读1篇短文 + 订正1类错误</li>
+                    <li><strong>C档（状态好）</strong>：完成“单词+阅读+句型输出”完整30分钟流程</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>完成任意一档即可，先让英语不断线。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我新掌握了____表达”。</p>
+            </div>
+
             <div id="importance">
                 <h2>英语学习的重要性</h2>
             <p>英语作为国际通用语言，是现代社会必备的技能之一。初中英语学习不仅是为了应对考试，更是为了培养语言交际能力，为将来的学习和工作打下坚实基础。英语学习需要听、说、读、写四项技能的全面发展。</p>
@@ -278,10 +300,10 @@
             </ul>
 
             <h2 id="detailed-methods">📚 详细英语学习方法与策略</h2>
-            
+
             <div class="method-card">
                 <h3>🎯 英语学习核心理念</h3>
-                
+
                 <h4>1. 语言输入优先原则</h4>
                 <ul>
                     <li><strong>大量输入：</strong>每天至少接触英语2小时（听+读）</li>
@@ -289,7 +311,7 @@
                     <li><strong>多样化输入：</strong>听力、阅读、视频等多种形式</li>
                     <li><strong>持续性输入：</strong>保持每日接触，形成语感</li>
                 </ul>
-                
+
                 <h4>2. 循序渐进学习法</h4>
                 <div class="timeline-item">
                     <strong>第1阶段（基础期）：</strong>重点掌握音标、基础词汇、简单语法
@@ -304,7 +326,7 @@
 
             <div class="skill-card">
                 <h3>📖 词汇学习系统化方法</h3>
-                
+
                 <h4>词汇记忆策略</h4>
                 <ul>
                     <li><strong>词根词缀法：</strong>掌握常见词根（如：vis-看，aud-听）</li>
@@ -312,7 +334,7 @@
                     <li><strong>情境记忆法：</strong>在具体语境中学习和使用单词</li>
                     <li><strong>重复记忆法：</strong>艾宾浩斯遗忘曲线复习法</li>
                 </ul>
-                
+
                 <h4>词汇学习计划</h4>
                 <div class="checklist">
                     <label><input type="checkbox"> 每天学习20个新单词</label><br>
@@ -320,10 +342,10 @@
                     <label><input type="checkbox"> 每周复习本周所有单词</label><br>
                     <label><input type="checkbox"> 每月进行词汇测试</label>
                 </div>
-                
+
                 <h4>词汇分级学习</h4>
                 <ul>
-                    <li><strong>核心词汇（1500词）：</strong>必须熟练掌握，能听说读写</li>
+                    <li><strong>核心词汇（1500词）：</strong>建议熟练掌握，能听说读写</li>
                     <li><strong>认知词汇（1000词）：</strong>能够理解意思，主要用于阅读</li>
                     <li><strong>拓展词汇（500词）：</strong>提高类词汇，增强语言表达力</li>
                 </ul>
@@ -331,14 +353,14 @@
 
             <div class="grammar-card">
                 <h3>📝 语法学习系统方法</h3>
-                
+
                 <h4>语法学习三步法</h4>
                 <ol>
                     <li><strong>理解规则：</strong>明确语法规则的含义和用法</li>
                     <li><strong>模仿练习：</strong>通过例句模仿正确的语法结构</li>
                     <li><strong>应用创造：</strong>在实际语境中运用语法知识</li>
                 </ol>
-                
+
                 <h4>重点语法突破</h4>
                 <div class="timeline-item">
                     <strong>时态系统：</strong>一般现在时→现在进行时→一般过去时→现在完成时
@@ -349,7 +371,7 @@
                 <div class="timeline-item">
                     <strong>语态变化：</strong>主动语态→被动语态→各种时态的被动语态
                 </div>
-                
+
                 <h4>语法错误预防</h4>
                 <ul>
                     <li><strong>主谓一致：</strong>注意单复数形式的匹配</li>
@@ -361,7 +383,7 @@
 
             <div class="practice-card">
                 <h3>🎯 综合技能训练方法</h3>
-                
+
                 <h4>听说读写整合训练</h4>
                 <ul>
                     <li><strong>听后说：</strong>听完材料后复述主要内容</li>
@@ -369,7 +391,7 @@
                     <li><strong>说后写：</strong>口头表达后整理成书面形式</li>
                     <li><strong>写后读：</strong>写完作文后大声朗读检查</li>
                 </ul>
-                
+
                 <h4>每日英语学习流程</h4>
                 <div class="daily-flow">
                     <div class="flow-step">
@@ -1171,7 +1193,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -1180,7 +1202,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -1192,7 +1214,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -1202,7 +1224,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['importance', 'knowledge-system', 'key-difficulties', 'detailed-methods', 'vocab-methods', 'learning-methods', 'learning-resources', 'exam-skills', 'evaluation-reflection'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -1212,7 +1234,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }

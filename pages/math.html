@@ -19,17 +19,17 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -39,18 +39,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -64,21 +64,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -93,36 +93,36 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -147,6 +147,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#plan-overview" onclick="scrollToSection('plan-overview')">8个月计划总览</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#learning-materials" onclick="scrollToSection('learning-materials')">学习资料推荐</a></li>
             <li><a href="#monthly-plans" onclick="scrollToSection('monthly-plans')">月度详细计划</a></li>
             <li><a href="#daily-schedule" onclick="scrollToSection('daily-schedule')">每日时间安排</a></li>
@@ -176,9 +177,30 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>数学不是天赋题，是方法题。你先相信“我能通过正确方法把分数拉上来”，然后每天把最小任务做完：20道基础题 + 订正3道错题。</p>
-                <p>想把“信心→行动→进步”做成一套系统：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>想把“信心→行动→进步”做成一套系统：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
             </div>
-            
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 数学每日最低执行线（先完成，再加码）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：15分钟基础计算 + 回做1道错题</li>
+                    <li><strong>B档（常规）</strong>：20分钟基础题 + 订正2道错题 + 口述1个解题步骤</li>
+                    <li><strong>C档（状态好）</strong>：30分钟分层练习 + 复盘当天错因</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>A/B/C任意完成一档即合格，不求完美不断线。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我弄懂了____”。</p>
+            </div>
+
             <!-- 8个月数学重建计划总览 -->
             <div id="plan-overview" class="plan-overview">
                 <h2>8个月数学重建计划总览</h2>
@@ -204,7 +226,7 @@
                         </ul>
                     </div>
                     <div class="phase">
-                        <h3>第6-8个月：冲刺突破期</h3>
+                        <h3>第6-8个月：提分巩固期</h3>
                         <p><strong>目标：</strong>达到理想分数，冲击90分以上</p>
                         <ul>
                             <li>二次函数综合应用</li>
@@ -219,7 +241,7 @@
             <!-- 学习资料推荐 -->
             <div id="learning-materials" class="learning-materials">
                 <h2>学习资料推荐</h2>
-                
+
                 <h3>📚 教材和辅导书</h3>
                 <div class="materials-grid">
                     <div class="material-item">
@@ -290,7 +312,7 @@
             <!-- 月度详细学习计划 -->
             <div id="monthly-plans" class="monthly-plans">
                 <h2>月度详细学习计划</h2>
-                
+
                 <div class="month-plan">
                     <h3>第1个月：有理数与整式基础</h3>
                     <div class="weekly-breakdown">
@@ -405,7 +427,7 @@
                 </div>
 
                 <div class="month-plan">
-                    <h3>第8个月：综合复习与中考冲刺</h3>
+                    <h3>第8个月：综合复习与中考提分巩固</h3>
                     <p><strong>重点内容：</strong>知识点串联、综合题训练、中考真题</p>
                     <p><strong>学习目标：</strong>形成完整知识体系，提高解题速度和准确率</p>
                 </div>
@@ -414,7 +436,7 @@
             <!-- 每日学习时间安排 -->
             <div id="daily-schedule" class="daily-schedule">
                 <h2>每日学习时间安排</h2>
-                
+
                 <div class="schedule-tabs">
                     <div class="tab-content">
                         <h3>工作日安排（周一至周五）</h3>
@@ -445,7 +467,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-content">
                         <h3>周末安排（周六、周日）</h3>
                         <div class="weekend-schedule">
@@ -477,7 +499,7 @@
             <!-- 系统性解题思路训练 -->
             <div id="problem-solving" class="problem-solving-training">
                 <h2>系统性解题思路训练</h2>
-                
+
                 <div class="training-method">
                     <h3>🎯 解题四步法（核心框架）</h3>
                     <div class="four-step-method">
@@ -653,7 +675,7 @@
             <!-- 科学记忆系统 -->
             <div id="memory-system" class="memory-system">
                 <h2>科学记忆系统</h2>
-                
+
                 <div class="memory-method">
                     <h3>📅 5+1复习法（对抗遗忘）</h3>
                     <div class="review-schedule-detailed">
@@ -756,7 +778,7 @@
             <!-- 分层刷题策略 -->
             <div id="practice-strategy" class="layered-practice">
                 <h2>分层刷题策略</h2>
-                
+
                 <div class="difficulty-levels">
                     <h3>🎯 题目难度科学分级</h3>
                     <div class="level-system">
@@ -814,7 +836,7 @@
                             </ul>
                         </div>
                         <div class="phase">
-                            <h4>第3阶段：冲刺突破（6-8个月）</h4>
+                            <h4>第3阶段：提分巩固（6-8个月）</h4>
                             <ul>
                                 <li><strong>题目选择：</strong>★★★☆☆难题挑战</li>
                                 <li><strong>数量要求：</strong>每天8-12题</li>
@@ -830,7 +852,7 @@
             <!-- 详细学习方法 -->
             <div class="detailed-methods">
                 <h2>详细学习方法与策略</h2>
-                
+
                 <div class="method-section">
                     <h3>📚 基础知识掌握策略</h3>
                     <div class="strategy-grid">
@@ -972,7 +994,7 @@
             <!-- 关键解题技巧 -->
             <div class="key-techniques">
                 <h2>关键解题技巧总结</h2>
-                
+
                 <div class="technique-category">
                     <h3>🔢 代数运算技巧</h3>
                     <div class="techniques-grid">
@@ -1067,7 +1089,7 @@
             <!-- 错题管理系统 -->
             <div class="error-management">
                 <h2>数学错题管理系统</h2>
-                
+
                 <div class="error-log-method">
                     <h3>错题记录格式</h3>
                     <div class="log-template">
@@ -1532,13 +1554,13 @@
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
-                
+
                 // 更新侧边栏活动状态
                 document.querySelectorAll('.sidebar-nav a').forEach(link => {
                     link.classList.remove('active');
                 });
                 document.querySelector(`[onclick="scrollToSection('${sectionId}')"]`).classList.add('active');
-                
+
                 // 在移动端关闭侧边栏
                 if (window.innerWidth <= 768) {
                     document.getElementById('sidebar').classList.remove('active');
@@ -1550,7 +1572,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['plan-overview', 'learning-materials', 'monthly-plans', 'daily-schedule', 'problem-solving', 'memory-system', 'practice-strategy', 'solving-techniques', 'error-management', 'layered-learning', 'key-difficulties', 'application-problems', 'learning-methods', 'practice-tests', 'common-errors'];
             let current = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -1560,7 +1582,7 @@
                     }
                 }
             });
-            
+
             if (current) {
                 document.querySelectorAll('.sidebar-nav a').forEach(link => {
                     link.classList.remove('active');

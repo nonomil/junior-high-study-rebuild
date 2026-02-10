@@ -3,32 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>心态重建：相信-看见-行动闭环 - 初中学习低分重建指导系统</title>
+    <title>心理建设：先稳住，再起步 - 初中学习低分重建指导系统</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .mindset-hero {
+            background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 50%, #f8fafc 100%);
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            padding: 2rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .mindset-hero h1 {
+            margin: 0 0 0.75rem;
+            font-size: 2rem;
+            color: #1e3a8a;
+        }
+
+        .mindset-hero p {
+            color: #334155;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .quote-inline {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border-left: 4px solid #2563eb;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .subtle {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .action-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .action-item h4 {
+            margin-bottom: 0.55rem;
+            color: #0f172a;
+        }
+
+        .soft-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1rem 1.1rem;
+            border-radius: 10px;
+            margin-top: 0.8rem;
+            color: #1e3a8a;
+        }
+
+        .micro-list li {
+            margin-bottom: 0.45rem;
+        }
+
+        .tool-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-card h3 {
+            margin-bottom: 0.65rem;
+        }
+
+        .input-group {
+            margin-top: 0.8rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .input-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .btn-row {
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .btn-soft {
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background: #f8fafc;
+            color: #1e293b;
+            font-weight: 700;
+            padding: 0.6rem 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-soft:hover {
+            background: #eef2ff;
+            border-color: #93c5fd;
+        }
+
+        .checkin-grid {
+            margin-top: 0.95rem;
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        .checkin-day {
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 0.55rem 0;
+            text-align: center;
+            background: #fff;
+            color: #334155;
+            cursor: pointer;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .checkin-day.active {
+            background: #dbeafe;
+            border-color: #60a5fa;
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        .final-note {
+            background: linear-gradient(135deg, #ecfeff 0%, #eef2ff 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 14px;
+            padding: 1.1rem 1.2rem;
+            line-height: 1.85;
+        }
+
+        .agreement-levels {
+            margin-top: 0.8rem;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .agreement-level {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 0.75rem;
+            color: #1e293b;
+            line-height: 1.65;
+        }
+
+        .agreement-level input {
+            margin-right: 6px;
+        }
+
+        .agreement-check-grid {
+            margin-top: 0.65rem;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.55rem;
+        }
+
+        .agreement-check-item {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 0.55rem 0.65rem;
+            color: #334155;
+        }
+
+        .agreement-check-item input {
+            margin-right: 6px;
+        }
+
+        .agreement-progress {
+            margin-top: 0.8rem;
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        .floating-motivation {
+            right: 16px;
+            bottom: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agreement-levels {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .checkin-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .mindset-hero h1 {
+                font-size: 1.65rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="../index.html">🎓 初中学习指导系统</a>
+                <a href="../index.html"><i class="fas fa-graduation-cap nav-ico" aria-hidden="true"></i> 初中学习指导系统</a>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">🏠 首页</a></li>
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link active">💝 心理支持</a>
+                    <a href="#" class="nav-link active"><i class="fas fa-heart nav-ico" aria-hidden="true"></i> 心理支持</a>
                     <ul class="dropdown-menu">
-                        <li><a href="emergency-strategies.html">🚨 应急策略</a></li>
-                        <li><a href="mindset-rebuild.html" style="color: #2563eb; font-weight: bold;">🧠 心态重建</a></li>
-                        <li><a href="../index.html#psychological-support">💝 心理支持总览</a></li>
-                        <li><a href="../index.html#communication">💬 沟通话术</a></li>
+                        <li><a href="emergency-strategies.html"><i class="fas fa-cloud-sun menu-ico" aria-hidden="true"></i> 稳住局面</a></li>
+                        <li><a href="mindset-rebuild.html" style="color: #2563eb; font-weight: bold;"><i class="fas fa-brain menu-ico" aria-hidden="true"></i> 心理建设</a></li>
+                        <li><a href="../index.html#psychological-support"><i class="fas fa-heart-circle-check menu-ico" aria-hidden="true"></i> 心理支持总览</a></li>
+                        <li><a href="../index.html#communication"><i class="fas fa-comments menu-ico" aria-hidden="true"></i> 沟通话术</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">🧠 学习方法</a>
+                    <a href="#" class="nav-link"><i class="fas fa-brain nav-ico" aria-hidden="true"></i> 学习方法</a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-strategies.html">📖 通用学习策略SOP</a></li>
-                        <li><a href="deep-learning-methods.html">🚀 深度学习与高效习得</a></li>
+                        <li><a href="learning-strategies.html"><i class="fas fa-book-open-reader menu-ico" aria-hidden="true"></i> 通用学习策略SOP</a></li>
+                        <li><a href="deep-learning-methods.html"><i class="fas fa-rocket menu-ico" aria-hidden="true"></i> 深度学习与高效习得</a></li>
                     </ul>
                 </li>
             </ul>
@@ -37,379 +268,277 @@
 
     <div class="main-content">
         <div class="container">
-            <div class="section-header">
-                <h1>🧠 心态重建：相信-看见-行动闭环</h1>
-                <p>先建立信念，再把信念变成可执行的行动，最后用行动看见进步</p>
+            <div class="mindset-hero">
+                <h1>🧠 心理建设：先稳住，再起步</h1>
+                <p>
+                    这页不是“打鸡血”，而是一套能自己操作、能每天执行的心理建设方案。
+                    对于当前 60-70 分、目标是普通公办高中的同学，核心不是复杂技巧，而是能不能主动学、愿不愿意学。
+                </p>
+                <p class="quote-inline">不是因为看见，所以相信；而是因为相信，所以看见。</p>
+                <p class="subtle">把“相信”变成可见行动，再用行动反过来增强信心。</p>
             </div>
 
             <section class="content-section">
-                <div class="info">
-                    <p><strong>一句话记住：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
-                    <p>它不是“鸡汤”，而是一套可操作的流程：相信 → 行动 → 记录进步 → 更相信 → 更愿意行动。</p>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2>0️⃣ 先把方向搞对：中考更看心态，高考更拼方法</h2>
-                <div class="card">
-                    <p>对60-70分、目标是考上普通公办高中的同学来说，最大的卡点往往不是智商，也不是复杂技巧，而是：</p>
-                    <ul>
-                        <li>能不能主动学</li>
-                        <li>愿不愿意学</li>
-                        <li>遇到挫折会不会自我否定，然后摆烂</li>
-                    </ul>
-                    <p>这页给你一套“可以自己操作”的心理建设方案：把信心挖出来，把行动做出来，把进步看见。</p>
-                </div>
-
+                <h2>1️⃣ 先把方向放对：中考更看心态与态度</h2>
                 <div class="grid grid-2">
-                    <div class="success">
-                        <h3>你要追求的不是“天才状态”</h3>
-                        <p>你只需要建立一个稳定的系统：每天能开始、能持续、能复盘。系统比情绪可靠。</p>
+                    <div class="card">
+                        <h3>中考阶段的关键</h3>
+                        <ul class="micro-list">
+                            <li>先稳住节奏，不追求完美起步</li>
+                            <li>先把“每天能开始”建立起来</li>
+                            <li>把“会不会”拆成“今天做没做”</li>
+                        </ul>
                     </div>
-                    <div class="warning">
-                        <h3>最危险的不是不会</h3>
-                        <p>而是“觉得自己不行” → 不开始 → 不练习 → 更不会 → 更觉得不行。</p>
+                    <div class="card">
+                        <h3>高考阶段的差异</h3>
+                        <ul class="micro-list">
+                            <li>高考更强调方法深度与综合能力</li>
+                            <li>中考冲公办，先解决意愿与执行</li>
+                            <li>态度跑在方法前面，方法才有意义</li>
+                        </ul>
                     </div>
                 </div>
+                <div class="soft-box">你不需要一下子“变学霸”，你只需要从今天开始把一个小动作做稳定。</div>
             </section>
 
             <section class="content-section">
-                <h2>1️⃣ 相信的力量：自我实现预言</h2>
-                <div class="card">
-                    <h3>什么是自我实现预言？</h3>
-                    <p>当你相信某件事会发生时，你的行为会更靠近正确方向；行为积累到一定程度，就会让结果真的发生。</p>
-                </div>
-
-                <div class="grid grid-2">
-                    <div class="danger">
-                        <h3>负向循环（破坏性）</h3>
-                        <p>不相信自己能学好 → 学习不投入 → 成绩没提高 → 更不相信 → 恶性循环</p>
+                <h2>2️⃣ 从长谈中提炼：3个能落地的心理暗示原则</h2>
+                <div class="action-grid">
+                    <div class="action-item">
+                        <h4>原则A：身份先行</h4>
+                        <p>先把自己定义成“愿意进步的人”，再去做符合这个身份的小行动。</p>
+                        <p class="subtle">话术示例：我是一个会按计划前进的人。</p>
                     </div>
-                    <div class="success">
-                        <h3>正向循环（建设性）</h3>
-                        <p>相信自己能进步 → 愿意认真学习 → 发现小进步 → 信心增强 → 更努力学习 → 良性循环</p>
+                    <div class="action-item">
+                        <h4>原则B：最小行动</h4>
+                        <p>不要等状态，先做 15 分钟。先完成，再优化，行动本身会带来状态。</p>
+                        <p class="subtle">话术示例：我先做 15 分钟，因为开始后我会更稳定。</p>
+                    </div>
+                    <div class="action-item">
+                        <h4>原则C：证据积累</h4>
+                        <p>每天留下一个“我做到了”的证据，让大脑看到自己在变好。</p>
+                        <p class="subtle">话术示例：我今天已经完成第一步，这让我更有底气。</p>
                     </div>
                 </div>
+                <div class="soft-box">
+                    说明：本节参考了李笑来与脱不花对话中的“通过语言训练注意力和行动倾向”的思路，
+                    这里已转成适合初中阶段、可当天执行的简化版本。
+                </div>
+                <div class="soft-box">实操句式：我是一个___的人，因为___，所以我现在先做___，做完我会___。</div>
             </section>
 
             <section class="content-section">
-                <h2>2️⃣ 如何建立“相信”？</h2>
+                <h2>3️⃣ 每天 5 分钟心理建设流程（可直接照做）</h2>
                 <div class="grid grid-3">
                     <div class="card">
-                        <h3>🎯 从小目标开始</h3>
-                        <ul>
-                            <li>不要一上来就盯“考上重点高中”</li>
-                            <li>先设定“本周数学提高5分”这类小目标</li>
-                            <li>完成小目标 → 建立信心 → 再升级目标</li>
-                        </ul>
+                        <h3>第1步（30秒）稳情绪</h3>
+                        <p>做 4-4 呼吸：吸气 4 秒，呼气 4 秒，连续 5 次。</p>
                     </div>
                     <div class="card">
-                        <h3>📌 记录每一个进步</h3>
-                        <ul>
-                            <li>准备一个“进步日记”或一张周计划表</li>
-                            <li>每天记录3个学习上的进步（再小也算）</li>
-                            <li>每周回看一次，让大脑看到“我在变强”</li>
-                        </ul>
+                        <h3>第2步（1分钟）说暗示</h3>
+                        <p>读一遍你的身份句 + 行动句，不讨论对错，只做执行。</p>
                     </div>
                     <div class="card">
-                        <h3>🧭 可视化未来</h3>
-                        <ul>
-                            <li>找一张理想高中的照片或校徽</li>
-                            <li>每天想象自己在那里的具体场景</li>
-                            <li>越具体越有效：教室、同学、作息、活动</li>
-                        </ul>
+                        <h3>第3步（3分半）做最小任务</h3>
+                        <p>选择一科最小任务：5 题计算 / 10 个单词 / 1 道错题重做。</p>
+                    </div>
+                </div>
+                <div class="soft-box">关键不是强度，而是稳定。连续做 21 天，比偶尔高强度更有用。</div>
+            </section>
+
+            <section class="content-section" id="generatorSection">
+                <h2>4️⃣ 生成你的“稳心话术”</h2>
+                <div class="tool-card">
+                    <p>输入你的目标和今天任务，生成一段“可执行的自我暗示”。</p>
+
+                    <div class="input-group">
+                        <label for="goalInput">我的目标（例：考上普通公办高中）</label>
+                        <input id="goalInput" type="text" placeholder="写一个具体、真实的目标">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="taskInput">我今天最小任务（例：数学错题1页）</label>
+                        <input id="taskInput" type="text" placeholder="任务要小、可执行">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="reasonInput">我为什么要做（例：想更稳地上普通公办高中）</label>
+                        <input id="reasonInput" type="text" placeholder="写一个真实理由，哪怕很朴素">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="worryInput">我最常见担心（例：怕做不好）</label>
+                        <input id="worryInput" type="text" placeholder="写一句你常出现的担心">
+                    </div>
+
+                    <div class="btn-row">
+                        <button class="btn-soft" type="button" id="generateBtn">生成我的话术</button>
+                        <button class="btn-soft" type="button" id="saveBtn">保存</button>
+                        <button class="btn-soft" type="button" id="copyBtn">复制文本</button>
+                        <button class="btn-soft" type="button" id="clearBtn">清空</button>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="outputText">我的心理暗示文本</label>
+                        <textarea id="outputText" placeholder="点击“生成我的话术”"></textarea>
                     </div>
                 </div>
             </section>
 
-            <section class="content-section">
-                <h2>3️⃣ 如何“看见”进步？</h2>
+            <section class="content-section" id="checkinSection">
+                <h2>5️⃣ 21天信心打卡（只求稳定，不求完美）</h2>
                 <div class="card">
-                    <h3>进步识别清单（每周至少对照一次）</h3>
-                    <ul>
-                        <li>✅ 这周错题比上周少了2道</li>
-                        <li>✅ 今天作业用时比昨天少了10分钟</li>
-                        <li>✅ 这个概念现在能自己讲出来了</li>
-                        <li>✅ 以前不会的题型，现在能做出来了</li>
-                        <li>✅ 复盘后，重复犯的错变少了</li>
+                    <p><strong>当日合格规则：</strong>完成以下 3 项中的任意 2 项即可。</p>
+                    <ul class="micro-list">
+                        <li>完成 15 分钟最小学习任务</li>
+                        <li>写下一条“今天的进步证据”</li>
+                        <li>读一遍自己的心理暗示文本</li>
                     </ul>
-                </div>
-
-                <div class="info">
-                    <strong>建议：每周日晚上做“进步总结”</strong><br>
-                    不要只看分数，还要看：知识掌握程度、错题减少情况、解题速度、学习习惯、心态变化。
+                    <p id="checkinProgress">已完成 0 / 21 天</p>
+                    <div class="checkin-grid" id="checkinGrid"></div>
+                    <div class="btn-row">
+                        <button class="btn-soft" type="button" id="resetCheckinBtn">重置打卡</button>
+                    </div>
                 </div>
             </section>
 
             <section class="content-section">
-                <h2>4️⃣ 如何激发“拼命”的动力？</h2>
+                <h2>6️⃣ 家长支持话术（减压版）</h2>
                 <div class="grid grid-2">
                     <div class="card">
-                        <h3>明确“为什么要拼命”</h3>
-                        <ul>
-                            <li>不是为了面子</li>
-                            <li>不是为了应付父母</li>
-                            <li>是为了关键时刻不后悔</li>
-                            <li>是为了拥有更多选择</li>
+                        <h3>建议多说</h3>
+                        <ul class="micro-list">
+                            <li>“你今天能坐下来开始，就很不错。”</li>
+                            <li>“我们先把今天这一小步做好。”</li>
+                            <li>“遇到卡点很正常，我们一起拆小。”</li>
                         </ul>
                     </div>
                     <div class="card">
-                        <h3>后悔预防机制</h3>
-                        <p><strong>场景A（努力后）：</strong>回头看，会说“还好我拼了，真值得”。</p>
-                        <p><strong>场景B（不努力）：</strong>回头看，会说“要是当时再努力一点就好了”。</p>
-                        <p>问自己：我想要哪个结局？</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2>5️⃣ 你能立刻做到的三件事（今天就开始）</h2>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>✅ 只做一个最小任务</h3>
-                        <p><strong>15分钟</strong>就够：一套小题/一段背诵/一张错题订正。关键是“开始”。</p>
-                    </div>
-                    <div class="card">
-                        <h3>✅ 记录一个可见证据</h3>
-                        <p>写一句话：今天我做到了什么。让大脑看到“我在行动”。</p>
-                    </div>
-                    <div class="card">
-                        <h3>✅ 说一句自我暗示</h3>
-                        <p>不是喊口号，而是给自己一个可执行的指令：现在做哪一步、做到什么程度。</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2>6️⃣ 心理暗示（Self-talk）：把你自己“说”成一个会学习的人</h2>
-                <div class="info">
-                    <p>在李笑来与脱不花的对话里反复提到一种实践：用可重复、可执行的语言，长期训练自己的注意力与行动倾向。你不用理解得很深，只要照做。</p>
-                </div>
-
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>🌅 早晨（1分钟）</h3>
-                        <ul>
-                            <li>今天我只要比昨天更稳一点</li>
-                            <li>我只需要开始，状态会在行动中出现</li>
-                            <li>我的任务很小：先做15分钟</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>🕛 中午（30秒）</h3>
-                        <ul>
-                            <li>我不靠情绪学习，我靠系统</li>
-                            <li>我现在只做下一步，不想太多</li>
-                            <li>做完这一小段，我就赢了今天</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>🌙 睡前（2分钟）</h3>
-                        <ul>
-                            <li>今天我做对了什么</li>
-                            <li>今天我下一次要避免什么错</li>
-                            <li>明天我第一件事做什么（写下来）</li>
+                        <h3>建议少说</h3>
+                        <ul class="micro-list">
+                            <li>“你怎么还不行？”</li>
+                            <li>“再这样就没希望了。”</li>
+                            <li>“别人都比你强。”</li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="success">
-                    <h3>最关键的一招：把暗示录音</h3>
-                    <p>用手机把你写的暗示读一遍录下来，睡前听2遍。你会更容易在第二天“自动开始”。</p>
-                </div>
             </section>
 
-            <section class="content-section">
-                <h2>7️⃣ 4步实操：从“厌学”到“主动学”</h2>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h3>第1步：把任务缩小到“能开始”</h3>
-                        <p>学习不是一口气做完，而是把启动门槛降到最低：15分钟起步，做完就算赢。</p>
+            <section class="content-section" id="agreementSection">
+                <h2>7️⃣ 低负担学习协议（学生自用）</h2>
+                <div class="tool-card">
+                    <p>目的：让你“再忙也不断线”。每天只完成一个档位，也算完成当天任务。</p>
+
+                    <div class="agreement-levels">
+                        <label class="agreement-level">
+                            <input type="radio" name="dailyLevel" value="A">
+                            <strong>A档（轻量）</strong><br>
+                            15分钟学习 + 1条进步证据
+                        </label>
+                        <label class="agreement-level">
+                            <input type="radio" name="dailyLevel" value="B">
+                            <strong>B档（标准）</strong><br>
+                            30分钟学习 + 1道错题订正
+                        </label>
+                        <label class="agreement-level">
+                            <input type="radio" name="dailyLevel" value="C">
+                            <strong>C档（状态好）</strong><br>
+                            45分钟学习 + 复盘记录
+                        </label>
                     </div>
-                    <div class="card">
-                        <h3>第2步：把“我不行”改成“我下一步做什么”</h3>
-                        <p>只问一个问题：我现在能做的下一步是什么？一旦下一步明确，情绪会下降。</p>
+
+                    <div class="input-group">
+                        <label for="weekPromiseInput">本周承诺（例：连续6天不断线）</label>
+                        <input id="weekPromiseInput" type="text" placeholder="写一句你愿意做到的承诺">
                     </div>
-                    <div class="card">
-                        <h3>第3步：用证据喂养信心</h3>
-                        <p>每天留下一个证据：完成一次订正、一次背诵、一套小题。信心来自证据，不来自想象。</p>
+
+                    <div class="input-group">
+                        <label for="weekRewardInput">完成后给自己的奖励（例：周日看一部电影）</label>
+                        <input id="weekRewardInput" type="text" placeholder="奖励要健康、可实现">
                     </div>
-                    <div class="card">
-                        <h3>第4步：每周复盘一次</h3>
-                        <p>一周只做一次复盘：哪里进步了？哪里卡住了？下周把哪一件事做得更稳？</p>
-                    </div>
-                </div>
-            </section>
 
-            <section class="content-section">
-                <h2>8️⃣ 21天打卡：把“相信”变成习惯</h2>
-                <div class="card">
-                    <p><strong>规则：</strong>每天只要完成以下三项中的<strong>任意两项</strong>就算合格，坚持21天。</p>
-                    <ul>
-                        <li>15分钟最小任务</li>
-                        <li>错题订正/复盘一次</li>
-                        <li>录音暗示听2遍</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3>打卡进度</h3>
-                    <p id="checkinProgressText">已完成 0 / 21 天</p>
-                    <div class="grid grid-3" id="checkinGrid"></div>
-                    <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-                        <button class="btn-inline" type="button" id="resetCheckinBtn">清空打卡</button>
-                        <button class="btn-inline" type="button" id="exportCheckinBtn">复制打卡结果</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2>9️⃣ 自我暗示生成器（写完就能用）</h2>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h3>填写你的版本</h3>
-                        <label for="goalInput" style="display: block; font-weight: 700; margin: 8px 0 6px;">我的目标</label>
-                        <input id="goalInput" type="text" style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 10px;" placeholder="例如：考上普通公办高中">
-
-                        <label for="reasonInput" style="display: block; font-weight: 700; margin: 12px 0 6px;">我为什么要这样做</label>
-                        <input id="reasonInput" type="text" style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 10px;" placeholder="例如：为了4个月后不后悔、为了有更多选择">
-
-                        <label for="todayTaskInput" style="display: block; font-weight: 700; margin: 12px 0 6px;">我今天的最小任务（15分钟）</label>
-                        <input id="todayTaskInput" type="text" style="width: 100%; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 10px;" placeholder="例如：数学20道基础题 + 订正3道错题">
-
-                        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="btn-inline" type="button" id="generateSelfTalkBtn">生成我的暗示</button>
-                            <button class="btn-inline" type="button" id="saveSelfTalkBtn">保存</button>
+                    <div class="input-group">
+                        <label>本周完成打勾（周一到周日）</label>
+                        <div class="agreement-check-grid">
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="0">周一</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="1">周二</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="2">周三</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="3">周四</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="4">周五</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="5">周六</label>
+                            <label class="agreement-check-item"><input class="agreement-day-checkbox" type="checkbox" data-day-index="6">周日</label>
                         </div>
                     </div>
-                    <div class="card">
-                        <h3>生成结果</h3>
-                        <textarea id="selfTalkOutput" style="width: 100%; min-height: 180px; padding: 10px 12px; border: 1px solid #e2e8f0; border-radius: 10px; line-height: 1.7;" placeholder="点击“生成我的暗示”"></textarea>
-                        <div style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap;">
-                            <button class="btn-inline" type="button" id="copySelfTalkBtn">复制文本</button>
-                            <button class="btn-inline" type="button" id="clearSelfTalkBtn">清空</button>
-                        </div>
-                        <div class="info" style="margin-top: 12px;">
-                            <strong>使用方法：</strong>每天早上读1遍，中午读1遍，晚上读1遍；最好录音，睡前听2遍。
-                        </div>
+
+                    <div class="input-group">
+                        <label for="agreementNoteInput">周末复盘（我做得好的1件事 / 下周改进1件事）</label>
+                        <textarea id="agreementNoteInput" placeholder="例：我这周连续完成了6天；下周想把晚饭后拖延缩短10分钟"></textarea>
+                    </div>
+
+                    <p class="agreement-progress" id="agreementProgressText">本周已完成 0 / 7 天</p>
+
+                    <div class="btn-row">
+                        <button class="btn-soft" type="button" id="saveAgreementBtn">保存协议</button>
+                        <button class="btn-soft" type="button" id="printAgreementBtn">打印协议</button>
+                        <button class="btn-soft" type="button" id="resetAgreementBtn">重置协议</button>
                     </div>
                 </div>
             </section>
 
             <section class="content-section">
-                <h2>🔟 每日心态建设工具包（简化版）</h2>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h3>🌅 早晨自我暗示（1分钟）</h3>
-                        <ol>
-                            <li>今天我会比昨天更好</li>
-                            <li>我有能力学会新知识</li>
-                            <li>困难是暂时的，进步是必然的</li>
-                            <li>我相信关键节点的自己会更强</li>
-                        </ol>
-                    </div>
-                    <div class="card">
-                        <h3>🌙 睡前进步日记（3分钟）</h3>
-                        <ol>
-                            <li>今天学习上的3个小进步</li>
-                            <li>今天感谢的1个人或1件事</li>
-                            <li>明天最期待完成的1件事</li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h3>🧩 挫折应对卡片（随身版）</h3>
-                        <p><strong>当我想放弃时，我要记住：</strong></p>
-                        <ul>
-                            <li>困难是成长的必经之路</li>
-                            <li>我已经走了这么远，不能前功尽弃</li>
-                            <li>休息一下，然后继续前进</li>
-                            <li>相信自己，我能行</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>⭐ 进步可视化表（每周贴星星）</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>周次</th>
-                                    <th>数学</th>
-                                    <th>物理</th>
-                                    <th>英语</th>
-                                    <th>本周亮点</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>第1周</td>
-                                    <td>⭐</td>
-                                    <td>⭐</td>
-                                    <td>⭐</td>
-                                    <td>开始建立错题本</td>
-                                </tr>
-                                <tr>
-                                    <td>第2周</td>
-                                    <td>⭐⭐</td>
-                                    <td>⭐</td>
-                                    <td>⭐⭐</td>
-                                    <td>能稳定按计划执行</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <div class="success">
-                    <h3>🌟 最后一句</h3>
-                    <p><strong>你不需要一下子变成学霸。</strong>你只需要：每天多学一点、每天更稳一点、每周复盘一次。你会越来越相信，你也会越来越看见。</p>
-                    <p>下一步建议：回到首页，从<a href="../index.html#emergency">紧急处理</a>或<a href="../index.html#diagnosis">学习诊断</a>开始。</p>
+                <div class="final-note">
+                    <h3>🌱 最后一句</h3>
+                    <p>
+                        你不是靠某一天爆发变强，而是靠每天稳定一点点变强。
+                        当你愿意开始、愿意持续、愿意记录进步，信心会自己长出来。
+                    </p>
+                    <p>
+                        下一步可选：回到 <a href="../index.html#diagnosis">学习诊断</a> 明确短板，
+                        或进入 <a href="../index.html#emergency">当下执行区</a> 把今天第一步做掉。
+                    </p>
                 </div>
             </section>
         </div>
     </div>
 
     <div class="floating-motivation">
-        <button class="motivation-btn" type="button" id="openMotivationBtn">💪 需要动力？</button>
+        <button class="motivation-btn" type="button" id="openMotivationBtn">🌤 我想稳一稳</button>
     </div>
 
-    <div class="motivation-modal" id="motivationModal" role="dialog" aria-modal="true" aria-label="激励弹窗">
+    <div class="motivation-modal" id="motivationModal" role="dialog" aria-modal="true" aria-label="稳心提示">
         <div class="motivation-modal-content">
             <div class="motivation-modal-header">
-                <div class="motivation-modal-title">给你一剂强心针</div>
+                <div class="motivation-modal-title">给你一句稳心提醒</div>
                 <button class="motivation-modal-close" type="button" id="closeMotivationBtn">×</button>
             </div>
             <div class="motivation-modal-body">
                 <p id="motivationText" style="margin: 0;"></p>
             </div>
             <div class="motivation-modal-actions">
-                <button class="btn-inline" type="button" id="nextMotivationBtn">再来一条</button>
+                <button class="btn-inline" type="button" id="nextMotivationBtn">换一句</button>
                 <button class="btn-inline" type="button" id="jumpToCheckinBtn">去打卡</button>
-                <button class="btn-inline" type="button" id="jumpToGeneratorBtn">去生成暗示</button>
+                <button class="btn-inline" type="button" id="jumpToGeneratorBtn">去写话术</button>
             </div>
         </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 初中学习低分重建指导系统. 专注学习，成就未来！</p>
+            <p>&copy; 2024 初中学习低分重建指导系统. 相信自己，稳步前进。</p>
         </div>
     </footer>
 
     <script>
         const storageKeys = {
-            checkin: 'jhsr_mindset_checkin_v1',
-            selfTalk: 'jhsr_mindset_selftalk_v1'
+            checkin: 'jhsr_mindset_checkin_v2',
+            selfTalk: 'jhsr_mindset_selftalk_v2',
+            agreement: 'jhsr_mindset_agreement_v1'
         };
 
         function readJson(key, fallback) {
             try {
-                const raw = window.localStorage.getItem(key);
-                if (!raw) return fallback;
-                return JSON.parse(raw);
+                const value = window.localStorage.getItem(key);
+                return value ? JSON.parse(value) : fallback;
             } catch {
                 return fallback;
             }
@@ -420,12 +549,10 @@
         }
 
         function initCheckin() {
-            const gridEl = document.getElementById('checkinGrid');
-            const progressEl = document.getElementById('checkinProgressText');
-            const resetBtn = document.getElementById('resetCheckinBtn');
-            const exportBtn = document.getElementById('exportCheckinBtn');
-
-            if (!gridEl || !progressEl || !resetBtn || !exportBtn) return;
+            const grid = document.getElementById('checkinGrid');
+            const progress = document.getElementById('checkinProgress');
+            const resetButton = document.getElementById('resetCheckinBtn');
+            if (!grid || !progress || !resetButton) return;
 
             const state = readJson(storageKeys.checkin, { days: Array.from({ length: 21 }, () => false) });
             if (!Array.isArray(state.days) || state.days.length !== 21) {
@@ -433,209 +560,295 @@
             }
 
             function render() {
-                const done = state.days.filter(Boolean).length;
-                progressEl.textContent = `已完成 ${done} / 21 天`;
-                gridEl.innerHTML = '';
-
-                for (let i = 0; i < 21; i++) {
-                    const wrapper = document.createElement('label');
-                    wrapper.style.display = 'flex';
-                    wrapper.style.alignItems = 'center';
-                    wrapper.style.gap = '10px';
-                    wrapper.style.padding = '10px 12px';
-                    wrapper.style.border = '1px solid #e2e8f0';
-                    wrapper.style.borderRadius = '12px';
-                    wrapper.style.background = state.days[i] ? '#ecfdf5' : '#ffffff';
-
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.checked = !!state.days[i];
-                    checkbox.addEventListener('change', () => {
-                        state.days[i] = checkbox.checked;
+                grid.innerHTML = '';
+                state.days.forEach((done, index) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = `checkin-day${done ? ' active' : ''}`;
+                    button.textContent = `第${index + 1}天`;
+                    button.addEventListener('click', () => {
+                        state.days[index] = !state.days[index];
                         writeJson(storageKeys.checkin, state);
                         render();
                     });
+                    grid.appendChild(button);
+                });
 
-                    const text = document.createElement('span');
-                    text.textContent = `第 ${i + 1} 天`;
-                    text.style.fontWeight = '700';
-
-                    wrapper.appendChild(checkbox);
-                    wrapper.appendChild(text);
-                    gridEl.appendChild(wrapper);
-                }
+                const count = state.days.filter(Boolean).length;
+                progress.textContent = `已完成 ${count} / 21 天`;
             }
 
-            resetBtn.addEventListener('click', () => {
+            resetButton.addEventListener('click', () => {
                 state.days = Array.from({ length: 21 }, () => false);
                 writeJson(storageKeys.checkin, state);
                 render();
             });
 
-            exportBtn.addEventListener('click', async () => {
-                const doneList = state.days
-                    .map((v, idx) => (v ? idx + 1 : null))
-                    .filter(Boolean)
-                    .join('、');
-                const text = `21天打卡：已完成 ${state.days.filter(Boolean).length}/21 天\n完成的天数：${doneList || '无'}`;
-                try {
-                    await navigator.clipboard.writeText(text);
-                    exportBtn.textContent = '已复制';
-                    window.setTimeout(() => exportBtn.textContent = '复制打卡结果', 1200);
-                } catch {
-                    window.prompt('复制下面文本：', text);
-                }
-            });
-
             render();
         }
 
-        function initSelfTalkGenerator() {
+        function initTalkGenerator() {
             const goalInput = document.getElementById('goalInput');
+            const taskInput = document.getElementById('taskInput');
             const reasonInput = document.getElementById('reasonInput');
-            const todayTaskInput = document.getElementById('todayTaskInput');
-            const output = document.getElementById('selfTalkOutput');
+            const worryInput = document.getElementById('worryInput');
+            const outputText = document.getElementById('outputText');
 
-            const generateBtn = document.getElementById('generateSelfTalkBtn');
-            const saveBtn = document.getElementById('saveSelfTalkBtn');
-            const copyBtn = document.getElementById('copySelfTalkBtn');
-            const clearBtn = document.getElementById('clearSelfTalkBtn');
+            const generateButton = document.getElementById('generateBtn');
+            const saveButton = document.getElementById('saveBtn');
+            const copyButton = document.getElementById('copyBtn');
+            const clearButton = document.getElementById('clearBtn');
 
-            if (!goalInput || !reasonInput || !todayTaskInput || !output) return;
-            if (!generateBtn || !saveBtn || !copyBtn || !clearBtn) return;
+            if (!goalInput || !taskInput || !reasonInput || !worryInput || !outputText) return;
 
-            const saved = readJson(storageKeys.selfTalk, { goal: '', reason: '', todayTask: '', output: '' });
+            const saved = readJson(storageKeys.selfTalk, { goal: '', task: '', reason: '', worry: '', output: '' });
             goalInput.value = saved.goal || '';
+            taskInput.value = saved.task || '';
             reasonInput.value = saved.reason || '';
-            todayTaskInput.value = saved.todayTask || '';
-            output.value = saved.output || '';
-
-            function generate() {
-                const goal = goalInput.value.trim();
-                const reason = reasonInput.value.trim();
-                const task = todayTaskInput.value.trim();
-
-                const lines = [
-                    `我相信我可以实现：${goal || '我的目标'}。`,
-                    `我这样做是因为：${reason || '我值得更好的选择'}。`,
-                    `我现在只做下一步：${task || '先开始15分钟'}。`,
-                    '我不靠情绪学习，我靠系统；开始了就会变强。',
-                    '今天比昨天更稳一点，就够了。'
-                ];
-
-                output.value = lines.join('\n');
-            }
+            worryInput.value = saved.worry || '';
+            outputText.value = saved.output || '';
 
             function persist() {
                 writeJson(storageKeys.selfTalk, {
                     goal: goalInput.value,
+                    task: taskInput.value,
                     reason: reasonInput.value,
-                    todayTask: todayTaskInput.value,
-                    output: output.value
+                    worry: worryInput.value,
+                    output: outputText.value
                 });
             }
 
-            generateBtn.addEventListener('click', () => {
+            function generate() {
+                const goal = goalInput.value.trim() || '考上普通公办高中';
+                const task = taskInput.value.trim() || '完成今天15分钟最小任务';
+                const reason = reasonInput.value.trim() || '我想把学习节奏稳住，给自己更多选择';
+                const worry = worryInput.value.trim() || '怕自己做不好';
+
+                const lines = [
+                    `我的目标：${goal}。`,
+                    '我的定位：我是一个愿意进步、愿意行动的人。',
+                    `我的理由：因为${reason}。`,
+                    `我的担心：${worry}。但担心不影响我先做第一步。`,
+                    `我的行动：现在先做「${task}」，做完再决定下一步。`,
+                    '我的原则：先完成，再优化；先稳定，再提速。',
+                    '我的提醒：今天比昨天更稳一点，我就更有底气。'
+                ];
+
+                outputText.value = lines.join('\n');
+            }
+
+            generateButton?.addEventListener('click', () => {
                 generate();
                 persist();
             });
 
-            saveBtn.addEventListener('click', () => {
+            saveButton?.addEventListener('click', () => {
                 persist();
-                saveBtn.textContent = '已保存';
-                window.setTimeout(() => saveBtn.textContent = '保存', 1200);
+                saveButton.textContent = '已保存';
+                window.setTimeout(() => {
+                    saveButton.textContent = '保存';
+                }, 1200);
             });
 
-            copyBtn.addEventListener('click', async () => {
-                const text = output.value.trim();
+            copyButton?.addEventListener('click', async () => {
+                const text = outputText.value.trim();
                 if (!text) return;
                 try {
                     await navigator.clipboard.writeText(text);
-                    copyBtn.textContent = '已复制';
-                    window.setTimeout(() => copyBtn.textContent = '复制文本', 1200);
+                    copyButton.textContent = '已复制';
+                    window.setTimeout(() => {
+                        copyButton.textContent = '复制文本';
+                    }, 1200);
                 } catch {
                     window.prompt('复制下面文本：', text);
                 }
             });
 
-            clearBtn.addEventListener('click', () => {
+            clearButton?.addEventListener('click', () => {
                 goalInput.value = '';
+                taskInput.value = '';
                 reasonInput.value = '';
-                todayTaskInput.value = '';
-                output.value = '';
+                worryInput.value = '';
+                outputText.value = '';
                 persist();
             });
         }
 
         function initMotivationModal() {
-            const openBtn = document.getElementById('openMotivationBtn');
+            const openButton = document.getElementById('openMotivationBtn');
             const modal = document.getElementById('motivationModal');
-            const closeBtn = document.getElementById('closeMotivationBtn');
-            const nextBtn = document.getElementById('nextMotivationBtn');
-            const textEl = document.getElementById('motivationText');
-            const jumpToCheckinBtn = document.getElementById('jumpToCheckinBtn');
-            const jumpToGeneratorBtn = document.getElementById('jumpToGeneratorBtn');
+            const closeButton = document.getElementById('closeMotivationBtn');
+            const nextButton = document.getElementById('nextMotivationBtn');
+            const textElement = document.getElementById('motivationText');
 
-            if (!openBtn || !modal || !closeBtn || !nextBtn || !textEl) return;
+            const jumpToCheckinButton = document.getElementById('jumpToCheckinBtn');
+            const jumpToGeneratorButton = document.getElementById('jumpToGeneratorBtn');
 
-            const motivations = [
-                '不是因为你厉害才开始，而是开始了你才会变厉害。',
-                '你不需要完美，你只需要开始，并且别停。',
-                '把目标缩小到15分钟：小到你无法拒绝。',
-                '你今天的努力，正在给未来的你铺路。',
-                '不是情绪驱动学习，是学习驱动情绪。',
-                '你只要比昨天更稳一点，就在赢。',
-                '你现在的任务不是变学霸，而是把系统跑起来。',
-                '最好的反击就是：完成你该完成的那一小步。'
+            if (!openButton || !modal || !closeButton || !nextButton || !textElement) return;
+
+            const messages = [
+                '你不需要完美，你只需要开始。',
+                '先做 15 分钟，你会比现在更有底气。',
+                '稳定执行，是最实用的天赋。',
+                '你已经在路上了，不必和别人抢节奏。',
+                '今天完成一个小任务，就是实打实的进步。',
+                '把注意力放在下一步，不放在自我否定上。'
             ];
 
             function pick() {
-                const idx = Math.floor(Math.random() * motivations.length);
-                textEl.textContent = motivations[idx];
+                const index = Math.floor(Math.random() * messages.length);
+                textElement.textContent = messages[index];
             }
 
-            function open() {
+            function openModal() {
                 pick();
                 modal.classList.add('is-open');
             }
 
-            function close() {
+            function closeModal() {
                 modal.classList.remove('is-open');
             }
 
-            openBtn.addEventListener('click', open);
-            closeBtn.addEventListener('click', close);
-            nextBtn.addEventListener('click', pick);
+            openButton.addEventListener('click', openModal);
+            closeButton.addEventListener('click', closeModal);
+            nextButton.addEventListener('click', pick);
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) close();
+            jumpToCheckinButton?.addEventListener('click', () => {
+                closeModal();
+                document.getElementById('checkinSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
 
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') close();
+            jumpToGeneratorButton?.addEventListener('click', () => {
+                closeModal();
+                document.getElementById('generatorSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
 
-            if (jumpToCheckinBtn) {
-                jumpToCheckinBtn.addEventListener('click', () => {
-                    close();
-                    const el = document.getElementById('checkinGrid');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        }
+
+        function initAgreementTool() {
+            const levelInputs = Array.from(document.querySelectorAll('input[name="dailyLevel"]'));
+            const weekPromiseInput = document.getElementById('weekPromiseInput');
+            const weekRewardInput = document.getElementById('weekRewardInput');
+            const agreementNoteInput = document.getElementById('agreementNoteInput');
+            const dayCheckboxes = Array.from(document.querySelectorAll('.agreement-day-checkbox'));
+
+            const saveAgreementButton = document.getElementById('saveAgreementBtn');
+            const printAgreementButton = document.getElementById('printAgreementBtn');
+            const resetAgreementButton = document.getElementById('resetAgreementBtn');
+            const agreementProgressText = document.getElementById('agreementProgressText');
+
+            if (!levelInputs.length || !weekPromiseInput || !weekRewardInput || !agreementNoteInput || !dayCheckboxes.length || !agreementProgressText) {
+                return;
             }
 
-            if (jumpToGeneratorBtn) {
-                jumpToGeneratorBtn.addEventListener('click', () => {
-                    close();
-                    const el = document.getElementById('goalInput');
-                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
+            const state = readJson(storageKeys.agreement, {
+                level: 'B',
+                weekPromise: '',
+                weekReward: '',
+                notes: '',
+                doneDays: Array.from({ length: 7 }, () => false)
+            });
+
+            if (!Array.isArray(state.doneDays) || state.doneDays.length !== 7) {
+                state.doneDays = Array.from({ length: 7 }, () => false);
             }
+
+            function render() {
+                levelInputs.forEach((levelInput) => {
+                    levelInput.checked = levelInput.value === state.level;
+                });
+
+                weekPromiseInput.value = state.weekPromise || '';
+                weekRewardInput.value = state.weekReward || '';
+                agreementNoteInput.value = state.notes || '';
+
+                dayCheckboxes.forEach((dayCheckbox) => {
+                    const dayIndex = Number(dayCheckbox.dataset.dayIndex || 0);
+                    dayCheckbox.checked = Boolean(state.doneDays[dayIndex]);
+                });
+
+                const doneCount = state.doneDays.filter(Boolean).length;
+                agreementProgressText.textContent = `本周已完成 ${doneCount} / 7 天`;
+            }
+
+            function persist() {
+                writeJson(storageKeys.agreement, state);
+                render();
+            }
+
+            levelInputs.forEach((levelInput) => {
+                levelInput.addEventListener('change', () => {
+                    state.level = levelInput.value;
+                    persist();
+                });
+            });
+
+            weekPromiseInput.addEventListener('input', () => {
+                state.weekPromise = weekPromiseInput.value;
+                writeJson(storageKeys.agreement, state);
+            });
+
+            weekRewardInput.addEventListener('input', () => {
+                state.weekReward = weekRewardInput.value;
+                writeJson(storageKeys.agreement, state);
+            });
+
+            agreementNoteInput.addEventListener('input', () => {
+                state.notes = agreementNoteInput.value;
+                writeJson(storageKeys.agreement, state);
+            });
+
+            dayCheckboxes.forEach((dayCheckbox) => {
+                dayCheckbox.addEventListener('change', () => {
+                    const dayIndex = Number(dayCheckbox.dataset.dayIndex || 0);
+                    state.doneDays[dayIndex] = dayCheckbox.checked;
+                    persist();
+                });
+            });
+
+            saveAgreementButton?.addEventListener('click', () => {
+                state.weekPromise = weekPromiseInput.value;
+                state.weekReward = weekRewardInput.value;
+                state.notes = agreementNoteInput.value;
+                writeJson(storageKeys.agreement, state);
+                saveAgreementButton.textContent = '已保存';
+                window.setTimeout(() => {
+                    saveAgreementButton.textContent = '保存协议';
+                }, 1200);
+            });
+
+            printAgreementButton?.addEventListener('click', () => {
+                window.print();
+            });
+
+            resetAgreementButton?.addEventListener('click', () => {
+                state.level = 'B';
+                state.weekPromise = '';
+                state.weekReward = '';
+                state.notes = '';
+                state.doneDays = Array.from({ length: 7 }, () => false);
+                persist();
+            });
+
+            render();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             initCheckin();
-            initSelfTalkGenerator();
+            initTalkGenerator();
             initMotivationModal();
+            initAgreementTool();
         });
     </script>
 </body>

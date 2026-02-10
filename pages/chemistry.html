@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -106,37 +106,37 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="chinese.html">📝 语文指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="chinese.html"><i class="fas fa-pen-nib menu-ico" aria-hidden="true"></i> 语文指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -170,6 +170,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#chemistry-overview" onclick="scrollToSection('chemistry-overview')">化学学习指南</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#chemistry-status" onclick="scrollToSection('chemistry-status')">学习现状分析</a></li>
             <li><a href="#chemistry-system" onclick="scrollToSection('chemistry-system')">核心知识体系</a></li>
             <li><a href="#chemistry-equation" onclick="scrollToSection('chemistry-equation')">化学方程式专题</a></li>
@@ -193,7 +194,28 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>化学是“起点相同”的提分科。先相信自己能追上来，然后每天把最小闭环做完：背1条方程式 + 做5道配平/推断 + 订正2道错题。</p>
-                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
+            </div>
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 化学每日最低执行线（先记核心，再做应用）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：背1条方程式 + 做2道基础题</li>
+                    <li><strong>B档（常规）</strong>：背1条方程式 + 做5道配平/推断 + 订正1题</li>
+                    <li><strong>C档（状态好）</strong>：完成1个小专题（方程式→实验→题型）</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>任意完成一档即可，先把化学不断线。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我更理解的化学变化是____”。</p>
             </div>
 
             <!-- 学习现状分析 -->
@@ -203,7 +225,7 @@
                     <p><strong>优势：</strong>化学作为初三新学科，所有学生起点相同，是快速提分的黄金机会。</p>
                     <p><strong>目标：</strong>从零基础到80-90分，重点突破方程式和实验应用。</p>
                 </div>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>🎯 学习重点</h3>
@@ -215,7 +237,7 @@
                             <li>化学计算和应用题</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>⚠️ 常见难点</h3>
                         <ul>
@@ -232,7 +254,7 @@
             <!-- 核心知识体系 -->
             <section class="content-section" id="chemistry-system">
                 <h2>🏗️ 化学核心知识体系</h2>
-                
+
                 <div class="timeline">
                     <div class="timeline-item">
                         <h3>第一章：走进化学世界</h3>
@@ -250,7 +272,7 @@
                             <li>基本实验仪器的使用</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第二章：我们周围的空气</h3>
                         <h4>核心概念：</h4>
@@ -268,7 +290,7 @@
                             <li>S + O₂ → SO₂</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第三章：物质构成的奥秘</h3>
                         <h4>核心概念：</h4>
@@ -286,7 +308,7 @@
                             <li>理解离子的形成</li>
                         </ul>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <h3>第四章：自然界的水</h3>
                         <h4>核心概念：</h4>
@@ -309,7 +331,7 @@
             <!-- 化学方程式专题突破 -->
             <section class="content-section" id="chemistry-equation">
                 <h2>⚗️ 化学方程式专题突破</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>📝 方程式书写步骤</h3>
@@ -319,7 +341,7 @@
                             <li><strong>标注反应条件：</strong>如加热、催化剂等</li>
                             <li><strong>标注气体或沉淀：</strong>用↑或↓表示</li>
                         </ol>
-                        
+
                         <h4>配平方法：</h4>
                         <ul>
                             <li><strong>观察法：</strong>适用于简单方程式</li>
@@ -327,17 +349,17 @@
                             <li><strong>奇偶配平法：</strong>适用于含奇数原子的方程式</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>🔥 常考方程式汇总</h3>
-                        
+
                         <h4>制取氧气：</h4>
                         <ul>
                             <li>2KMnO₄ → K₂MnO₄ + MnO₂ + O₂↑</li>
                             <li>2KClO₃ → 2KCl + 3O₂↑</li>
                             <li>2H₂O₂ → 2H₂O + O₂↑</li>
                         </ul>
-                        
+
                         <h4>燃烧反应：</h4>
                         <ul>
                             <li>C + O₂ → CO₂</li>
@@ -345,7 +367,7 @@
                             <li>4P + 5O₂ → 2P₂O₅</li>
                             <li>3Fe + 2O₂ → Fe₃O₄</li>
                         </ul>
-                        
+
                         <h4>水的反应：</h4>
                         <ul>
                             <li>2H₂ + O₂ → 2H₂O</li>
@@ -359,7 +381,7 @@
             <!-- 化学实验专题 -->
             <section class="content-section" id="chemistry-experiment">
                 <h2>🔬 化学实验专题</h2>
-                
+
                 <div class="grid grid-3">
                     <div class="card">
                         <h3>基本操作</h3>
@@ -370,7 +392,7 @@
                             <li>量筒的读数方法</li>
                             <li>天平的使用</li>
                         </ul>
-                        
+
                         <h4>安全注意：</h4>
                         <ul>
                             <li>实验前检查仪器</li>
@@ -379,7 +401,7 @@
                             <li>实验后清洗仪器</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>气体制取</h3>
                         <h4>制取氧气：</h4>
@@ -388,7 +410,7 @@
                             <li>过氧化氢制氧气</li>
                             <li>氯酸钾制氧气</li>
                         </ul>
-                        
+
                         <h4>收集方法：</h4>
                         <ul>
                             <li>排水法收集</li>
@@ -396,7 +418,7 @@
                             <li>向下排空气法</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>物质检验</h3>
                         <h4>常见检验：</h4>
@@ -406,7 +428,7 @@
                             <li>水：无水硫酸铜变蓝</li>
                             <li>氢气：点燃产生淡蓝色火焰</li>
                         </ul>
-                        
+
                         <h4>实验现象：</h4>
                         <ul>
                             <li>颜色变化</li>
@@ -421,26 +443,26 @@
             <!-- 化学计算专题 -->
             <section class="content-section" id="chemistry-calculation">
                 <h2>🧮 化学计算专题</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>基本计算类型</h3>
-                        
+
                         <h4>1. 相对分子质量计算</h4>
                         <p><strong>方法：</strong>各原子相对原子质量×原子个数之和</p>
                         <p><strong>例题：</strong>H₂SO₄的相对分子质量 = 1×2 + 32×1 + 16×4 = 98</p>
-                        
+
                         <h4>2. 化学式中元素质量比</h4>
                         <p><strong>方法：</strong>各元素质量比 = 相对原子质量×原子个数的比</p>
                         <p><strong>例题：</strong>H₂O中H:O = (1×2):(16×1) = 2:16 = 1:8</p>
-                        
+
                         <h4>3. 元素质量分数</h4>
                         <p><strong>公式：</strong>元素质量分数 = (相对原子质量×原子个数)/相对分子质量×100%</p>
                     </div>
-                    
+
                     <div class="card">
                         <h3>解题步骤</h3>
-                        
+
                         <ol>
                             <li><strong>审题：</strong>明确题目要求和已知条件</li>
                             <li><strong>分析：</strong>确定计算类型和使用公式</li>
@@ -448,7 +470,7 @@
                             <li><strong>计算：</strong>按步骤进行数值计算</li>
                             <li><strong>检验：</strong>检查答案是否合理</li>
                         </ol>
-                        
+
                         <div class="warning">
                             <h4>注意事项：</h4>
                             <ul>
@@ -465,11 +487,11 @@
             <!-- 化学学习方法 -->
             <section class="content-section" id="chemistry-methods">
                 <h2>📚 化学学习方法</h2>
-                
+
                 <div class="grid grid-2">
                     <div class="card">
                         <h3>记忆方法</h3>
-                        
+
                         <h4>化学方程式记忆：</h4>
                         <ul>
                             <li><strong>理解记忆：</strong>理解反应原理再记忆</li>
@@ -477,7 +499,7 @@
                             <li><strong>对比记忆：</strong>对比相似反应记忆</li>
                             <li><strong>实验记忆：</strong>结合实验现象记忆</li>
                         </ul>
-                        
+
                         <h4>元素符号记忆：</h4>
                         <ul>
                             <li>联想记忆法</li>
@@ -486,10 +508,10 @@
                             <li>重复记忆法</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>理解方法</h3>
-                        
+
                         <h4>概念理解：</h4>
                         <ul>
                             <li>抓住关键词</li>
@@ -497,7 +519,7 @@
                             <li>举例说明</li>
                             <li>对比分析</li>
                         </ul>
-                        
+
                         <h4>实验理解：</h4>
                         <ul>
                             <li>明确实验目的</li>
@@ -512,7 +534,7 @@
             <!-- 学习资源推荐 -->
             <section class="content-section" id="chemistry-resources">
                 <h2>📖 学习资源推荐</h2>
-                
+
                 <div class="grid grid-3">
                     <div class="card">
                         <h3>教材资源</h3>
@@ -523,7 +545,7 @@
                             <li><strong>化学计算专题：</strong>计算方法详解</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>在线资源</h3>
                         <ul>
@@ -533,7 +555,7 @@
                             <li><strong>化学视频课程：</strong>概念讲解</li>
                         </ul>
                     </div>
-                    
+
                     <div class="card">
                         <h3>实验工具</h3>
                         <ul>
@@ -549,7 +571,7 @@
             <!-- 备考策略 -->
             <section class="content-section" id="chemistry-exam">
                 <h2>🎯 中考备考策略</h2>
-                
+
                 <div class="success">
                     <h3>备考时间安排：</h3>
                     <ul>
@@ -558,7 +580,7 @@
                         <li><strong>冲刺阶段（4-6月）：</strong>真题练习和查漏补缺</li>
                     </ul>
                 </div>
-                
+
                 <div class="info">
                     <h3>考试技巧：</h3>
                     <ul>
@@ -589,7 +611,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -598,7 +620,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -610,7 +632,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -620,7 +642,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['chemistry-overview', 'chemistry-status', 'chemistry-system', 'chemistry-equation', 'chemistry-experiment', 'chemistry-calculation', 'chemistry-methods', 'chemistry-resources', 'chemistry-exam'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -630,7 +652,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }

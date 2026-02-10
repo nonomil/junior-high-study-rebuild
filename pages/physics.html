@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -105,37 +105,37 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="chinese.html">📝 语文指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="chinese.html"><i class="fas fa-pen-nib menu-ico" aria-hidden="true"></i> 语文指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -169,6 +169,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#overview" onclick="scrollToSection('overview')">8个月总体规划</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#knowledge-framework" onclick="scrollToSection('knowledge-framework')">物理知识框架</a></li>
             <li><a href="#month1-electricity" onclick="scrollToSection('month1-electricity')">第1个月：电学专项</a></li>
             <li><a href="#experiment-training" onclick="scrollToSection('experiment-training')">实验题专项训练</a></li>
@@ -194,9 +195,30 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>物理学习最怕“我不行所以不碰”。你只要每天稳定做一件小事：理解一个现象 + 练5道同类型题 + 订正2道错题。</p>
-                <p>需要更完整的自我暗示与21天打卡：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>需要更完整的自我暗示与21天打卡：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
             </div>
-            
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 物理每日最低执行线（先理解，再做题）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：理解1个现象 + 复述1个公式含义</li>
+                    <li><strong>B档（常规）</strong>：做5道同类型题 + 订正2道错题</li>
+                    <li><strong>C档（状态好）</strong>：完成1个小专题（现象→公式→应用）</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>完成任意一档即可，先保持学习连续性。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我真正理解了____现象”。</p>
+            </div>
+
             <div class="info">
                 <h3>🔬 物理学习的核心原则</h3>
                 <p><strong>理解现象，而不是背公式！</strong>物理不是数学，不能只做题。要先理解现象，再做题。每个公式都对应一个现象，联系生活实际来理解。</p>
@@ -204,7 +226,7 @@
 
             <div id="overview">
                 <h2>📊 8个月物理学习总体规划</h2>
-            
+
                 <div class="study-plan-overview">
                 <div class="phase-card">
                     <h3>第1-3个月：基础重建期</h3>
@@ -215,7 +237,7 @@
                         <li><strong>时间分配</strong>：每天45分钟，周末90分钟</li>
                     </ul>
                 </div>
-                
+
                 <div class="phase-card">
                     <h3>第4-6个月：能力提升期</h3>
                     <ul>
@@ -225,9 +247,9 @@
                         <li><strong>时间分配</strong>：每天50分钟，周末120分钟</li>
                     </ul>
                 </div>
-                
+
                 <div class="phase-card">
-                    <h3>第7-8个月：冲刺突破期</h3>
+                    <h3>第7-8个月：提分巩固期</h3>
                     <ul>
                         <li><strong>目标</strong>：冲击85分以上</li>
                         <li><strong>重点</strong>：中考真题训练，查漏补缺</li>
@@ -240,7 +262,7 @@
 
             <div id="knowledge-framework">
                 <h2>🧠 建立物理知识框架（第1天必做）</h2>
-            
+
             <div class="framework-guide">
                 <h3>用思维导图理清物理全貌</h3>
                 <div class="step-by-step">
@@ -262,7 +284,7 @@
                             </pre>
                         </div>
                     </div>
-                    
+
                     <div class="step">
                         <h4>步骤2：标注掌握程度</h4>
                         <ul>
@@ -271,7 +293,7 @@
                             <li><span class="color-red">红色</span>：不掌握（50%以下正确率）</li>
                         </ul>
                     </div>
-                    
+
                     <div class="step">
                         <h4>步骤3：制定攻克顺序</h4>
                         <p>优先攻克<span class="color-red">红色</span>板块，通常顺序为：电学 → 力学 → 光学/热学</p>
@@ -282,10 +304,10 @@
 
             <div id="month1-electricity">
                 <h2>⚡ 第1个月：电学专项突破</h2>
-            
+
             <div class="monthly-plan">
                 <h3>Week 1: 理解电路基础</h3>
-                
+
                 <div class="daily-schedule">
                     <div class="day-plan">
                         <h4>Day 1: 用生活例子理解基本概念</h4>
@@ -296,20 +318,20 @@
                                 <li><strong>电压 = 水压</strong>：水压大，水流快；电压高，电流大</li>
                                 <li><strong>电阻 = 水管粗细</strong>：管细阻力大，线细电阻大</li>
                             </ul>
-                            
+
                             <h5>🤔 思考生活例子</h5>
                             <ul>
                                 <li>为什么手机充电器有大有小？（功率不同）</li>
                                 <li>为什么电线要用铜线不用铁线？（电阻小）</li>
                                 <li>为什么电路短路会跳闸？（电流太大）</li>
                             </ul>
-                            
+
                             <div class="practice-task">
                                 <strong>今日任务：</strong>和父母一起讨论这些例子，理解了再看课本定义
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="day-plan">
                         <h4>Day 2-3: 画电路图（电学的关键）</h4>
                         <div class="circuit-training">
@@ -335,18 +357,18 @@
                                     </ul>
                                 </li>
                             </ol>
-                            
+
                             <div class="practice-task">
                                 <strong>目标：</strong>画20个电路图，熟练掌握串并联识别
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="day-plan">
                         <h4>Day 4-5: 理解欧姆定律</h4>
                         <div class="ohm-law-guide">
                             <h5>⚡ 欧姆定律深度理解</h5>
-                            
+
                             <div class="formula-explanation">
                                 <h6>不要死背 I=U/R，要理解含义：</h6>
                                 <ul>
@@ -354,7 +376,7 @@
                                     <li><strong>电阻越大，电流越小</strong>（管细，水流慢）</li>
                                 </ul>
                             </div>
-                            
+
                             <div class="application-rules">
                                 <h6>🔍 应用要点：</h6>
                                 <ul>
@@ -363,13 +385,13 @@
                                     <li><strong>使用条件</strong>：已知两个量，求第三个量</li>
                                 </ul>
                             </div>
-                            
+
                             <div class="practice-task">
                                 <strong>练习：</strong>做3道例题，搞懂公式应用方法
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="day-plan">
                         <h4>Day 6: 综合题训练</h4>
                         <div class="problem-solving">
@@ -381,14 +403,14 @@
                                 <li><strong>第四步</strong>：列公式</li>
                                 <li><strong>第五步</strong>：计算</li>
                             </ol>
-                            
+
                             <div class="practice-task">
                                 <strong>训练量：</strong>5道串并联电路计算题，不求快，要求每步都理解
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <h3>Week 2-4: 力学与光学突破</h3>
                 <div class="weekly-pattern">
                     <h4>📅 每个知识点的7天学习模式</h4>
@@ -405,10 +427,10 @@
 
             <div id="experiment-training">
                 <h2>🔬 实验题专项训练（第2-3个月）</h2>
-            
+
             <div class="experiment-guide">
                 <h3>实验题的万能套路</h3>
-                
+
                 <div class="experiment-pattern">
                     <h4>🤔 实验题通常问什么？</h4>
                     <ol>
@@ -418,7 +440,7 @@
                         <li>如果出现XX现象，说明什么？</li>
                     </ol>
                 </div>
-                
+
                 <div class="experiment-method">
                     <h4>📋 解题方法</h4>
                     <ol>
@@ -438,9 +460,9 @@
                         <li><strong>专项练习</strong>：做10道实验题，熟悉套路</li>
                     </ol>
                 </div>
-                
+
                 <h3>重点实验详解</h3>
-                
+
                 <div class="key-experiments">
                     <div class="experiment-detail">
                         <h4>⚖️ 探究杠杆平衡条件</h4>
@@ -458,7 +480,7 @@
                             <li><strong>易错点</strong>：力臂不是力的作用点到支点的距离，而是力的作用线到支点的垂直距离</li>
                         </ul>
                     </div>
-                    
+
                     <div class="experiment-detail">
                         <h4>💡 测量小灯泡电功率</h4>
                         <ul>
@@ -481,7 +503,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="experiment-detail">
                         <h4>🔍 探究凸透镜成像规律</h4>
                         <ul>
@@ -504,11 +526,11 @@
 
             <div id="learning-materials">
                 <h2>📚 学习资料推荐</h2>
-            
+
             <div class="learning-resources">
                 <div class="resource-category">
                     <h3>📖 教材与辅导书</h3>
-                    
+
                     <div class="score-based-resources">
                         <div class="score-range">
                             <h4>60分以下学生推荐</h4>
@@ -529,7 +551,7 @@
                                 </li>
                             </ul>
                         </div>
-                        
+
                         <div class="score-range">
                             <h4>60-75分学生推荐</h4>
                             <ul>
@@ -549,7 +571,7 @@
                                 </li>
                             </ul>
                         </div>
-                        
+
                         <div class="score-range">
                             <h4>75分以上学生推荐</h4>
                             <ul>
@@ -570,10 +592,10 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="resource-category">
                     <h3>💻 在线学习资源</h3>
-                    
+
                     <div class="online-resources">
                         <div class="resource-type">
                             <h4>🎥 视频课程推荐</h4>
@@ -601,7 +623,7 @@
                                 </li>
                             </ul>
                         </div>
-                        
+
                         <div class="resource-type">
                             <h4>📱 学习APP推荐</h4>
                             <ul>
@@ -635,11 +657,11 @@
 
             <div id="daily-schedule">
                 <h2>📅 每日学习安排</h2>
-            
+
             <div class="daily-schedule-physics">
                 <div class="weekday-schedule">
                     <h3>📚 工作日学习安排（45分钟）</h3>
-                    
+
                     <div class="time-block">
                         <h4>🌅 早晨（7:00-7:15，15分钟）</h4>
                         <ul>
@@ -648,7 +670,7 @@
                             <li><strong>实验原理</strong>：回忆重要实验的原理</li>
                         </ul>
                     </div>
-                    
+
                     <div class="time-block">
                         <h4>🌆 晚上（19:30-20:00，30分钟）</h4>
                         <ul>
@@ -669,10 +691,10 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="weekend-schedule">
                     <h3>🏠 周末学习安排（90分钟）</h3>
-                    
+
                     <div class="weekend-morning">
                         <h4>🌄 周六上午（9:00-10:30，90分钟）</h4>
                         <ul>
@@ -693,7 +715,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="weekend-afternoon">
                         <h4>🌇 周日下午（15:00-16:30，90分钟）</h4>
                         <ul>
@@ -720,7 +742,7 @@
             <!-- 详细学习方法与策略 -->
             <div id="detailed-methods" class="detailed-methods">
                 <h2>📚 详细学习方法与策略</h2>
-                
+
                 <div class="method-section">
                     <h3>🧠 物理概念理解策略</h3>
                     <div class="strategy-grid">
@@ -919,11 +941,11 @@
 
             <div id="problem-solving">
                 <h2>🎯 解题技巧与方法</h2>
-            
+
             <div class="problem-solving-techniques">
                 <div class="technique-category">
                     <h3>⚡ 电学解题技巧</h3>
-                    
+
                     <div class="technique-detail">
                         <h4>🔌 电路分析万能方法</h4>
                         <ol>
@@ -949,7 +971,7 @@
                             </li>
                         </ol>
                     </div>
-                    
+
                     <div class="technique-detail">
                         <h4>💡 电功率计算技巧</h4>
                         <ul>
@@ -971,10 +993,10 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="technique-category">
                     <h3>⚖️ 力学解题技巧</h3>
-                    
+
                     <div class="technique-detail">
                         <h4>🎯 受力分析方法</h4>
                         <ol>
@@ -996,7 +1018,7 @@
                             </li>
                         </ol>
                     </div>
-                    
+
                     <div class="technique-detail">
                         <h4>🌊 浮力问题解题步骤</h4>
                         <ol>
@@ -1018,10 +1040,10 @@
                         </ol>
                     </div>
                 </div>
-                
+
                 <div class="technique-category">
                     <h3>🔍 光学解题技巧</h3>
-                    
+
                     <div class="technique-detail">
                         <h4>🪞 光路图绘制方法</h4>
                         <ol>
@@ -1053,10 +1075,10 @@
 
             <div id="error-management">
                 <h2>📝 错题管理系统</h2>
-            
+
             <div class="error-management">
                 <h3>🗂️ 错题记录格式</h3>
-                
+
                 <div class="error-record-template">
                     <h4>📋 物理错题记录模板</h4>
                     <div class="template-example">
@@ -1094,9 +1116,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <h3>🔄 错题复习计划</h3>
-                
+
                 <div class="review-schedule">
                     <h4>📅 基于遗忘曲线的复习安排</h4>
                     <ul>
@@ -1108,9 +1130,9 @@
                         <li><strong>第6次复习</strong>：第30天（1个月后）</li>
                     </ul>
                 </div>
-                
+
                 <h3>📊 错误类型分析</h3>
-                
+
                 <div class="error-analysis">
                     <div class="error-type">
                         <h4>🧠 概念理解类错误</h4>
@@ -1132,7 +1154,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="error-type">
                         <h4>📐 公式应用类错误</h4>
                         <ul>
@@ -1154,7 +1176,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="error-type">
                         <h4>🔬 实验操作类错误</h4>
                         <ul>
@@ -1182,7 +1204,7 @@
 
             <div id="key-principles">
                 <h2>🚀 物理学习的关键原则</h2>
-            
+
             <div class="key-principles">
                 <div class="principle-card">
                     <h3>🔬 理解现象，不要死背公式</h3>
@@ -1191,7 +1213,7 @@
                         <strong>例如：</strong>学习欧姆定律时，不要只记I=U/R，要理解"电压越大电流越大，电阻越大电流越小"的物理意义。
                     </div>
                 </div>
-                
+
                 <div class="principle-card">
                     <h3>📐 画图很重要</h3>
                     <p>电路图、受力分析图、光路图，一定要会画。画图能帮助理解物理过程，是解题的关键步骤。</p>
@@ -1199,7 +1221,7 @@
                         <strong>建议：</strong>每天练习画5个不同类型的图，包括电路图、受力图、光路图等。
                     </div>
                 </div>
-                
+
                 <div class="principle-card">
                     <h3>🌍 联系生活实际</h3>
                     <p>每学一个知识点，想想生活中哪里能用到。这样既能加深理解，又能培养学习兴趣。</p>
@@ -1207,7 +1229,7 @@
                         <strong>例如：</strong>学习浮力时，想想为什么轮船能浮在水面上，为什么热气球能升空。
                     </div>
                 </div>
-                
+
                 <div class="principle-card">
                     <h3>⏰ 做题不要死磕</h3>
                     <p>10分钟做不出来，看答案，看懂为什么这么做。理解比做对更重要。</p>
@@ -1220,10 +1242,10 @@
 
             <div id="effect-evaluation">
                 <h2>📈 学习效果评估</h2>
-            
+
             <div class="assessment-system">
                 <h3>📊 每周自我评估</h3>
-                
+
                 <div class="weekly-assessment">
                     <h4>🎯 知识掌握程度评估</h4>
                     <div class="assessment-checklist">
@@ -1234,7 +1256,7 @@
                             <li>□ 能区分相似概念的不同</li>
                             <li>□ 能画出相关的示意图</li>
                         </ul>
-                        
+
                         <h5>公式应用能力（每周检查）</h5>
                         <ul>
                             <li>□ 能正确记忆本周学的公式</li>
@@ -1242,7 +1264,7 @@
                             <li>□ 能判断公式的适用条件</li>
                             <li>□ 能正确进行单位换算</li>
                         </ul>
-                        
+
                         <h5>实验理解程度（每周检查）</h5>
                         <ul>
                             <li>□ 能说出实验的目的和原理</li>
@@ -1252,9 +1274,9 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <h3>📝 月度测试安排</h3>
-                
+
                 <div class="monthly-test">
                     <h4>🗓️ 测试时间安排</h4>
                     <ul>
@@ -1263,7 +1285,7 @@
                         <li><strong>第3周</strong>：实验题专项测试</li>
                         <li><strong>第4周</strong>：综合能力测试（模拟考试）</li>
                     </ul>
-                    
+
                     <h4>📊 成绩分析方法</h4>
                     <ul>
                         <li><strong>85分以上</strong>：学习方法正确，继续保持</li>
@@ -1317,7 +1339,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -1326,7 +1348,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -1338,7 +1360,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -1348,7 +1370,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['overview', 'knowledge-framework', 'month1-electricity', 'experiment-training', 'learning-materials', 'daily-schedule', 'detailed-methods', 'problem-solving', 'error-management', 'key-principles', 'effect-evaluation', 'final-advice'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -1358,7 +1380,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }

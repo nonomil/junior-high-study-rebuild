@@ -9,13 +9,13 @@
 1. 安装Pandoc：https://pandoc.org/installing.html
 2. 在命令行运行：
 ```bash
-pandoc "14-4个月紧急冲刺版-中考逆袭完整方案.md" -o "14-4个月紧急冲刺版-中考逆袭完整方案.docx"
+pandoc "14-4个月稳步提分版-中考上岸方案.md" -o "14-4个月稳步提分版-中考上岸方案.docx"
 ```
 
 ### 方法二：使用在线转换工具
 
 1. 访问 https://cloudconvert.com/md-to-docx
-2. 上传 `14-4个月紧急冲刺版-中考逆袭完整方案.md` 文件
+2. 上传 `14-4个月稳步提分版-中考上岸方案.md` 文件
 3. 点击转换并下载
 
 ### 方法三：使用VS Code插件
@@ -36,7 +36,7 @@ pandoc "14-4个月紧急冲刺版-中考逆袭完整方案.md" -o "14-4个月紧
 
 ## 文件位置
 
-- Markdown源文件：`docs-v2/14-4个月紧急冲刺版-中考逆袭完整方案.md`
+- Markdown源文件：`docs-v2/14-4个月稳步提分版-中考上岸方案.md`
 - HTML网页版：`pages/sprint-4months.html`
 - Word文档目录：`初中学习低分重建--word版/`
 

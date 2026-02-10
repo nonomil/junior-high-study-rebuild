@@ -19,29 +19,29 @@
             z-index: 100;
             padding: 20px 0;
         }
-        
+
         .sidebar-header {
             padding: 0 20px 15px 20px;
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 15px;
         }
-        
+
         .sidebar-header h3 {
             font-size: 16px;
             color: var(--primary-color);
             margin: 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .sidebar-nav li {
             margin: 0;
         }
-        
+
         .sidebar-nav a {
             display: block;
             padding: 10px 20px;
@@ -51,18 +51,18 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background: #007bff;
             color: white;
         }
-        
+
         .main-content {
             margin-left: 250px;
             padding: 20px;
         }
-        
+
         .toggle-sidebar {
             display: none;
             position: fixed;
@@ -76,21 +76,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
+
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .sidebar.active {
                 transform: translateX(0);
             }
-            
+
             .main-content {
                 margin-left: 0;
             }
-            
+
             .toggle-sidebar {
                 display: block;
             }
@@ -105,37 +105,37 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a>
                 </li>
                 <li class="nav-item">
-                    <a href="emergency-strategies.html" class="nav-link">🚨 紧急处理</a>
+                    <a href="emergency-strategies.html" class="nav-link"><i class="fas fa-cloud-sun nav-ico" aria-hidden="true"></i> 稳住局面</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学科指南 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-book-open nav-ico" aria-hidden="true"></i> 学科指南 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="math.html">🧮 数学指南</a></li>
-                        <li><a href="physics.html">⚛️ 物理指南</a></li>
-                        <li><a href="english.html">🔤 英语指南</a></li>
-                        <li><a href="chinese.html">📝 语文指南</a></li>
-                        <li><a href="politics.html">📖 政治指南</a></li>
-                        <li><a href="history.html">📚 历史指南</a></li>
-                        <li><a href="chemistry.html">🧪 化学指南</a></li>
-                        <li><a href="biology.html">🌱 生物指南</a></li>
-                        <li><a href="geography.html">🌍 地理指南</a></li>
+                        <li><a href="math.html"><i class="fas fa-square-root-variable menu-ico" aria-hidden="true"></i> 数学指南</a></li>
+                        <li><a href="physics.html"><i class="fas fa-atom menu-ico" aria-hidden="true"></i> 物理指南</a></li>
+                        <li><a href="english.html"><i class="fas fa-language menu-ico" aria-hidden="true"></i> 英语指南</a></li>
+                        <li><a href="chinese.html"><i class="fas fa-pen-nib menu-ico" aria-hidden="true"></i> 语文指南</a></li>
+                        <li><a href="politics.html"><i class="fas fa-scale-balanced menu-ico" aria-hidden="true"></i> 政治指南</a></li>
+                        <li><a href="history.html"><i class="fas fa-landmark menu-ico" aria-hidden="true"></i> 历史指南</a></li>
+                        <li><a href="chemistry.html"><i class="fas fa-flask-vial menu-ico" aria-hidden="true"></i> 化学指南</a></li>
+                        <li><a href="biology.html"><i class="fas fa-seedling menu-ico" aria-hidden="true"></i> 生物指南</a></li>
+                        <li><a href="geography.html"><i class="fas fa-earth-asia menu-ico" aria-hidden="true"></i> 地理指南</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">学习管理 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-list-check nav-ico" aria-hidden="true"></i> 学习管理 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="time-management.html">⏰ 时间管理</a></li>
-                        <li><a href="family-education.html">👨‍👩‍👧‍👦 家庭教育</a></li>
+                        <li><a href="time-management.html"><i class="fas fa-clock menu-ico" aria-hidden="true"></i> 时间管理</a></li>
+                        <li><a href="family-education.html"><i class="fas fa-people-roof menu-ico" aria-hidden="true"></i> 家庭教育</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">工具资源 <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-screwdriver-wrench nav-ico" aria-hidden="true"></i> 工具资源 <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="learning-diagnosis.html">🔍 学习诊断</a></li>
-                        <li><a href="resources.html">📋 学习资源</a></li>
+                        <li><a href="learning-diagnosis.html"><i class="fas fa-magnifying-glass menu-ico" aria-hidden="true"></i> 学习诊断</a></li>
+                        <li><a href="resources.html"><i class="fas fa-folder-open menu-ico" aria-hidden="true"></i> 学习资源</a></li>
                     </ul>
                 </li>
             </ul>
@@ -169,6 +169,7 @@
         </div>
         <ul class="sidebar-nav">
             <li><a href="#history-overview" onclick="scrollToSection('history-overview')">历史学习指南</a></li>
+            <li><a href="#daily-minimum" onclick="scrollToSection('daily-minimum')">🌱 每日最低执行线</a></li>
             <li><a href="#history-status" onclick="scrollToSection('history-status')">学习现状分析</a></li>
             <li><a href="#history-system" onclick="scrollToSection('history-system')">历史知识体系</a></li>
             <li><a href="#history-memory" onclick="scrollToSection('history-memory')">记忆技巧方法</a></li>
@@ -191,13 +192,34 @@
             <div class="info">
                 <p><strong>心态提示：</strong>不是因为看见，所以相信；而是因为相信，所以看见。</p>
                 <p>历史不是“背完就行”，是“能按时间线讲清因果”。先相信你能把线索串起来，然后每天做最小任务：整理1条时间线 + 复述1个因果链 + 做1道材料题。</p>
-                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心态重建</a>。</p>
+                <p>需要更系统的自我激励闭环：去 <a href="mindset-rebuild.html">心理建设</a>。</p>
+            </div>
+
+            <div class="info quick-jump" id="quick-jump">
+                <h3>🧭 提分快捷入口</h3>
+                <p>先稳住心态，再做诊断，最后执行今天任务。</p>
+                <div class="quick-jump-actions">
+                    <a href="mindset-rebuild.html" class="btn btn-secondary">去心理建设</a>
+                    <a href="learning-diagnosis.html" class="btn btn-secondary">去学习诊断</a>
+                    <a href="../index.html#emergency" class="btn btn-secondary">去当下执行区</a>
+                </div>
+            </div>
+
+            <div id="daily-minimum" class="info">
+                <h3>🌱 历史每日最低执行线（先时间线，再因果链）</h3>
+                <ul>
+                    <li><strong>A档（状态一般）</strong>：整理1条时间线 + 记3个关键词</li>
+                    <li><strong>B档（常规）</strong>：复述1个因果链 + 做1道材料题 + 订正1题</li>
+                    <li><strong>C档（状态好）</strong>：完成1个专题（背景→经过→影响）</li>
+                </ul>
+                <p><strong>当日合格标准：</strong>任意完成一档即可，先把历史线索串起来。</p>
+                <p><strong>进步证据：</strong>每天写一句“今天我更清楚____事件因果了”。</p>
             </div>
 
             <!-- 学习现状分析 -->
             <section class="content-section" id="history-status">
                 <h2>📊 历史学习现状分析</h2>
-                
+
                 <div class="info-box">
                     <h3>典型问题表现</h3>
                     <ul>
@@ -344,7 +366,7 @@
 
                 <div class="card">
                     <h3>中国近现代史</h3>
-                    
+
                     <h4>阶段特征：</h4>
                     <ul>
                         <li><strong>1840-1919年：旧民主主义革命时期</strong>
@@ -380,7 +402,7 @@
 
                 <div class="card">
                     <h3>世界历史</h3>
-                    
+
                     <h4>古代文明：</h4>
                     <ul>
                         <li><strong>古代东方文明</strong>：古埃及、古巴比伦、古印度、古代中国</li>
@@ -542,8 +564,8 @@
 
                 <div class="card">
                     <h3>论述题标准作业流程 (SOP) - "三步成文法"</h3>
-                    <p><strong>核心理念</strong>：任何一道历史论述题，其本质都是要求你就一个问题"发表看法并证明它"。一个高分答案，必须包含清晰的"观点"、充分的"论据"和简明的"总结"。</p>
-                    
+                    <p><strong>核心理念</strong>：任何一道历史论述题，其本质都是要求你就一个问题"发表看法并证明它"。一个高分答案，建议包含清晰的"观点"、充分的"论据"和简明的"总结"。</p>
+
                     <h4>操作三步骤：</h4>
                     <ol>
                         <li><strong>第一步：亮观点 (一句话)</strong>
@@ -575,9 +597,9 @@
                     <div class="info-box">
                         <h4>案例演示：评价洋务运动</h4>
                         <p><strong>材料</strong>：19世纪60年代到90年代，洋务派以"自强"、"求富"为口号，创办了一系列军事和民用工业，如安庆内军械所、江南制造总局等。但最终在甲午中日战争中惨败，宣告了洋务运动的失败。</p>
-                        
+
                         <p><strong>【亮观点】</strong> 洋务运动是一次失败的封建统治者的自救运动，但它客观上开启了中国近代化的进程。</p>
-                        
+
                         <p><strong>【摆论据】</strong></p>
                         <ul>
                             <li><strong>第一，从目的上看</strong>，它是为了维护清朝的封建统治，是地主阶级的自救运动，这是其失败的根源。</li>
@@ -585,7 +607,7 @@
                             <li><strong>第三，从影响上看</strong>，它客观上刺激了中国民族资本主义的产生和发展，对外国的经济侵略起到了一定的抵制作用，是中国近代化的开端。</li>
                             <li><strong>第四，从结果上看</strong>，甲午中日战争的惨败证明了只学习技术而不改变腐朽的封建制度，是无法让中国真正富强起来的。</li>
                         </ul>
-                        
+
                         <p><strong>【做总结】</strong> 综上所述，洋务运动虽然没能实现国家富强，但它打开了古老中国紧闭的大门，是中国从传统社会向近代社会过渡的重要一环。</p>
                     </div>
                 </div>
@@ -619,7 +641,7 @@
 
                 <div class="card">
                     <h3>材料解析题答题策略</h3>
-                    
+
                     <h4>材料分析步骤：</h4>
                     <ol>
                         <li><strong>材料信息提取</strong>：
@@ -654,7 +676,7 @@
 
                 <div class="card">
                     <h3>论述题答题策略</h3>
-                    
+
                     <h4>论述题类型：</h4>
                     <table class="diagnosis-table">
                         <thead>
@@ -721,7 +743,7 @@
 
                 <div class="card">
                     <h3>第一阶段：通史复习（11-12月）</h3>
-                    
+
                     <h4>专题一：中国古代史</h4>
                     <ul>
                         <li>学习重点：政治制度演变、经济发展脉络、思想文化成就</li>
@@ -741,7 +763,7 @@
 
                 <div class="card">
                     <h3>第二阶段：专题深化（1-3月）</h3>
-                    
+
                     <h4>专题三：世界史重点</h4>
                     <ul>
                         <li>学习重点：工业革命、两次世界大战、冷战格局</li>
@@ -761,7 +783,7 @@
 
                 <div class="card">
                     <h3>第三阶段：综合提升（4-6月）</h3>
-                    
+
                     <h4>专题五：热点专题</h4>
                     <ul>
                         <li>学习重点：历史热点、周年纪念、现实意义</li>
@@ -1081,7 +1103,7 @@
                 searchInput.dispatchEvent(event);
             }
         }
-        
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
@@ -1090,7 +1112,7 @@
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
             if (element) {
-                element.scrollIntoView({ 
+                element.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -1102,7 +1124,7 @@
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             const activeLink = document.querySelector(`a[onclick="scrollToSection('${activeId}')"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
@@ -1112,7 +1134,7 @@
         window.addEventListener('scroll', function() {
             const sections = ['history-overview', 'history-status', 'history-system', 'history-memory', 'history-answer', 'history-topics', 'history-methods', 'history-resources', 'history-evaluation'];
             let currentSection = '';
-            
+
             sections.forEach(sectionId => {
                 const element = document.getElementById(sectionId);
                 if (element) {
@@ -1122,7 +1144,7 @@
                     }
                 }
             });
-            
+
             if (currentSection) {
                 updateActiveLink(currentSection);
             }
@@ -1134,4 +1156,3 @@
     </script>
 </body>
 </html>
-
