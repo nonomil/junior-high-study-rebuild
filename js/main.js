@@ -160,16 +160,16 @@ function loadPageContent(pageName, contentPath) {
 function generatePageContent(pageName) {
     const pageTemplates = {
         'time-management': {
-            title: '时间管理与学习计划 - 8个月冲刺方案',
+            title: '时间管理与学习计划 - 4个月稳步提分方案（16周）',
             content: `
                 <a href="#" class="back-button" onclick="loadPage('home')">
                     <i class="fas fa-arrow-left"></i> 返回首页
                 </a>
                 <h1>时间管理与学习计划</h1>
-                <h2>8个月冲刺方案概览</h2>
-                <img src="images/8个月学习时间轴.svg" alt="8个月学习时间轴" style="width: 100%; margin: 2rem 0;">
+                <h2>4个月稳步提分方案概览</h2>
+                <img src="images/4个月学习时间轴.svg" alt="4个月稳步提分时间轴" style="width: 100%; margin: 2rem 0;">
                 
-                <h2>第一阶段：基础诊断期 (1-2月)</h2>
+                <h2>第1阶段：稳住局面 + 基础回补（第1-4周）</h2>
                 <h3>目标设定</h3>
                 <ul>
                     <li>全面评估当前学习状况</li>
@@ -182,11 +182,11 @@ function generatePageContent(pageName) {
                 <ul>
                     <li><strong>学习现状评估</strong>：完成各科目基础测试，明确起点水平</li>
                     <li><strong>问题根源分析</strong>：深入分析学习困难的具体原因</li>
-                    <li><strong>目标制定</strong>：设定8个月的总体目标和阶段性目标</li>
+                    <li><strong>目标制定</strong>：设定4个月的稳步目标和阶段性目标</li>
                     <li><strong>计划制定</strong>：制定详细的日、周、月学习计划</li>
                 </ul>
                 
-                <h2>第二阶段：知识重建期 (3-5月)</h2>
+                <h2>第2阶段：题型强化（第5-8周）</h2>
                 <h3>重点任务</h3>
                 <ul>
                     <li>系统梳理各科知识体系</li>
@@ -203,7 +203,7 @@ function generatePageContent(pageName) {
                     <li><strong>文科</strong>：构建知识框架，培养记忆技巧</li>
                 </ul>
                 
-                <h2>第三阶段：能力提升期 (6-7月)</h2>
+                <h2>第3阶段：真题专项（第9-12周）</h2>
                 <h3>提升重点</h3>
                 <ul>
                     <li>强化解题技巧和应用能力</li>
@@ -212,7 +212,7 @@ function generatePageContent(pageName) {
                     <li>加强薄弱科目的专项训练</li>
                 </ul>
                 
-                <h2>第四阶段：模拟强化期 (8月)</h2>
+                <h2>第4阶段：模拟收官（第13-16周）</h2>
                 <h3>强化策略</h3>
                 <ul>
                     <li>综合性复习和模拟训练</li>

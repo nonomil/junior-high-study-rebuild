@@ -1,6 +1,6 @@
 # 初中学习低分重建指导网站（Junior High Study Rebuild Site）
 
-这是项目的静态网站源码，内容涵盖：8个月学习计划、各学科学习指南、家校沟通策略、应急处理方案，以及配套的流程图与知识体系图。
+这是项目的静态网站源码，内容涵盖：4个月（16周）稳步提分计划、各学科学习指南、家校沟通策略、稳住局面方案，以及配套的流程图与知识体系图。
 
 - 仓库地址：https://github.com/nonomil/junior-high-study-rebuild
 - 在线访问（国内）：https://juniorhighstudy-8i7o50u1.maozi.io/
