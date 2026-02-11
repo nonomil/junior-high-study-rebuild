@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择题快速排除技巧：全科通用 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .principle-card {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .principle-card h4 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .checklist {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .checklist ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .checklist li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .example-box {
+            background: #f8fafc;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .tips-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .tips-card h4 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+        }
+        .tag {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin: 0 2px;
+        }
+        .tag-right {
+            background: #22c55e;
+        }
+        .tag-wrong {
+            background: #ef4444;
+        }
+        .sop-box {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .sop-step {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .sop-step-number {
+            background: #fbbf24;
+            color: #1e293b;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .subject-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .subject-tab {
+            background: #f1f5f9;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .subject-tab:hover, .subject-tab.active {
+            background: #2563eb;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><i class="fas fa-graduation-cap nav-ico" aria-hidden="true"></i> 初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-brain nav-ico" aria-hidden="true"></i> 高阶思维</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-strategies.html"><i class="fas fa-book-open-reader menu-ico" aria-hidden="true"></i> 通用学习策略SOP</a></li>
+                        <li><a href="advanced-problem-solving.html"><i class="fas fa-lightbulb menu-ico" aria-hidden="true"></i> 高阶解题思维</a></li>
+                        <li><a href="multiple-choice-tips.html" style="color: #2563eb; font-weight: bold;"><i class="fas fa-check-double menu-ico" aria-hidden="true"></i> 选择题排除技巧</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h1>✅ 选择题快速排除技巧：全科通用</h1>
+                <p>适用于所有学科的选择题答题策略，快速排除干扰项，提高准确率</p>
+            </div>
+
+            <div class="info">
+                <p><strong>核心提示：</strong>选择题的正确答案只有一个，我们的任务是找到3个错误的，剩下的就是对的。</p>
+                <p><strong>核心策略：</strong>与其找对的，不如找错的。</p>
+                <p>需要更系统的解题方法：去 <a href="advanced-problem-solving.html">高阶解题思维</a>。</p>
+            </div>
+
+            <!-- 前言：选择题的本质 -->
+            <section class="content-section">
+                <div class="info-card">
+                    <h3>📖 前言：选择题的本质</h3>
+                    <p><strong>选择题的优势：</strong></p>
+                    <ul>
+                        <li>答案就在眼前，不需要从零开始</li>
+                        <li>可以用排除法，提高准确率</li>
+                        <li>是"送分题"的主要载体</li>
+                    </ul>
+                    <p><strong>选择题的陷阱：</strong></p>
+                    <ul>
+                        <li>干扰项设计巧妙，容易误选</li>
+                        <li>需要极强的细节识别能力</li>
+                        <li>"看起来都对"的选项最危险</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>核心策略：</strong></p>
+                        <p style="font-size: 1.2em; font-weight: bold; margin-top: 10px;">选择题的正确答案只有一个，<br>我们的任务是找到3个错误的，<br>剩下的就是对的。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 一、通用排除技巧 -->
+            <section class="content-section">
+                <h2>一、通用排除技巧（适用于所有选择题）</h2>
+
+                <h3>1.1 绝对词排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：含绝对词的选项通常是错误的</h4>
+                    <pre>
+【常见绝对词】
+- 一定、必然、必定
+- 只有、仅仅、唯一
+- 所有、全部、每个
+- 从不、永不、总是
+- 必须、一定、肯定
+
+【排除规则】
+看到这些词 → 优先排除
+除非题目本身就用了绝对词
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>示例</h4>
+                    <p><strong>题：关于环保，下列说法正确的是（ ）</strong></p>
+                    <p>A. 所有污染都是工业造成 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>B. 只有政府才能解决环保问题 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>C. 个人行为对环境没有影响 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>D. 每个人都应该参与环保 <span class="tag tag-right">没有"所有""必须"</span></p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选D</p>
+                </div>
+
+                <h3>1.2 逻辑矛盾排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：两个选项矛盾，必有一对一错</h4>
+                    <pre>
+【应用场景】
+- 选项A和B意思完全相反
+- 选项C和D互相矛盾
+
+【判断方法】
+如果A对，B一定错
+如果A错，B可能对也可能错
+→ 先找出矛盾对
+→ 再结合其他信息判断
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>示例</h4>
+                    <p><strong>题：水的沸点是多少？（ ）</strong></p>
+                    <p>A. 100°C</p>
+                    <p>B. 低于100°C</p>
+                    <p>C. 高于100°C</p>
+                    <p>D. 等于100°C</p>
+                    <p>→ A和D意思相近</p>
+                    <p>→ B和C与A/D矛盾</p>
+                    <p>→ 根据常识，标准大气压下选A或D</p>
+                    <p>→ A说"是"，D说"等于"，D更精确</p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选D</p>
+                </div>
+
+                <h3>1.3 范围不当排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：选项范围过大或过小通常是错的</h4>
+                    <pre>
+【范围过大】
+- 说得太满
+- 涵盖了不该涵盖的
+
+【范围过小】
+- 说得太窄
+- 没说完整
+
+【正确范围】
+- 恰当、适度
+- 与题干范围匹配
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>示例</h4>
+                    <p><strong>题：阅读能力包括哪些方面？（ ）</strong></p>
+                    <p>A. 识字能力 <span class="tag tag-wrong">范围过小</span></p>
+                    <p>B. 识字和理解能力 <span class="tag">范围合适</span></p>
+                    <p>C. 识字、理解、推理、评价能力 <span class="tag">可能正确</span></p>
+                    <p>D. 识字、理解、推理、评价、应用、创造、记忆等所有语言能力 <span class="tag tag-wrong">范围过大</span></p>
+                    <p>→ 在B和C中选择，C更全面</p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选C</p>
+                </div>
+
+                <h3>1.4 无中生有排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：选项中的信息题干完全没有提及</h4>
+                    <pre>
+【识别方法】
+对照题干，找选项中的关键词
+如果题干没提到 → 优先排除
+
+【注意】
+- 不要用常识判断
+- 只看题干说了什么
+- "题干没说的"都是错的
+                    </pre>
+                </div>
+
+                <div class="example-box">
+                    <h4>示例</h4>
+                    <p><strong>题：文中提到作者对北京的态度是？（ ）</strong></p>
+                    <p>A. 喜欢北京的天气 <span class="tag tag-wrong">题干没提天气</span></p>
+                    <p>B. 欣赏北京的历史文化 <span class="tag tag-right">题干提到了</span></p>
+                    <p>C. 讨厌北京的交通 <span class="tag tag-wrong">题干没提交通</span></p>
+                    <p>D. 想搬到上海 <span class="tag tag-wrong">题干完全没说</span></p>
+                    <p>→ 排除A、C、D</p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选B</p>
+                </div>
+            </section>
+
+            <!-- 二、语言类选择题技巧 -->
+            <section class="content-section">
+                <h2>二、语言类选择题技巧（语文、英语）</h2>
+
+                <h3>2.1 语感判断法（英语）</h3>
+                <div class="tips-card">
+                    <h4>原理：读起来不顺口的通常是错的</h4>
+                    <pre>
+【操作方法】
+1. 快速默读选项
+2. 感觉哪里"别扭"
+3. 优先排除别扭的
+
+【适用范围】
+- 英语语法选择题
+- 词语搭配题
+- 完形填空
+
+【示例】
+He is good _____ playing basketball.
+A. in（不搭配）
+B. with（不搭配）
+C. at（be good at）✓
+D. for（不搭配）
+→ 语感：be good at是固定搭配
+→ 选C
+                    </pre>
+                </div>
+
+                <h3>2.2 搭配排除法（语文、英语）</h3>
+                <div class="tips-card">
+                    <h4>原理：词语搭配有固定规律，不符合的是错的</h4>
+                    <pre>
+【常见错误搭配】
+- 提高+水平/能力（√）
+- 提高+数量/速度（× 应该用"增加"）
+
+- attention+to（√）
+- attention+with/on（×）
+
+【记忆方法】
+建立"搭配库"，遇到就积累
+                    </pre>
+                </div>
+
+                <h3>2.3 语法排除法（英语）</h3>
+                <div class="tips-card">
+                    <h4>原理：语法错误的选项直接排除</h4>
+                    <pre>
+【快速检查点】
+1. 主谓一致：单复数对不对？
+2. 时态：前后时态是否一致？
+3. 语态：主动还是被动？
+4. 非谓语：to do/doing/done对不对？
+
+【操作流程】
+一眼扫过选项
+发现语法错误 → 立即排除
+
+【示例】
+题：She _____ to school every day.
+A. go（主谓不一致）×
+B. goes（可能对）
+C. going（缺谓语）×
+D. went（时态不一致）×
+→ 排除A、C、D
+→ 选B
+                    </pre>
+                </div>
+
+                <h3>2.4 语境排除法（语文、英语）</h3>
+                <div class="tips-card">
+                    <h4>原理：选项必须符合上下文语境</h4>
+                    <pre>
+【判断方法】
+1. 看空前空后的内容
+2. 判断逻辑关系
+3. 排除不符合语境的
+
+【常见语境】
+- 转折：but/however/yet
+- 因果：because/so/therefore
+- 递进：and/moreover
+                    </pre>
+                </div>
+            </section>
+
+            <!-- 三、理科选择题技巧 -->
+            <section class="content-section">
+                <h2>三、理科选择题技巧（数学、物理、化学）</h2>
+
+                <h3>3.1 量级排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：数量级明显不合理的排除</h4>
+                    <pre>
+【应用场景】
+- 物理估算题
+- 化学计算题
+- 数学应用题
+
+【排除方法】
+1. 先估算大致范围
+2. 排除明显过大或过小的
+3. 在合理范围内选择
+
+【示例】
+题：一个教室的体积大约是多少？（ ）
+A. 10 m³（太小）×
+B. 100 m³（合理）
+C. 10000 m³（太大）×
+D. 0.1 m³（太小）×
+→ 教室大约8m×5m×3m=120m³
+→ 选B
+                    </pre>
+                </div>
+
+                <h3>3.2 单位排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：单位不匹配的选项直接排除</h4>
+                    <pre>
+【常见错误】
+- 时间单位：秒/分/小时混淆
+- 长度单位：米/厘米/毫米混淆
+- 质量单位：千克/克/毫克混淆
+
+【操作方法】
+1. 先判断正确单位
+2. 排除单位不对的
+3. 再比较数值
+
+【示例】
+题：一个鸡蛋的质量大约是？（ ）
+A. 5 g（太轻）×
+B. 50 g（合理）
+C. 500 g（太重）×
+D. 0.5 kg（=500g，太重）×
+→ 选B
+                    </pre>
+                </div>
+
+                <h3>3.3 符号排除法</h3>
+                <div class="tips-card">
+                    <h4>原理：正负号明显错误的排除</h4>
+                    <pre>
+【应用场景】
+- 数学中的正负数
+- 物理中的矢量方向
+- 化学中的电荷
+
+【排除方法】
+1. 判断应该是正还是负
+2. 排除符号错误的
+
+【示例】
+题：-3 + 5 = ？（ ）
+A. -8（符号错）×
+B. -2（符号错）×
+C. 2（可能对）
+D. 8（计算错）×
+→ -3+5=2
+→ 选C
+                    </pre>
+                </div>
+
+                <h3>3.4 代值排除法（数学）</h3>
+                <div class="tips-card">
+                    <h4>原理：代入特殊值验证</h4>
+                    <pre>
+【适用题型】
+- 代数式化简
+- 函数性质
+- 不等式
+
+【操作方法】
+1. 取一个特殊值（如x=0,1,-1）
+2. 代入各选项验证
+3. 排除不符合的
+
+【示例】
+题：若a>b，则下列一定成立的是？（ ）
+A. a² > b²（试a=1,b=-1）×
+B. -a < -b（可能对）
+C. a+1 > b+1（可能对）
+D. |a| > |b|（试a=1,b=-2）×
+
+用特殊值验证：
+取a=1,b=0：
+A:1>0√,B:-1<0√,C:2>1√,D:1>0√→无法排除
+取a=-1,b=-2：
+A:1>4×,B:1<2√,C:0>-1√,D:1>2×→排除A、D
+在B和C中，C是显然正确的
+→ 选C
+                    </pre>
+                </div>
+            </section>
+
+            <!-- 四、文科选择题技巧 -->
+            <section class="content-section">
+                <h2>四、文科选择题技巧（政治、历史、地理）</h2>
+
+                <h3>4.1 时间线排除法（历史）</h3>
+                <div class="tips-card">
+                    <h4>原理：时间不符合的直接排除</h4>
+                    <pre>
+【应用方法】
+1. 先确定事件的大致时间
+2. 排除明显时间不对的
+3. 在时间范围内的选择
+
+【示例】
+题：下列哪个事件发生在1949年？（ ）
+A. 五四运动（1919年）×
+B. 抗日战争爆发（1937年）×
+C. 中华人民共和国成立（1949年）
+D. 改革开放（1978年）×
+→ 排除A、B、D
+→ 选C
+                    </pre>
+                </div>
+
+                <h3>4.2 因果关系排除法（政治、历史）</h3>
+                <div class="tips-card">
+                    <h4>原理：因果不匹配的排除</h4>
+                    <pre>
+【判断方法】
+1. 找出题干中的"因"和"果"
+2. 看选项因果是否匹配
+3. 排除因果混乱的
+
+【常见错误】
+- 倒果为因
+- 强加因果
+- 因果无关
+                    </pre>
+                </div>
+
+                <h3>4.3 地图信息排除法（地理）</h3>
+                <div class="tips-card">
+                    <h4>原理：地图信息不匹配的排除</h4>
+                    <pre>
+【检查要点】
+1. 位置对不对？
+2. 范围对不对？
+3. 符号对不对？
+
+【操作方法】
+先看地图，再看选项
+                    </pre>
+                </div>
+            </section>
+
+            <!-- 五、三步排除法SOP -->
+            <section class="content-section">
+                <h2>五、三步排除法SOP</h2>
+
+                <h3>5.1 标准答题流程</h3>
+                <div class="sop-box">
+                    <div class="sop-step">
+                        <div class="sop-step-number">1</div>
+                        <div>
+                            <h4 style="color: #fbbf24; margin-top: 0;">第1步：审题（30秒）</h4>
+                            <ul>
+                                <li>读题干，圈出关键词</li>
+                                <li>判断题型</li>
+                                <li>明确答题要求</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sop-step">
+                        <div class="sop-step-number">2</div>
+                        <div>
+                            <h4 style="color: #fbbf24; margin-top: 0;">第2步：排除（60秒）</h4>
+                            <ul>
+                                <li>用上面的技巧快速排除</li>
+                                <li>通常能排除2-3个</li>
+                                <li>剩下的再仔细比较</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sop-step">
+                        <div class="sop-step-number">3</div>
+                        <div>
+                            <h4 style="color: #fbbf24; margin-top: 0;">第3步：验证（30秒）</h4>
+                            <ul>
+                                <li>检查选择是否正确</li>
+                                <li>确认没有读错题</li>
+                                <li>确认没有手误涂错</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>5.2 难题处理策略</h3>
+                <div class="highlight-box">
+                    <h4>方法1：标记后跳过</h4>
+                    <ul>
+                        <li>不要在一道题上花太多时间</li>
+                        <li>先做会的，再回来思考</li>
+                    </ul>
+                    <h4>方法2：排除到二选一</h4>
+                    <ul>
+                        <li>实在不会，先排除明显的错误项</li>
+                        <li>在剩下两个中"直觉"选择</li>
+                        <li>标记，回头检查</li>
+                    </ul>
+                    <h4>方法3：相信第一直觉</h4>
+                    <ul>
+                        <li>第一感觉往往是对的</li>
+                        <li>不要轻易改来改去</li>
+                        <li>除非有确凿证据</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 六、考场实用技巧 -->
+            <section class="content-section">
+                <h2>六、考场实用技巧</h2>
+
+                <h3>6.1 时间分配</h3>
+                <div class="success-box">
+                    <h4>简单题（30秒/题）</h4>
+                    <ul>
+                        <li>一眼能看出答案的</li>
+                        <li>不要犹豫，快速选择</li>
+                    </ul>
+                    <h4>中档题（60秒/题）</h4>
+                    <ul>
+                        <li>需要思考的</li>
+                        <li>按三步法来</li>
+                    </ul>
+                    <h4>难题（标记后跳过）</h4>
+                    <ul>
+                        <li>不要超过2分钟</li>
+                        <li>最后回来处理</li>
+                    </ul>
+                </div>
+
+                <h3>6.2 涂卡技巧</h3>
+                <div class="danger-box">
+                    <h4>边做边涂</h4>
+                    <ul>
+                        <li>不要等到最后一起涂</li>
+                        <li>容易出错或来不及</li>
+                    </ul>
+                    <h4>仔细核对</h4>
+                    <ul>
+                        <li>题号和答题卡是否对应</li>
+                        <li>不要涂错行</li>
+                    </ul>
+                    <h4>留白处理</h4>
+                    <ul>
+                        <li>实在不会的，不要留空</li>
+                        <li>按直觉选一个，有25%概率对</li>
+                    </ul>
+                </div>
+
+                <h3>6.3 检查策略</h3>
+                <div class="principle-card">
+                    <h4>检查重点</h4>
+                    <ol>
+                        <li>有没有涂错题号</li>
+                        <li>有没有理解错题目</li>
+                        <li>计算题再算一遍</li>
+                        <li>再看一遍排除过程</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 七、实战练习 -->
+            <section class="content-section">
+                <h2>七、实战练习</h2>
+
+                <div class="example-box">
+                    <h4>练习1：快速排除</h4>
+                    <p><strong>题：关于网络，下列说法正确的是（ ）</strong></p>
+                    <p>A. 网络上的信息都是真实的 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>B. 网络一定会让人上瘾 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>C. 我们应该完全不使用网络 <span class="tag tag-wrong">绝对词</span></p>
+                    <p>D. 理性使用网络，扬长避短 <span class="tag tag-right">合理</span></p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选D</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>练习2：矛盾排除</h4>
+                    <p><strong>题：下列哪个数最大？（ ）</strong></p>
+                    <p>A. 0.5</p>
+                    <p>B. 1/3 ≈ 0.33</p>
+                    <p>C. 2/3 ≈ 0.67</p>
+                    <p>D. 0.4</p>
+                    <p>→ A=0.5, B≈0.33, C≈0.67, D=0.4</p>
+                    <p>→ 排除A、B、D</p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选C</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>练习3：综合运用</h4>
+                    <p><strong>题：She has been _____ here _____ 2020.</strong></p>
+                    <p>A. work, since</p>
+                    <p>B. working, for <span class="tag tag-wrong">for+时间段</span></p>
+                    <p>C. working, since</p>
+                    <p>D. work, for <span class="tag tag-wrong">has been后用working</span></p>
+                    <p>→ 排除B、D（for/since搭配）</p>
+                    <p>→ 排除A（work应为working）</p>
+                    <p style="font-weight: bold; color: #22c55e; margin-top: 10px;">→ 选C</p>
+                </div>
+            </section>
+
+            <!-- 结语 -->
+            <section class="content-section">
+                <div class="info-card" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white;">
+                    <h3 style="color: white;">🎯 结语：选择题不难，排除是王道</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8;"><strong>核心观点：</strong></p>
+                    <p style="font-size: 1.2em; font-weight: bold; margin-top: 10px;">选择题的正确答案是唯一的，<br>错误答案有三个。<br>与其找对的，不如找错的。</p>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px;"><strong>记住：</strong></p>
+                    <ul>
+                        <li>排除法是最可靠的方法</li>
+                        <li>第一直觉往往是对的</li>
+                        <li>时间管理很重要</li>
+                        <li>仔细审题是前提</li>
+                    </ul>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px;"><strong>最后建议：</strong></p>
+                    <ul>
+                        <li>平时练习中多使用排除法</li>
+                        <li>总结常见干扰特征</li>
+                        <li>提高做题速度</li>
+                        <li>保持冷静心态</li>
+                    </ul>
+                    <p style="font-size: 1.3em; font-weight: bold; margin-top: 20px;">祝你选择题全对！</p>
+                </div>
+            </section>
+
+            <!-- 返回首页 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="../index.html" class="btn btn-primary">🏠 返回首页</a>
+                <a href="advanced-problem-solving.html" class="btn btn-secondary" style="margin-left: 10px;">🧠 高阶解题思维</a>
+                <a href="exam-prediction.html" class="btn btn-secondary" style="margin-left: 10px;">🎯 考前猜题策略</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer style="background: #1e293b; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container">
+            <p style="text-align: center; margin: 0;">
+                选择题快速排除技巧 - 全科通用<br>
+                适合对象：所有需要提高选择题准确率的初中生
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

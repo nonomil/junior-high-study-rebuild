@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考前猜题策略：科学预测考点 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .principle-card {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .principle-card h4 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .checklist {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .checklist ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .checklist li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .pyramid-box {
+            background: #1e293b;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .trend-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .trend-card h4 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+        .subject-box {
+            background: #f8fafc;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .prediction-table {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .confidence-high {
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .confidence-medium {
+            color: #eab308;
+            font-weight: bold;
+        }
+        .warning-box {
+            background: #fef9c3;
+            border-left: 4px solid #eab308;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><i class="fas fa-graduation-cap nav-ico" aria-hidden="true"></i> 初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-brain nav-ico" aria-hidden="true"></i> 高阶思维</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-strategies.html"><i class="fas fa-book-open-reader menu-ico" aria-hidden="true"></i> 通用学习策略SOP</a></li>
+                        <li><a href="advanced-problem-solving.html"><i class="fas fa-lightbulb menu-ico" aria-hidden="true"></i> 高阶解题思维</a></li>
+                        <li><a href="exam-prediction.html" style="color: #2563eb; font-weight: bold;"><i class="fas fa-bullseye menu-ico" aria-hidden="true"></i> 考前猜题策略</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h1>🎯 考前猜题策略：科学预测考点</h1>
+                <p>用数据分析和出题规律，科学预测考试重点</p>
+            </div>
+
+            <div class="info">
+                <p><strong>核心提示：</strong>猜题是为了更高效地复习，不是为了投机取巧。猜对了是锦上添花，猜错了复习也没有白费。</p>
+                <p><strong>重要原则：</strong>猜对了是运气，复习到了是实力。即使没猜中，复习的过程也没有白费。</p>
+                <p>需要更系统的解题方法：去 <a href="advanced-problem-solving.html">高阶解题思维</a>。</p>
+            </div>
+
+            <!-- 前言：猜题不是赌博 -->
+            <section class="content-section">
+                <div class="info-card">
+                    <h3>📖 前言：猜题不是赌博</h3>
+                    <p><strong>什么是科学猜题：</strong></p>
+                    <ul>
+                        <li>不是靠运气瞎蒙</li>
+                        <li>不是迷信"小道消息"</li>
+                        <li>而是基于数据和规律的理性分析</li>
+                    </ul>
+                    <p><strong>科学猜题的价值：</strong></p>
+                    <ul>
+                        <li>缩小复习范围，提高效率</li>
+                        <li>把有限时间用在刀刃上</li>
+                        <li>增强考试信心</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>核心原则：</strong></p>
+                        <p>猜对了是运气，复习到了是实力。<br>即使没猜中，复习的过程也没有白费。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 一、考点分布规律：数据说话 -->
+            <section class="content-section">
+                <h2>一、考点分布规律：数据说话</h2>
+
+                <h3>1.1 考点权重分析</h3>
+                <p><strong>基本事实：</strong>不是所有考点都同等重要</p>
+
+                <div class="pyramid-box">
+                    <h4 style="color: #fbbf24; text-align: center;">考点重要性金字塔</h4>
+                    <div style="background: #22c55e; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                        <strong>【A级：必考点】每年都考，分值高</strong>
+                        <ul>
+                            <li>数学：函数、几何证明、方程</li>
+                            <li>英语：阅读理解、写作、时态语态</li>
+                            <li>语文：现代文阅读、作文、文言文</li>
+                        </ul>
+                    </div>
+                    <div style="background: #3b82f6; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                        <strong>【B级：常考点】经常考，分值中等</strong>
+                        <ul>
+                            <li>数学：统计概率、立体几何</li>
+                            <li>英语：完形填空、词汇运用</li>
+                            <li>语文：诗歌鉴赏、文学常识</li>
+                        </ul>
+                    </div>
+                    <div style="background: #eab308; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                        <strong>【C级：轮考点】偶尔考，分值低</strong>
+                        <ul>
+                            <li>数学：复数、向量（部分地区）</li>
+                            <li>英语：特殊句式、构词法</li>
+                            <li>语文：标点符号、书法鉴赏</li>
+                        </ul>
+                    </div>
+                    <div style="background: #94a3b8; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                        <strong>【D级：冷考点】多年未考，可能淡化</strong>
+                        <ul>
+                            <li>教材变化中被删除的内容</li>
+                            <li>与当前教育理念不符的内容</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>1.2 如何收集考点数据</h3>
+                <div class="success-box">
+                    <h4>数据来源</h4>
+                    <p><strong>来源1：历年真题</strong></p>
+                    <ul>
+                        <li>收集近3-5年的真题</li>
+                        <li>统计每个考点出现的频率</li>
+                    </ul>
+                    <p><strong>来源2：考纲/课标</strong></p>
+                    <ul>
+                        <li>官方文件明确列出必考内容</li>
+                        <li>注意"了解""理解""掌握"的差异</li>
+                    </ul>
+                    <p><strong>来源3：模拟试卷</strong></p>
+                    <ul>
+                        <li>老师出的模拟题反映了命题趋势</li>
+                        <li>模拟题的重点往往是真题的重点</li>
+                    </ul>
+                    <p><strong>来源4：期末/单元测试</strong></p>
+                    <ul>
+                        <li>本校老师的出题风格</li>
+                        <li>期末考试重点可能是中考重点</li>
+                    </ul>
+                    <p><strong>来源5：同学/老师的"感觉"</strong></p>
+                    <ul>
+                        <li>有经验的老师会透露重点</li>
+                        <li>交流可以获取更多信息</li>
+                    </ul>
+                </div>
+
+                <h3>1.3 考点统计表模板</h3>
+                <div class="prediction-table">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>年份</th>
+                                <th>考点</th>
+                                <th>题型</th>
+                                <th>分值</th>
+                                <th>难度</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023</td>
+                                <td>二次函数</td>
+                                <td>解答题</td>
+                                <td>12分</td>
+                                <td>中</td>
+                                <td>顶点+最值</td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td>二次函数</td>
+                                <td>选择题</td>
+                                <td>3分</td>
+                                <td>易</td>
+                                <td>对称轴</td>
+                            </tr>
+                            <tr>
+                                <td>2021</td>
+                                <td>二次函数</td>
+                                <td>解答题</td>
+                                <td>10分</td>
+                                <td>中</td>
+                                <td>解析式</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" style="text-align: center; background: #f0fdf4;">
+                                    <strong>统计：3年3考 | 必考点</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 二、出题趋势分析：把握风向 -->
+            <section class="content-section">
+                <h2>二、出题趋势分析：把握风向</h2>
+
+                <h3>2.1 时代背景与命题方向</h3>
+                <div class="trend-card">
+                    <h4>趋势1：联系实际</h4>
+                    <p>试题越来越多地采用真实情境</p>
+                    <ul>
+                        <li>例：用数学知识解决生活中的问题</li>
+                        <li><strong>对策：</strong>关注时事，练习应用题</li>
+                    </ul>
+                </div>
+
+                <div class="trend-card">
+                    <h4>趋势2：核心素养</h4>
+                    <p>不仅考知识，更考能力</p>
+                    <ul>
+                        <li>例：推理能力、探究能力</li>
+                        <li><strong>对策：</strong>多思考"为什么"，不只是"怎么做"</li>
+                    </ul>
+                </div>
+
+                <div class="trend-card">
+                    <h4>趋势3：跨学科融合</h4>
+                    <p>不同学科知识综合考查</p>
+                    <ul>
+                        <li>例：语文+历史，物理+数学</li>
+                        <li><strong>对策：</strong>建立学科联系</li>
+                    </ul>
+                </div>
+
+                <div class="trend-card">
+                    <h4>趋势4：开放性试题</h4>
+                    <p>答案不唯一，鼓励创新思维</p>
+                    <ul>
+                        <li>例：数学探究题，语文开放作文</li>
+                        <li><strong>对策：</strong>训练发散思维，不满足标准答案</li>
+                    </ul>
+                </div>
+
+                <h3>2.2 教材变化考点</h3>
+                <div class="warning-box">
+                    <h4>重要原则：教材变了，考点也要变</h4>
+                    <p><strong>新增内容</strong></p>
+                    <ul>
+                        <li>近年新加的章节</li>
+                        <li>例：新教材中的"数据分析"</li>
+                        <li><strong>预测：</strong>很可能成为新考点</li>
+                    </ul>
+                    <p><strong>删除内容</strong></p>
+                    <ul>
+                        <li>教材中已删除的内容</li>
+                        <li>例：旧教材的某些定理</li>
+                        <li><strong>预测：</strong>基本不会再考</li>
+                    </ul>
+                    <p><strong>调整内容</strong></p>
+                    <ul>
+                        <li>教学要求有变化的内容</li>
+                        <li>例：从"了解"变为"掌握"</li>
+                        <li><strong>预测：</strong>考查深度会增加</li>
+                    </ul>
+                </div>
+
+                <h3>2.3 "三年周期"规律</h3>
+                <div class="highlight-box">
+                    <h4>观察发现：很多考点呈现3年左右的循环</h4>
+                    <pre style="background: #1e293b; color: #e2e8f0;">
+2021年：考点A（难）
+   ↓
+2022年：考点B（难）← 难度轮换
+   ↓
+2023年：考点C（难）
+   ↓
+2024年？可能是考点A（难）← 循环
+                    </pre>
+                    <p><strong>应用方法：</strong></p>
+                    <ul>
+                        <li>看近3年的大题分布</li>
+                        <li>推测今年可能轮到哪个难点</li>
+                        <li>重点复习相关内容</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 三、题型预测：细节决定成败 -->
+            <section class="content-section">
+                <h2>三、题型预测：细节决定成败</h2>
+
+                <h3>3.1 题型稳定性分析</h3>
+                <p><strong>基本规律：</strong>大题型相对稳定，小题可能有变化</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                        <h4 style="color: #22c55e;">稳定题型</h4>
+                        <ul>
+                            <li>语文：作文、现代文阅读、文言文</li>
+                            <li>数学：解答题（最后2-3道）</li>
+                            <li>英语：阅读、完形、写作</li>
+                        </ul>
+                        <p style="color: #166534; font-size: 0.9em;">预测难度：★☆☆☆☆</p>
+                    </div>
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px; border-left: 4px solid #eab308;">
+                        <h4 style="color: #ca8a04;">微调题型</h4>
+                        <ul>
+                            <li>语文：诗歌鉴赏题型、语言运用</li>
+                            <li>数学：选择/填空题的具体考点</li>
+                            <li>英语：听力、语法填空</li>
+                        </ul>
+                        <p style="color: #854d0e; font-size: 0.9em;">预测难度：★★★☆☆</p>
+                    </div>
+                    <div style="background: #fef2f2; padding: 20px; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #ef4444;">创新题型</h4>
+                        <ul>
+                            <li>每年都有1-2道"新面孔"</li>
+                            <li>通常是开放性或探究性试题</li>
+                        </ul>
+                        <p style="color: #991b1b; font-size: 0.9em;">预测难度：★★★★★（最难猜）</p>
+                    </div>
+                </div>
+
+                <h3>3.2 热点预测：关注时事</h3>
+                <div class="subject-box">
+                    <h4>社会热点与考点结合</h4>
+                    <p><strong>科技热点</strong></p>
+                    <ul>
+                        <li>人工智能、航天、新能源</li>
+                        <li>可能考点：物理/数学中的数据分析</li>
+                        <li>可能题型：信息提取与处理</li>
+                    </ul>
+                    <p><strong>社会事件</strong></p>
+                    <ul>
+                        <li>环保、健康、教育改革</li>
+                        <li>可能考点：语文作文素材</li>
+                        <li>可能题型：英语阅读背景</li>
+                    </ul>
+                    <p><strong>文化热点</strong></p>
+                    <ul>
+                        <li>传统节日、文化遗产</li>
+                        <li>可能考点：语文文言文/诗歌</li>
+                        <li>可能题型：历史/政治相关题</li>
+                    </ul>
+                </div>
+
+                <h3>3.3 学校命题风格分析</h3>
+                <div class="success-box">
+                    <h4>本校老师的出题习惯</h4>
+                    <p><strong>通过日常测试观察</strong></p>
+                    <ul>
+                        <li>哪些知识点老师强调多？</li>
+                        <li>哪种题型老师偏爱？</li>
+                        <li>老师讲课的"重头戏"是什么？</li>
+                    </ul>
+                    <p><strong>分析模拟试卷</strong></p>
+                    <ul>
+                        <li>模拟题的重点往往是考试重点</li>
+                        <li>老师反复练习的题型要重视</li>
+                    </ul>
+                    <p><strong>老师的"暗示"</strong></p>
+                    <ul>
+                        <li>"这个很重要" → 高概率考点</li>
+                        <li>"大家注意" → 可能是陷阱或难点</li>
+                        <li>考前强调的内容 → 必考内容</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 四、考前2周预测法：精准聚焦 -->
+            <section class="content-section">
+                <h2>四、考前2周预测法：精准聚焦</h2>
+
+                <h3>4.1 倒数第二次考试分析</h3>
+                <div class="principle-card">
+                    <h4>重要信号：考前最近的一次考试是重要风向标</h4>
+                    <p><strong>为什么重要</strong></p>
+                    <ul>
+                        <li>老师往往用这次考试"摸底"</li>
+                        <li>考查的内容可能就是重点</li>
+                        <li>错题可能是考试陷阱</li>
+                    </ul>
+                    <p><strong>如何利用</strong></p>
+                    <ul>
+                        <li>把这次考试的重点列出来</li>
+                        <li>分析自己的薄弱环节</li>
+                        <li>考前针对性复习</li>
+                    </ul>
+                </div>
+
+                <h3>4.2 老师考前"最后一课"</h3>
+                <div class="highlight-box">
+                    <h4>捕捉信号</h4>
+                    <p><strong>重点强调的内容</strong></p>
+                    <ul>
+                        <li>老师花了大量时间讲的</li>
+                        <li>反复提醒的</li>
+                        <li>几乎100%是考点</li>
+                    </ul>
+                    <p><strong>快速带过的内容</strong></p>
+                    <ul>
+                        <li>一笔带过的</li>
+                        <li>说"了解就行"的</li>
+                        <li>可能不是重点</li>
+                    </ul>
+                    <p><strong>没讲完的内容</strong></p>
+                    <ul>
+                        <li>有时老师会故意留一点</li>
+                        <li>可能成为考题</li>
+                        <li>需要自己补充学习</li>
+                    </ul>
+                </div>
+
+                <h3>4.3 同班同学的"情报"</h3>
+                <div class="success-box">
+                    <h4>信息交换</h4>
+                    <p><strong>整理笔记交流</strong></p>
+                    <ul>
+                        <li>看看同学笔记中老师强调的重点</li>
+                        <li>对比自己有没有遗漏</li>
+                    </ul>
+                    <p><strong>错题交流</strong></p>
+                    <ul>
+                        <li>一起讨论常错题型</li>
+                        <li>可能是共性问题，考试会考</li>
+                    </ul>
+                    <p><strong>"感觉"交流</strong></p>
+                    <ul>
+                        <li>大家都觉得难的内容可能考</li>
+                        <li>大家都容易忽视的内容可能考</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 五、分科猜题策略 -->
+            <section class="content-section">
+                <h2>五、分科猜题策略</h2>
+
+                <h3>5.1 数学：抓大放小</h3>
+                <div class="subject-box">
+                    <h4>必猜内容</h4>
+                    <ul>
+                        <li>最后两道大题的类型（函数/几何）</li>
+                        <li>选择填空中的压轴题</li>
+                        <li>应用题可能的实际背景</li>
+                    </ul>
+                    <h4>猜题方法</h4>
+                    <p><strong>函数类</strong></p>
+                    <ul>
+                        <li>二次函数是绝对重点</li>
+                        <li>结合实际问题（最大/最小值）</li>
+                        <li>可能与几何图形结合</li>
+                    </ul>
+                    <p><strong>几何类</strong></p>
+                    <ul>
+                        <li>证明题（相似、全等）</li>
+                        <li>计算题（面积、长度）</li>
+                        <li>可能涉及动点问题</li>
+                    </ul>
+                    <p><strong>统计概率</strong></p>
+                    <ul>
+                        <li>题型相对固定</li>
+                        <li>扇形统计图、平均数</li>
+                        <li>可能与实际调查结合</li>
+                    </ul>
+                </div>
+
+                <h3>5.2 英语：关注热点</h3>
+                <div class="subject-box">
+                    <h4>必猜内容</h4>
+                    <ul>
+                        <li>作文话题</li>
+                        <li>阅读理解主题</li>
+                        <li>完形填空题材</li>
+                    </ul>
+                    <h4>猜题方法</h4>
+                    <p><strong>作文话题</strong></p>
+                    <ul>
+                        <li>个人成长、校园生活（高频）</li>
+                        <li>环保、健康、科技（热点）</li>
+                        <li>中华文化、家乡介绍（常考）</li>
+                    </ul>
+                    <p><strong>阅读主题</strong></p>
+                    <ul>
+                        <li>人物故事（记叙文）</li>
+                        <li>科普知识（说明文）</li>
+                        <li>社会现象（议论文）</li>
+                    </ul>
+                    <p><strong>语法重点</strong></p>
+                    <ul>
+                        <li>时态：一般过去、现在完成、过去进行</li>
+                        <li>从句：定语从句、状语从句</li>
+                        <li>非谓语：不定式、动名词</li>
+                    </ul>
+                </div>
+
+                <h3>5.3 语文：紧跟时代</h3>
+                <div class="subject-box">
+                    <h4>必猜内容</h4>
+                    <ul>
+                        <li>作文方向</li>
+                        <li>现代文阅读主题</li>
+                        <li>文言文重点篇目</li>
+                    </ul>
+                    <h4>猜题方法</h4>
+                    <p><strong>作文方向</strong></p>
+                    <ul>
+                        <li>成长励志（个人经历）</li>
+                        <li>家国情怀（社会责任）</li>
+                        <li>文化传承（传统文化）</li>
+                        <li>科技创新（时代发展）</li>
+                    </ul>
+                    <p><strong>现代文阅读</strong></p>
+                    <ul>
+                        <li>关注社会热点</li>
+                        <li>引人深思的主题</li>
+                        <li>可能夹叙夹议</li>
+                    </ul>
+                    <p><strong>文言文</strong></p>
+                    <ul>
+                        <li>教材中的经典篇目</li>
+                        <li>与传统文化相关</li>
+                        <li>可能考对比阅读</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 六、猜题后的复习策略 -->
+            <section class="content-section">
+                <h2>六、猜题后的复习策略</h2>
+
+                <h3>6.1 三轮复习法</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #dbeafe; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #1d4ed8;">第一轮：全面覆盖</h4>
+                        <ul>
+                            <li>过一遍所有知识点</li>
+                            <li>不留死角</li>
+                        </ul>
+                    </div>
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #ca8a04;">第二轮：重点突破</h4>
+                        <ul>
+                            <li>针对预测的考点</li>
+                            <li>深入练习</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px;">
+                        <h4 style="color: #22c55e;">第三轮：查漏补缺</h4>
+                        <ul>
+                            <li>错题复习</li>
+                            <li>薄弱环节加强</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>6.2 "猜中"与"未中"的应对</h3>
+                <div class="success-box">
+                    <h4>如果猜中了</h4>
+                    <ul>
+                        <li>很好，你有备而来</li>
+                        <li>但不能大意</li>
+                        <li>继续巩固，确保拿满分</li>
+                    </ul>
+                </div>
+                <div class="danger-box">
+                    <h4>如果没猜中</h4>
+                    <ul>
+                        <li>正常现象，不可完全依赖猜题</li>
+                        <li>依靠平时的积累</li>
+                        <li>调整心态，冷静应对</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4>核心原则</h4>
+                    <p><strong>猜题是辅助，实力是根本。</strong></p>
+                    <p><strong>复习的过程本身就是提升。</strong></p>
+                </div>
+            </section>
+
+            <!-- 七、实战操作：考前预测表 -->
+            <section class="content-section">
+                <h2>七、实战操作：考前预测表</h2>
+
+                <div class="prediction-table">
+                    <h4 style="text-align: center; color: #2563eb; margin-top: 0;">考前预测记录表</h4>
+
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <h5 class="confidence-high">【必考点预测】（信心度：高）</h5>
+                        <p><strong>1. 数学：二次函数综合题</strong></p>
+                        <p style="margin-left: 20px;">→ 理由：近3年每年都考</p>
+                        <p style="margin-left: 20px;">→ 复习：已完成3道大题</p>
+                        <p><strong>2. 英语：环境保护话题作文</strong></p>
+                        <p style="margin-left: 20px;">→ 理由：热点话题+高频题材</p>
+                        <p style="margin-left: 20px;">→ 复习：背熟相关词汇</p>
+                        <p><strong>3. 语文：传统文化主题阅读</strong></p>
+                        <p style="margin-left: 20px;">→ 理由：符合当前导向</p>
+                        <p style="margin-left: 20px;">→ 复习：熟悉相关题材</p>
+                    </div>
+
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <h5 class="confidence-medium">【可能考点】（信心度：中）</h5>
+                        <p><strong>1. 数学：统计与概率应用</strong></p>
+                        <p><strong>2. 英语：图表类阅读理解</strong></p>
+                        <p><strong>3. 语文：议论文阅读</strong></p>
+                    </div>
+
+                    <div style="background: #fef2f2; padding: 20px; border-radius: 8px;">
+                        <h5 style="color: #ef4444;">【意外考点】（需要准备）</h5>
+                        <p><strong>1. 新型探究题</strong></p>
+                        <p><strong>2. 开放性试题</strong></p>
+                        <p><strong>3. 跨学科综合题</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 结语 -->
+            <section class="content-section">
+                <div class="info-card" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white;">
+                    <h3 style="color: white;">🎯 结语：科学猜题，理性备考</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8;"><strong>核心观点：</strong></p>
+                    <p style="font-size: 1.1em; line-height: 1.8;">猜题是为了更高效地复习，不是为了投机取巧。<br>猜对了是锦上添花，猜错了复习也没有白费。</p>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px;"><strong>最终建议：</strong></p>
+                    <ul>
+                        <li>把猜题作为辅助手段，不要完全依赖</li>
+                        <li>重点复习预测考点，但不要忽视基础</li>
+                        <li>保持平常心，考试时灵活应对</li>
+                        <li>记住：实力才是硬道理</li>
+                    </ul>
+                    <p style="font-size: 1.2em; font-weight: bold; margin-top: 15px;">最后一句话：</p>
+                    <p style="font-size: 1.3em; margin-top: 10px;">最靠谱的"猜题"，<br>就是把所有可能考的内容都复习到。</p>
+                </div>
+            </section>
+
+            <!-- 返回首页 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="../index.html" class="btn btn-primary">🏠 返回首页</a>
+                <a href="advanced-problem-solving.html" class="btn btn-secondary" style="margin-left: 10px;">🧠 高阶解题思维</a>
+                <a href="multiple-choice-tips.html" class="btn btn-secondary" style="margin-left: 10px;">✅ 选择题排除技巧</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer style="background: #1e293b; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container">
+            <p style="text-align: center; margin: 0;">
+                考前猜题策略 - 科学预测考点<br>
+                适合对象：所有需要备考的初中生
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

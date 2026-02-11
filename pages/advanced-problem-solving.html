@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶解题思维：从题海到题核 - 初中学习低分重建指导系统</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .principle-card {
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .principle-card h4 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .checklist {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .checklist ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .checklist li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .danger-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .example-box {
+            background: #f8fafc;
+            border-left: 4px solid #8b5cf6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .question-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .steps-box {
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .steps-box ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .steps-box li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .level-pyramid {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background: #f1f5f9;
+            font-weight: 600;
+        }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .tag {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin: 2px;
+        }
+        .tag-wrong {
+            background: #ef4444;
+        }
+        .tag-right {
+            background: #22c55e;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><i class="fas fa-graduation-cap nav-ico" aria-hidden="true"></i> 初中学习指导系统</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link"><i class="fas fa-house nav-ico" aria-hidden="true"></i> 首页</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active"><i class="fas fa-brain nav-ico" aria-hidden="true"></i> 高阶思维</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="learning-strategies.html"><i class="fas fa-book-open-reader menu-ico" aria-hidden="true"></i> 通用学习策略SOP</a></li>
+                        <li><a href="deep-learning-methods.html"><i class="fas fa-rocket menu-ico" aria-hidden="true"></i> 深度学习与高效习得</a></li>
+                        <li><a href="advanced-problem-solving.html" style="color: #2563eb; font-weight: bold;"><i class="fas fa-lightbulb menu-ico" aria-hidden="true"></i> 高阶解题思维</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="section-header">
+                <h1>🧠 高阶解题思维：从题海到题核</h1>
+                <p>跳出"刷题怪圈"，掌握从一道题到一类题的思维升级路径</p>
+            </div>
+
+            <div class="info">
+                <p><strong>核心提示：</strong>不是做了1000道题就能学好，而是1000次深入思考1道题。</p>
+                <p>题海战术的问题：做得多 ≠ 懂得多，数量不能代替质量，机械重复无法提升思维。</p>
+                <p>需要更系统的学习策略：去 <a href="learning-strategies.html">通用学习策略SOP</a>。</p>
+            </div>
+
+            <!-- 前言：题海的陷阱 -->
+            <section class="content-section">
+                <div class="info-card">
+                    <h3>📖 前言：题海的陷阱</h3>
+                    <p><strong>典型困境：</strong></p>
+                    <ul>
+                        <li>做了1000道题，考试成绩却没有明显提升</li>
+                        <li>看过的题会做，稍微变一下就不会了</li>
+                        <li>不知道什么题该做，什么题不该做</li>
+                        <li>考试时遇到"新题"就慌了</li>
+                    </ul>
+                    <p><strong>核心问题：</strong>你在"刷题"，但没有"懂题"。</p>
+                    <p><strong>解决方向：</strong>从"题海"走向"题核"——找到每道题背后的核心考点和思维模式。</p>
+                </div>
+            </section>
+
+            <!-- 一、题核思维：三要素分析法 -->
+            <section class="content-section">
+                <h2>一、题核思维：三要素分析法</h2>
+
+                <h3>1.1 什么是"题核"</h3>
+                <p>每道题都有三个核心要素：</p>
+
+                <div class="level-pyramid">
+                    <h4 style="color: #fbbf24;">题核 = 题目的"DNA"</h4>
+                    <ol>
+                        <li><strong>考点定位：</strong>这道题考的是什么知识点？</li>
+                        <li><strong>思维路径：</strong>从题目到答案，大脑需要走哪些步骤？</li>
+                        <li><strong>变形方式：</strong>这道题可以有多少种变化形式？</li>
+                    </ol>
+                </div>
+
+                <h3>1.2 题核分析SOP</h3>
+                <p><strong>每做一道题，必须问自己三个问题：</strong></p>
+
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24; margin-bottom: 15px;">问题1：考点定位</h4>
+                    <p>这道题考的是什么？</p>
+                    <ul>
+                        <li>具体到：章节、知识点、公式、定理</li>
+                        <li>示例：这道题考的是"二次函数的顶点坐标"而不是"二次函数"</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin: 15px 0 15px 0;">问题2：思维路径</h4>
+                    <p>我是怎么解出来的？</p>
+                    <ul>
+                        <li>第一步：看到了什么关键信息？</li>
+                        <li>第二步：想到了什么方法/公式？</li>
+                        <li>第三步：如何得出答案？</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin: 15px 0 15px 0;">问题3：变形方式</h4>
+                    <p>这道题还能怎么出？</p>
+                    <ul>
+                        <li>如果换个数字，我会做吗？</li>
+                        <li>如果换个问法，我会做吗？</li>
+                        <li>如果和另一个知识点结合，我会做吗？</li>
+                    </ul>
+                </div>
+
+                <h3>1.3 题核分析实战示例</h3>
+                <div class="question-card">
+                    <h4 style="color: #2563eb;">原题：已知二次函数y = x² - 4x + 3，求其顶点坐标。</h4>
+
+                    <div class="principle-card">
+                        <h4>考点定位</h4>
+                        <ul>
+                            <li>章节：二次函数</li>
+                            <li>知识点：顶点坐标公式或配方法</li>
+                            <li>核心技能：将一般式化为顶点式</li>
+                        </ul>
+                    </div>
+
+                    <div class="principle-card">
+                        <h4>思维路径</h4>
+                        <p><strong>方法一（公式法）：</strong></p>
+                        <ol>
+                            <li>看到一般式 y = ax² + bx + c</li>
+                            <li>想到顶点坐标公式 (-b/2a, (4ac-b²)/4a)</li>
+                            <li>代入：a=1, b=-4, c=3</li>
+                            <li>计算：x = 4/2 = 2, y = (12-16)/4 = -1</li>
+                            <li>答案：(2, -1)</li>
+                        </ol>
+                        <p><strong>方法二（配方法）：</strong></p>
+                        <ol>
+                            <li>y = x² - 4x + 3</li>
+                            <li>y = (x² - 4x + 4) - 4 + 3</li>
+                            <li>y = (x - 2)² - 1</li>
+                            <li>顶点坐标：(2, -1)</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>变形方式</h4>
+                        <ul>
+                            <li>变形1：求对称轴 → x = 2</li>
+                            <li>变形2：求最小值 → y最小 = -1</li>
+                            <li>变形3：求与x轴交点 → 令y=0</li>
+                            <li>变形4：给定顶点和另一点，求解析式 → 逆向问题</li>
+                            <li>变形5：向上平移2个单位后的顶点 → (2, 1)</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <p><strong>题核总结：</strong>这道题的本质是"二次函数顶点式与一般式的互化"，掌握了这个，上面所有变形都会做。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 二、从一道题到一类题：题型归类法 -->
+            <section class="content-section">
+                <h2>二、从一道题到一类题：题型归类法</h2>
+
+                <h3>2.1 题型归类的三个层次</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #fef2f2; padding: 20px; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #ef4444;">层次1：按知识点归类</h4>
+                        <p><strong>示例：</strong>这是"二次函数题"</p>
+                        <p style="color: #991b1b; font-size: 0.9em;">问题：太宽泛，无指导意义</p>
+                    </div>
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px; border-left: 4px solid #eab308;">
+                        <h4 style="color: #ca8a04;">层次2：按考点归类</h4>
+                        <p><strong>示例：</strong>这是"求二次函数顶点坐标题"</p>
+                        <p style="color: #854d0e; font-size: 0.9em;">问题：还是太具体，无法迁移</p>
+                    </div>
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                        <h4 style="color: #22c55e;">层次3：按思维模式归类 ★</h4>
+                        <p><strong>示例：</strong>这是"配方法/公式法应用题"</p>
+                        <p style="color: #166534; font-size: 0.9em;">价值：可以迁移到其他情境</p>
+                    </div>
+                </div>
+
+                <h3>2.2 建立个人"题型库"</h3>
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24; margin-bottom: 15px;">操作步骤</h4>
+                    <ol>
+                        <li><strong>准备一个大本子</strong>（或电子文档）
+                            <ul>
+                                <li>按学科分类</li>
+                                <li>每个学科分成若干个"题型板块"</li>
+                            </ul>
+                        </li>
+                        <li><strong>每做一道典型题，进行"题核分析"</strong>
+                            <ul>
+                                <li>按上面的三要素分析法分析</li>
+                                <li>写下这道题的"思维路径"</li>
+                            </ul>
+                        </li>
+                        <li><strong>给这道题"贴标签"</strong>
+                            <ul>
+                                <li>标签1：所属章节</li>
+                                <li>标签2：核心考点</li>
+                                <li>标签3：思维模式（最重要！）</li>
+                            </ul>
+                        </li>
+                        <li><strong>定期整理</strong>
+                            <ul>
+                                <li>把相同标签的题放在一起</li>
+                                <li>找出它们的共同特征</li>
+                                <li>总结出"题型通解法"</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>2.3 题型库示例（数学）</h3>
+                <div class="question-card">
+                    <div style="background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <span class="tag">题型标签</span>
+                        <h4 style="margin-top: 10px;">配方法应用</h4>
+                    </div>
+
+                    <div class="principle-card">
+                        <h4>特征</h4>
+                        <ul>
+                            <li>涉及完全平方公式</li>
+                            <li>需要调整式子形式</li>
+                            <li>出现平方项</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>典型题1：求二次函数顶点</h4>
+                        <pre>y = x² - 4x + 3 = (x-2)² - 1</pre>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>典型题2：因式分解</h4>
+                        <pre>x² - 4x + 3 = (x-2)² - 1 = (x-1)(x-3)</pre>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>典型题3：解方程</h4>
+                        <pre>x² - 4x + 3 = 0 → (x-2)² = 1 → x=3或x=1</pre>
+                    </div>
+
+                    <div class="success-box">
+                        <h4>通解法</h4>
+                        <ol>
+                            <li>识别：有平方项，可以配方</li>
+                            <li>配方：(a±b)² = a²±2ab+b²</li>
+                            <li>应用：根据题目要求变形</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 三、出题人思维：逆向解题训练 -->
+            <section class="content-section">
+                <h2>三、出题人思维：逆向解题训练</h2>
+
+                <h3>3.1 什么是"出题人思维"</h3>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>思维类型</th>
+                            <th>核心问题</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>普通学生思维</strong></td>
+                            <td>这道题怎么做？</td>
+                        </tr>
+                        <tr>
+                            <td><strong>出题人思维 ★</strong></td>
+                            <td>这道题是怎么设计出来的？</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="level-pyramid">
+                    <h4 style="color: #fbbf24;">出题人设计一道题的五个步骤</h4>
+                    <ol>
+                        <li>步骤1：选定考点（要考什么）</li>
+                        <li>步骤2：选择情境（用什么形式包装）</li>
+                        <li>步骤3：设置陷阱（学生容易错在哪）</li>
+                        <li>步骤4：调整难度（数字复杂度、计算量）</li>
+                        <li>步骤5：编制选项/答案</li>
+                    </ol>
+                </div>
+
+                <h3>3.2 出题人思维训练SOP</h3>
+                <p><strong>训练方法：给题目"做手术"</strong></p>
+
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24;">手术1：拆解考点</h4>
+                    <ul>
+                        <li>这道题考了几个知识点？</li>
+                        <li>哪个是主考点？哪个是次考点？</li>
+                        <li>示例：这道题表面考"函数"，实际考"数形结合"</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">手术2：识别陷阱</h4>
+                    <ul>
+                        <li>哪里是出题人故意设置的陷阱？</li>
+                        <li>如果避开陷阱，题目会变简单吗？</li>
+                        <li>示例：这个"非负数"条件是陷阱，很多人忽略了</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">手术3：替换数字</h4>
+                    <ul>
+                        <li>把数字换成简单的，题目会变什么样？</li>
+                        <li>示例：把复杂的分数换成整数，再看解题思路</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">手术4：反向设计</h4>
+                    <ul>
+                        <li>如果让你出这道题，你会怎么出？</li>
+                        <li>还能有什么变化形式？</li>
+                    </ul>
+                </div>
+
+                <h3>3.3 出题人思维实战</h3>
+                <div class="question-card">
+                    <h4 style="color: #2563eb;">原题：如图，在△ABC中，∠A=60°，AB=8，AC=6，求BC的长。</h4>
+
+                    <div class="steps-box">
+                        <h4 style="color: #fbbf24;">出题人思维拆解</h4>
+                        <ul>
+                            <li><strong>步骤1：</strong>选定考点 → 余弦定理</li>
+                            <li><strong>步骤2：</strong>选择情境 → 三角形边角关系</li>
+                            <li><strong>步骤3：</strong>设置陷阱
+                                <ul>
+                                    <li>陷阱1：没有给直角，不能用勾股定理</li>
+                                    <li>陷阱2：需要自己画图</li>
+                                    <li>陷阱3：余弦定理公式记忆容易出错</li>
+                                </ul>
+                            </li>
+                            <li><strong>步骤4：</strong>调整难度 → 数字凑整，方便计算</li>
+                            <li><strong>步骤5：</strong>编制答案 → BC² = 8² + 6² - 2×8×6×cos60° = 100</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>反向思考</h4>
+                        <p>如果我来出这道题，可以怎么变？</p>
+                        <ul>
+                            <li>变1：给出三边，求一个角 → 逆用余弦定理</li>
+                            <li>变2：给出两边和一角，判断三角形形状 → 分类讨论</li>
+                            <li>变3：结合实际情境 → 测量两点距离</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 四、举一反三：一题多解与多题一解 -->
+            <section class="content-section">
+                <h2>四、举一反三：一题多解与多题一解</h2>
+
+                <h3>4.1 一题多解：拓宽思维</h3>
+                <div class="principle-card">
+                    <h4>为什么要一题多解</h4>
+                    <ul>
+                        <li>不同解法对应不同思维角度</li>
+                        <li>考试时多一种方法就多一份保险</li>
+                        <li>训练思维的灵活性</li>
+                    </ul>
+                </div>
+
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24;">操作步骤</h4>
+                    <ol>
+                        <li><strong>用常规方法解出答案</strong>
+                            <p>这是保底方法，必须掌握</p>
+                        </li>
+                        <li><strong>尝试另一种思路</strong>
+                            <p>从不同角度切入，例：几何题既可以用计算法，也可以用变换法</p>
+                        </li>
+                        <li><strong>比较各种方法</strong>
+                            <p>哪种最快？哪种最稳妥？哪种适用范围最广？</p>
+                        </li>
+                        <li><strong>总结最优策略</strong>
+                            <p>不同题型用不同方法，形成"方法库"</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <h3>4.2 多题一解：提炼通法</h3>
+                <div class="highlight-box">
+                    <h4>什么是多题一解？</h4>
+                    <p>表面不同的题目，背后的思维模式是一样的。</p>
+                </div>
+
+                <div class="example-box">
+                    <h4>示例</h4>
+                    <ul>
+                        <li>题1：二次函数求顶点</li>
+                        <li>题2：一元二次方程求根</li>
+                        <li>题3：因式分解</li>
+                    </ul>
+                    <p><strong>→ 表面不同，但都可能用到"配方法"</strong></p>
+                    <p><strong>→ 这就是"多题一解"</strong></p>
+                </div>
+
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24;">操作步骤</h4>
+                    <ol>
+                        <li><strong>做题时注意"似曾相识"的感觉</strong>
+                            <p>这道题和之前哪道题很像？</p>
+                        </li>
+                        <li><strong>比较相似题目</strong>
+                            <p>它们有什么共同点？解法有什么共同之处？</p>
+                        </li>
+                        <li><strong>提炼"通法"</strong>
+                            <p>把共同点总结成一个方法，给这个方法起个名字</p>
+                        </li>
+                        <li><strong>验证通法</strong>
+                            <p>拿新题试试这个方法，如果适用，就加入你的"方法库"</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 五、错题的高级用法：从错误到认知升级 -->
+            <section class="content-section">
+                <h2>五、错题的高级用法：从错误到认知升级</h2>
+
+                <h3>5.1 错题的三个层次</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                    <div style="background: #fef2f2; padding: 20px; border-radius: 8px; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #ef4444;">层次1：订正答案</h4>
+                        <p><strong>最低级</strong></p>
+                        <p>把正确答案写上</p>
+                        <p style="color: #991b1b;">问题：下次还可能错</p>
+                    </div>
+                    <div style="background: #fef9c3; padding: 20px; border-radius: 8px; border-left: 4px solid #eab308;">
+                        <h4 style="color: #ca8a04;">层次2：分析原因</h4>
+                        <p><strong>中级</strong></p>
+                        <p>搞清楚为什么错</p>
+                        <p style="color: #854d0e;">问题：只是"知其然"</p>
+                    </div>
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 4px solid #22c55e;">
+                        <h4 style="color: #22c55e;">层次3：认知升级 ★</h4>
+                        <p><strong>高级</strong></p>
+                        <p>找到思维漏洞，重建认知结构</p>
+                        <p style="color: #166534;">这才是真正进步</p>
+                    </div>
+                </div>
+
+                <h3>5.2 错题深度分析SOP</h3>
+                <div class="steps-box">
+                    <h4 style="color: #fbbf24;">第1步：错误分类（4种类型）</h4>
+                    <ul>
+                        <li><strong>A类：知识盲区型</strong> → 完全不会</li>
+                        <li><strong>B类：理解偏差型</strong> → 以为会了，实际错了</li>
+                        <li><strong>C类：技能缺失型</strong> → 知道怎么做，但做不对</li>
+                        <li><strong>D类：粗心大意型</strong> → 会做，但错了</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">第2步：针对性补救</h4>
+                    <ul>
+                        <li>A类：系统学习这个知识点</li>
+                        <li>B类：重新理解，纠正认知</li>
+                        <li>C类：专项训练，提高熟练度</li>
+                        <li>D类：养成检查习惯</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">第3步：设计同类题</h4>
+                    <ul>
+                        <li>自己给自己出题</li>
+                        <li>变化数字/情境</li>
+                        <li>确保真正掌握</li>
+                    </ul>
+
+                    <h4 style="color: #fbbf24; margin-top: 15px;">第4步：建立"错误档案"</h4>
+                    <ul>
+                        <li>记录典型错误</li>
+                        <li>定期回顾</li>
+                        <li>避免"重复犯错"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 六、实战应用：30天题核训练计划 -->
+            <section class="content-section">
+                <h2>六、实战应用：30天题核训练计划</h2>
+
+                <h3>第1周：建立意识</h3>
+                <div class="success-box">
+                    <h4>目标</h4>
+                    <p>每道题都进行题核分析</p>
+                    <h4>执行</h4>
+                    <ul>
+                        <li>每天只做5道题（但要精做）</li>
+                        <li>每道题都写三个问题的答案</li>
+                        <li>建立题型库框架</li>
+                    </ul>
+                    <h4>检验标准</h4>
+                    <ul>
+                        <li>能清晰说出每道题的考点</li>
+                        <li>能画出解题思维路径</li>
+                    </ul>
+                </div>
+
+                <h3>第2周：题型归类</h3>
+                <div class="success-box">
+                    <h4>目标</h4>
+                    <p>开始建立个人题型库</p>
+                    <h4>执行</h4>
+                    <ul>
+                        <li>把第1周的30道题分类</li>
+                        <li>找出至少5个"题型标签"</li>
+                        <li>每个题型下至少有3道题</li>
+                    </ul>
+                    <h4>检验标准</h4>
+                    <ul>
+                        <li>看到新题，能快速归类</li>
+                        <li>能说出这类题的通解法</li>
+                    </ul>
+                </div>
+
+                <h3>第3周：出题人思维</h3>
+                <div class="success-box">
+                    <h4>目标</h4>
+                    <p>练习逆向思考</p>
+                    <h4>执行</h4>
+                    <ul>
+                        <li>每天选1道题，进行"手术"拆解</li>
+                        <li>尝试自己设计变式题</li>
+                        <li>和同学互相出题</li>
+                    </ul>
+                    <h4>检验标准</h4>
+                    <ul>
+                        <li>能看出题目的陷阱在哪里</li>
+                        <li>能预测题目可能的变形</li>
+                    </ul>
+                </div>
+
+                <h3>第4周：综合提升</h3>
+                <div class="success-box">
+                    <h4>目标</h4>
+                    <p>整合所有方法</p>
+                    <h4>执行</h4>
+                    <ul>
+                        <li>做一套真题</li>
+                        <li>用题核思维分析每道题</li>
+                        <li>总结自己的"薄弱题型"</li>
+                    </ul>
+                    <h4>检验标准</h4>
+                    <ul>
+                        <li>看到题目能快速识别考点</li>
+                        <li>有多种解法可供选择</li>
+                        <li>错题数量明显减少</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 结语 -->
+            <section class="content-section">
+                <div class="info-card" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white;">
+                    <h3 style="color: white;">🎯 结语：从刷题到懂题</h3>
+                    <p style="font-size: 1.1em; line-height: 1.8;"><strong>题海战术的问题：</strong></p>
+                    <ul>
+                        <li>做得多 ≠ 懂得多</li>
+                        <li>数量不能代替质量</li>
+                        <li>机械重复无法提升思维</li>
+                    </ul>
+                    <p style="font-size: 1.1em; line-height: 1.8; margin-top: 15px;"><strong>题核思维的价值：</strong></p>
+                    <ul>
+                        <li>每道题都发挥最大价值</li>
+                        <li>从"做完"到"懂透"</li>
+                        <li>真正实现举一反三</li>
+                    </ul>
+                    <p style="font-size: 1.2em; font-weight: bold; margin-top: 15px;">记住：</p>
+                    <p style="font-size: 1.3em; margin-top: 10px;">不是做了1000道题就能学好，<br>而是1000次深入思考1道题。</p>
+                    <p style="margin-top: 15px; opacity: 0.9;"><strong>从今天开始：</strong></p>
+                    <ul>
+                        <li>少做题，多思考</li>
+                        <li>每道题都要"榨干价值"</li>
+                        <li>建立自己的"题核库"</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 返回首页 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="../index.html" class="btn btn-primary">🏠 返回首页</a>
+                <a href="learning-strategies.html" class="btn btn-secondary" style="margin-left: 10px;">📖 通用学习策略</a>
+                <a href="exam-prediction.html" class="btn btn-secondary" style="margin-left: 10px;">🎯 考前猜题策略</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer style="background: #1e293b; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container">
+            <p style="text-align: center; margin: 0;">
+                高阶解题思维 - 从题海到题核<br>
+                适合对象：所有希望提升解题能力的初中生
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
