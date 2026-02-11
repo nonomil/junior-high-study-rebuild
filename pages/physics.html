@@ -501,7 +501,7 @@
                 <h2>📚 知识体系重建计划</h2>
 
                 <div class="phase-timeline">
-                    <div class="phase-item">
+                    <div class="phase-item" id="mechanics">
                         <h3>第一阶段：力学基础（第1-4周）</h3>
                         <div class="success-box">
                             <h4>模块1：力与运动</h4>
@@ -585,18 +585,49 @@
 
                         <div class="info-box">
                             <h4>模块2：压强与浮力</h4>
-                            <div class="formula-box">
-                                <h5>固体压强</h5>
-                                <p>压强定义：$p = \frac{F}{S}$</p>
-                            </div>
-                            <div class="formula-box">
-                                <h5>液体压强</h5>
-                                <p>液体压强公式：$p = \rho gh$</p>
-                            </div>
-                            <div class="formula-box">
-                                <h5>浮力计算</h5>
-                                <p>阿基米德原理：$F_{浮} = \rho_{液}gV_{排}$</p>
-                            </div>
+
+                            <h5>Week 1-2: 压强概念与计算</h5>
+
+                            <p><strong>固体压强：</strong></p>
+                            <ul>
+                                <li>压强定义：$p = \frac{F}{S}$</li>
+                                <li>增大压强的方法：增大压力、减小受力面积</li>
+                                <li>减小压强的方法：减小压力、增大受力面积</li>
+                            </ul>
+
+                            <p><strong>液体压强：</strong></p>
+                            <ul>
+                                <li>液体压强特点：向各个方向都有压强</li>
+                                <li>液体压强公式：$p = \rho gh$</li>
+                                <li>连通器原理：连通器中同种液体静止时，各部分液面相平</li>
+                            </ul>
+
+                            <p><strong>气体压强：</strong></p>
+                            <ul>
+                                <li>大气压强的存在</li>
+                                <li>大气压强的测量：托里拆利实验</li>
+                                <li>大气压强的应用：吸盘、注射器等</li>
+                            </ul>
+
+                            <h5 style="margin-top: 20px;">Week 3-4: 浮力原理与应用</h5>
+
+                            <p><strong>浮力产生原因：</strong>液体压强差</p>
+                            <p><strong>阿基米德原理：</strong>$F_{浮} = \rho_{液}gV_{排}$</p>
+
+                            <p><strong>物体浮沉条件：</strong></p>
+                            <ul>
+                                <li>$F_{浮} > G_{物}$：上浮</li>
+                                <li>$F_{浮} = G_{物}$：悬浮或漂浮</li>
+                                <li>$F_{浮} < G_{物}$：下沉</li>
+                            </ul>
+
+                            <p><strong>浮力计算方法：</strong></p>
+                            <ol>
+                                <li><strong>阿基米德原理</strong>：$F_{浮} = \rho_{液}gV_{排}$</li>
+                                <li><strong>称重法</strong>：$F_{浮} = G_{空气中} - G_{液体中}$</li>
+                                <li><strong>平衡法</strong>：$F_{浮} = G_{物}$（悬浮或漂浮时）</li>
+                                <li><strong>压力差法</strong>：$F_{浮} = F_{向上} - F_{向下}$</li>
+                            </ol>
                         </div>
 
                         <div class="warning-box">
@@ -609,9 +640,59 @@
                                 <li>液体压强只与深度有关，与容器形状无关</li>
                             </ul>
                         </div>
+
+                        <div class="success-box">
+                            <h4>模块3：功、功率与机械</h4>
+
+                            <h5>Week 1-2: 功与功率</h5>
+
+                            <p><strong>功的概念：</strong></p>
+                            <ul>
+                                <li>功的定义：力与在力的方向上移动距离的乘积</li>
+                                <li>功的公式：$W = Fs$</li>
+                                <li>功的单位：焦耳（J）</li>
+                                <li>做功的两个必要因素：有力作用、在力的方向上有距离</li>
+                            </ul>
+
+                            <p><strong>功率的概念：</strong></p>
+                            <ul>
+                                <li>功率的定义：单位时间内做的功</li>
+                                <li>功率公式：$P = \frac{W}{t} = Fv$</li>
+                                <li>功率单位：瓦特（W）</li>
+                            </ul>
+
+                            <h5 style="margin-top: 20px;">Week 3-4: 简单机械</h5>
+
+                            <p><strong>杠杆：</strong></p>
+                            <ul>
+                                <li>杠杆平衡条件：$F_1 \times L_1 = F_2 \times L_2$</li>
+                                <li>杠杆分类：省力杠杆、费力杠杆、等臂杠杆</li>
+                                <li>杠杆应用：天平、剪刀、钳子等</li>
+                            </ul>
+
+                            <p><strong>滑轮：</strong></p>
+                            <ul>
+                                <li>定滑轮：改变力的方向，不省力</li>
+                                <li>动滑轮：省一半力，费一倍距离</li>
+                                <li>滑轮组：$F = \frac{G}{n}$（n为承重绳子段数）</li>
+                            </ul>
+
+                            <p><strong>机械效率：</strong></p>
+                            <ul>
+                                <li>有用功、额外功、总功</li>
+                                <li>机械效率：$\eta = \frac{W_{有用}}{W_{总}} \times 100\%$</li>
+                            </ul>
+
+                            <div class="formula-box">
+                                <h5>功与功率公式总结</h5>
+                                <p>功：$W = Fs$</p>
+                                <p style="margin-top: 10px;">功率：$P = \frac{W}{t} = Fv$</p>
+                                <p style="margin-top: 10px;">机械效率：$\eta = \frac{W_{有用}}{W_{总}} \times 100\%$</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="phase-item">
+                    <div class="phase-item" id="electricity">
                         <h3>第二阶段：电学系统（第5-8周）</h3>
 
                         <div class="info-box">
